@@ -1,1 +1,2 @@
-console.log('Test');
+// import './store';
+import './ui';
