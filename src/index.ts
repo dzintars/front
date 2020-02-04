@@ -1,2 +1,2 @@
-import './store';
-import './ui';
+import './store'
+import './ui'

@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit-element'
 
 export default css`
   :host {
@@ -12,4 +12,4 @@ export default css`
     background-color: var(--color-lawngreen-main);
     border-color: #339933;
   }
-`;
+`

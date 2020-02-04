@@ -6,28 +6,28 @@ import {
   css,
   TemplateResult,
   CSSResult,
-} from 'lit-element';
-import { repeat } from 'lit-html/directives/repeat';
-import { connect } from '@captaincodeman/redux-connect-element';
+} from 'lit-element'
+import { repeat } from 'lit-html/directives/repeat'
+import { connect } from '../../../utils/connect'
 import {
   store,
   RootState,
   User,
   UserSelectors,
   UserActions,
-} from '../../../store';
-import '../../components/my-component';
+} from '../../../store'
+import '../../components/my-component'
 
 @customElement('view-user-list')
 export class UserListElement extends connect(store, LitElement) {
-  @property({ type: Array }) users: User[];
-  @property({ type: Number }) selected: number;
+  @property({ type: Array }) users: User[]
+  @property({ type: Number }) selected: number
 
   mapState(state: RootState) {
     return {
       users: UserSelectors.users(state),
       selected: UserSelectors.selected(state),
-    };
+    }
   }
 
   mapEvents() {
@@ -38,7 +38,7 @@ export class UserListElement extends connect(store, LitElement) {
       //   UserActions.updateUser(e.detail),
       // 'my-component-delete': (e: CustomEvent) =>
       //   UserActions.deleteUser(e.detail.key),
-    };
+    }
   }
 
   render(): TemplateResult {
@@ -54,7 +54,7 @@ export class UserListElement extends connect(store, LitElement) {
           ></my-component>
         `
       )}
-    `;
+    `
   }
 
   static get styles(): CSSResult {
@@ -66,6 +66,6 @@ export class UserListElement extends connect(store, LitElement) {
       my-component {
         margin: 8px;
       }
-    `;
+    `
   }
 }

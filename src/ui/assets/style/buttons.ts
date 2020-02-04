@@ -1,4 +1,4 @@
-import { css } from 'lit-element';
+import { css } from 'lit-element'
 
 export const Buttons = css`
   * {
@@ -8,4 +8,4 @@ export const Buttons = css`
   button {
     border: 2px solid dodgerblue;
   }
-`;
+`

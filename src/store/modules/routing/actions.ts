@@ -1,5 +1,5 @@
-import { push, replace, go, goBack, goForward } from '../../../utils/router';
-import { ActionsUnion } from '../../actions';
+import { push, replace, go, goBack, goForward } from '../../../utils/router'
+import { ActionsUnion } from '../../actions'
 
 export const RoutingActions = {
   push,
@@ -7,6 +7,6 @@ export const RoutingActions = {
   go,
   goBack,
   goForward,
-};
+}
 
-export type RoutingActions = ActionsUnion<typeof RoutingActions>;
+export type RoutingActions = ActionsUnion<typeof RoutingActions>

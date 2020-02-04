@@ -1,12 +1,12 @@
-import { UserActions, UserTypes } from './actions';
-import { User } from './model';
+import { UserActions, UserTypes } from './actions'
+import { User } from './model'
 
 export interface UserState {
-  entities: { [id: number]: User };
-  ids: number[];
-  fetching: boolean;
-  selected: number;
-  error: Error;
+  entities: { [id: number]: User }
+  ids: number[]
+  fetching: boolean
+  selected: number
+  error: Error
 }
 
 const initialState: UserState = {
@@ -15,7 +15,7 @@ const initialState: UserState = {
   fetching: false,
   selected: 0,
   error: null,
-};
+}
 
 export default (
   state: UserState = initialState,
@@ -23,10 +23,10 @@ export default (
 ): UserState => {
   switch (action.type) {
     case UserTypes.USER_SELECT:
-      return { ...state, selected: action.payload.id };
+      return { ...state, selected: action.payload.id }
 
     case UserTypes.USER_LIST_FETCH_REQUEST:
-      return { ...state, fetching: true, error: null };
+      return { ...state, fetching: true, error: null }
 
     case UserTypes.USER_LIST_FETCH_SUCCESS:
       return {
@@ -35,18 +35,18 @@ export default (
         entities: {
           ...state.entities,
           ...action.payload.users.reduce((map, user) => {
-            map[user.id] = user;
-            return map;
+            map[user.id] = user
+            return map
           }, {}),
         },
         ids: action.payload.users.map(user => user.id),
-      };
+      }
 
     case UserTypes.USER_LIST_FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.payload.error };
+      return { ...state, fetching: false, error: action.payload.error }
 
     case UserTypes.USER_FETCH_REQUEST:
-      return { ...state, fetching: true, error: null };
+      return { ...state, fetching: true, error: null }
 
     case UserTypes.USER_FETCH_SUCCESS:
       return {
@@ -56,12 +56,12 @@ export default (
           ...state.entities,
           [action.payload.user.id]: action.payload.user,
         },
-      };
+      }
 
     case UserTypes.USER_FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.payload.error };
+      return { ...state, fetching: false, error: action.payload.error }
 
     default:
-      return state;
+      return state
   }
-};
+}

@@ -60,6 +60,7 @@ module.exports = merge(common, {
   ],
   devtool: 'source-map',
   devServer: {
+    // https://webpack.js.org/configuration/dev-server/
     hot: true,
     compress: true,
     // open: true,

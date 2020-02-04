@@ -1,2 +1,2 @@
 // HYGEN.IO: INJECT EXPORT HERE
-export * from './my-component';
+export * from './my-component'

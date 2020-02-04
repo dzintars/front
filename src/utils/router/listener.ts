@@ -1,4 +1,4 @@
-import { locationChange } from './actions';
+import { locationChange } from './actions'
 
 export function startListener(history, store) {
   store.dispatch(
@@ -7,7 +7,7 @@ export function startListener(history, store) {
       search: history.location.search,
       hash: history.location.hash,
     })
-  );
+  )
 
   history.listen(location => {
     store.dispatch(
@@ -16,6 +16,6 @@ export function startListener(history, store) {
         search: location.search,
         hash: location.hash,
       })
-    );
-  });
+    )
+  })
 }

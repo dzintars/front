@@ -3,16 +3,16 @@ import {
   customElement,
   property,
   TemplateResult,
-} from 'lit-element';
-import template from './template';
-import style from './style';
+} from 'lit-element'
+import template from './template'
+import style from './style'
 
 @customElement('my-component')
 export class MyComponentElement extends LitElement {
-  public static styles = [style];
-  @property({ type: Boolean, reflect: true }) selected: boolean = false;
-  @property({ type: Number }) key: number = 0;
-  @property({ type: String }) name: string = 'Dzintars';
+  public static styles = [style]
+  @property({ type: Boolean, reflect: true }) selected: boolean = false
+  @property({ type: Number }) key: number = 0
+  @property({ type: String }) name: string = 'Dzintars'
 
   onButtonClick(): void {
     const evt = new CustomEvent('my-component-click', {
@@ -22,26 +22,26 @@ export class MyComponentElement extends LitElement {
         key: this.key,
         name: this.name,
       },
-    });
-    this.dispatchEvent(evt);
+    })
+    this.dispatchEvent(evt)
   }
 
   protected render(): TemplateResult {
-    return template.call(this);
+    return template.call(this)
   }
 }
 
 declare global {
   interface DocumentEventMap {
-    'my-component-click': CustomEvent<MyComponentData>;
+    'my-component-click': CustomEvent<MyComponentData>
   }
 
   interface HTMLElementTagNameMap {
-    'my-component': MyComponentElement;
+    'my-component': MyComponentElement
   }
 }
 
 export interface MyComponentData {
-  key: number;
-  name: string;
+  key: number
+  name: string
 }

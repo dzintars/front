@@ -1,24 +1,24 @@
-import { PUSH, REPLACE, GO, GO_BACK, GO_FORWARD } from './constants';
+import { PUSH, REPLACE, GO, GO_BACK, GO_FORWARD } from './constants'
 
 // eslint-disable-next-line consistent-return
 export const routerMiddleware = history => () => next => action => {
   switch (action.type) {
     case PUSH:
-      history.push(action.payload);
-      break;
+      history.push(action.payload)
+      break
     case REPLACE:
-      history.replace(action.payload);
-      break;
+      history.replace(action.payload)
+      break
     case GO:
-      history.go(action.payload);
-      break;
+      history.go(action.payload)
+      break
     case GO_BACK:
-      history.goBack();
-      break;
+      history.goBack()
+      break
     case GO_FORWARD:
-      history.goForward();
-      break;
+      history.goForward()
+      break
     default:
-      return next(action);
+      return next(action)
   }
-};
+}

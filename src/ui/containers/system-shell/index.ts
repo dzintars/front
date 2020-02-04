@@ -5,8 +5,8 @@ import {
   css,
   TemplateResult,
   CSSResult,
-} from 'lit-element';
-import '../app-router/app-router';
+} from 'lit-element'
+import '../app-router/app-router'
 // import '../../components/main-taskbar'
 
 @customElement('system-shell')
@@ -20,7 +20,7 @@ export class AppShellElement extends LitElement {
       <a href="/users/3">3</a>
       <a href="/applications">Applications</a>
       <app-router></app-router>
-    `;
+    `
   }
 
   static get styles(): CSSResult {
@@ -32,6 +32,6 @@ export class AppShellElement extends LitElement {
       app-router {
         display: block;
       }
-    `;
+    `
   }
 }

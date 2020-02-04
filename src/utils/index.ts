@@ -4,28 +4,28 @@ function parseSelector(selector) {
   const logic = {
     isClass: selector.startsWith('.'),
     isId: selector.startsWith('#'),
-  };
+  }
 
-  const key = logic.isClass ? 'className' : logic.isId ? 'id' : '';
+  const key = logic.isClass ? 'className' : logic.isId ? 'id' : ''
 
   return {
     key,
     val: selector.substr(1),
-  };
+  }
 }
 
 function EventPathIncludes(event, selector) {
   // https://stackoverflow.com/questions/39245488/event-path-undefined-with-firefox-and-vue-js
   if (!event || !(event.path || (event.composedPath && event.composedPath())))
-    return false;
+    return false
 
-  const selectorDetails = parseSelector(selector);
+  const selectorDetails = parseSelector(selector)
   return (event.path || (event.composedPath && event.composedPath())).some(
     el => {
-      if (!el[selectorDetails.key]) return false;
-      return el[selectorDetails.key].includes(selectorDetails.val);
+      if (!el[selectorDetails.key]) return false
+      return el[selectorDetails.key].includes(selectorDetails.val)
     }
-  );
+  )
 }
 
-export { EventPathIncludes };
+export { EventPathIncludes }

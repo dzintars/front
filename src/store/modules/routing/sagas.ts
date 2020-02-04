@@ -1,34 +1,34 @@
-import { AnyAction } from 'redux';
-import { eventChannel, buffers } from 'redux-saga';
-import UniversalRouter from 'universal-router';
-import { RoutingActions } from './actions';
+import { AnyAction } from 'redux'
+import { eventChannel, buffers } from 'redux-saga'
+import UniversalRouter from 'universal-router'
+import { RoutingActions } from './actions'
 
-import { routes } from './routes';
-import { takeEvery, call, take, put, cancelled } from 'redux-saga/effects';
+import { routes } from './routes'
+import { takeEvery, call, take, put, cancelled } from 'redux-saga/effects'
 
-export default [routeSaga, clickListener];
+export default [routeSaga, clickListener]
 
 const ROUTE_SAGAS = [...routes].map(r => ({
   ...r,
   action: (context, params) => call([r, r.route], params, context.queries),
-}));
+}))
 
-const sagaRouter = new UniversalRouter(ROUTE_SAGAS);
+const sagaRouter = new UniversalRouter(ROUTE_SAGAS)
 
 function* routeSaga() {
-  yield takeEvery('ROUTER/LOCATION_CHANGE', navigationSaga);
+  yield takeEvery('ROUTER/LOCATION_CHANGE', navigationSaga)
 }
 
-let pathnamePrev = '';
+let pathnamePrev = ''
 function* navigationSaga(action: AnyAction) {
-  const { pathname, queries } = action.payload;
+  const { pathname, queries } = action.payload
 
-  if (pathname === pathnamePrev) return;
+  if (pathname === pathnamePrev) return
 
   try {
-    const route = yield sagaRouter.resolve({ pathname, queries });
+    const route = yield sagaRouter.resolve({ pathname, queries })
     if (route) {
-      yield route;
+      yield route
     }
   } catch (err) {
     // no route, ignore
@@ -36,16 +36,16 @@ function* navigationSaga(action: AnyAction) {
 }
 
 function* clickListener() {
-  const channel = yield call(clickChannel);
+  const channel = yield call(clickChannel)
 
   try {
     while (true) {
-      const action = yield take(channel);
-      yield put(action);
+      const action = yield take(channel)
+      yield put(action)
     }
   } finally {
     if (yield cancelled()) {
-      channel.close();
+      channel.close()
     }
   }
 }
@@ -61,37 +61,36 @@ function clickChannel() {
         e.shiftKey ||
         e.defaultPrevented
       ) {
-        return;
+        return
       }
 
       const anchor = <HTMLAnchorElement>(
         e.composedPath().filter(n => (n as HTMLElement).tagName === 'A')[0]
-      );
+      )
       if (
         !anchor ||
         anchor.target ||
         anchor.hasAttribute('download') ||
         anchor.getAttribute('rel') === 'external'
       ) {
-        return;
+        return
       }
 
-      const href = anchor.href;
+      const href = anchor.href
       if (!href || href.indexOf('mailto:') !== -1) {
-        return;
+        return
       }
 
-      const location = window.location;
-      const origin =
-        location.origin || location.protocol + '//' + location.host;
-      if (href.indexOf(origin) !== 0) return;
+      const location = window.location
+      const origin = location.origin || location.protocol + '//' + location.host
+      if (href.indexOf(origin) !== 0) return
 
-      e.preventDefault();
+      e.preventDefault()
       if (href !== location.href) {
-        emit(RoutingActions.push(anchor.href.substr(origin.length)));
+        emit(RoutingActions.push(anchor.href.substr(origin.length)))
       }
-    };
-    window.document.body.addEventListener('click', handler);
-    return () => document.body.removeEventListener('click', handler);
-  }, buffers.fixed(1));
+    }
+    window.document.body.addEventListener('click', handler)
+    return () => document.body.removeEventListener('click', handler)
+  }, buffers.fixed(1))
 }

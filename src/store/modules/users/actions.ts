@@ -1,5 +1,5 @@
-import { createAction, ActionsUnion } from '../../actions';
-import { User } from './model';
+import { createAction, ActionsUnion } from '../../actions'
+import { User } from './model'
 
 export enum UserTypes {
   USER_SELECT = 'USER_SELECT',
@@ -38,6 +38,6 @@ export const UserActions = {
       message: error.message,
       stack: error.stack,
     }),
-};
+}
 
-export type UserActions = ActionsUnion<typeof UserActions>;
+export type UserActions = ActionsUnion<typeof UserActions>
