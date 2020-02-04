@@ -1,16 +1,14 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "target": "esnext",
     "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "node",
-    "lib": ["esnext", "dom", "DOM.Iterable"],
-    "strict": false,
     "noImplicitAny": false,
     "noEmitHelpers": true,
     "importHelpers": true,
-    "esModuleInterop": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ESNext", "dom", "dom.iterable"]
   }
 }

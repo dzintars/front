@@ -13,17 +13,33 @@
       href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/src/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/src/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/src/favicon-16x16.png">
-		<link rel="manifest" href="/src/site.webmanifest">
-		<link rel="mask-icon" href=/src/safari-pinned-tab.svg" color="#5bbad5">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="theme-color" content="#ffffff"> -->
+
+    <!-- POLYFILLS ... dear web, please grow out of this soon! -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=WebAnimations,requestIdleCallback"></script>
+
+    <!-- Put local development configuration here -->
+    <script>
+      window.MyApp = {
+        api: 'https://jsonplaceholder.typicode.com',
+        localApi: 'http://localhost:3002',
+      };
+    </script>
+    <!--
+			  Have server generate a script tag with configuration
+			  from its environment in a script tag here.
+			  **Key idea:**
+			  The app should be just copied around from different stages
+			  (dev, integration, production, A/B testing) without having
+			  to be modified (by a build / bundling step).
+			  It should just pick up the environment.
+			  See also: https://12factor.net
+			 -->
+
+    <!-- <script async src="/scripts/my-app.min.js"></script> -->
   </head>
   <body>
-    <!-- <system-shell></system-shell> -->
-    <app-shell></app-shell>
+    <system-shell></system-shell>
     <noscript>This application needs JavaScript to be enabled</noscript>
   </body>
 </html>

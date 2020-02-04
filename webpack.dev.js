@@ -60,7 +60,7 @@ module.exports = merge(common, {
   ],
   devtool: 'source-map',
   devServer: {
-    port: 3001, // Can ommit this, so port will be picked up randomly from available ports.
+    port: 3000, // Can omit this, so port will be picked up randomly from available ports.
     historyApiFallback: true, // Serves index file for any path
   },
   module: {
