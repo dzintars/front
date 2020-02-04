@@ -1,0 +1,40 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    // "editor.tabSize": 2, // Potentially overlaps with Editorconfig extension
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      // Leaving this setting there for reference. Disabled because Prettier is used for formating.
+      "source.fixAll.eslint": false
+    }
+  },
+  "[typescript]": {
+    // "editor.tabSize": 2, // Potentially overlaps with Editorconfig extension
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  },
+  "eslint.debug": true,
+  // "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.workingDirectories": [
+    "./web/app"
+  ],
+  "cSpell.words": [
+    "Editorconfig",
+    "Hygen",
+    "ROADMAP",
+    "bigint",
+    "lintstaged",
+    "monorepository",
+    "npmignore"
+  ],
+  "typescript.tsdk": ".vscode/pnpify/typescript/lib",
+  "eslint.nodePath": ".vscode/pnpify",
+  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js"
+}
