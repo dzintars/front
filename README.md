@@ -1,14 +1,4 @@
-# Oswee Publicly faced SPA
-
-```sh
-npm init
-npm install
-```
-
-```sh
-npm start
-npm run build
-```
+# Publicly faced SPA
 
 ## Redux router
 
