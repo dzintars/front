@@ -4,11 +4,13 @@ import { all, spawn, call } from 'redux-saga/effects'
 // HYGEN.IO: INJECT IMPORT HERE
 import route from './modules/routing/sagas'
 import users from './modules/users/sagas'
+import applications from './modules/applications/sagas'
 
 export const rootSagas = {
   // HYGEN.IO: INJECT ROOT SAGA HERE
   route,
   users,
+  applications,
 }
 
 export const sagaMiddleware = createSagaMiddleware()

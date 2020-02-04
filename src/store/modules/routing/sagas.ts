@@ -6,18 +6,12 @@ import { RoutingActions } from './actions'
 import { routes } from './routes'
 import { takeEvery, call, take, put, cancelled } from 'redux-saga/effects'
 
-export default [routeSaga, clickListener]
-
 const ROUTE_SAGAS = [...routes].map(r => ({
   ...r,
   action: (context, params) => call([r, r.route], params, context.queries),
 }))
 
 const sagaRouter = new UniversalRouter(ROUTE_SAGAS)
-
-function* routeSaga() {
-  yield takeEvery('ROUTER/LOCATION_CHANGE', navigationSaga)
-}
 
 let pathnamePrev = ''
 function* navigationSaga(action: AnyAction) {
@@ -35,19 +29,8 @@ function* navigationSaga(action: AnyAction) {
   }
 }
 
-function* clickListener() {
-  const channel = yield call(clickChannel)
-
-  try {
-    while (true) {
-      const action = yield take(channel)
-      yield put(action)
-    }
-  } finally {
-    if (yield cancelled()) {
-      channel.close()
-    }
-  }
+function* routeSaga() {
+  yield takeEvery('ROUTER/LOCATION_CHANGE', navigationSaga)
 }
 
 function clickChannel() {
@@ -94,3 +77,20 @@ function clickChannel() {
     return () => document.body.removeEventListener('click', handler)
   }, buffers.fixed(1))
 }
+
+function* clickListener() {
+  const channel = yield call(clickChannel)
+
+  try {
+    while (true) {
+      const action = yield take(channel)
+      yield put(action)
+    }
+  } finally {
+    if (yield cancelled()) {
+      channel.close()
+    }
+  }
+}
+
+export default [routeSaga, clickListener]

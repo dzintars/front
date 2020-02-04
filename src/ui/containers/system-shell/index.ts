@@ -7,12 +7,13 @@ import {
   CSSResult,
 } from 'lit-element'
 import '../app-router/app-router'
-// import '../../components/main-taskbar'
+import '../../components/main-taskbar'
 
 @customElement('system-shell')
 export class AppShellElement extends LitElement {
   render(): TemplateResult {
     return html`
+      <main-taskbar></main-taskbar>
       <a href="/">home</a>
       <a href="/users">users</a>
       <a href="/users/1">1</a>
