@@ -1,13 +1,14 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const merge = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const common = require('./webpack.common');
+import path from 'path'
+import webpack from 'webpack'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import merge from 'webpack-merge'
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+import common from './webpack.common'
 //
-module.exports = merge(common, {
+const config: webpack.Configuration = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contentHash].bundle.js',
@@ -54,4 +55,6 @@ module.exports = merge(common, {
       },
     ],
   },
-});
+})
+
+export default config

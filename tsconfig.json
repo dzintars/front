@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "sourceMap": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "target": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": false,
     "noEmitHelpers": true,
     "importHelpers": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["ESNext", "dom", "dom.iterable"]
   }
