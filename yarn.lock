@@ -1001,7 +1001,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/html-minifier@npm:^3.5.2":
+"@types/html-minifier@npm:*, @types/html-minifier@npm:^3.5.2":
   version: 3.5.3
   resolution: "@types/html-minifier@npm:3.5.3"
   dependencies:
@@ -1009,6 +1009,17 @@ __metadata:
     "@types/relateurl": "*"
     "@types/uglify-js": "*"
   checksum: 0d398633db8a7cf7ff4485d43f5685387c52963b012841f27a6778c5ce95c786511b34ae2fabd800000b770f234f48808286a8d4d537e537eaea09139b20caa4
+  languageName: node
+  linkType: hard
+
+"@types/html-webpack-plugin@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "@types/html-webpack-plugin@npm:3.2.2"
+  dependencies:
+    "@types/html-minifier": "*"
+    "@types/tapable": "*"
+    "@types/webpack": "*"
+  checksum: a4069628577610c96080928dd1e72d1f4b2464f3bc7ff3e3f51cfe84b44eabe773ee3687c75a86f9128da3f70159b68f92a5f5af61f1a7fa0f47fa2f51273c81
   languageName: node
   linkType: hard
 
@@ -1053,6 +1064,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mini-css-extract-plugin@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "@types/mini-css-extract-plugin@npm:0.9.0"
+  dependencies:
+    "@types/webpack": "*"
+  checksum: e80f04a9c2ec36c0610a1f922eea130b2eaef9cf767900895fe44ded68af183056edcbc2efb56f5c2c20757aac20524bee420538ca71820189ca2729b9cc0fa3
+  languageName: node
+  linkType: hard
+
 "@types/minimatch@npm:*":
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
@@ -1064,6 +1084,15 @@ __metadata:
   version: 13.7.0
   resolution: "@types/node@npm:13.7.0"
   checksum: 3ee505198cb714c56ce20fca902fcbd05643badc22c2f25917a2544b1a1d905b9086b90147e79bd977a9c8bb912db60240d11152827ad779e9373cdd5864e5c2
+  languageName: node
+  linkType: hard
+
+"@types/optimize-css-assets-webpack-plugin@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@types/optimize-css-assets-webpack-plugin@npm:5.0.1"
+  dependencies:
+    "@types/webpack": "*"
+  checksum: ed2f7b7903f2e5a39696f7cf6ae1814bdc4eb98ef952158eedaaaf3ba02503c145c27f0c26e14e92ccc26b25389e7158d4e43d90ba156c48d1a30b2c00a98068
   languageName: node
   linkType: hard
 
@@ -1125,6 +1154,16 @@ __metadata:
   version: 1.0.5
   resolution: "@types/tapable@npm:1.0.5"
   checksum: 40dce9a2ddc1d6a16c91d4d24bc0138aa142ecfccade622aaf9f68412ec27fcba98ee1ecffce825b623d430062884bac3ffd495fdf2ac819097132e90e4a583b
+  languageName: node
+  linkType: hard
+
+"@types/terser-webpack-plugin@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@types/terser-webpack-plugin@npm:2.2.0"
+  dependencies:
+    "@types/webpack": "*"
+    terser: ^4.3.9
+  checksum: 7f30e903e7c7e6c5c32b58fc672ea60f32c36754b2752bdf0fa7a710d84e0b858956d6c90f97c5c78e50d4c9de422aa5c4d53f8722087a54e283de8550850e50
   languageName: node
   linkType: hard
 
@@ -5435,7 +5474,11 @@ __metadata:
     "@babel/plugin-transform-typescript": ^7.8.3
     "@commitlint/cli": ^8.3.5
     "@commitlint/config-conventional": ^8.3.4
+    "@types/html-webpack-plugin": ^3.2.2
+    "@types/mini-css-extract-plugin": ^0.9.0
     "@types/node": ^13.7.0
+    "@types/optimize-css-assets-webpack-plugin": ^5.0.1
+    "@types/terser-webpack-plugin": ^2.2.0
     "@types/webpack": ^4.41.5
     "@types/webpack-dev-server": ^3.10.0
     "@types/webpack-merge": ^4.1.5
@@ -12520,7 +12563,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"terser@npm:^4.1.2, terser@npm:^4.4.3, terser@npm:^4.6.2":
+"terser@npm:^4.1.2, terser@npm:^4.3.9, terser@npm:^4.4.3, terser@npm:^4.6.2":
   version: 4.6.3
   resolution: "terser@npm:4.6.3"
   dependencies:

@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects'
 
 import { UserActions } from '../users'
-import { ApplicationActions } from '../applications'
+import { fetchApplicationList } from '../applications'
 
 function* homeRoute(params, queries) {}
 
@@ -15,7 +15,7 @@ function* userRoute(params, queries) {
 }
 
 function* applicationListRoute(params, queries) {
-  yield put(ApplicationActions.fetchApplicationList())
+  yield put(fetchApplicationList())
 }
 
 export const routes = [

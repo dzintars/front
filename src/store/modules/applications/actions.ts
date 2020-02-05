@@ -1,54 +1,60 @@
-import { createAction, ActionsUnion } from '../../actions'
-import { Application } from './model'
+// import { createAction, ActionsUnion } from '../../actions'
+import { ApplicationTypes, ApplicationActionTypes } from './types'
+import { Application } from './models'
 
-export enum ApplicationTypes {
-  APPLICATION_SELECT = 'APPLICATION_SELECT',
+export const selectApplication = (uuid: string): ApplicationActionTypes => ({
+  type: ApplicationTypes.SELECT,
+  uuid,
+})
 
-  APPLICATION_LIST_FETCH = 'APPLICATION_LIST_FETCH',
-  APPLICATION_LIST_FETCH_REQUEST = 'APPLICATION_LIST_FETCH_REQUEST',
-  APPLICATION_LIST_FETCH_SUCCESS = 'APPLICATION_LIST_FETCH_SUCCESS',
-  APPLICATION_LIST_FETCH_FAILURE = 'APPLICATION_LIST_FETCH_FAILURE',
+export const fetchApplicationList = (): ApplicationActionTypes => ({
+  type: ApplicationTypes.LIST_FETCH,
+})
 
-  APPLICATION_FETCH = 'APPLICATION_FETCH',
-  APPLICATION_FETCH_REQUEST = 'APPLICATION_FETCH_REQUEST',
-  APPLICATION_FETCH_SUCCESS = 'APPLICATION_FETCH_SUCCESS',
-  APPLICATION_FETCH_FAILURE = 'APPLICATION_FETCH_FAILURE',
-}
+export const fetchApplicationListRequest = (): ApplicationActionTypes => ({
+  type: ApplicationTypes.LIST_FETCH_REQUEST,
+})
 
-export const ApplicationActions = {
-  selectApplication: (uuid: string) =>
-    createAction(ApplicationTypes.APPLICATION_SELECT, { uuid }),
+export const fetchApplicationListSuccess = (applications: Application[]): ApplicationActionTypes => ({
+  type: ApplicationTypes.LIST_FETCH_SUCCESS,
+  applications,
+})
 
-  fetchApplicationList: () => createAction(ApplicationTypes.APPLICATION_LIST_FETCH),
+export const fetchApplicationListFailure = (error: Error): ApplicationActionTypes => ({
+  type: ApplicationTypes.LIST_FETCH_FAILURE,
+  error,
+})
 
-  fetchApplicationListRequest: () =>
-    createAction(ApplicationTypes.APPLICATION_LIST_FETCH_REQUEST),
+export const fetchApplication = (uuid: string): ApplicationActionTypes => ({
+  type: ApplicationTypes.FETCH,
+  uuid,
+})
 
-  fetchApplicationListSuccess: (applications: Application[]) =>
-    createAction(ApplicationTypes.APPLICATION_LIST_FETCH_SUCCESS, {
-      applications,
-    }),
+export const fetchApplicationRequest = (uuid: string): ApplicationActionTypes => ({
+  type: ApplicationTypes.FETCH_REQUEST,
+  uuid,
+})
 
-  fetchApplicationListFailure: (error: Error) =>
-    createAction(ApplicationTypes.APPLICATION_LIST_FETCH_FAILURE, { error }),
+export const fetchApplicationSuccess = (application: Application): ApplicationActionTypes => ({
+  type: ApplicationTypes.FETCH_SUCCESS,
+  application,
+})
 
-  fetchApplication: (uuid: string) =>
-    createAction(ApplicationTypes.APPLICATION_FETCH, { uuid }),
+export const fetchApplicationFailure = (uuid: string, error: Error): ApplicationActionTypes => ({
+  type: ApplicationTypes.FETCH_FAILURE,
+  uuid,
+  error,
+})
 
-  fetchApplicationRequest: (uuid: string) =>
-    createAction(ApplicationTypes.APPLICATION_FETCH_REQUEST, { uuid }),
+// export const ApplicationActions = {
+//   fetchApplicationFailure: (uuid: string, error: Error) =>
+//     createAction(ApplicationTypes.FETCH_FAILURE, {
+//       uuid,
+//       error,
+//       name: error.name,
+//       message: error.message,
+//       stack: error.stack,
+//     }),
+// }
 
-  fetchApplicationSuccess: (application: Application) =>
-    createAction(ApplicationTypes.APPLICATION_FETCH_SUCCESS, { application }),
-    
-  fetchApplicationFailure: (uuid: string, error: Error) =>
-    createAction(ApplicationTypes.APPLICATION_FETCH_FAILURE, {
-      uuid,
-      error,
-      name: error.name,
-      message: error.message,
-      stack: error.stack,
-    }),
-}
-
-export type ApplicationActions = ActionsUnion<typeof ApplicationActions>
+// export type ApplicationActions = ActionsUnion<typeof ApplicationActions>

@@ -38,6 +38,7 @@ const config: webpack.Configuration = merge(common, {
       {
         test: /\.scss$/,
         use: [
+          // Order of the loaders are important!
           MiniCssExtractPlugin.loader, // 3. Extract CSS into files
           'css-loader', // 2. Turns CSS into commonjs
           'sass-loader', // 1. Turns SCSS into CSS

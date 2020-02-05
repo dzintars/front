@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect'
-
 import { RootState } from '../../reducer'
 
 const getState = (state: RootState) => state.applications

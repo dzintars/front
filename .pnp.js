@@ -57,6 +57,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       142,
       140,
       139,
+      138,
       136,
       132,
       130,
@@ -134,7 +135,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/plugin-transform-typescript", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:7.8.3"],
             ["@commitlint/cli", "npm:8.3.5"],
             ["@commitlint/config-conventional", "npm:8.3.4"],
+            ["@types/html-webpack-plugin", "npm:3.2.2"],
+            ["@types/mini-css-extract-plugin", "npm:0.9.0"],
             ["@types/node", "npm:13.7.0"],
+            ["@types/optimize-css-assets-webpack-plugin", "npm:5.0.1"],
+            ["@types/terser-webpack-plugin", "npm:2.2.0"],
             ["@types/webpack", "npm:4.41.5"],
             ["@types/webpack-dev-server", "npm:3.10.0"],
             ["@types/webpack-merge", "npm:4.1.5"],
@@ -1382,6 +1387,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"
         }]
       ]],
+      ["@types/html-webpack-plugin", [
+        ["npm:3.2.2", {
+          "packageLocation": "./.yarn/cache/@types-html-webpack-plugin-npm-3.2.2-638235e60c-1.zip/node_modules/@types/html-webpack-plugin/",
+          "packageDependencies": [
+            ["@types/html-webpack-plugin", "npm:3.2.2"],
+            ["@types/html-minifier", "npm:3.5.3"],
+            ["@types/tapable", "npm:1.0.5"],
+            ["@types/webpack", "npm:4.41.5"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
       ["@types/http-proxy", [
         ["npm:1.17.3", {
           "packageLocation": "./.yarn/cache/@types-http-proxy-npm-1.17.3-6799e6ab8d-1.zip/node_modules/@types/http-proxy/",
@@ -1431,6 +1448,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"
         }]
       ]],
+      ["@types/mini-css-extract-plugin", [
+        ["npm:0.9.0", {
+          "packageLocation": "./.yarn/cache/@types-mini-css-extract-plugin-npm-0.9.0-10f24d4a25-1.zip/node_modules/@types/mini-css-extract-plugin/",
+          "packageDependencies": [
+            ["@types/mini-css-extract-plugin", "npm:0.9.0"],
+            ["@types/webpack", "npm:4.41.5"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
       ["@types/minimatch", [
         ["npm:3.0.3", {
           "packageLocation": "./.yarn/cache/@types-minimatch-npm-3.0.3-c8b0625f84-1.zip/node_modules/@types/minimatch/",
@@ -1445,6 +1472,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-13.7.0-6051c9578d-1.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:13.7.0"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
+      ["@types/optimize-css-assets-webpack-plugin", [
+        ["npm:5.0.1", {
+          "packageLocation": "./.yarn/cache/@types-optimize-css-assets-webpack-plugin-npm-5.0.1-58916ef4c2-1.zip/node_modules/@types/optimize-css-assets-webpack-plugin/",
+          "packageDependencies": [
+            ["@types/optimize-css-assets-webpack-plugin", "npm:5.0.1"],
+            ["@types/webpack", "npm:4.41.5"]
           ],
           "linkType": "HARD"
         }]
@@ -1520,6 +1557,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-tapable-npm-1.0.5-160e971eb3-1.zip/node_modules/@types/tapable/",
           "packageDependencies": [
             ["@types/tapable", "npm:1.0.5"]
+          ],
+          "linkType": "HARD"
+        }]
+      ]],
+      ["@types/terser-webpack-plugin", [
+        ["npm:2.2.0", {
+          "packageLocation": "./.yarn/cache/@types-terser-webpack-plugin-npm-2.2.0-04737230e3-1.zip/node_modules/@types/terser-webpack-plugin/",
+          "packageDependencies": [
+            ["@types/terser-webpack-plugin", "npm:2.2.0"],
+            ["@types/webpack", "npm:4.41.5"],
+            ["terser", "npm:4.6.3"]
           ],
           "linkType": "HARD"
         }]
@@ -6327,7 +6375,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/plugin-transform-typescript", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:7.8.3"],
             ["@commitlint/cli", "npm:8.3.5"],
             ["@commitlint/config-conventional", "npm:8.3.4"],
+            ["@types/html-webpack-plugin", "npm:3.2.2"],
+            ["@types/mini-css-extract-plugin", "npm:0.9.0"],
             ["@types/node", "npm:13.7.0"],
+            ["@types/optimize-css-assets-webpack-plugin", "npm:5.0.1"],
+            ["@types/terser-webpack-plugin", "npm:2.2.0"],
             ["@types/webpack", "npm:4.41.5"],
             ["@types/webpack-dev-server", "npm:3.10.0"],
             ["@types/webpack-merge", "npm:4.1.5"],
