@@ -5544,6 +5544,7 @@ __metadata:
     webpack-dev-server: ^3.10.2
     webpack-merge: ^4.2.2
     webpack-pwa-manifest: ^4.1.1
+    zen-observable-ts: ^0.8.20
   languageName: unknown
   linkType: soft
 
@@ -12874,7 +12875,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.10.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
+"tslib@npm:^1.10.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0, tslib@npm:^1.9.3":
   version: 1.10.0
   resolution: "tslib@npm:1.10.0"
   checksum: 626387669b38797372530d84df93dafcc0eca2b3bad31b109c7308b2e8d9c4ed0ba94113eb08a6946aa1fbee3b619fb69dd81f8681654bbc806cf8f208caeb47
@@ -14079,5 +14080,22 @@ fsevents@^1.2.7:
   version: 3.1.1
   resolution: "yn@npm:3.1.1"
   checksum: e06491e44f4f86b1ff20cb1105ae34c7a72fbf0128eb88210f40744ae70812dc2225553edc3b180ac820529e3da1446abff51f687717ae2878dd5ab060c7df1f
+  languageName: node
+  linkType: hard
+
+"zen-observable-ts@npm:^0.8.20":
+  version: 0.8.20
+  resolution: "zen-observable-ts@npm:0.8.20"
+  dependencies:
+    tslib: ^1.9.3
+    zen-observable: ^0.8.0
+  checksum: 4da965f9e4e84e089c83080e7ec9b0855d17285904e5f0b5bde77b1c3c9bb1dff26afb89cc27e0f8c275aa6f4bb2fee38484ec784ea973ec992dfcf1ed5005d0
+  languageName: node
+  linkType: hard
+
+"zen-observable@npm:^0.8.0":
+  version: 0.8.15
+  resolution: "zen-observable@npm:0.8.15"
+  checksum: 2a2ca0a23de24de3fe61178c82ec4a1f9781fe4c17a3bd1534eeea8dfdf0f5eb913c52cc96758055eed8d88251aab42a83797399482f477c2aa6f142e5c8f1b4
   languageName: node
   linkType: hard
