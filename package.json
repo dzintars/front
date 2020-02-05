@@ -80,7 +80,6 @@
     "fork-ts-checker-webpack-plugin": "^4.0.3",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "latest",
     "json-server": "^0.15.1",
     "jsonlint": "^1.6.3",
     "lint-staged": "^10.0.7",
