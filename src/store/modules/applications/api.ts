@@ -10,9 +10,7 @@ function* fetchApplications() {
       'Content-Type': 'application/json',
     },
   })
-  console.log(response)
   const applications = yield response.status === 200 ? response.json() : []
-  console.log(applications)
   return applications
 }
 
