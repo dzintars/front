@@ -1,5 +1,6 @@
 const URL = `http://localhost:3002/applications`
 
+// TODO: Reduce existing data from fetched data
 function* fetchApplications() {
   const response = yield fetch(URL, {
     method: 'GET',

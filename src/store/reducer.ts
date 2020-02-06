@@ -13,7 +13,7 @@ export interface RootState {
   applications: ApplicationsState
 }
 
-export const rootReducer = combineReducers({
+export const rootReducer = combineReducers<RootState>({
   // HYGEN.IO: INJECT REDUCER HERE
   route,
   users,
