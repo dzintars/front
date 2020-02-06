@@ -1,5 +1,3 @@
-// import { Application } from './models'
-
 const URL = `http://localhost:3002/applications`
 
 function* fetchApplications() {
@@ -28,6 +26,6 @@ function* fetchApplications() {
 //   }, {})
 // }
 
-export const Api = {
+export const API = {
   fetchApplications,
 }

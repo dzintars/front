@@ -45,16 +45,3 @@ export const fetchApplicationFailure = (uuid: string, error: Error): Application
   uuid,
   error,
 })
-
-// export const ApplicationActions = {
-//   fetchApplicationFailure: (uuid: string, error: Error) =>
-//     createAction(ApplicationTypes.FETCH_FAILURE, {
-//       uuid,
-//       error,
-//       name: error.name,
-//       message: error.message,
-//       stack: error.stack,
-//     }),
-// }
-
-// export type ApplicationActions = ActionsUnion<typeof ApplicationActions>

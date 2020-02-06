@@ -3,7 +3,7 @@ import { ApplicationTypes } from './types'
 import { fetchApplicationListRequest, fetchApplicationListSuccess, fetchApplicationListFailure } from './actions'
 // import { ApplicationSelectors } from './selectors'
 // import { Application } from './models'
-import { Api } from './api'
+import { API } from './api'
 
 // function* selectApplicationSaga(action: ReturnType<typeof ApplicationActions.selectApplication>) {
 //   const { uuid } = action.payload
@@ -33,7 +33,7 @@ const getPage = state => state.applications.page
 function* fetchApplicationListSaga(action) {
   yield put(fetchApplicationListRequest())
   try {
-    const applications = yield call(Api.fetchApplications)
+    const applications = yield call(API.fetchApplications)
     yield put(fetchApplicationListSuccess(applications))
   } catch (err) {
     console.error(err)
