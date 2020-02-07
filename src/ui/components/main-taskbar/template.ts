@@ -8,7 +8,7 @@ export default function template(this: MainTaskbarElement): TemplateResult {
       this.applications,
       app => app.uuid,
       app => html`
-        <a>${app.title}</a>
+        <a href=${app.permalink}>${app.title}</a>
       `
     )}
   `
