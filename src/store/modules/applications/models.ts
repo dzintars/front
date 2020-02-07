@@ -5,9 +5,9 @@ export interface Application {
 }
 
 export interface ApplicationsState {
-  entities: { [uuid: string]: Application }
-  ids: string[]
-  fetching: boolean
-  selected: string
-  error: Error
+  readonly entities: { [uuid: string]: Application }
+  readonly ids: string[]
+  readonly fetching: boolean
+  readonly selected: string
+  readonly error: Error
 }

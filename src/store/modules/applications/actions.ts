@@ -1,4 +1,3 @@
-// import { createAction, ActionsUnion } from '../../actions'
 import { ApplicationTypes, ApplicationActionTypes } from './types'
 import { Application } from './models'
 

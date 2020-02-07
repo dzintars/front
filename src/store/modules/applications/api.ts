@@ -1,4 +1,4 @@
-const URL = `http://localhost:3002/applications`
+const URL = `${window.MyApp.localApi}/applications`
 
 // TODO: Reduce existing data from fetched data
 function* fetchApplications() {

@@ -28,8 +28,6 @@
     "format:eslint": "eslint --ext .ts,.js,.html . --fix",
     "format:prettier": "prettier \"**/*.ts\" --write",
     "json:server": "json-server --port 3002 --watch src/store/db.json",
-    "rollup:build": "rollup -c",
-    "rollup:build:watch": "rollup -c -w",
     "wp": "webpack --display-error-details"
   },
   "resolutions": {
