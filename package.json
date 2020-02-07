@@ -28,8 +28,6 @@
     "format:eslint": "eslint --ext .ts,.js,.html . --fix",
     "format:prettier": "prettier \"**/*.ts\" --write",
     "json:server": "json-server --port 3002 --watch src/store/db.json",
-    "rollup:build": "rollup -c",
-    "rollup:build:watch": "rollup -c -w",
     "wp": "webpack --display-error-details"
   },
   "resolutions": {
@@ -80,6 +78,7 @@
     "fork-ts-checker-webpack-plugin": "^4.0.3",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "latest",
     "json-server": "^0.15.1",
     "jsonlint": "^1.6.3",
     "lint-staged": "^10.0.7",

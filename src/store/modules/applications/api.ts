@@ -1,7 +1,6 @@
-// import { Application } from './models'
+const URL = `${window.MyApp.localApi}/applications`
 
-const URL = `http://localhost:3002/applications`
-
+// TODO: Reduce existing data from fetched data
 function* fetchApplications() {
   const response = yield fetch(URL, {
     method: 'GET',
@@ -28,6 +27,6 @@ function* fetchApplications() {
 //   }, {})
 // }
 
-export const Api = {
+export const API = {
   fetchApplications,
 }
