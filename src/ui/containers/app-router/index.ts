@@ -1,12 +1,5 @@
 import UniversalRouter from 'universal-router'
-import {
-  LitElement,
-  customElement,
-  html,
-  property,
-  css,
-  PropertyValues,
-} from 'lit-element'
+import { LitElement, customElement, html, property, css, PropertyValues } from 'lit-element'
 import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
@@ -33,7 +26,7 @@ export class AppRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<view-home></view-home>`,
+      action: () => `<view-home>Home</view-home>`,
     },
     {
       path: '/users',
@@ -41,7 +34,7 @@ export class AppRouterElement extends connect(store, LitElement) {
     },
     {
       path: '/applications',
-      action: () => `<view-user-list></view-user-list>`,
+      action: () => `<h1>Applications</h1>`,
     },
     {
       path: '/users/:id',

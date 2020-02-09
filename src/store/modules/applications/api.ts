@@ -1,6 +1,5 @@
 const URL = `${window.MyApp.localApi}/applications`
 
-// TODO: Reduce existing data from fetched data
 function* fetchApplications() {
   const response = yield fetch(URL, {
     method: 'GET',

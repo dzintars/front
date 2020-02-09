@@ -9,7 +9,7 @@
     "lit element",
     "boilerplate"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "private": true,
   "repository": {
     "type": "git",

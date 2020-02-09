@@ -1,17 +1,7 @@
-import {
-  LitElement,
-  customElement,
-  property,
-  TemplateResult,
-} from 'lit-element'
+import { LitElement, customElement, property, TemplateResult } from 'lit-element'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
-import {
-  store,
-  RootState,
-  Application,
-  ApplicationSelectors,
-} from '../../../store'
+import { store, RootState, Application, ApplicationSelectors } from '../../../store'
 import template from './template'
 import style from './style'
 

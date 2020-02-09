@@ -1,2 +1,2 @@
 // HYGEN.IO: INJECT EXPORT HERE
-export * from './system-shell'
+export * from './home-app'

@@ -24,9 +24,7 @@ const storageKey = `my-app`
 const storageVersion = '20190731'
 const shouldPersist = (type: string) => true // type.startsWith('CART_') || type.startsWith('ORDER_')
 
-export const storageMiddleware: Middleware<Dispatch> = (
-  store: MiddlewareAPI
-) => next => (action: AnyAction) => {
+export const storageMiddleware: Middleware<Dispatch> = (store: MiddlewareAPI) => next => (action: AnyAction) => {
   const result = next(action)
   const persist = shouldPersist(action.type)
 
@@ -59,5 +57,5 @@ export const initialState = (): any => {
   const age_days = age_ms / 1000 / 60 / 60 / 24
   if (age_days > 365) return undefined
 
-  return <RootState>cache.state
+  return cache.state as RootState
 }

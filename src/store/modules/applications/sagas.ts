@@ -17,7 +17,7 @@ import { API } from './api'
 //   yield takeLatest(ApplicationTypes.SELECT, selectApplicationSaga)
 // }
 
-const getPage = state => state.applications.page
+// const getPage = state => state.applications.page
 
 // function* fetchApplicationListSaga() {
 //   try {
