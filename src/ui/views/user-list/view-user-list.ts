@@ -1,21 +1,7 @@
-import {
-  LitElement,
-  customElement,
-  html,
-  property,
-  css,
-  TemplateResult,
-  CSSResult,
-} from 'lit-element'
+import { LitElement, customElement, html, property, css, TemplateResult, CSSResult } from 'lit-element'
 import { repeat } from 'lit-html/directives/repeat'
 import { connect } from '../../../utils/connect'
-import {
-  store,
-  RootState,
-  User,
-  UserSelectors,
-  UserActions,
-} from '../../../store'
+import { store, RootState, User, UserSelectors, UserActions } from '../../../store'
 import '../../components/my-component'
 
 @customElement('view-user-list')
@@ -32,8 +18,7 @@ export class UserListElement extends connect(store, LitElement) {
 
   mapEvents() {
     return {
-      'my-component-click': (e: CustomEvent) =>
-        UserActions.selectUser(e.detail.key),
+      'my-component-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
       // 'my-component-updated': (e: CustomEvent) =>
       //   UserActions.updateUser(e.detail),
       // 'my-component-delete': (e: CustomEvent) =>
@@ -47,11 +32,7 @@ export class UserListElement extends connect(store, LitElement) {
         this.users,
         user => user.id,
         user => html`
-          <my-component
-            .key=${user.id}
-            .name=${user.name}
-            .selected=${user.id === this.selected}
-          ></my-component>
+          <my-component .key=${user.id} .name=${user.name} .selected=${user.id === this.selected}></my-component>
         `
       )}
     `
@@ -60,10 +41,16 @@ export class UserListElement extends connect(store, LitElement) {
   static get styles(): CSSResult {
     return css`
       :host {
-        display: block;
+        flex: 1;
+        display: fex;
+        flex-direction: column;
+        overflow: auto;
+        border: 5px dotted red;
       }
 
       my-component {
+        /* flex: 1;
+        min-height: min-content; */
         margin: 8px;
       }
     `

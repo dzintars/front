@@ -1,12 +1,12 @@
 * {
-	font-family: Montserrat, sans-serif;
-	text-rendering: geometricPrecision;
+  font-family: Montserrat, sans-serif;
+  text-rendering: geometricPrecision;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
@@ -19,18 +19,24 @@ h5,
 h6,
 p,
 a {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 svg path {
-	fill: inherit;
+  fill: inherit;
 }
 
 body {
-	position: relative;
-	display: grid;
-	//    grid-template-columns: 1fr;
-	//    grid-template-rows: 1fr;
-	place-items: center center;
+  position: relative;
+  display: grid;
+  //    grid-template-columns: 1fr;
+  //    grid-template-rows: 1fr;
+  place-items: center center;
+  overflow: hidden;
+}
+
+system-shell {
+  height: 100vh;
+  width: 100vw;
 }

@@ -26,7 +26,7 @@ export class AppRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<view-home></view-home>`,
+      action: () => `<view-home>Home</view-home>`,
     },
     {
       path: '/users',

@@ -3,13 +3,13 @@ import { css } from 'lit-element'
 export default css`
   :host {
     display: block;
-    width: 100%;
+    box-sizing: border-box;
+    border: 10px solid dodgerblue;
   }
-
-  app-router {
+  /* home-app {
     display: block;
-  }
-  main-taskbar {
-    height: var(--size-sl, 48px);
-  }
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+  } */
 `
