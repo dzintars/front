@@ -22,5 +22,5 @@ export const routes = [
   { path: '/', route: homeRoute },
   { path: '/users', route: userListRoute },
   { path: '/users/:id', route: userRoute },
-  { path: '/applications', route: applicationListRoute },
+  { path: '/apps/users/applications', route: applicationListRoute },
 ]

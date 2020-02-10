@@ -30,6 +30,9 @@ export class UserDetailElement extends connect(store, LitElement) {
       :host {
         display: block;
       }
+      my-component {
+        margin: 1rem;
+      }
     `
   }
 }

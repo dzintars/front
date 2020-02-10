@@ -4,7 +4,7 @@ export default css`
   :host {
     display: block;
     box-sizing: border-box;
-    border: 10px solid dodgerblue;
+    /* border: 10px solid dodgerblue; */
   }
   /* home-app {
     display: block;
@@ -12,4 +12,11 @@ export default css`
     min-height: 100%;
     width: 100%;
   } */
+  system-router {
+    display: flex;
+    height: 100%;
+    /* border: 3px dotted blue; */
+    overflow: hidden;
+    box-sizing: border-box;
+  }
 `
