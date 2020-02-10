@@ -5,8 +5,8 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 import { connect } from '../../../utils/connect'
 import { store, RootState, RoutingSelectors } from '../../../store'
 
-@customElement('app-router')
-export class AppRouterElement extends connect(store, LitElement) {
+@customElement('system-router')
+export class SystemRouterElement extends connect(store, LitElement) {
   @property({ type: String }) pathname: string
   @property({ type: String }) view: string
 
@@ -26,23 +26,49 @@ export class AppRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<view-home>Home</view-home>`,
+      action: () => `<h1>Home</h1>`,
     },
     {
-      path: '/users',
-      action: () => `<view-user-list></view-user-list>`,
+      path: '/apps',
+      children: [
+        {
+          path: '',
+          action: () => `<h1>Apps</h1>`,
+        },
+        {
+          path: '/users',
+          children: [
+            {
+              path: '',
+              action: () => `<home-app><view-user-list slot="workspace"></view-user-list></home-app>`,
+            },
+            {
+              path: '/applications',
+              action: () => `<home-app><h1 slot="workspacex">Applications</h1></home-app>`,
+            },
+            {
+              path: '/:id',
+              action: () => `<home-app><view-user-detail slot="workspace"></view-user-detail></home-app>`,
+            },
+          ],
+        },
+      ],
     },
     {
-      path: '/applications',
-      action: () => `<h1>Applications</h1>`,
+      path: '/signin',
+      action: () => `<h1>Signin</h1>`,
     },
     {
-      path: '/users/:id',
-      action: () => `<view-user-detail></view-user-detail>`,
+      path: '/signup',
+      action: () => `<h1>Signup</h1>`,
+    },
+    {
+      path: '/restore-password',
+      action: () => `<h1>Restore Password</h1>`,
     },
   ]
 
-  createRenderRoot() {
+  createRenderRoot(): this {
     return this
   }
 

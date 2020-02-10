@@ -45,12 +45,10 @@ export class UserListElement extends connect(store, LitElement) {
         display: fex;
         flex-direction: column;
         overflow: auto;
-        border: 5px dotted red;
+        border: 5px solid red;
       }
 
       my-component {
-        /* flex: 1;
-        min-height: min-content; */
         margin: 8px;
       }
     `

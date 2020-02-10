@@ -1,8 +1,9 @@
 import { html, TemplateResult } from 'lit-element'
 import '../../views/home-app'
+import '../system-router'
 
 export default function template(): TemplateResult {
   return html`
-    <home-app></home-app>
+    <system-router></system-router>
   `
 }

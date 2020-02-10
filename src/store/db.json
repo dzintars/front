@@ -13,25 +13,25 @@
       "uuid": "54789c07-bb43-4db4-8b2d-1a8e1f8c67f1",
       "title": "Users",
       "type": "system",
-      "permalink": "/users"
+      "permalink": "/apps/users"
     },
     {
       "uuid": "c178025e-a209-4c50-8c34-36d35f36494c",
       "title": "User 1",
       "type": "system",
-      "permalink": "/users/1"
+      "permalink": "/apps/users/1"
     },
     {
       "uuid": "437642dd-7d74-4213-af76-b51fc24eff0",
       "title": "User 2",
       "type": "system",
-      "permalink": "/users/2"
+      "permalink": "/apps/users/2"
     },
     {
       "uuid": "5a2192a0-0051-46a1-85e7-17245ba24f55",
       "title": "Applications",
       "type": "system",
-      "permalink": "/applications"
+      "permalink": "/apps/users/applications"
     }
   ]
 }

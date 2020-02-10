@@ -34,7 +34,9 @@ export default css`
   } */
   app-router {
     display: flex;
-    border: 3px solid blue;
+    height: 100%;
+    box-sizing: border-box;
+    border: 3px dotted red;
     overflow: hidden;
   }
 `
