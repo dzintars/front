@@ -60,7 +60,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
     },
     {
       path: '/signup',
-      action: () => `<h1>Signup</h1>`,
+      action: () => `<app-signup><h1 slot="workspace">Signup</h1></app-signup>`,
     },
     {
       path: '/restore-password',

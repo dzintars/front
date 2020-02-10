@@ -1,10 +1,9 @@
 import { html, TemplateResult } from 'lit-element'
-import '../../views/home-app'
-import '../../views/app-signup'
-import '../system-router'
+import '../../components/main-taskbar'
 
 export default function template(): TemplateResult {
   return html`
-    <system-router></system-router>
+    <main-taskbar></main-taskbar>
+    <slot name="workspace"></slot>
   `
 }

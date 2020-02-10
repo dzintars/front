@@ -19,17 +19,23 @@ export const UserActions = {
   selectUser: (id: number) => createAction(UserTypes.USER_SELECT, { id }),
 
   fetchUserList: () => createAction(UserTypes.USER_LIST_FETCH),
+
   fetchUserListRequest: () => createAction(UserTypes.USER_LIST_FETCH_REQUEST),
+
   fetchUserListSuccess: (users: User[]) =>
     createAction(UserTypes.USER_LIST_FETCH_SUCCESS, { users }),
+
   fetchUserListFailure: (error: Error) =>
     createAction(UserTypes.USER_LIST_FETCH_FAILURE, { error }),
 
   fetchUser: (id: number) => createAction(UserTypes.USER_FETCH, { id }),
+
   fetchUserRequest: (id: number) =>
     createAction(UserTypes.USER_FETCH_REQUEST, { id }),
+
   fetchUserSuccess: (user: User) =>
     createAction(UserTypes.USER_FETCH_SUCCESS, { user }),
+    
   fetchUserFailure: (id: number, error: Error) =>
     createAction(UserTypes.USER_FETCH_FAILURE, {
       id,

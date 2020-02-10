@@ -33,5 +33,19 @@
       "type": "system",
       "permalink": "/apps/users/applications"
     }
-  ]
+  ],
+  "organizations": {
+    "98c5a988-41eb-4062-bf9b-f8be27632989": {
+      "uuid": "98c5a988-41eb-4062-bf9b-f8be27632989",
+      "title": "Google"
+    },
+    "ab753eae-6513-44bf-85c1-c861487d2c25": {
+      "uuid": "ab753eae-6513-44bf-85c1-c861487d2c25",
+      "title": "Microsoft"
+    },
+    "fe537148-a4ee-44e7-82b1-860d573000ee": {
+      "uuid": "fe537148-a4ee-44e7-82b1-860d573000ee",
+      "title": "Apple"
+    }
+  }
 }
