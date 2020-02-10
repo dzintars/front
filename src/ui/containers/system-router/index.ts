@@ -44,7 +44,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
             },
             {
               path: '/applications',
-              action: () => `<home-app><h1 slot="workspacex">Applications</h1></home-app>`,
+              action: () => `<home-app><h1 slot="workspace">Applications</h1></home-app>`,
             },
             {
               path: '/:id',

@@ -5,12 +5,14 @@ export default css`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: var(--color-dodgerblue-8d);
-    color: var(--color-dodgerblue-8l);
+    background: var(--color-gray-60);
+    border-bottom: 1px solid var(--color-gray-70);
+    color: var(--color-gainsboro-8l);
     margin: 0;
+    box-shadow: var(--shadow-8);
   }
   a {
-    color: var(--color-dodgerblue-8l);
+    color: var(--color-gray-210);
     padding-left: 10px;
   }
   p {

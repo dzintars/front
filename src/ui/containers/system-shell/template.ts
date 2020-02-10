@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-element'
-import '../../views/home-app'
+import '../../views/app-home'
 import '../../views/app-signup'
 import '../system-router'
 

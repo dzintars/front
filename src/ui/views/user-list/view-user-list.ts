@@ -45,11 +45,12 @@ export class UserListElement extends connect(store, LitElement) {
         display: fex;
         flex-direction: column;
         overflow: auto;
-        border: 5px solid red;
+        /* border: 5px solid red; */
+        background-color: var(--color-white);
       }
 
       my-component {
-        margin: 8px;
+        margin: 1rem;
       }
     `
   }
