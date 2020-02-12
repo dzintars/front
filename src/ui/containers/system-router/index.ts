@@ -26,29 +26,25 @@ export class SystemRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<h1>Home</h1>`,
+      action: () => `<app-home><h1 slot="workspace">Home</h1></app-home>`,
     },
     {
       path: '/apps',
       children: [
         {
           path: '',
-          action: () => `<h1>Apps</h1>`,
+          action: () => `<app-apps><h1 slot="workspace">Apps</h1></app-apps>`,
         },
         {
           path: '/users',
           children: [
             {
               path: '',
-              action: () => `<home-app><view-user-list slot="workspace"></view-user-list></home-app>`,
-            },
-            {
-              path: '/applications',
-              action: () => `<home-app><h1 slot="workspace">Applications</h1></home-app>`,
+              action: () => `<app-users><view-user-list slot="workspace"></view-user-list></app-users>`,
             },
             {
               path: '/:id',
-              action: () => `<home-app><view-user-detail slot="workspace"></view-user-detail></home-app>`,
+              action: () => `<app-users><view-user-detail slot="workspace"></view-user-detail></app-users>`,
             },
           ],
         },
@@ -56,15 +52,15 @@ export class SystemRouterElement extends connect(store, LitElement) {
     },
     {
       path: '/signin',
-      action: () => `<h1>Signin</h1>`,
+      action: () => `<app-signin><h1 slot="workspace">Signin</h1></app-signin>`,
     },
     {
       path: '/signup',
       action: () => `<app-signup><h1 slot="workspace">Signup</h1></app-signup>`,
     },
     {
-      path: '/restore-password',
-      action: () => `<h1>Restore Password</h1>`,
+      path: '/forgot-password',
+      action: () => `<app-forgot-password><h1 slot="workspace">Forgot Password</h1></app-forgot-password>`,
     },
   ]
 

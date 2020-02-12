@@ -11,8 +11,6 @@ export default css`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border: 10px solid pink;
-    /* overflow: hidden; */
   }
   main-taskbar {
     height: var(--size-sl, 48px);

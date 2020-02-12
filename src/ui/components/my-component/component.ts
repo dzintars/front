@@ -1,9 +1,4 @@
-import {
-  LitElement,
-  customElement,
-  property,
-  TemplateResult,
-} from 'lit-element'
+import { LitElement, customElement, property, TemplateResult } from 'lit-element'
 import template from './template'
 import style from './style'
 
@@ -23,6 +18,7 @@ export class MyComponentElement extends LitElement {
         name: this.name,
       },
     })
+    console.log(evt)
     this.dispatchEvent(evt)
   }
 

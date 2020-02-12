@@ -3,8 +3,8 @@ import { AppShellElement } from '../../containers/app-shell'
 import template from './template'
 import style from './style'
 
-@customElement('app-home')
-export class AppHomeElement extends AppShellElement {
+@customElement('app-users')
+export class AppUsersElement extends AppShellElement {
   protected render(): TemplateResult {
     return template.call(this)
   }
