@@ -28,9 +28,10 @@ export default css`
     width: var(--size-sl);
     background-color: var(--color-gray-60);
     border: none;
+    outline: none;
   }
   button:hover {
-    background-color: var(--color-gray-80);
+    background-color: var(--color-gray-70);
   }
   svg {
     width: 2rem;
