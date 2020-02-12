@@ -16,15 +16,10 @@ export class UserListElement extends connect(store, LitElement) {
     }
   }
 
-  mapEvents() {
-    return {
-      'my-component-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
-      // 'my-component-updated': (e: CustomEvent) =>
-      //   UserActions.updateUser(e.detail),
-      // 'my-component-delete': (e: CustomEvent) =>
-      //   UserActions.deleteUser(e.detail.key),
-    }
-  }
+  // Intercept custom events from child components and call Redux action (Connect lib)
+  mapEvents = () => ({
+    'my-component-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
+  })
 
   render(): TemplateResult {
     return html`
@@ -51,6 +46,7 @@ export class UserListElement extends connect(store, LitElement) {
 
       my-component {
         margin: 1rem;
+        box-sizing: border-box;
       }
     `
   }

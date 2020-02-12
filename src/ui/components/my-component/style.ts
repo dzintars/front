@@ -1,6 +1,9 @@
 import { css } from 'lit-element'
 
 export default css`
+  * {
+    box-sizing: border-box;
+  }
   :host {
     display: block;
     padding: 10px;
@@ -8,14 +11,27 @@ export default css`
     border-radius: 6px;
     background: var(--color-gray-30);
     box-shadow: var(--shadow-4);
+    box-sizing: border-box;
   }
 
   :host([selected]) {
-    background-color: var(--color-lawngreen-main);
+    background-color: var(--color-success-1l);
     border-color: #339933;
   }
+
   :host(:hover) {
     background-color: var(--color-gray-40);
     box-shadow: var(--shadow-8);
+  }
+
+  :host([selected]:hover) {
+    background-color: var(--color-success);
+    box-shadow: var(--shadow-8);
+  }
+
+  :host(:focus),
+  :host(:focus-within) {
+    box-sizing: border-box;
+    border: 3px solid red;
   }
 `

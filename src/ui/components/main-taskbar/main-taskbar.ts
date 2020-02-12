@@ -17,6 +17,16 @@ export class MainTaskbarElement extends connect(store, LitElement) {
     }
   }
 
+  onButtonClick(): void {
+    const event = new CustomEvent('launcher-click', {
+      bubbles: true,
+      composed: true,
+      detail: {},
+    })
+    this.dispatchEvent(event)
+    console.log('Clicked')
+  }
+
   public static styles = [style]
 
   protected render(): TemplateResult {

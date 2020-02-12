@@ -18,8 +18,8 @@ export class MyComponentElement extends LitElement {
         name: this.name,
       },
     })
-    console.log(evt)
     this.dispatchEvent(evt)
+    this.focus()
   }
 
   protected render(): TemplateResult {
