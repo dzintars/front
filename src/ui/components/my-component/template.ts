@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-element'
-import { MyComponentElement } from './my-component'
+import { MyComponentElement } from './component'
 
 export default function template(this: MyComponentElement): TemplateResult {
   return html`

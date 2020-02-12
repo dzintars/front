@@ -4,6 +4,7 @@ import { repeat } from 'lit-html/directives/repeat'
 
 export default function template(this: MainTaskbarElement): TemplateResult {
   return html`
+    <button>Start</button>
     ${repeat(
       this.applications,
       app => app.uuid,
