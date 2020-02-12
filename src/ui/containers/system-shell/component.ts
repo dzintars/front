@@ -11,6 +11,16 @@ export class SystemShellElement extends LitElement {
   }
   public static styles = [style]
 
+  // Intercept custom events from child components and call Redux action
+  mapEvents() {
+    return {
+      // 'launcher-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
+      'launcher-click': (e: CustomEvent) => {
+        console.log(e)
+      },
+    }
+  }
+
   ctrlShiftP(): void {
     const evt = new CustomEvent('ctrl-shift-p-click', {
       bubbles: true,
@@ -33,6 +43,9 @@ export class SystemShellElement extends LitElement {
         e.preventDefault()
         console.log(e)
       }
+    })
+    document.addEventListener('launcher-click', function(e) {
+      console.log('launcher-click received', e)
     })
   }
 }

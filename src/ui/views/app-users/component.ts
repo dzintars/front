@@ -13,4 +13,14 @@ export class AppUsersElement extends AppShellElement {
   public static get styles(): any {
     return [super.styles, style]
   }
+
+  // Intercept custom events from child components and call Redux action
+  mapEvents() {
+    return {
+      // 'launcher-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
+      'launcher-click': (e: CustomEvent) => {
+        console.log(e)
+      },
+    }
+  }
 }

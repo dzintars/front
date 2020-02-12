@@ -1,6 +1,9 @@
 import { css } from 'lit-element'
 
 export default css`
+  * {
+    box-sizing: border-box;
+  }
   :host {
     display: block;
     padding: 10px;
@@ -8,6 +11,7 @@ export default css`
     border-radius: 6px;
     background: var(--color-gray-30);
     box-shadow: var(--shadow-4);
+    box-sizing: border-box;
   }
 
   :host([selected]) {
@@ -27,6 +31,7 @@ export default css`
 
   :host(:focus),
   :host(:focus-within) {
+    box-sizing: border-box;
     border: 3px solid red;
   }
 `

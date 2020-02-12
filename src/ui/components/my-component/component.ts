@@ -19,7 +19,6 @@ export class MyComponentElement extends LitElement {
       },
     })
     this.dispatchEvent(evt)
-    console.log(this)
     this.focus()
   }
 

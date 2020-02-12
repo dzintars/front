@@ -5,7 +5,7 @@ import { Grid } from '../../assets/svg'
 
 export default function template(this: MainTaskbarElement): TemplateResult {
   return html`
-    <button title="Open Launcher">
+    <button @click=${this.onButtonClick} title="Open Launcher">
       ${Grid('black')}
     </button>
     ${repeat(

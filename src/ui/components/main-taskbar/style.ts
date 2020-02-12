@@ -33,6 +33,9 @@ export default css`
   button:hover {
     background-color: var(--color-gray-70);
   }
+  button:active {
+    background-color: var(--color-gray-80);
+  }
   svg {
     width: 2rem;
     height: 2rem;
