@@ -31,7 +31,7 @@ export default css`
 
   :host(:focus),
   :host(:focus-within) {
-    box-sizing: border-box;
-    border: 3px solid red;
+    outline-style: ridge;
+    outline-color: var(--color-dodgerblue-6l);
   }
 `

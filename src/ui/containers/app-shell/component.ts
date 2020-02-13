@@ -1,4 +1,4 @@
-import { LitElement, customElement, TemplateResult, CSSResult } from 'lit-element'
+import { LitElement, customElement, TemplateResult, CSSResultArray } from 'lit-element'
 import template from './template'
 import style from './style'
 
@@ -7,8 +7,8 @@ export class AppShellElement extends LitElement {
   protected render(): TemplateResult {
     return template.call(this)
   }
-  // public static styles = [style]
-  public static get styles() {
-    return style
+
+  public static get styles(): CSSResultArray {
+    return [style]
   }
 }

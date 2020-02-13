@@ -3,7 +3,9 @@ import { put } from 'redux-saga/effects'
 import { UserActions } from '../users'
 import { fetchApplicationList } from '../applications'
 
-function* homeRoute(params, queries) {}
+function* homeRoute(params, queries) {
+  yield put(fetchApplicationList())
+}
 
 function* userListRoute(params, queries) {
   yield put(UserActions.fetchUserList())

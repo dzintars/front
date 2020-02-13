@@ -24,7 +24,6 @@ export class MainTaskbarElement extends connect(store, LitElement) {
       detail: {},
     })
     this.dispatchEvent(event)
-    console.log('Clicked')
   }
 
   public static styles = [style]
