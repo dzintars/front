@@ -10,7 +10,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
   @property({ type: String }) pathname: string
   @property({ type: String }) view: string
 
-  mapState(state: RootState): any {
+  mapState(state: RootState) {
     return {
       pathname: RoutingSelectors.pathname(state),
     }

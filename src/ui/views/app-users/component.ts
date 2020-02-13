@@ -1,4 +1,4 @@
-import { customElement, TemplateResult, CSSResult } from 'lit-element'
+import { customElement, TemplateResult, property, CSSResultArray } from 'lit-element'
 import { AppShellElement } from '../../containers/app-shell'
 import template from './template'
 import style from './style'
@@ -6,21 +6,11 @@ import style from './style'
 @customElement('app-users')
 export class AppUsersElement extends AppShellElement {
   protected render(): TemplateResult {
-    return template.call(this)
-  }
-  // public static styles = [super.styles, style]
-
-  public static get styles(): any {
-    return [super.styles, style]
+    return template.call(this) // Don't pass whole "this"
   }
 
-  // Intercept custom events from child components and call Redux action
-  mapEvents() {
-    return {
-      // 'launcher-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
-      'launcher-click': (e: CustomEvent) => {
-        console.log(e)
-      },
-    }
+  public static get styles(): CSSResultArray {
+    // return [super.styles, style]
+    return [AppShellElement.styles, style]
   }
 }

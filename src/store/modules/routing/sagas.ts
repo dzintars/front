@@ -13,7 +13,7 @@ const ROUTE_SAGAS = [...routes].map(r => ({
 
 const sagaRouter = new UniversalRouter(ROUTE_SAGAS)
 
-let pathnamePrev = ''
+const pathnamePrev = ''
 function* navigationSaga(action: AnyAction) {
   const { pathname, queries } = action.payload
 
@@ -36,26 +36,12 @@ function* routeSaga() {
 function clickChannel() {
   return eventChannel(emit => {
     const handler = (e: MouseEvent) => {
-      if (
-        (e.button && e.button !== 0) ||
-        e.metaKey ||
-        e.altKey ||
-        e.ctrlKey ||
-        e.shiftKey ||
-        e.defaultPrevented
-      ) {
+      if ((e.button && e.button !== 0) || e.metaKey || e.altKey || e.ctrlKey || e.shiftKey || e.defaultPrevented) {
         return
       }
 
-      const anchor = <HTMLAnchorElement>(
-        e.composedPath().filter(n => (n as HTMLElement).tagName === 'A')[0]
-      )
-      if (
-        !anchor ||
-        anchor.target ||
-        anchor.hasAttribute('download') ||
-        anchor.getAttribute('rel') === 'external'
-      ) {
+      const anchor = e.composedPath().filter(n => (n as HTMLElement).tagName === 'A')[0] as HTMLAnchorElement
+      if (!anchor || anchor.target || anchor.hasAttribute('download') || anchor.getAttribute('rel') === 'external') {
         return
       }
 
@@ -73,6 +59,7 @@ function clickChannel() {
         emit(RoutingActions.push(anchor.href.substr(origin.length)))
       }
     }
+
     window.document.body.addEventListener('click', handler)
     return () => document.body.removeEventListener('click', handler)
   }, buffers.fixed(1))

@@ -22,6 +22,20 @@ export class MyComponentElement extends LitElement {
     this.focus()
   }
 
+  // onHostClick(): void {
+  //   const event = new CustomEvent('launcher-click', {
+  //     bubbles: true,
+  //     composed: true,
+  //     detail: { key: 'Test' },
+  //   })
+  //   this.dispatchEvent(event)
+  // }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.addEventListener('click', this.onButtonClick)
+  }
+
   protected render(): TemplateResult {
     return template.call(this)
   }
