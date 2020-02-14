@@ -1,13 +1,22 @@
 import { LitElement, customElement, property, TemplateResult } from 'lit-element'
+import { connect } from '../../../utils/connect'
+import { store, RootState, LauncherSelectors } from '../../../store'
 import template from './template'
 import style from './style'
 
 @customElement('system-shell' as any)
-export class SystemShellElement extends LitElement {
+export class SystemShellElement extends connect(store, LitElement) {
+  @property({ type: Boolean }) isLauncherVisible: boolean = false
   protected render(): TemplateResult {
     return template.call(this)
   }
   public static styles = [style]
+
+  mapState(state: RootState) {
+    return {
+      isLauncherVisible: LauncherSelectors.getVisibility(state),
+    }
+  }
 
   // Intercept custom events from child components and call Redux action (works only if store is connected)
   // mapEvents() {
