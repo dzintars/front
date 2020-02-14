@@ -5,15 +5,17 @@ import { Grid } from '../../assets/svg'
 
 export default function template(this: MainLauncherElement): TemplateResult {
   return html`
-    <button @click=${this.onButtonClick} title="Open Launcher">
+    <button @click=${this.toggleLauncher} title="Open Launcher">
       ${Grid('black')}
     </button>
-    ${repeat(
-      this.applications,
-      app => app.uuid,
-      app => html`
-        <a href=${app.permalink}>${app.title}</a>
-      `
-    )}
+    <ul>
+      ${repeat(
+        this.applications,
+        app => app.uuid,
+        app => html`
+          <li><a href=${app.permalink}>${app.title}</a></li>
+        `
+      )}
+    </ul>
   `
 }

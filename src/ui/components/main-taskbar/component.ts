@@ -1,7 +1,7 @@
 import { LitElement, customElement, property, TemplateResult } from 'lit-element'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, Application, ApplicationSelectors } from '../../../store'
+import { store, RootState, Application, ApplicationSelectors, toggleLauncher } from '../../../store'
 import template from './template'
 import style from './style'
 
@@ -15,6 +15,10 @@ export class MainTaskbarElement extends connect(store, LitElement) {
       applications: ApplicationSelectors.applications(state),
       selected: ApplicationSelectors.selected(state),
     }
+  }
+
+  toggleLauncher(): void {
+    store.dispatch(toggleLauncher())
   }
 
   onButtonClick(): void {
