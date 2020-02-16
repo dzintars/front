@@ -37,6 +37,7 @@ export const storageMiddleware: Middleware<Dispatch> = (store: MiddlewareAPI) =>
         timestamp: new Date(),
         state: {
           users: state.users,
+          applications: state.applications,
         },
       }
       localStorage.setItem(storageKey, JSON.stringify(cache))
