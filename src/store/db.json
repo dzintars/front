@@ -89,5 +89,369 @@
       "uuid": "9581537b-a314-47fd-8d47-b00715067c0c",
       "name": "Clementina DuBuque"
     }
+  },
+  "orders": {
+    "2ecc3de7-6609-4785-9b75-3f8c631c3fa4": {
+      "uuid": "2ecc3de7-6609-4785-9b75-3f8c631c3fa4",
+      "destination_address": "adb13c41-0f6a-40bd-b49e-bd65e572c5f6"
+    },
+    "4b0632a9-9cb1-4bf1-b1a3-d2574534a9b2": {
+      "uuid": "4b0632a9-9cb1-4bf1-b1a3-d2574534a9b2",
+      "destination_address": "34b1890f-90d6-4030-96f6-7df9caa0dbbe"
+    },
+    "fe60811d-6c49-4ab4-b804-7ac5adf298f8": {
+      "uuid": "fe60811d-6c49-4ab4-b804-7ac5adf298f8",
+      "destination_address": "6900ade9-575d-4299-b6c2-9725010e18fd"
+    },
+    "86bd83c1-1b90-4928-9766-cae5266239a6": {
+      "uuid": "86bd83c1-1b90-4928-9766-cae5266239a6",
+      "destination_address": "56a868e9-103b-4cc9-80bd-06501feabd91"
+    },
+    "087e5132-8bb3-4fc8-8fe4-9ab26f39a090": {
+      "uuid": "087e5132-8bb3-4fc8-8fe4-9ab26f39a090",
+      "destination_address": "735f05ae-c402-4a4d-808b-024d119d45ac"
+    },
+    "189ebd3e-9ac2-4d6b-a8a0-5f35368dd2b7": {
+      "uuid": "189ebd3e-9ac2-4d6b-a8a0-5f35368dd2b7",
+      "destination_address": "27d8be66-572c-4167-9a3e-fbd5b37cd8fa"
+    },
+    "c1c92386-03d9-49bb-b9e8-df9fe652792a": {
+      "uuid": "c1c92386-03d9-49bb-b9e8-df9fe652792a",
+      "destination_address": "49252029-a92a-4528-9d95-fb0af8773e30"
+    },
+    "6f68880b-8543-4b32-8a18-8221dd942b53": {
+      "uuid": "6f68880b-8543-4b32-8a18-8221dd942b53",
+      "destination_address": "f16f489f-3327-4529-8406-6b91baec3792"
+    },
+    "ac2292f0-6ee7-414b-978f-2ab4137ea50b": {
+      "uuid": "ac2292f0-6ee7-414b-978f-2ab4137ea50b",
+      "destination_address": "a62b516e-e84b-425f-9fad-503f88a4c95b"
+    },
+    "07664809-4c3d-4c45-9cfb-63056c7ba804": {
+      "uuid": "07664809-4c3d-4c45-9cfb-63056c7ba804",
+      "destination_address": "530de3a3-f758-40d1-8f8c-8550831116da"
+    },
+    "1601b118-18e0-418a-8f12-809281083086": {
+      "uuid": "1601b118-18e0-418a-8f12-809281083086",
+      "destination_address": "ac17a186-1811-4327-b6e5-d8d97bc36111"
+    },
+    "e6a6a178-2e9b-4ff2-b6f0-28e768d1a1fb": {
+      "uuid": "e6a6a178-2e9b-4ff2-b6f0-28e768d1a1fb",
+      "destination_address": "b59645ee-fbd6-4645-9b15-fe916c52c5df"
+    },
+    "e682f0a8-5c11-452b-bc5e-7b359eb6e01f": {
+      "uuid": "e682f0a8-5c11-452b-bc5e-7b359eb6e01f",
+      "destination_address": "646a447a-b15a-47da-8873-428aa18359c2"
+    },
+    "d37a37c9-9cad-4992-81e3-59b3389d8333": {
+      "uuid": "d37a37c9-9cad-4992-81e3-59b3389d8333",
+      "destination_address": "4567b805-f7a3-41e7-b581-d47ce0186cd3"
+    },
+    "c3916df2-fd79-4b63-849f-adef333d12e4": {
+      "uuid": "c3916df2-fd79-4b63-849f-adef333d12e4",
+      "destination_address": "3f00d966-5846-4b90-a9dd-d7d2cca3c988"
+    },
+    "a08b71d6-41bf-43f0-a027-a6c57c3b622f": {
+      "uuid": "a08b71d6-41bf-43f0-a027-a6c57c3b622f",
+      "destination_address": "70cad2aa-9014-468f-aec0-2d9cc0444da0"
+    },
+    "00b84d74-0e1d-4546-b195-c4f5836892cb": {
+      "uuid": "00b84d74-0e1d-4546-b195-c4f5836892cb",
+      "destination_address": "74ec94ab-4094-4acc-bd8f-def412e999d2"
+    },
+    "80defb47-c449-4d25-bea8-4c15a2370ede": {
+      "uuid": "80defb47-c449-4d25-bea8-4c15a2370ede",
+      "destination_address": "a0c5bf80-423b-41ba-a682-8e2d378db69c"
+    },
+    "c919f835-f419-42d7-8259-1c98924a459f": {
+      "uuid": "c919f835-f419-42d7-8259-1c98924a459f",
+      "destination_address": "fac7ddfb-82c6-4a43-8085-41d7d2c9bb28"
+    },
+    "a308d030-9dba-487f-9ad2-a05a70d57a58": {
+      "uuid": "a308d030-9dba-487f-9ad2-a05a70d57a58",
+      "destination_address": "05ef38d6-95ab-4382-ba51-50dc616f86a9"
+    },
+    "9a74ba58-0eac-4933-8b6c-44968d5eb289": {
+      "uuid": "9a74ba58-0eac-4933-8b6c-44968d5eb289",
+      "destination_address": "2f4bd5a2-e45e-4062-8261-4c516e96b874"
+    },
+    "84a2f075-9d20-4096-b36b-c628557681ad": {
+      "uuid": "84a2f075-9d20-4096-b36b-c628557681ad",
+      "destination_address": "914b090a-e178-4c8a-a4ae-4c71cc9b3bf1"
+    },
+    "d4aa82f9-ef4f-4bc2-8dbe-868647da79f1": {
+      "uuid": "d4aa82f9-ef4f-4bc2-8dbe-868647da79f1",
+      "destination_address": "790daa3b-206a-4bed-aa38-57dd0751f3d4"
+    },
+    "84b73ace-a628-4128-9f3f-406da25e446b": {
+      "uuid": "84b73ace-a628-4128-9f3f-406da25e446b",
+      "destination_address": "f225ee22-7b6c-4f11-9733-852544fa054c"
+    },
+    "5fee0a79-be6c-4440-9698-f6382555b0c4": {
+      "uuid": "5fee0a79-be6c-4440-9698-f6382555b0c4",
+      "destination_address": "fb9301e9-9ce9-4f76-b308-4b6e94fe500b"
+    },
+    "135e81a4-0250-4333-9b32-9e1646c17be7": {
+      "uuid": "135e81a4-0250-4333-9b32-9e1646c17be7",
+      "destination_address": "21842330-4c85-48db-bbba-b9e51998d4de"
+    },
+    "2d44780f-419b-46d3-8841-1e579d31756d": {
+      "uuid": "2d44780f-419b-46d3-8841-1e579d31756d",
+      "destination_address": "3f283e76-2125-4f3c-8a6d-fb77a5c97d51"
+    },
+    "cd9ecb87-6e66-4714-b263-c4daef624ea5": {
+      "uuid": "cd9ecb87-6e66-4714-b263-c4daef624ea5",
+      "destination_address": "e523c816-c3ce-48a8-a316-6dfa741d2ff2"
+    },
+    "53dc8aa0-04f2-41dc-9203-310865d836de": {
+      "uuid": "53dc8aa0-04f2-41dc-9203-310865d836de",
+      "destination_address": "8edd1b7a-ca9b-4b69-a9ae-610816d3e14c"
+    },
+    "5008dc81-fef7-4cf3-a2d9-c5cac3f1c465": {
+      "uuid": "5008dc81-fef7-4cf3-a2d9-c5cac3f1c465",
+      "destination_address": "33d4279f-334e-4b2f-bf96-6155a46a4f2c"
+    },
+    "9afa358a-c42f-4f43-8057-0c743ab8d30c": {
+      "uuid": "9afa358a-c42f-4f43-8057-0c743ab8d30c",
+      "destination_address": "787ec2ac-def3-427f-bc9a-f7b2998f1a8f"
+    },
+    "e37885c0-6535-47d0-893a-288bf847ad9c": {
+      "uuid": "e37885c0-6535-47d0-893a-288bf847ad9c",
+      "destination_address": "80b10a0f-a72e-4b76-8362-0322ea6240dd"
+    },
+    "7f1bb0f1-2067-4b11-81b5-5f5544217812": {
+      "uuid": "7f1bb0f1-2067-4b11-81b5-5f5544217812",
+      "destination_address": "34324d59-eea0-4dc2-be7d-0c4b42211b1f"
+    },
+    "d22b2534-c913-44b6-904a-5b2b809ebdd3": {
+      "uuid": "d22b2534-c913-44b6-904a-5b2b809ebdd3",
+      "destination_address": "b792c89b-2762-4de7-912c-6c6489a2c9f4"
+    },
+    "df4e4a3a-87e8-405f-a174-f0610131b849": {
+      "uuid": "df4e4a3a-87e8-405f-a174-f0610131b849",
+      "destination_address": "40bc8601-2b9a-4107-82ea-1a5e5cc87396"
+    },
+    "7bff02d6-85dc-407e-a1b8-4c155b0f7fe7": {
+      "uuid": "7bff02d6-85dc-407e-a1b8-4c155b0f7fe7",
+      "destination_address": "014f865e-478d-465d-8d95-bd2c4f38ac0f"
+    },
+    "21bbf62c-359a-46b4-a3e1-d4b644574b8e": {
+      "uuid": "21bbf62c-359a-46b4-a3e1-d4b644574b8e",
+      "destination_address": "37c83dad-f99a-4135-89b6-f09bf5845e4f"
+    },
+    "b18bb025-b743-4576-b8d6-bbfb6e0cac17": {
+      "uuid": "b18bb025-b743-4576-b8d6-bbfb6e0cac17",
+      "destination_address": "c5cdf403-a53b-44d3-afa8-e2874c0eb6f8"
+    },
+    "d3a0e2ee-ad48-48e4-b9db-15934945ac6c": {
+      "uuid": "d3a0e2ee-ad48-48e4-b9db-15934945ac6c",
+      "destination_address": "b74d56f6-9602-4487-97b2-5e6925918e56"
+    },
+    "809d1a36-3fab-4d42-babc-757881164b94": {
+      "uuid": "809d1a36-3fab-4d42-babc-757881164b94",
+      "destination_address": "201bfaf1-aad3-4357-85d1-e2815e0af5a9"
+    }
+  },
+  "locations": {
+    "adb13c41-0f6a-40bd-b49e-bd65e572c5f6": {
+      "uuid": "adb13c41-0f6a-40bd-b49e-bd65e572c5f6",
+      "full_address": "Aleksandra Čaka iela 31, Rīga",
+      "sort_full_address": ""
+    },
+    "34b1890f-90d6-4030-96f6-7df9caa0dbbe": {
+      "uuid": "34b1890f-90d6-4030-96f6-7df9caa0dbbe",
+      "full_address": "Aleksandra Čaka iela 37, Rīga",
+      "sort_full_address": ""
+    },
+    "6900ade9-575d-4299-b6c2-9725010e18fd": {
+      "uuid": "6900ade9-575d-4299-b6c2-9725010e18fd",
+      "full_address": "Blaumaņa iela 16, Rīga",
+      "sort_full_address": ""
+    },
+    "56a868e9-103b-4cc9-80bd-06501feabd91": {
+      "uuid": "56a868e9-103b-4cc9-80bd-06501feabd91",
+      "full_address": "Dzirnavu iela 105, Rīga",
+      "sort_full_address": ""
+    },
+    "735f05ae-c402-4a4d-808b-024d119d45ac": {
+      "uuid": "735f05ae-c402-4a4d-808b-024d119d45ac",
+      "full_address": "Krišjāņa Barona iela 30, Rīga",
+      "sort_full_address": ""
+    },
+    "27d8be66-572c-4167-9a3e-fbd5b37cd8fa": {
+      "uuid": "27d8be66-572c-4167-9a3e-fbd5b37cd8fa",
+      "full_address": "Lāčplēša iela 38, Rīga",
+      "sort_full_address": ""
+    },
+    "49252029-a92a-4528-9d95-fb0af8773e30": {
+      "uuid": "49252029-a92a-4528-9d95-fb0af8773e30",
+      "full_address": "Pērses iela 2, Rīga",
+      "sort_full_address": ""
+    },
+    "f16f489f-3327-4529-8406-6b91baec3792": {
+      "uuid": "f16f489f-3327-4529-8406-6b91baec3792",
+      "full_address": "Aleksandra Čaka iela 45 K-1, Rīga",
+      "sort_full_address": ""
+    },
+    "a62b516e-e84b-425f-9fad-503f88a4c95b": {
+      "uuid": "a62b516e-e84b-425f-9fad-503f88a4c95b",
+      "full_address": "Ģertrūdes iela 30, Rīga",
+      "sort_full_address": ""
+    },
+    "530de3a3-f758-40d1-8f8c-8550831116da": {
+      "uuid": "530de3a3-f758-40d1-8f8c-8550831116da",
+      "full_address": "Ģertrūdes iela 60, Rīga",
+      "sort_full_address": ""
+    },
+    "ac17a186-1811-4327-b6e5-d8d97bc36111": {
+      "uuid": "ac17a186-1811-4327-b6e5-d8d97bc36111",
+      "full_address": "Krišjāņa Barona iela 60, Rīga",
+      "sort_full_address": ""
+    },
+    "b59645ee-fbd6-4645-9b15-fe916c52c5df": {
+      "uuid": "b59645ee-fbd6-4645-9b15-fe916c52c5df",
+      "full_address": "Martas iela 7, Rīga",
+      "sort_full_address": ""
+    },
+    "646a447a-b15a-47da-8873-428aa18359c2": {
+      "uuid": "646a447a-b15a-47da-8873-428aa18359c2",
+      "full_address": "Stabu iela 31, Rīga",
+      "sort_full_address": ""
+    },
+    "4567b805-f7a3-41e7-b581-d47ce0186cd3": {
+      "uuid": "4567b805-f7a3-41e7-b581-d47ce0186cd3",
+      "full_address": "Tērbatas iela 42/44, Rīga",
+      "sort_full_address": ""
+    },
+    "3f00d966-5846-4b90-a9dd-d7d2cca3c988": {
+      "uuid": "3f00d966-5846-4b90-a9dd-d7d2cca3c988",
+      "full_address": "Baznīcas iela 8, Rīga",
+      "sort_full_address": ""
+    },
+    "70cad2aa-9014-468f-aec0-2d9cc0444da0": {
+      "uuid": "70cad2aa-9014-468f-aec0-2d9cc0444da0",
+      "full_address": "Baznīcas iela 32, Rīga",
+      "sort_full_address": ""
+    },
+    "74ec94ab-4094-4acc-bd8f-def412e999d2": {
+      "uuid": "74ec94ab-4094-4acc-bd8f-def412e999d2",
+      "full_address": "Brīvības bulvāris 19, Rīga",
+      "sort_full_address": ""
+    },
+    "a0c5bf80-423b-41ba-a682-8e2d378db69c": {
+      "uuid": "a0c5bf80-423b-41ba-a682-8e2d378db69c",
+      "full_address": "Brīvības iela 55, Rīga",
+      "sort_full_address": ""
+    },
+    "fac7ddfb-82c6-4a43-8085-41d7d2c9bb28": {
+      "uuid": "fac7ddfb-82c6-4a43-8085-41d7d2c9bb28",
+      "full_address": "Bruņinieku iela 8B, Rīga",
+      "sort_full_address": ""
+    },
+    "05ef38d6-95ab-4382-ba51-50dc616f86a9": {
+      "uuid": "05ef38d6-95ab-4382-ba51-50dc616f86a9",
+      "full_address": "Dzirnavu iela 55, Rīga",
+      "sort_full_address": ""
+    },
+    "2f4bd5a2-e45e-4062-8261-4c516e96b874": {
+      "uuid": "2f4bd5a2-e45e-4062-8261-4c516e96b874",
+      "full_address": "Elizabetes iela 43, Rīga",
+      "sort_full_address": ""
+    },
+    "914b090a-e178-4c8a-a4ae-4c71cc9b3bf1": {
+      "uuid": "914b090a-e178-4c8a-a4ae-4c71cc9b3bf1",
+      "full_address": "Kalpaka bulvāris 6, Rīga",
+      "sort_full_address": ""
+    },
+    "790daa3b-206a-4bed-aa38-57dd0751f3d4": {
+      "uuid": "790daa3b-206a-4bed-aa38-57dd0751f3d4",
+      "full_address": "Krišjāņa Valdemāra iela 2, Rīga",
+      "sort_full_address": ""
+    },
+    "f225ee22-7b6c-4f11-9733-852544fa054c": {
+      "uuid": "f225ee22-7b6c-4f11-9733-852544fa054c",
+      "full_address": "Krišjāņa Valdemāra iela 40, Rīga",
+      "sort_full_address": ""
+    },
+    "fb9301e9-9ce9-4f76-b308-4b6e94fe500b": {
+      "uuid": "fb9301e9-9ce9-4f76-b308-4b6e94fe500b",
+      "full_address": "Lāčplēša iela 2, Rīga",
+      "sort_full_address": ""
+    },
+    "21842330-4c85-48db-bbba-b9e51998d4de": {
+      "uuid": "21842330-4c85-48db-bbba-b9e51998d4de",
+      "full_address": "Raiņa bulvāris 3, Rīga",
+      "sort_full_address": ""
+    },
+    "3f283e76-2125-4f3c-8a6d-fb77a5c97d51": {
+      "uuid": "3f283e76-2125-4f3c-8a6d-fb77a5c97d51",
+      "full_address": "Skolas iela 11, Rīga",
+      "sort_full_address": ""
+    },
+    "e523c816-c3ce-48a8-a316-6dfa741d2ff2": {
+      "uuid": "e523c816-c3ce-48a8-a316-6dfa741d2ff2",
+      "full_address": "Aleksandra Čaka iela 66, Rīga",
+      "sort_full_address": ""
+    },
+    "8edd1b7a-ca9b-4b69-a9ae-610816d3e14c": {
+      "uuid": "8edd1b7a-ca9b-4b69-a9ae-610816d3e14c",
+      "full_address": "Aleksandra Čaka iela 110 K-1, Rīga",
+      "sort_full_address": ""
+    },
+    "33d4279f-334e-4b2f-bf96-6155a46a4f2c": {
+      "uuid": "33d4279f-334e-4b2f-bf96-6155a46a4f2c",
+      "full_address": "Artilērijas iela 40H, Rīga",
+      "sort_full_address": ""
+    },
+    "787ec2ac-def3-427f-bc9a-f7b2998f1a8f": {
+      "uuid": "787ec2ac-def3-427f-bc9a-f7b2998f1a8f",
+      "full_address": "Baložu iela 2, Rīga",
+      "sort_full_address": ""
+    },
+    "80b10a0f-a72e-4b76-8362-0322ea6240dd": {
+      "uuid": "80b10a0f-a72e-4b76-8362-0322ea6240dd",
+      "full_address": "Daugavgrīvas iela 2, Rīga",
+      "sort_full_address": ""
+    },
+    "34324d59-eea0-4dc2-be7d-0c4b42211b1f": {
+      "uuid": "34324d59-eea0-4dc2-be7d-0c4b42211b1f",
+      "full_address": "Kalnciema iela 4, Rīga",
+      "sort_full_address": ""
+    },
+    "b792c89b-2762-4de7-912c-6c6489a2c9f4": {
+      "uuid": "b792c89b-2762-4de7-912c-6c6489a2c9f4",
+      "full_address": "Meža iela 3, Rīga",
+      "sort_full_address": ""
+    },
+    "40bc8601-2b9a-4107-82ea-1a5e5cc87396": {
+      "uuid": "40bc8601-2b9a-4107-82ea-1a5e5cc87396",
+      "full_address": "Daugavgrīvas iela 31G, Rīga",
+      "sort_full_address": ""
+    },
+    "014f865e-478d-465d-8d95-bd2c4f38ac0f": {
+      "uuid": "014f865e-478d-465d-8d95-bd2c4f38ac0f",
+      "full_address": "Ūdens iela 6, Rīga",
+      "sort_full_address": ""
+    },
+    "37c83dad-f99a-4135-89b6-f09bf5845e4f": {
+      "uuid": "37c83dad-f99a-4135-89b6-f09bf5845e4f",
+      "full_address": "Baldones iela 1, Rīga",
+      "sort_full_address": ""
+    },
+    "c5cdf403-a53b-44d3-afa8-e2874c0eb6f8": {
+      "uuid": "c5cdf403-a53b-44d3-afa8-e2874c0eb6f8",
+      "full_address": "Bumbieru iela 4, Rīga",
+      "sort_full_address": ""
+    },
+    "b74d56f6-9602-4487-97b2-5e6925918e56": {
+      "uuid": "b74d56f6-9602-4487-97b2-5e6925918e56",
+      "full_address": "Dārza iela 5, Rīga",
+      "sort_full_address": ""
+    },
+    "201bfaf1-aad3-4357-85d1-e2815e0af5a9": {
+      "uuid": "201bfaf1-aad3-4357-85d1-e2815e0af5a9",
+      "full_address": "Eiženijas iela 2A, Rīga",
+      "sort_full_address": ""
+    }
   }
 }
