@@ -941,6 +941,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/emscripten@npm:^1.38.0":
+  version: 1.39.2
+  resolution: "@types/emscripten@npm:1.39.2"
+  checksum: 1eda5a66dc500c20ec20c49020808effeb676ed802633e3fc4bb854128f9ea560a715c0b380d29d5aa5e607dbed604ed474831d72c43a10e3f7fd6cbec3785c1
+  languageName: node
+  linkType: hard
+
 "@types/eslint-visitor-keys@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/eslint-visitor-keys@npm:1.0.0"
@@ -1504,28 +1511,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/fslib@npm:^2.0.0-rc.15":
-  version: 2.0.0-rc.15
-  resolution: "@yarnpkg/fslib@npm:2.0.0-rc.15"
+"@yarnpkg/fslib@npm:^2.0.0-rc.16":
+  version: 2.0.0-rc.16
+  resolution: "@yarnpkg/fslib@npm:2.0.0-rc.16"
   dependencies:
-    "@yarnpkg/libzip": ^2.0.0-rc.8
+    "@yarnpkg/libzip": ^2.0.0-rc.10
     tmp: ^0.1.0
-  checksum: 5ca7045c6802038d20744a8c1d8da8bc8c433239932f9ab7ece93554614b2d7d1b0d4fcabc341a84911977b55d91997c6eb273cd83b07e5931e7301daba2eee7
+  checksum: 7c09a124eb111c25d343a41d40034ab5d9dc805a42465755828bd18f10faa1566e8082f9c8ec2c4ea7c82486f084fdb8b358f829e9fc4dee8929e0481efb8527
   languageName: node
   linkType: hard
 
-"@yarnpkg/libzip@npm:^2.0.0-rc.8":
-  version: 2.0.0-rc.9
-  resolution: "@yarnpkg/libzip@npm:2.0.0-rc.9"
-  checksum: 801f8b2a1e86cc4b8c162de16192b9c799f6108bd5350865892121be84b3f864b9c609f3481d1b1f5b9ce63db2cd17e8cc830031103760784ccb5a8e0123e4a4
-  languageName: node
-  linkType: hard
-
-"@yarnpkg/pnpify@npm:^2.0.0-rc.17":
-  version: 2.0.0-rc.17
-  resolution: "@yarnpkg/pnpify@npm:2.0.0-rc.17"
+"@yarnpkg/libzip@npm:^2.0.0-rc.10":
+  version: 2.0.0-rc.10
+  resolution: "@yarnpkg/libzip@npm:2.0.0-rc.10"
   dependencies:
-    "@yarnpkg/fslib": ^2.0.0-rc.15
+    "@types/emscripten": ^1.38.0
+  checksum: 29647282c078b90d2f5853b24559b73f1738954cefee0d0dfeecf5b236fd536f85762addcaa7a8cc19a122446ea94ed9d7b63eb92312001678808287de6543ac
+  languageName: node
+  linkType: hard
+
+"@yarnpkg/pnpify@npm:^2.0.0-rc.18":
+  version: 2.0.0-rc.18
+  resolution: "@yarnpkg/pnpify@npm:2.0.0-rc.18"
+  dependencies:
+    "@yarnpkg/fslib": ^2.0.0-rc.16
+    chalk: ^3.0.0
     comment-json: ^2.2.0
     cross-spawn: 6.0.5
   peerDependencies:
@@ -1538,7 +1548,7 @@ __metadata:
       optional: true
   bin:
     pnpify: ./lib/cli.js
-  checksum: 2c475d35a82fa71f27ed7f8f4751606cd28fcea6b89fbcfec18eaa4684cc956130c7349c58870c667dbcf320a30ab9b14a56a6b7d8b3c30c63d4f5b92a9b9d06
+  checksum: 53ea6e3d79b75dca4e3d353520388c6a2653bcf61911c79c100bdd700413c5bd19caa3c3dcf8ae29c8eb404d2203c51fe612da2fb080f4191fb9e083405b7116
   languageName: node
   linkType: hard
 
@@ -5484,7 +5494,7 @@ __metadata:
     "@types/webpack-merge": ^4.1.5
     "@typescript-eslint/eslint-plugin": ^2.18.0
     "@typescript-eslint/parser": ^2.18.0
-    "@yarnpkg/pnpify": ^2.0.0-rc.17
+    "@yarnpkg/pnpify": ^2.0.0-rc.18
     awesome-typescript-loader: ^5.2.1
     babel-loader: ^8.0.6
     browser-sync: ^2.26.7

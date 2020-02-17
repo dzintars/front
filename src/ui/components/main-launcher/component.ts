@@ -21,7 +21,6 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Boolean, reflect: true }) isVisible: boolean = false
   @property({ type: Object }) wrapperRef: any = this.setWrapperRef.bind(this)
   @property({ type: Array }) applications: Application[]
-  @property({ type: String }) selected: string
 
   public static styles = [style]
 
@@ -32,7 +31,6 @@ export class MainLauncherElement extends connect(store, LitElement) {
   mapState(state: RootState) {
     return {
       applications: ApplicationSelectors.applications(state),
-      selected: ApplicationSelectors.selected(state),
       isVisible: LauncherSelectors.getVisibility(state),
     }
   }
