@@ -1,6 +1,8 @@
 import { PersonTypes, PersonActionTypes } from './types'
 import { PersonsState } from './models'
 
+export { PersonsState }
+
 const initialState: PersonsState = {
   entities: {},
   ids: [],

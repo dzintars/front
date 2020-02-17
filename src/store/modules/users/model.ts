@@ -21,3 +21,11 @@ export interface User {
     bs: string
   }
 }
+
+export interface UserState {
+  entities: { [id: number]: User }
+  ids: number[]
+  fetching: boolean
+  selected: number
+  error: Error
+}

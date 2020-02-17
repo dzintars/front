@@ -1,4 +1,16 @@
 import { Organization } from './models'
+// https://www.youtube.com/watch?v=da3ygw2zJAw&t=341s
+// import {
+//   selectOrganization,
+//   fetchOrganizationList,
+//   fetchOrganizationListRequest,
+//   fetchOrganizationListSuccess,
+//   fetchOrganizationListFailure,
+//   fetchOrganization,
+//   fetchOrganizationRequest,
+//   fetchOrganizationSuccess,
+//   fetchOrganizationFailure,
+// } from './actions'
 
 export enum OrganizationTypes {
   SELECT = 'ORGANIZATION_SELECT',
@@ -60,3 +72,14 @@ export type OrganizationActionTypes =
   | FetchRequest
   | FetchSuccess
   | FetchFailure
+
+// export type OrganizationActionInferred =
+//   | ReturnType<typeof selectOrganization>
+//   | ReturnType<typeof fetchOrganizationList>
+//   | ReturnType<typeof fetchOrganizationListRequest>
+//   | ReturnType<typeof fetchOrganizationListSuccess>
+//   | ReturnType<typeof fetchOrganizationListFailure>
+//   | ReturnType<typeof fetchOrganization>
+//   | ReturnType<typeof fetchOrganizationRequest>
+//   | ReturnType<typeof fetchOrganizationSuccess>
+//   | ReturnType<typeof fetchOrganizationFailure>

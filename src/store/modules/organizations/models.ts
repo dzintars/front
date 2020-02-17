@@ -1,8 +1,6 @@
 export interface Organization {
   readonly uuid: string
   readonly title: string
-  readonly type: string
-  readonly permalink: string
 }
 
 export interface OrganizationsState {

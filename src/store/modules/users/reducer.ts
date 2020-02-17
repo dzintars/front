@@ -1,13 +1,5 @@
 import { UserActions, UserTypes } from './actions'
-import { User } from './model'
-
-export interface UserState {
-  entities: { [id: number]: User }
-  ids: number[]
-  fetching: boolean
-  selected: number
-  error: Error
-}
+import { UserState } from './model'
 
 const initialState: UserState = {
   entities: {},
@@ -17,10 +9,9 @@ const initialState: UserState = {
   error: null,
 }
 
-export default (
-  state: UserState = initialState,
-  action: UserActions
-): UserState => {
+export { UserState }
+
+export default (state: UserState = initialState, action: UserActions): UserState => {
   switch (action.type) {
     case UserTypes.USER_SELECT:
       return { ...state, selected: action.payload.id }

@@ -1,6 +1,8 @@
 import { ApplicationTypes, ApplicationActionTypes } from './types'
 import { ApplicationsState } from './models'
 
+export { ApplicationsState }
+
 const initialState: ApplicationsState = {
   entities: {},
   ids: [],

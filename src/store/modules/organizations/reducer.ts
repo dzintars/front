@@ -1,6 +1,8 @@
 import { OrganizationTypes, OrganizationActionTypes } from './types'
 import { OrganizationsState } from './models'
 
+export { OrganizationsState }
+
 const initialState: OrganizationsState = {
   entities: {},
   ids: [],
