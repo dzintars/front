@@ -10,6 +10,8 @@ import persons from './modules/persons/reducer'
 import { PersonsState } from './modules/persons/models'
 import accounts from './modules/accounts/reducer'
 import { AccountsState } from './modules/accounts/models'
+import organizations from './modules/organizations/reducer'
+import { OrganizationsState } from './modules/organizations/models'
 
 export interface RootState {
   // HYGEN.IO: INJECT STATE HERE
@@ -19,6 +21,7 @@ export interface RootState {
   applications: ApplicationsState
   persons: PersonsState
   accounts: AccountsState
+  organizations: OrganizationsState
 }
 
 export const rootReducer = combineReducers<RootState>({
@@ -29,4 +32,5 @@ export const rootReducer = combineReducers<RootState>({
   applications,
   persons,
   accounts,
+  organizations,
 })
