@@ -16,16 +16,13 @@ function parseSelector(selector) {
 
 function EventPathIncludes(event, selector) {
   // https://stackoverflow.com/questions/39245488/event-path-undefined-with-firefox-and-vue-js
-  if (!event || !(event.path || (event.composedPath && event.composedPath())))
-    return false
+  if (!event || !(event.path || (event.composedPath && event.composedPath()))) return false
 
   const selectorDetails = parseSelector(selector)
-  return (event.path || (event.composedPath && event.composedPath())).some(
-    el => {
-      if (!el[selectorDetails.key]) return false
-      return el[selectorDetails.key].includes(selectorDetails.val)
-    }
-  )
+  return (event.path || (event.composedPath && event.composedPath())).some(el => {
+    if (!el[selectorDetails.key]) return false
+    return el[selectorDetails.key].includes(selectorDetails.val)
+  })
 }
 
 export { EventPathIncludes }

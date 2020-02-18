@@ -29,9 +29,9 @@
     },
     {
       "uuid": "5a2192a0-0051-46a1-85e7-17245ba24f55",
-      "title": "Applications",
+      "title": "Router",
       "type": "system",
-      "permalink": "/apps/users/applications"
+      "permalink": "/apps/router"
     }
   ],
   "organizations": {
@@ -92,7 +92,7 @@
   },
   "orders": {
     "2ecc3de7-6609-4785-9b75-3f8c631c3fa4": {
-      "uuid": "2ecc3de7-6609-4785-9b75-3f8c631c3fa4",
+      "id": "2ecc3de7-6609-4785-9b75-3f8c631c3fa4",
       "destination_address": "adb13c41-0f6a-40bd-b49e-bd65e572c5f6"
     },
     "4b0632a9-9cb1-4bf1-b1a3-d2574534a9b2": {

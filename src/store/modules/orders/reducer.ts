@@ -1,9 +1,9 @@
-import { PersonTypes, PersonActionTypes } from './types'
-import { PersonsState } from './models'
+import { OrderTypes, OrderActionTypes } from './types'
+import { OrdersState } from './models'
 
-export { PersonsState }
+export { OrdersState }
 
-const initialState: PersonsState = {
+const initialState: OrdersState = {
   entities: {},
   ids: [],
   fetching: false,
@@ -11,45 +11,45 @@ const initialState: PersonsState = {
   error: null,
 }
 
-export default (state: PersonsState = initialState, action: PersonActionTypes): PersonsState => {
+export default (state: OrdersState = initialState, action: OrderActionTypes): OrdersState => {
   switch (action.type) {
-    case PersonTypes.SELECT:
+    case OrderTypes.SELECT:
       return { ...state, selected: action.uuid }
 
-    case PersonTypes.LIST_FETCH_REQUEST:
+    case OrderTypes.LIST_FETCH_REQUEST:
       return { ...state, fetching: true, error: null }
 
-    case PersonTypes.LIST_FETCH_SUCCESS:
+    case OrderTypes.LIST_FETCH_SUCCESS:
       return {
         ...state,
         fetching: false,
         entities: {
           ...state.entities,
-          ...action.persons.reduce((map, person) => {
-            map[person.uuid] = person
+          ...action.orders.reduce((map, order) => {
+            map[order.uuid] = order
             return map
           }, {}),
         },
-        ids: action.persons.map(person => person.uuid),
+        ids: action.orders.map(order => order.uuid),
       }
 
-    case PersonTypes.LIST_FETCH_FAILURE:
+    case OrderTypes.LIST_FETCH_FAILURE:
       return { ...state, fetching: false, error: action.error }
 
-    case PersonTypes.FETCH_REQUEST:
+    case OrderTypes.FETCH_REQUEST:
       return { ...state, fetching: true, error: null }
 
-    case PersonTypes.FETCH_SUCCESS:
+    case OrderTypes.FETCH_SUCCESS:
       return {
         ...state,
         fetching: false,
         entities: {
           ...state.entities,
-          [action.person.uuid]: action.person,
+          [action.order.uuid]: action.order,
         },
       }
 
-    case PersonTypes.FETCH_FAILURE:
+    case OrderTypes.FETCH_FAILURE:
       return { ...state, fetching: false, error: action.error }
 
     default:

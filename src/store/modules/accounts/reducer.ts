@@ -1,6 +1,8 @@
 import { AccountTypes, AccountActionTypes } from './types'
 import { AccountsState } from './models'
 
+export { AccountsState }
+
 const initialState: AccountsState = {
   entities: {},
   ids: [],

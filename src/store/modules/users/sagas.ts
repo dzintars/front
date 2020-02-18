@@ -3,12 +3,6 @@ import { UserTypes, UserActions } from './actions'
 import { UserSelectors } from './selectors'
 import { User } from './model'
 
-export default [selectUserListener, fetchUserListListener, fetchUserListener]
-
-function* selectUserListener() {
-  yield takeLatest(UserTypes.USER_SELECT, selectUserSaga)
-}
-
 function* selectUserSaga(action: ReturnType<typeof UserActions.selectUser>) {
   const { id } = action.payload
   const shouldFetch = yield select(UserSelectors.shouldFetch)
@@ -17,13 +11,18 @@ function* selectUserSaga(action: ReturnType<typeof UserActions.selectUser>) {
   }
 }
 
-function* fetchUserListListener() {
-  yield takeLatest(UserTypes.USER_LIST_FETCH, fetchUserListSaga)
+function* selectUserListener() {
+  yield takeLatest(UserTypes.USER_SELECT, selectUserSaga)
 }
 
-function* fetchUserListSaga(
-  action: ReturnType<typeof UserActions.fetchUserList>
-) {
+export async function fetchUsers() {
+  const url = `${window.MyApp.api}/users`
+  const resp = await fetch(url)
+  const json = await resp.json()
+  return json as User[]
+}
+
+function* fetchUserListSaga(action: ReturnType<typeof UserActions.fetchUserList>) {
   yield put(UserActions.fetchUserListRequest())
   try {
     const users = yield call(fetchUsers)
@@ -34,8 +33,15 @@ function* fetchUserListSaga(
   }
 }
 
-function* fetchUserListener() {
-  yield takeLatest(UserTypes.USER_FETCH, fetchUserSaga)
+function* fetchUserListListener() {
+  yield takeLatest(UserTypes.USER_LIST_FETCH, fetchUserListSaga)
+}
+
+export async function fetchUser(id: number) {
+  const url = `${window.MyApp.api}/users/${id}`
+  const resp = await fetch(url)
+  const json = await resp.json()
+  return json as User
 }
 
 function* fetchUserSaga(action: ReturnType<typeof UserActions.fetchUser>) {
@@ -51,16 +57,8 @@ function* fetchUserSaga(action: ReturnType<typeof UserActions.fetchUser>) {
   }
 }
 
-export async function fetchUsers() {
-  const url = `${window.MyApp.api}/users`
-  const resp = await fetch(url)
-  const json = await resp.json()
-  return <User[]>json
+function* fetchUserListener() {
+  yield takeLatest(UserTypes.USER_FETCH, fetchUserSaga)
 }
 
-export async function fetchUser(id: number) {
-  const url = `${window.MyApp.api}/users/${id}`
-  const resp = await fetch(url)
-  const json = await resp.json()
-  return <User>json
-}
+export default [selectUserListener, fetchUserListListener, fetchUserListener]

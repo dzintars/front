@@ -3,6 +3,7 @@ import { connect } from '../../../utils/connect'
 import { store, RootState, LauncherSelectors } from '../../../store'
 import template from './template'
 import style from './style'
+// import { EventPathIncludes } from '../../../utils'
 
 @customElement('system-shell' as any)
 export class SystemShellElement extends connect(store, LitElement) {
@@ -41,5 +42,11 @@ export class SystemShellElement extends connect(store, LitElement) {
     document.addEventListener('launcher-click', function(e) {
       console.log('launcher-click received', e)
     })
+    // this.addEventListener('click', function(e: any) {
+    //   if (EventPathIncludes(e, '#main-launcher')) {
+    //     console.log('Regular click received', e)
+    //   }
+    //   console.log('Click received', e)
+    // })
   }
 }

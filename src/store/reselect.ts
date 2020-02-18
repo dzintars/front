@@ -6,6 +6,7 @@ import { RoutingSelectors } from './modules/routing'
 import { LauncherSelectors } from './modules/launcher'
 import { UserSelectors } from './modules/users'
 import { ApplicationSelectors } from './modules/applications'
+import { OrganizationSelectors } from './modules/organizations'
 
 export const startReselect = (store: Store) => {
   ReselectTools.getStateWith(() => store.getState())
@@ -14,4 +15,5 @@ export const startReselect = (store: Store) => {
   ReselectTools.registerSelectors(LauncherSelectors)
   ReselectTools.registerSelectors(UserSelectors)
   ReselectTools.registerSelectors(ApplicationSelectors)
+  ReselectTools.registerSelectors(OrganizationSelectors)
 }

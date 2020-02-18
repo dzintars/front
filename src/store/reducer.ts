@@ -4,12 +4,11 @@ import { combineReducers } from 'redux'
 import route, { RoutingState } from './modules/routing/reducer'
 import launcher, { LauncherState } from './modules/launcher/reducer'
 import users, { UserState } from './modules/users/reducer'
-import applications from './modules/applications/reducer'
-import { ApplicationsState } from './modules/applications/models'
-import persons from './modules/persons/reducer'
-import { PersonsState } from './modules/persons/models'
-import accounts from './modules/accounts/reducer'
-import { AccountsState } from './modules/accounts/models'
+import applications, { ApplicationsState } from './modules/applications/reducer'
+import persons, { PersonsState } from './modules/persons/reducer'
+import accounts, { AccountsState } from './modules/accounts/reducer'
+import organizations, { OrganizationsState } from './modules/organizations/reducer'
+import orders, { OrdersState } from './modules/orders/reducer'
 
 export interface RootState {
   // HYGEN.IO: INJECT STATE HERE
@@ -19,6 +18,8 @@ export interface RootState {
   applications: ApplicationsState
   persons: PersonsState
   accounts: AccountsState
+  organizations: OrganizationsState
+  orders: OrdersState
 }
 
 export const rootReducer = combineReducers<RootState>({
@@ -29,4 +30,6 @@ export const rootReducer = combineReducers<RootState>({
   applications,
   persons,
   accounts,
+  organizations,
+  orders,
 })

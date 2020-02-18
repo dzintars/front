@@ -60,7 +60,7 @@
     "@types/webpack-merge": "^4.1.5",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
-    "@yarnpkg/pnpify": "^2.0.0-rc.17",
+    "@yarnpkg/pnpify": "^2.0.0-rc.18",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
