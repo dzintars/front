@@ -17,6 +17,7 @@ export enum ApplicationTypes {
 interface Select {
   readonly type: ApplicationTypes.SELECT
   readonly uuid: string
+  readonly meta: any
 }
 interface ListFetch {
   readonly type: ApplicationTypes.LIST_FETCH

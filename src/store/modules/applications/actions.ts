@@ -4,6 +4,7 @@ import { Application } from './models'
 export const selectApplication = (uuid: string): ApplicationActionTypes => ({
   type: ApplicationTypes.SELECT,
   uuid,
+  meta: { websocket: true },
 })
 
 export const fetchApplicationList = (): ApplicationActionTypes => ({

@@ -12,6 +12,7 @@ import {
   hideLauncher,
   launcherShown,
   launcherHidden,
+  selectApplication,
 } from '../../../store'
 import template from './template'
 import style from './style'
@@ -21,6 +22,8 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Boolean, reflect: true }) isVisible: boolean = false
   @property({ type: Object }) wrapperRef: any = this.setWrapperRef.bind(this)
   @property({ type: Array }) applications: Application[]
+
+  // private socket = new WebSocket('ws://localhost:8080/ws')
 
   public static styles = [style]
 
@@ -56,13 +59,28 @@ export class MainLauncherElement extends connect(store, LitElement) {
   connectedCallback(): void {
     super.connectedCallback()
     document.addEventListener('mousedown', this.handleClickOutside)
-    store.dispatch(launcherShown())
+    // store.dispatch(launcherShown())
+    // this.socket.onopen = () => {
+    //   console.log('Connected')
+    //   this.socket.send('Hello from client')
+    // }
+    // this.socket.onclose = e => {
+    //   console.log('Socket closed', e)
+    // }
+    // this.socket.onerror = e => {
+    //   console.log('Socket error:', e)
+    // }
+    // this.socket.onmessage = m => {
+    //   console.log('Message received', m)
+    // }
   }
 
   disconnectedCallback(): void {
     super.disconnectedCallback()
     document.removeEventListener('mousedown', this.handleClickOutside)
     store.dispatch(launcherHidden())
+    // console.log('Disconnected')
+    // this.socket.close()
   }
 
   setWrapperRef(node): void {
@@ -77,6 +95,9 @@ export class MainLauncherElement extends connect(store, LitElement) {
 
   toggleLauncher(): void {
     store.dispatch(toggleLauncher())
+  }
+  sendWs(): void {
+    store.dispatch(selectApplication('10578886-1033-4d2c-a8df-65452c62573b'))
   }
 }
 

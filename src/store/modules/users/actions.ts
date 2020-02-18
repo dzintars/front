@@ -35,7 +35,7 @@ export const UserActions = {
 
   fetchUserSuccess: (user: User) =>
     createAction(UserTypes.USER_FETCH_SUCCESS, { user }),
-    
+
   fetchUserFailure: (id: number, error: Error) =>
     createAction(UserTypes.USER_FETCH_FAILURE, {
       id,

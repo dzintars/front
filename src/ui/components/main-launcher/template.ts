@@ -13,7 +13,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
         this.applications,
         app => app.uuid,
         app => html`
-          <li><a href=${app.permalink}>${app.title}</a></li>
+          <li><a href=${app.permalink} @click=${this.sendWs}>${app.title}</a></li>
         `
       )}
     </ul>
