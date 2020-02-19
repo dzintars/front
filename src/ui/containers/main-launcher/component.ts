@@ -8,10 +8,10 @@ import {
   RoutingActions,
   Application,
   ApplicationSelectors,
-  LauncherSelectors,
+  UiSelectors,
   toggleLauncher,
   hideLauncher,
-  launcherShown,
+  launcherDisplayed,
   launcherHidden,
   selectApplication,
 } from '../../../store'
@@ -27,7 +27,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   mapState(state: RootState) {
     return {
       applications: ApplicationSelectors.applications(state),
-      isVisible: LauncherSelectors.getVisibility(state),
+      isVisible: UiSelectors.getLauncherVisibility(state),
     }
   }
 
@@ -35,7 +35,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   mapEvents() {
     return {
       // 'my-component-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
-      'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key)
+      'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
     }
   }
 
@@ -60,7 +60,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   connectedCallback(): void {
     super.connectedCallback()
     document.addEventListener('mousedown', this.handleClickOutside)
-    store.dispatch(launcherShown())
+    store.dispatch(launcherDisplayed())
   }
 
   disconnectedCallback(): void {

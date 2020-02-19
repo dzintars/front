@@ -1,6 +1,6 @@
 import { LitElement, customElement, property, TemplateResult } from 'lit-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, LauncherSelectors } from '../../../store'
+import { store, RootState, UiSelectors } from '../../../store'
 import template from './template'
 import style from './style'
 // import { EventPathIncludes } from '../../../utils'
@@ -15,7 +15,7 @@ export class SystemShellElement extends connect(store, LitElement) {
 
   mapState(state: RootState) {
     return {
-      isLauncherVisible: LauncherSelectors.getVisibility(state),
+      isLauncherVisible: UiSelectors.getLauncherVisibility(state),
     }
   }
 
