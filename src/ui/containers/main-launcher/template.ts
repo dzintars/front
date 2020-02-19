@@ -8,16 +8,20 @@ import '../../components/ui-launcher'
 export default function template(this: MainLauncherElement): TemplateResult {
   return html`
     <ui-launcher>
-      <button slot="main" @click=${this.toggleLauncher} title="Open Launcher">
-        ${Grid('black')}
-      </button>
-      ${repeat(
-        this.applications,
-        app => app.uuid,
-        app => html`
-          <application-shortcut  slot="main" .key=${app.permalink} .title=${app.title}></application-shortcut>
-        `
-      )}
+      <nav slot="main">
+        <button @click=${this.toggleLauncher} title="Open Launcher">
+          ${Grid('black')}
+        </button>
+      </nav>
+      <section slot="main">
+        ${repeat(
+          this.applications,
+          app => app.uuid,
+          app => html`
+            <application-shortcut slot="main" .key=${app.permalink} .title=${app.title}></application-shortcut>
+          `
+        )}
+      </section>
     </ui-launcher>
   `
 }

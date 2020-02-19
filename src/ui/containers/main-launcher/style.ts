@@ -18,6 +18,12 @@ export default css`
     z-index: 2;
   }
 
+  section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   button {
     display: flex;
     flex-direction: row;

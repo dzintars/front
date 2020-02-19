@@ -3,6 +3,6 @@ import { ApplicationShortcutElement } from './component'
 
 export default function template(this: ApplicationShortcutElement): TemplateResult {
   return html`
-    <p>${this.title}</p>
+    ${this.title}
   `
 }

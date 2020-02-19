@@ -6,7 +6,6 @@ export default css`
   }
   :host {
     display: block;
-    padding: 1rem;
     box-sizing: border-box;
     border: 1px solid var(--color-gray-40);
     border-radius: 6px;
