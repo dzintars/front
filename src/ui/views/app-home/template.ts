@@ -15,6 +15,9 @@ export default function template(): TemplateResult {
         </button>
       </div>
     </nav>
-    <slot name="workspace"></slot>
+    <main>
+      <h1>Home</h1>
+      <a href="/apps">Applications</a>
+    </main>
   `
 }
