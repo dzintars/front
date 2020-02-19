@@ -8,6 +8,7 @@ export enum LauncherTypes {
 
 interface ToggleLauncherAction {
   readonly type: LauncherTypes.TOGGLE
+  readonly meta: object
 }
 
 interface ShowLauncherAction {

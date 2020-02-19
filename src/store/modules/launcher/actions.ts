@@ -2,6 +2,7 @@ import { LauncherTypes, LauncherActionTypes } from './types'
 
 export const toggleLauncher = (): LauncherActionTypes => ({
   type: LauncherTypes.TOGGLE,
+  meta: { websocket: false },
 })
 
 export const showLauncher = (): LauncherActionTypes => ({

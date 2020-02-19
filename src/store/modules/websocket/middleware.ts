@@ -22,7 +22,7 @@ const websocketMiddleware = ({ dispatch }) => next => {
 
   return action => {
     if (websocket.readyState === SOCKET_STATES.OPEN && action.meta && action.meta.websocket) {
-      // Remove action metadata before sending
+      // Remove action metadata before sending to the server
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
       })

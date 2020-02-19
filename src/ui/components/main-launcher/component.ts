@@ -1,10 +1,11 @@
-import { LitElement, customElement, property, TemplateResult } from 'lit-element'
+import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
 import { EventPathIncludes } from '../../../utils'
 import {
   store,
   RootState,
+  RoutingActions,
   Application,
   ApplicationSelectors,
   LauncherSelectors,
@@ -23,18 +24,18 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Object }) wrapperRef: any = this.setWrapperRef.bind(this)
   @property({ type: Array }) applications: Application[]
 
-  // private socket = new WebSocket('ws://localhost:8080/ws')
-
-  public static styles = [style]
-
-  protected render(): TemplateResult {
-    return template.call(this)
-  }
-
   mapState(state: RootState) {
     return {
       applications: ApplicationSelectors.applications(state),
       isVisible: LauncherSelectors.getVisibility(state),
+    }
+  }
+
+  // Intercept custom events from child components and call Redux action (Connect lib)
+  mapEvents() {
+    return {
+      // 'my-component-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
+      'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
     }
   }
 
@@ -59,28 +60,13 @@ export class MainLauncherElement extends connect(store, LitElement) {
   connectedCallback(): void {
     super.connectedCallback()
     document.addEventListener('mousedown', this.handleClickOutside)
-    // store.dispatch(launcherShown())
-    // this.socket.onopen = () => {
-    //   console.log('Connected')
-    //   this.socket.send('Hello from client')
-    // }
-    // this.socket.onclose = e => {
-    //   console.log('Socket closed', e)
-    // }
-    // this.socket.onerror = e => {
-    //   console.log('Socket error:', e)
-    // }
-    // this.socket.onmessage = m => {
-    //   console.log('Message received', m)
-    // }
+    store.dispatch(launcherShown())
   }
 
   disconnectedCallback(): void {
     super.disconnectedCallback()
     document.removeEventListener('mousedown', this.handleClickOutside)
     store.dispatch(launcherHidden())
-    // console.log('Disconnected')
-    // this.socket.close()
   }
 
   setWrapperRef(node): void {
@@ -98,6 +84,14 @@ export class MainLauncherElement extends connect(store, LitElement) {
   }
   sendWs(): void {
     store.dispatch(selectApplication('10578886-1033-4d2c-a8df-65452c62573b'))
+  }
+
+  protected render(): TemplateResult {
+    return template.call(this)
+  }
+
+  public static get styles(): CSSResultArray {
+    return [style]
   }
 }
 

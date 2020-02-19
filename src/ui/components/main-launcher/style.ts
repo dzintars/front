@@ -18,13 +18,7 @@ export default css`
   :host([hidden]) {
     display: none;
   }
-  a {
-    color: var(--color-gray-210);
-    padding-left: 10px;
-  }
-  p {
-    margin: 0;
-  }
+
   button {
     display: flex;
     flex-direction: row;
@@ -49,5 +43,9 @@ export default css`
   }
   svg .primary {
     stroke: red;
+  }
+  application-shortcut {
+    margin: 1rem;
+    width: 200px;
   }
 `
