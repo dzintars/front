@@ -15,6 +15,7 @@ export class UserDetailElement extends connect(store, LitElement) {
 
   clicked(e: Event) {
     this.user
+    console.log('this')
   }
 
   render() {

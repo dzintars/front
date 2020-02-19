@@ -2,21 +2,20 @@ import { css } from 'lit-element'
 
 export default css`
   :host {
+    display: block;
+  }
+  :host([hidden]) {
+    display: none;
+  }
+
+  ui-launcher {
     position: absolute;
     display: flex;
     flex-direction: column;
     background: var(--color-gray-20);
-    /* border: 10px solid var(--color-dodgerblue-main); */
-    color: var(--color-gray-210);
-    margin: 0;
-    box-shadow: var(--shadow-64);
-    box-sizing: border-box;
     height: 100%;
     width: 30%;
     z-index: 2;
-  }
-  :host([hidden]) {
-    display: none;
   }
 
   button {

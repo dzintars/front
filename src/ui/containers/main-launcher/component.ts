@@ -35,7 +35,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   mapEvents() {
     return {
       // 'my-component-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
-      'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
+      'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key)
     }
   }
 
