@@ -2,29 +2,28 @@ import { css } from 'lit-element'
 
 export default css`
   :host {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background: var(--color-gray-20);
-    /* border: 10px solid var(--color-dodgerblue-main); */
-    color: var(--color-gray-210);
-    margin: 0;
-    box-shadow: var(--shadow-64);
-    box-sizing: border-box;
-    height: 100%;
-    width: 30%;
-    z-index: 2;
+    display: block;
   }
   :host([hidden]) {
     display: none;
   }
-  a {
-    color: var(--color-gray-210);
-    padding-left: 10px;
+
+  ui-launcher {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-gray-20);
+    height: 100%;
+    width: 30%;
+    z-index: 2;
   }
-  p {
-    margin: 0;
+
+  section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+
   button {
     display: flex;
     flex-direction: row;
@@ -49,5 +48,9 @@ export default css`
   }
   svg .primary {
     stroke: red;
+  }
+  application-shortcut {
+    margin: 1rem;
+    width: 200px;
   }
 `

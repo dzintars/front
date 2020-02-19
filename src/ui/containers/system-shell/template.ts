@@ -6,7 +6,7 @@ import '../../views/app-users'
 import '../../views/app-signin'
 import '../../views/app-signup'
 import '../../views/app-forgot-password'
-import '../../components/main-launcher'
+import '../../containers/main-launcher'
 import '../system-router'
 
 export default function template(this: SystemShellElement): TemplateResult {

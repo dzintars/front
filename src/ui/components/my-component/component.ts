@@ -19,7 +19,7 @@ export class MyComponentElement extends LitElement {
       },
     })
     this.dispatchEvent(evt)
-    this.focus()
+    // this.focus()
   }
 
   // onHostClick(): void {
