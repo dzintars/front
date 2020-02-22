@@ -20,3 +20,7 @@ export const launcherDisplayed = (): UiActionTypes => ({
 export const launcherHidden = (): UiActionTypes => ({
   type: UiTypes.LAUNCHER_HIDDEN,
 })
+
+export const displayAccountWidget = (): UiActionTypes => ({
+  type: UiTypes.ACCOUNT_WIDGET_DISPLAY,
+})

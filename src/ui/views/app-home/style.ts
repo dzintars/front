@@ -32,7 +32,8 @@ export default css`
 
   .main-area {
     flex: 1;
-    justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
   }
 
   .logo {
@@ -44,6 +45,14 @@ export default css`
     height: var(--size-sl);
     width: auto;
     border: none;
+  }
+
+  ul {
+    text-align: center;
+  }
+  ul li {
+    display: inline-block;
+    margin-right: 0.5rem;
   }
 
   .btn {
@@ -78,5 +87,11 @@ export default css`
 
   main {
     padding: 0 4rem;
+  }
+
+  overlay-agent {
+    height: 100%;
+    width: 100%;
+    position: absolute;
   }
 `

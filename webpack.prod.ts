@@ -1,12 +1,12 @@
-import path from 'path'
 import webpack from 'webpack'
+import common from './webpack.common'
+import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import merge from 'webpack-merge'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
-import common from './webpack.common'
 //
 const config: webpack.Configuration = merge(common, {
   mode: 'production',

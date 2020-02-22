@@ -1,8 +1,8 @@
-import path from 'path'
 import webpack from 'webpack'
+import common from './webpack.common'
+import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import merge from 'webpack-merge'
-import common from './webpack.common'
 
 const config: webpack.Configuration = merge(common, {
   mode: 'development',
@@ -15,6 +15,7 @@ const config: webpack.Configuration = merge(common, {
     new HtmlWebpackPlugin({
       template: './src/template.html',
       // template: path.resolve(__dirname, 'src', 'template.html'),
+      favicon: './src/ui/assets/favicon.ico',
       filename: './index.html',
     }),
   ],
@@ -30,21 +31,30 @@ const config: webpack.Configuration = merge(common, {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css|\.s(c|a)ss$/,
         use: [
           // Order of the loaders are important!
-          'style-loader', // 3. Inject styles into DOM
-          'css-loader', // 2. Turns CSS into commonjs
-          'sass-loader', // 1. Turns SCSS into CSS
+          { loader: 'style-loader' }, // 3. Inject styles into DOM
+          { loader: 'css-loader', options: { modules: true } }, // 2. Turns CSS into commonjs
+          { loader: 'sass-loader' }, // 1. Turns SCSS into CSS
         ],
+        // include: /src/,
+        // use: [
+        //   { loader: 'style-loader' }, // 3. Inject styles into DOM
+        //   { loader: 'lit-scss-loader', options: { minify: false /* defaults to false */ } },
+        //   { loader: 'css-modules-typescript-loader' }, // to generate a .d.ts module next to the .scss file
+        //   { loader: 'extract-loader' },
+        //   { loader: 'css-loader', options: { modules: false } }, // 2. to convert the resulting CSS to Javascript to be bundled (modules:true to rename CSS classes in output to cryptic identifiers, except if wrapped in a :global(...) pseudo class)
+        //   { loader: 'sass-loader', options: { sourceMap: true } }, // 1. Turns SCSS into CSS
+        // ],
       },
       {
         test: /\.(svg|png|jpg|gif)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash].[ext]',
             outputPath: '/img',
+            name: '[name].[hash].[ext]',
           },
         },
       },

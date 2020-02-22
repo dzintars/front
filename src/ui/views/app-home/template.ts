@@ -8,6 +8,13 @@ export default function template(): TemplateResult {
         <div class="logo">
           ${DzintarsDev()}
         </div>
+        <ul>
+          <li>Home</li>
+          <li>Solutions</li>
+          <li>Support</li>
+          <li>Resources</li>
+          <li>About Us</li>
+        </ul>
       </div>
       <div class="actions-area">
         <button class="btn" title="Sign In">
