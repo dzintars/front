@@ -5,6 +5,7 @@ export { UiState }
 
 const initialState: UiState = {
   isLauncherDisplayed: false,
+  isAccountWidgetDisplayed: false,
 }
 
 export default (state: UiState = initialState, action: UiActionTypes): UiState => {
@@ -22,6 +23,9 @@ export default (state: UiState = initialState, action: UiActionTypes): UiState =
 
     case UiTypes.LAUNCHER_HIDDEN:
       return { ...state, isLauncherDisplayed: false }
+
+    case UiTypes.ACCOUNT_WIDGET_DISPLAY:
+      return { ...state, isAccountWidgetDisplayed: true }
 
     default:
       return state

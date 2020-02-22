@@ -1,4 +1,4 @@
-import { LitElement, customElement, property, TemplateResult } from 'lit-element'
+import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, UiSelectors } from '../../../store'
 import template from './template'
@@ -11,7 +11,11 @@ export class SystemShellElement extends connect(store, LitElement) {
   protected render(): TemplateResult {
     return template.call(this)
   }
-  public static styles = [style]
+  // public static styles = [style]
+
+  public static get styles(): CSSResultArray {
+    return [style]
+  }
 
   mapState(state: RootState) {
     return {

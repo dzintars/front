@@ -4,6 +4,7 @@ export enum UiTypes {
   LAUNCHER_HIDE = 'UI_LAUNCHER_HIDE',
   LAUNCHER_DISPLAYED = 'UI_LAUNCHER_DISPLAYED',
   LAUNCHER_HIDDEN = 'UI_LAUNCHER_HIDDEN',
+  ACCOUNT_WIDGET_DISPLAY = 'UI_ACCOUNT_WIDGET_DISPLAY',
 }
 
 interface ToggleLauncherAction {
@@ -27,9 +28,14 @@ interface LauncherHiddenAction {
   readonly type: UiTypes.LAUNCHER_HIDDEN
 }
 
+interface DisplayAccountWidgetAction {
+  readonly type: UiTypes.ACCOUNT_WIDGET_DISPLAY
+}
+
 export type UiActionTypes =
   | ToggleLauncherAction
   | ShowLauncherAction
   | HideLauncherAction
   | LauncherDisplayedAction
   | LauncherHiddenAction
+  | DisplayAccountWidgetAction

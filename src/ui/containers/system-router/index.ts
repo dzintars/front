@@ -26,7 +26,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<app-home><h1 slot="workspace">Home</h1></app-home>`,
+      action: () => `<app-home></app-home>`,
     },
     {
       path: '/apps',
