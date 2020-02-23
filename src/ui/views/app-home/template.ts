@@ -1,7 +1,9 @@
 import { html, TemplateResult } from 'lit-element'
+import { AppHomeElement } from './component'
 import { DzintarsDev, User } from '../../assets/svg'
+import '../../containers/account-widget'
 
-export default function template(): TemplateResult {
+export default function template(this: AppHomeElement): TemplateResult {
   return html`
     <nav>
       <div class="main-area">
@@ -17,14 +19,21 @@ export default function template(): TemplateResult {
         </ul>
       </div>
       <div class="actions-area">
-        <button class="btn" title="Sign In">
+        <button class="btn" title="Sign In" @click=${this.toggleAccountWidget}>
           ${User()}
         </button>
       </div>
     </nav>
     <main>
-      <h1>Home</h1>
-      <a href="/apps">Applications</a>
+      <div class="workspace">
+        <h1>Home</h1>
+        <a href="/apps">Applications</a>
+      </div>
+      ${this.isActionWidgetDisplayed
+        ? html`
+            <account-widget>Test</account-widget>
+          `
+        : ``}
     </main>
   `
 }

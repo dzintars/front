@@ -4,6 +4,7 @@ export default css`
   :host([hidden]) {
     display: none;
   }
+
   :host {
     height: 100%;
     min-height: 100%;
@@ -15,6 +16,7 @@ export default css`
     /* overflow: hidden; */
     /* background: var(--color-gainsboro-10l); */
   }
+
   main-taskbar {
     height: var(--size-sl, 48px);
     min-height: var(--size-sl, 48px);
@@ -49,10 +51,22 @@ export default css`
 
   ul {
     text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
   }
+
   ul li {
     display: inline-block;
     margin-right: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 3px;
+  }
+
+  ul li:hover {
+    background-color: var(--color-gray-20, dodgerblue);
+    padding: 0.4rem 0.6rem;
+    cursor: pointer;
   }
 
   .btn {
@@ -86,12 +100,24 @@ export default css`
   }
 
   main {
-    padding: 0 4rem;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
   }
 
-  overlay-agent {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  .workspace {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem;
+    /* border: 1px solid dodgerblue; */
+  }
+
+  account-widget {
+    position: fixed;
+    right: 1rem;
+    box-shadow: var(--shadow-16);
+    height: 400px;
+    width: 300px;
   }
 `

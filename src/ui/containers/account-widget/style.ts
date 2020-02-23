@@ -9,12 +9,21 @@ export default css`
     box-sizing: border-box;
     border: 1px solid var(--color-gray-40);
     border-radius: 6px;
-    background: var(--color-gray-30);
+    background: var(--color-white);
     box-shadow: var(--shadow-4);
+    padding: 1rem;
   }
 
-  :host(:hover) {
-    background-color: var(--color-gray-40);
-    box-shadow: var(--shadow-16);
+  ui-card {
+    height: 3rem;
+  }
+
+  ui-card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    height: 100%;
+    width: 100%;
   }
 `

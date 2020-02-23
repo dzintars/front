@@ -8,14 +8,6 @@ import style from './style'
 @customElement('system-shell' as any)
 export class SystemShellElement extends connect(store, LitElement) {
   @property({ type: Boolean }) isLauncherVisible: boolean = false
-  protected render(): TemplateResult {
-    return template.call(this)
-  }
-  // public static styles = [style]
-
-  public static get styles(): CSSResultArray {
-    return [style]
-  }
 
   mapState(state: RootState) {
     return {
@@ -33,7 +25,7 @@ export class SystemShellElement extends connect(store, LitElement) {
   //   }
   // }
 
-  connectedCallback() {
+  connectedCallback(): void {
     super.connectedCallback()
     // https://stackoverflow.com/a/37559790/6651080
     document.addEventListener('keydown', function(e) {
@@ -52,5 +44,13 @@ export class SystemShellElement extends connect(store, LitElement) {
     //   }
     //   console.log('Click received', e)
     // })
+  }
+
+  protected render(): TemplateResult {
+    return template.call(this)
+  }
+
+  public static get styles(): CSSResultArray {
+    return [style]
   }
 }
