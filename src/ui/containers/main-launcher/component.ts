@@ -82,6 +82,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   toggleLauncher(): void {
     store.dispatch(toggleLauncher())
   }
+  
   sendWs(): void {
     store.dispatch(selectApplication('10578886-1033-4d2c-a8df-65452c62573b'))
   }

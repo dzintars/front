@@ -7,3 +7,5 @@ export * from './modules/websocket'
 
 export * from './store'
 export * from './reducer'
+
+export { connect } from '../utils/connect'
