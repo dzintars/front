@@ -1,6 +1,6 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, UiSelectors } from '../../../store'
+import { store, RootState, UiSelectors, hideLauncher } from '../../../store'
 import template from './template'
 import style from './style'
 // import { EventPathIncludes } from '../../../utils'
@@ -12,6 +12,11 @@ export class SystemShellElement extends connect(store, LitElement) {
   mapState(state: RootState) {
     return {
       isLauncherVisible: UiSelectors.getLauncherVisibility(state),
+    }
+  }
+  mapEvents() {
+    return {
+      'application-shortcut-click': (e: CustomEvent) => hideLauncher(),
     }
   }
 

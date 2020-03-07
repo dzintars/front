@@ -9,6 +9,8 @@ const SOCKET_STATES = {
   CLOSED: 3,
 }
 
+const user = 'dzintars'
+
 const websocketMiddleware = ({ dispatch }) => next => {
   const websocket = new WebSocket(wsApi)
   Object.assign(websocket, {
@@ -25,6 +27,7 @@ const websocketMiddleware = ({ dispatch }) => next => {
       // Remove action metadata before sending to the server
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
+        user: user,
       })
       websocket.send(JSON.stringify(cleanAction))
     }

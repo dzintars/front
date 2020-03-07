@@ -28,3 +28,18 @@ export const toggleAccountWidget = (): UiActionTypes => ({
 export const displayAccountWidget = (): UiActionTypes => ({
   type: UiTypes.ACCOUNT_WIDGET_DISPLAY,
 })
+export const loadApplication = (): UiActionTypes => ({
+  type: UiTypes.APPLICATION_LOAD,
+})
+export const loadingApplication = (): UiActionTypes => ({
+  type: UiTypes.APPLICATION_LOADING,
+})
+export const loadedApplication = (): UiActionTypes => ({
+  type: UiTypes.APPLICATION_LOADED,
+})
+export const closeApplication = (): UiActionTypes => ({
+  type: UiTypes.APPLICATION_CLOSE,
+})
+export const closedApplication = (): UiActionTypes => ({
+  type: UiTypes.APPLICATION_CLOSED,
+})

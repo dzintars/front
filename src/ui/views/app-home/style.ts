@@ -130,4 +130,15 @@ export default css`
     height: 470px;
     width: 360px;
   }
+  footer {
+    height: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    /* border: 1px solid dodgerblue; */
+  }
+  websocket-status {
+    margin: 0 0.5rem;
+  }
 `

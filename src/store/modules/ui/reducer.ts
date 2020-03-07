@@ -6,6 +6,9 @@ export { UiState }
 const initialState: UiState = {
   isLauncherDisplayed: false,
   isAccountWidgetDisplayed: false,
+  application: {
+    state: false,
+  },
 }
 
 export default (state: UiState = initialState, action: UiActionTypes): UiState => {

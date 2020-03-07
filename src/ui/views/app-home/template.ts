@@ -2,6 +2,7 @@ import { html, TemplateResult } from 'lit-element'
 import { AppHomeElement } from './component'
 import { DzintarsDev, User, Apps } from '../../assets/svg'
 import '../../containers/account-widget'
+import '../../containers/websocket-status'
 
 export default function template(this: AppHomeElement): TemplateResult {
   return html`
@@ -38,5 +39,8 @@ export default function template(this: AppHomeElement): TemplateResult {
         <a href="/apps">Applications</a>
       </div>
     </main>
+    <footer>
+      <websocket-status></websocket-status>
+    </footer>
   `
 }
