@@ -19,15 +19,19 @@ interface ToggleLauncherAction {
 }
 interface ShowLauncherAction {
   readonly type: UiTypes.LAUNCHER_SHOW
+  readonly meta: object
 }
 interface HideLauncherAction {
   readonly type: UiTypes.LAUNCHER_HIDE
+  readonly meta: object
 }
 interface LauncherDisplayedAction {
   readonly type: UiTypes.LAUNCHER_DISPLAYED
+  readonly meta: object
 }
 interface LauncherHiddenAction {
   readonly type: UiTypes.LAUNCHER_HIDDEN
+  readonly meta: object
 }
 interface ToggleAccountWidgetAction {
   readonly type: UiTypes.ACCOUNT_WIDGET_TOGGLE

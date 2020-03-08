@@ -9,7 +9,6 @@ import {
   Application,
   ApplicationSelectors,
   UiSelectors,
-  toggleLauncher,
   hideLauncher,
   launcherDisplayed,
   launcherHidden,
@@ -79,8 +78,8 @@ export class MainLauncherElement extends connect(store, LitElement) {
     }
   }
 
-  toggleLauncher(): void {
-    store.dispatch(toggleLauncher())
+  hideLauncher(): void {
+    store.dispatch(hideLauncher())
   }
 
   sendWs(): void {
