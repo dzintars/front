@@ -20,10 +20,12 @@ interface ToggleLauncherAction {
 interface ShowLauncherAction {
   readonly type: UiTypes.LAUNCHER_SHOW
   readonly meta: object
+  readonly payload: object
 }
 interface HideLauncherAction {
   readonly type: UiTypes.LAUNCHER_HIDE
   readonly meta: object
+  readonly payload: object
 }
 interface LauncherDisplayedAction {
   readonly type: UiTypes.LAUNCHER_DISPLAYED

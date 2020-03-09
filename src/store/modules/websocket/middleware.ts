@@ -43,8 +43,13 @@ const websocketMiddleware = ({ dispatch }) => next => {
       // Remove action metadata before sending to the server
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
-        user: user,
+        // clone original action payload if that exists. Populate payload with global values like stakeholder id
+        payload: {
+          user: user,
+          data: Object.assign({}, action.payload, {}),
+        },
       })
+      console.log(cleanAction)
       websocket.send(JSON.stringify(cleanAction))
     }
     next(action)
