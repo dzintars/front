@@ -1,7 +1,7 @@
 import { LitElement, customElement, property, TemplateResult } from 'lit-element'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, Application, ApplicationSelectors, toggleLauncher } from '../../../store'
+import { store, RootState, Application, ApplicationSelectors, displayLauncher } from '../../../store'
 import template from './template'
 import style from './style'
 
@@ -17,8 +17,8 @@ export class MainTaskbarElement extends connect(store, LitElement) {
     }
   }
 
-  toggleLauncher(): void {
-    store.dispatch(toggleLauncher())
+  showLauncher(): void {
+    store.dispatch(displayLauncher())
   }
 
   onButtonClick(): void {

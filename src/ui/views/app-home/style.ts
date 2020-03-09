@@ -27,9 +27,11 @@ export default css`
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: var(--size-xxl);
+    min-height: var(--size-xxl);
     box-sizing: border-box;
     /* border: 1px solid dodgerblue; */
+    box-shadow: var(--shadow-8);
+    background-color: var(--color-gray-10);
   }
 
   .main-area {
@@ -64,15 +66,19 @@ export default css`
   }
 
   ul li:hover {
-    background-color: var(--color-gray-20, dodgerblue);
+    background-color: var(--color-gray-30, dodgerblue);
     padding: 0.4rem 0.6rem;
     cursor: pointer;
+  }
+
+  .actions {
+    padding: 0 2rem;
   }
 
   .btn {
     height: var(--size-s);
     width: var(--size-s);
-    margin: 0 2rem;
+    margin: 0 0.5rem;
     padding: 0;
     /* color: var(--color-dodgerblue-main); */
     background-color: unset;
@@ -81,15 +87,18 @@ export default css`
     box-shadow: var(--shadow-8);
     outline: unset;
   }
+
   .btn svg {
     width: 100%;
     height: 100%;
     border: none;
   }
+
   .btn svg .main {
     stroke: var(--color-gray-100);
     fill: var(--color-gray-100);
   }
+
   .btn:hover svg .main {
     stroke: var(--color-dodgerblue-main);
     fill: var(--color-dodgerblue-main);
@@ -116,8 +125,20 @@ export default css`
   account-widget {
     position: fixed;
     right: 1rem;
+    top: calc(var(--size-xxl) - 0.5rem);
     box-shadow: var(--shadow-16);
-    height: 400px;
-    width: 300px;
+    height: 470px;
+    width: 360px;
+  }
+  footer {
+    height: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    /* border: 1px solid dodgerblue; */
+  }
+  websocket-status {
+    margin: 0 0.5rem;
   }
 `

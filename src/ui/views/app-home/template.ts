@@ -1,10 +1,16 @@
 import { html, TemplateResult } from 'lit-element'
 import { AppHomeElement } from './component'
-import { DzintarsDev, User } from '../../assets/svg'
+import { DzintarsDev, User, Apps } from '../../assets/svg'
 import '../../containers/account-widget'
+import '../../containers/websocket-status'
 
 export default function template(this: AppHomeElement): TemplateResult {
   return html`
+    ${this.isActionWidgetDisplayed
+      ? html`
+          <account-widget>Test</account-widget>
+        `
+      : ``}
     <nav>
       <div class="main-area">
         <div class="logo">
@@ -18,7 +24,10 @@ export default function template(this: AppHomeElement): TemplateResult {
           <li>About Us</li>
         </ul>
       </div>
-      <div class="actions-area">
+      <div class="actions">
+        <button class="btn" title="Sign In" @click=${this.toggleAccountWidget}>
+          ${Apps()}
+        </button>
         <button class="btn" title="Sign In" @click=${this.toggleAccountWidget}>
           ${User()}
         </button>
@@ -29,11 +38,9 @@ export default function template(this: AppHomeElement): TemplateResult {
         <h1>Home</h1>
         <a href="/apps">Applications</a>
       </div>
-      ${this.isActionWidgetDisplayed
-        ? html`
-            <account-widget>Test</account-widget>
-          `
-        : ``}
     </main>
+    <footer>
+      <websocket-status></websocket-status>
+    </footer>
   `
 }

@@ -9,6 +9,24 @@ const SOCKET_STATES = {
   CLOSED: 3,
 }
 
+function getCookie(cname) {
+  const name = cname + '='
+  const decodedCookie = decodeURIComponent(document.cookie)
+  const ca = decodedCookie.split(';')
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i]
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1)
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length)
+    }
+  }
+  return ''
+}
+
+const user = getCookie('user')
+
 const websocketMiddleware = ({ dispatch }) => next => {
   const websocket = new WebSocket(wsApi)
   Object.assign(websocket, {
@@ -25,7 +43,13 @@ const websocketMiddleware = ({ dispatch }) => next => {
       // Remove action metadata before sending to the server
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
+        // clone original action payload if that exists. Populate payload with global values like stakeholder id
+        payload: {
+          user: user,
+          data: Object.assign({}, action.payload, {}),
+        },
       })
+      console.log(cleanAction)
       websocket.send(JSON.stringify(cleanAction))
     }
     next(action)
