@@ -34,7 +34,6 @@ const websocketMiddleware = ({ dispatch }) => next => {
     onclose: () => dispatch(websocketDisconnected()),
     onerror: error => console.log(`WS Error: ${error.data} `),
     onmessage: event => {
-      console.log(event.data)
       dispatch(JSON.parse(event.data))
     },
   })
@@ -46,6 +45,7 @@ const websocketMiddleware = ({ dispatch }) => next => {
         meta: undefined,
         user: user,
       })
+      // TODO: Make action Type CamelCase
       websocket.send(JSON.stringify(cleanAction))
     }
     next(action)

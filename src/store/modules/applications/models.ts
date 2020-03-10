@@ -11,4 +11,5 @@ export interface ApplicationsState {
   readonly fetching: boolean
   readonly selected: string
   readonly error: Error
+  readonly data: object
 }
