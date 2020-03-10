@@ -17,7 +17,7 @@ export class MainTaskbarElement extends connect(store, LitElement) {
     }
   }
 
-  showLauncher(): void {
+  displayLauncher(): void {
     store.dispatch(displayLauncher())
   }
 

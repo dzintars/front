@@ -1,6 +1,6 @@
 import { websocketConnected, websocketDisconnected } from './actions'
 
-const wsApi = 'ws://localhost:8080/ws'
+const wsApi = 'ws://localhost:8080'
 
 const SOCKET_STATES = {
   CONNECTING: 0,
@@ -34,6 +34,7 @@ const websocketMiddleware = ({ dispatch }) => next => {
     onclose: () => dispatch(websocketDisconnected()),
     onerror: error => console.log(`WS Error: ${error.data} `),
     onmessage: event => {
+      console.log(event.data)
       dispatch(JSON.parse(event.data))
     },
   })
@@ -43,13 +44,8 @@ const websocketMiddleware = ({ dispatch }) => next => {
       // Remove action metadata before sending to the server
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
-        // clone original action payload if that exists. Populate payload with global values like stakeholder id
-        payload: {
-          user: user,
-          data: Object.assign({}, action.payload, {}),
-        },
+        user: user,
       })
-      console.log(cleanAction)
       websocket.send(JSON.stringify(cleanAction))
     }
     next(action)

@@ -6,7 +6,7 @@ export const toggleLauncher = (): UiActionTypes => ({
 })
 
 export const displayLauncher = (): UiActionTypes => ({
-  type: UiTypes.LAUNCHER_SHOW,
+  type: UiTypes.LAUNCHER_DISPLAY,
   meta: { websocket: true },
   payload: { stakeholder: '12345' },
 })
@@ -14,7 +14,7 @@ export const displayLauncher = (): UiActionTypes => ({
 export const hideLauncher = (): UiActionTypes => ({
   type: UiTypes.LAUNCHER_HIDE,
   meta: { websocket: true },
-  payload: { stakeholder: 12345 },
+  payload: { stakeholder: '54322' },
 })
 
 export const launcherDisplayed = (): UiActionTypes => ({

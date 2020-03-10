@@ -16,14 +16,14 @@ export default (state: UiState = initialState, action: UiActionTypes): UiState =
     case UiTypes.LAUNCHER_TOGGLE:
       return { ...state, isLauncherDisplayed: !state.isLauncherDisplayed }
 
-    case UiTypes.LAUNCHER_SHOW:
+    case UiTypes.LAUNCHER_DISPLAY:
+      return { ...state, isLauncherDisplayed: true }
+
+    case UiTypes.LAUNCHER_DISPLAYED:
       return { ...state, isLauncherDisplayed: true }
 
     case UiTypes.LAUNCHER_HIDE:
       return { ...state, isLauncherDisplayed: false }
-
-    case UiTypes.LAUNCHER_DISPLAYED:
-      return { ...state, isLauncherDisplayed: true }
 
     case UiTypes.LAUNCHER_HIDDEN:
       return { ...state, isLauncherDisplayed: false }
