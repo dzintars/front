@@ -12,12 +12,15 @@ export enum ApplicationTypes {
   FETCH_REQUEST = 'APPLICATION_FETCH_REQUEST',
   FETCH_SUCCESS = 'APPLICATION_FETCH_SUCCESS',
   FETCH_FAILURE = 'APPLICATION_FETCH_FAILURE',
+
+  GET = 'APPLICATION_GET',
+  GET_SUCCESS = 'APPLICATION_GET_SUCCESS',
 }
 
 interface Select {
   readonly type: ApplicationTypes.SELECT
   readonly uuid: string
-  readonly meta: any
+  readonly meta: object
 }
 interface ListFetch {
   readonly type: ApplicationTypes.LIST_FETCH
@@ -50,6 +53,14 @@ interface FetchFailure {
   readonly uuid: string
   readonly error: Error
 }
+interface Get {
+  readonly type: ApplicationTypes.GET
+  readonly meta: object
+}
+interface GetSuccess {
+  readonly type: ApplicationTypes.GET_SUCCESS
+  readonly payload: object
+}
 
 export type ApplicationActionTypes =
   | Select
@@ -61,3 +72,5 @@ export type ApplicationActionTypes =
   | FetchRequest
   | FetchSuccess
   | FetchFailure
+  | Get
+  | GetSuccess

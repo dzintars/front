@@ -9,6 +9,7 @@ const initialState: ApplicationsState = {
   fetching: false,
   selected: '',
   error: null,
+  data: {},
 }
 
 export default (state: ApplicationsState = initialState, action: ApplicationActionTypes): ApplicationsState => {
@@ -47,6 +48,11 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
           ...state.entities,
           [action.application.uuid]: action.application,
         },
+      }
+    case ApplicationTypes.GET_SUCCESS:
+      return {
+        ...state,
+        data: action.payload,
       }
 
     case ApplicationTypes.FETCH_FAILURE:
