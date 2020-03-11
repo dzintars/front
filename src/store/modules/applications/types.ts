@@ -56,6 +56,7 @@ interface FetchFailure {
 interface Get {
   readonly type: ApplicationTypes.GET
   readonly meta: object
+  readonly payload: object
 }
 interface GetSuccess {
   readonly type: ApplicationTypes.GET_SUCCESS
