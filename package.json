@@ -27,6 +27,11 @@
     "json:server": "json-server --port 3002 --watch src/store/db.json",
     "wp": "webpack --display-error-details"
   },
+  "dependenciesMeta": {
+    "webpack-dev-server": {
+      "unplugged": true
+    }
+  },
   "dependencies": {
     "history": "^4.10.1",
     "lit-element": "latest",

@@ -1,6 +1,7 @@
 import webpack from 'webpack'
 import common from './webpack.common'
 import path from 'path'
+import fs from 'fs'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import merge from 'webpack-merge'
 
@@ -22,11 +23,20 @@ const config: webpack.Configuration = merge(common, {
   devtool: 'source-map',
   devServer: {
     // https://webpack.js.org/configuration/dev-server/
+    port: 3000, // Can omit this, so port will be picked up randomly from available ports.
+    // open: true, // Open in default browser tab automatically
+    historyApiFallback: true, // Serves index file for any path
     hot: true,
     compress: true,
-    // open: true,
-    port: 3000, // Can omit this, so port will be picked up randomly from available ports.
-    historyApiFallback: true, // Serves index file for any path
+    // https://webpack.js.org/configuration/dev-server/#devserverhttp2
+    http2: true,
+    // https: true,
+    https: {
+      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey1.pem'),
+      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+    },
+    disableHostCheck: true, // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
   },
   module: {
     rules: [

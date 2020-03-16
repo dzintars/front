@@ -49,6 +49,7 @@ export const fetchApplicationFailure = (uuid: string, error: Error): Application
 export const getApplications = (): ApplicationActionTypes => ({
   type: ApplicationTypes.GET,
   meta: { websocket: true },
+  payload: { stakeholder: '54322' },
 })
 
 export const getApplicationsSuccess = (payload: object): ApplicationActionTypes => ({
