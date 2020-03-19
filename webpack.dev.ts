@@ -36,7 +36,8 @@ const config: webpack.Configuration = merge(common, {
       cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
       ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
     },
-    disableHostCheck: true, // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
+    // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
+    disableHostCheck: true,
   },
   module: {
     rules: [

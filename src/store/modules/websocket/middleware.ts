@@ -1,6 +1,6 @@
 import { websocketConnected, websocketDisconnected } from './actions'
 
-const wsApi = 'ws://localhost:8080'
+const wsApi = 'ws://localhost:9090'
 
 const SOCKET_STATES = {
   CONNECTING: 0,
