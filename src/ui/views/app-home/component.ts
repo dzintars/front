@@ -1,5 +1,13 @@
 import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
-import { store, connect, RootState, WebsocketSelectors, UiSelectors, toggleAccountWidget } from '../../../store'
+import {
+  store,
+  connect,
+  RootState,
+  WebsocketSelectors,
+  UiSelectors,
+  toggleAccountWidget,
+  Application,
+} from '../../../store'
 import template from './template'
 import style from './style'
 
@@ -7,6 +15,7 @@ import style from './style'
 export class AppHomeElement extends connect(store, LitElement) {
   @property({ type: Boolean }) isActionWidgetDisplayed: boolean = false
   @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
+  @property({ type: Object }) applications: { [uuid: string]: Application } = {}
 
   mapState(state: RootState) {
     return {

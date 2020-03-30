@@ -1,19 +1,36 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, UiSelectors, hideLauncher } from '../../../store'
+import {
+  store,
+  RootState,
+  WebsocketSelectors,
+  UiSelectors,
+  hideLauncher,
+  getApplications,
+  ApplicationSelectors,
+} from '../../../store'
 import template from './template'
 import style from './style'
 // import { EventPathIncludes } from '../../../utils'
 
 @customElement('system-shell' as any)
 export class SystemShellElement extends connect(store, LitElement) {
+  @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
   @property({ type: Boolean }) isLauncherVisible: boolean = false
+  // @property({ type: Object }) selectedApplication: object = {}
+  @property({ type: String }) selectedApplication: string = 'app-users'
+
+  // @property({ type: Object }) entities: object = {}
 
   mapState(state: RootState) {
     return {
+      websocketState: WebsocketSelectors.state(state),
       isLauncherVisible: UiSelectors.getLauncherVisibility(state),
+      // selectedApplication: ApplicationSelectors.component(state),
+      // entities: ApplicationSelectors.entities(state),
     }
   }
+
   mapEvents() {
     return {
       'application-shortcut-click': (e: CustomEvent) => hideLauncher(),
@@ -37,11 +54,14 @@ export class SystemShellElement extends connect(store, LitElement) {
       if (e.ctrlKey && e.shiftKey && e.keyCode === 80) {
         e.stopPropagation()
         e.preventDefault()
-        console.log(e)
+        // console.log(e)
       }
     })
     document.addEventListener('launcher-click', function(e) {
       console.log('launcher-click received', e)
+    })
+    document.addEventListener('application-shortcut-click', function(e) {
+      console.log('start-application-click received', e)
     })
     // this.addEventListener('click', function(e: any) {
     //   if (EventPathIncludes(e, '#main-launcher')) {

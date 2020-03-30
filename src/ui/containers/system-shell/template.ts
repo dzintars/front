@@ -7,15 +7,27 @@ import '../../views/app-signin'
 import '../../views/app-signup'
 import '../../views/app-forgot-password'
 import '../../containers/main-launcher'
+import '../../containers/app-shell'
 import '../system-router'
 
 export default function template(this: SystemShellElement): TemplateResult {
-  return html`
-    ${this.isLauncherVisible
-      ? html`
-          <main-launcher id="main-launcher"></main-launcher>
-        `
-      : ``}
-    <system-router></system-router>
-  `
+  switch (this.websocketState) {
+    case 'WEBSOCKET_CONNECTING':
+      return html`
+        <div style="background-color: orange;"><p style="color: white;">Connecting...</p></div>
+      `
+    case 'WEBSOCKET_CONNECTED':
+      return html`
+        ${this.isLauncherVisible
+          ? html`
+              <main-launcher id="main-launcher"></main-launcher>
+            `
+          : ``}
+        <app-shell></app-shell>
+      `
+    default:
+      return html`
+        <div style="background-color: red;"><p style="color: white;">Disconnected</p></div>
+      `
+  }
 }

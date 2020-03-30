@@ -5,6 +5,8 @@ import style from './style'
 
 @customElement('app-users')
 export class AppUsersElement extends AppShellElement {
+  @property({ type: String }) componentName: string = 'app-users'
+
   protected render(): TemplateResult {
     return template.call(this) // Don't pass whole "this"
   }

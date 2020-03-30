@@ -1,5 +1,5 @@
 import { ApplicationTypes, ApplicationActionTypes } from './types'
-import { Application } from './models'
+import { Application, ApplicationsX } from './models'
 
 export const selectApplication = (uuid: string): ApplicationActionTypes => ({
   type: ApplicationTypes.SELECT,
@@ -46,13 +46,18 @@ export const fetchApplicationFailure = (uuid: string, error: Error): Application
   error,
 })
 
+export const startApplication = (uuid: string): ApplicationActionTypes => ({
+  type: ApplicationTypes.START,
+  uuid,
+})
+
 export const getApplications = (): ApplicationActionTypes => ({
   type: ApplicationTypes.GET,
   meta: { websocket: true },
   payload: { stakeholder: '54322' },
 })
 
-export const getApplicationsSuccess = (payload: object): ApplicationActionTypes => ({
+export const getApplicationsSuccess = (payload: ApplicationsX): ApplicationActionTypes => ({
   type: ApplicationTypes.GET_SUCCESS,
   payload,
 })

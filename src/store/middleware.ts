@@ -3,4 +3,4 @@ import websocketMiddleware from './modules/websocket/middleware'
 import { sagaMiddleware } from './sagas'
 import { storageMiddleware } from './storage'
 
-export const middleware = [historyMiddleware, sagaMiddleware, storageMiddleware, websocketMiddleware]
+export const middleware = [websocketMiddleware, historyMiddleware, sagaMiddleware, storageMiddleware]

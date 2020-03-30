@@ -18,7 +18,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
           this.applications,
           app => app.uuid,
           app => html`
-            <application-shortcut slot="main" .key=${app.permalink} .title=${app.title}></application-shortcut>
+            <application-shortcut slot="main" .key=${app.uuid} .title=${app.title}></application-shortcut>
           `
         )}
       </section>

@@ -1,4 +1,5 @@
 import { html, TemplateResult } from 'lit-element'
+import { repeat } from 'lit-html/directives/repeat'
 import { AppHomeElement } from './component'
 import { DzintarsDev, User, Apps } from '../../assets/svg'
 import '../../containers/account-widget'
@@ -35,8 +36,15 @@ export default function template(this: AppHomeElement): TemplateResult {
     </nav>
     <main>
       <div class="workspace">
-        <h1>Home</h1>
+        <h1>Main</h1>
         <a href="/apps">Applications</a>
+        ${repeat(
+          Object.keys(this.applications),
+          key =>
+            html`
+              <p>${this.applications[key].title}</p>
+            `
+        )}
       </div>
     </main>
     <footer>

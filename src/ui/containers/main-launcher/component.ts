@@ -12,6 +12,7 @@ import {
   hideLauncher,
   launcherDisplayed,
   launcherHidden,
+  startApplication,
   selectApplication,
 } from '../../../store'
 import template from './template'
@@ -33,8 +34,8 @@ export class MainLauncherElement extends connect(store, LitElement) {
   // Intercept custom events from child components and call Redux action (Connect lib)
   mapEvents() {
     return {
-      // 'my-component-click': (e: CustomEvent) => UserActions.selectUser(e.detail.key),
-      'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
+      'application-shortcut-click': (e: CustomEvent) => startApplication(e.detail.key),
+      // 'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
     }
   }
 

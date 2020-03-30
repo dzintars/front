@@ -29,15 +29,15 @@ const config: webpack.Configuration = merge(common, {
     hot: true,
     compress: true,
     // https://webpack.js.org/configuration/dev-server/#devserverhttp2
-    http2: true,
-    // https: true,
-    https: {
-      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey1.pem'),
-      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
-      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
-    },
-    // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
-    disableHostCheck: true,
+    // http2: true,
+    // // https: true,
+    // https: {
+    //   key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey1.pem'),
+    //   cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+    //   ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+    // },
+    // // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
+    // disableHostCheck: true,
   },
   module: {
     rules: [

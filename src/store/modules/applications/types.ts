@@ -1,4 +1,4 @@
-import { Application } from './models'
+import { Application, ApplicationsX } from './models'
 
 export enum ApplicationTypes {
   SELECT = 'APPLICATION_SELECT',
@@ -12,6 +12,13 @@ export enum ApplicationTypes {
   FETCH_REQUEST = 'APPLICATION_FETCH_REQUEST',
   FETCH_SUCCESS = 'APPLICATION_FETCH_SUCCESS',
   FETCH_FAILURE = 'APPLICATION_FETCH_FAILURE',
+
+  START = 'APPLICATION_START',
+  STARTING = 'APPLICATION_STARTING', // Show the loader while loading the data
+  STARTED = 'APPLICATION_STARTED',
+  STOP = 'APPLICATION_STOP',
+  STOPPED = 'APPLICATION_STOPPED',
+  FAILED = 'APPLICATION_FAILED', // Show the error if any or RBAC restrictions
 
   GET = 'APPLICATION_GET',
   GET_SUCCESS = 'APPLICATION_GET_SUCCESS',
@@ -53,14 +60,36 @@ interface FetchFailure {
   readonly uuid: string
   readonly error: Error
 }
+
+interface StartApplication {
+  readonly type: ApplicationTypes.START
+  readonly uuid: string
+}
+interface StartingApplication {
+  readonly type: ApplicationTypes.STARTING
+}
+interface StartedApplication {
+  readonly type: ApplicationTypes.STARTED
+}
+interface StopApplication {
+  readonly type: ApplicationTypes.STOP
+}
+interface StoppedApplication {
+  readonly type: ApplicationTypes.STOPPED
+}
+interface FailedApplication {
+  readonly type: ApplicationTypes.FAILED
+}
+
 interface Get {
   readonly type: ApplicationTypes.GET
   readonly meta: object
   readonly payload: object
 }
+
 interface GetSuccess {
   readonly type: ApplicationTypes.GET_SUCCESS
-  readonly payload: object
+  readonly payload: ApplicationsX
 }
 
 export type ApplicationActionTypes =
@@ -73,5 +102,11 @@ export type ApplicationActionTypes =
   | FetchRequest
   | FetchSuccess
   | FetchFailure
+  | StartApplication
+  | StartingApplication
+  | StartedApplication
+  | StopApplication
+  | StoppedApplication
+  | FailedApplication
   | Get
   | GetSuccess
