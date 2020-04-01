@@ -1,14 +1,14 @@
 import { html, TemplateResult } from 'lit-element'
 import { SystemShellElement } from './component'
-import '../../views/app-apps'
-import '../../views/app-home'
-import '../../views/app-users'
-import '../../views/app-signin'
-import '../../views/app-signup'
-import '../../views/app-forgot-password'
 import '../../containers/main-launcher'
 import '../../containers/app-shell'
-import '../system-router'
+// import '../../views/app-apps'
+// import '../../views/app-home'
+// import '../../views/app-users'
+// import '../../views/app-signin'
+// import '../../views/app-signup'
+// import '../../views/app-forgot-password'
+// import '../system-router'
 
 export default function template(this: SystemShellElement): TemplateResult {
   switch (this.websocketState) {

@@ -17,17 +17,11 @@ import style from './style'
 export class SystemShellElement extends connect(store, LitElement) {
   @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
   @property({ type: Boolean }) isLauncherVisible: boolean = false
-  // @property({ type: Object }) selectedApplication: object = {}
-  @property({ type: String }) selectedApplication: string = 'app-users'
-
-  // @property({ type: Object }) entities: object = {}
 
   mapState(state: RootState) {
     return {
       websocketState: WebsocketSelectors.state(state),
       isLauncherVisible: UiSelectors.getLauncherVisibility(state),
-      // selectedApplication: ApplicationSelectors.component(state),
-      // entities: ApplicationSelectors.entities(state),
     }
   }
 

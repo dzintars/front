@@ -19,25 +19,36 @@ const config: webpack.Configuration = merge(common, {
       favicon: './src/ui/assets/favicon.ico',
       filename: './index.html',
     }),
+    new webpack.HotModuleReplacementPlugin({
+      // Options...
+    }),
   ],
   devtool: 'source-map',
   devServer: {
     // https://webpack.js.org/configuration/dev-server/
+    host: '0.0.0.0',
     port: 3000, // Can omit this, so port will be picked up randomly from available ports.
     // open: true, // Open in default browser tab automatically
     historyApiFallback: true, // Serves index file for any path
     hot: true,
     compress: true,
     // https://webpack.js.org/configuration/dev-server/#devserverhttp2
-    // http2: true,
-    // // https: true,
-    // https: {
-    //   key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey1.pem'),
-    //   cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
-    //   ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
-    // },
-    // // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
-    // disableHostCheck: true,
+    allowedHosts: ['dev.oswee.com'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
+    http2: true,
+    https: {
+      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey1.pem'),
+      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+    },
+    // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
+    // disableHostCheck: true, // Probably not needed if allowedHosts is used
+    overlay: {
+      warnings: true,
+      errors: true,
+    },
+    sockHost: 'dev.oswee.com',
+    sockPath: '/sockjs-node',
+    sockPort: 443,
   },
   module: {
     rules: [

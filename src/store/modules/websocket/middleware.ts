@@ -1,6 +1,7 @@
 import { websocketConnected, websocketDisconnected } from './actions'
 
-const wsApi = 'ws://localhost:9090'
+// const wsApi = 'ws://localhost:9090'
+const wsApi = 'wss://api.oswee.com'
 
 const SOCKET_STATES = {
   CONNECTING: 0,

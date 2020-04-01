@@ -36,7 +36,7 @@ export default function template(this: AppHomeElement): TemplateResult {
     </nav>
     <main>
       <div class="workspace">
-        <h1>Main</h1>
+        <h1>Main X2</h1>
         <a href="/apps">Applications</a>
         ${repeat(
           Object.keys(this.applications),
