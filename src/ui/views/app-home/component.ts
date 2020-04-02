@@ -7,6 +7,7 @@ import {
   UiSelectors,
   toggleAccountWidget,
   Application,
+  displayLauncher,
 } from '../../../store'
 import template from './template'
 import style from './style'
@@ -22,6 +23,10 @@ export class AppHomeElement extends connect(store, LitElement) {
       websocketState: WebsocketSelectors.state(state),
       isActionWidgetDisplayed: UiSelectors.getAccountWidgetVisibility(state),
     }
+  }
+
+  displayLauncher(): void {
+    store.dispatch(displayLauncher())
   }
 
   toggleAccountWidget(): void {

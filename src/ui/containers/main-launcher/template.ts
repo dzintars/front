@@ -3,7 +3,7 @@ import { MainLauncherElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
 import { Grid } from '../../assets/svg'
 import '../../components/application-shortcut'
-import '../../components/ui-launcher'
+import '../../elements/ui-launcher'
 
 export default function template(this: MainLauncherElement): TemplateResult {
   return html`

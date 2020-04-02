@@ -46,6 +46,7 @@ const config: webpack.Configuration = merge(common, {
       warnings: true,
       errors: true,
     },
+    // TODO: Use devServer.transportMode wss
     sockHost: 'dev.oswee.com',
     sockPath: '/sockjs-node',
     sockPort: 443,

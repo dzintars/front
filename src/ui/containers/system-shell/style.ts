@@ -19,4 +19,8 @@ export default css`
     overflow: hidden;
     box-sizing: border-box;
   }
+  app-shell {
+    height: 100%;
+    width: 100%;
+  }
 `

@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-element'
-import '../../components/ui-card'
+import '../../elements/ui-card'
 
 export default function template(): TemplateResult {
   return html`
