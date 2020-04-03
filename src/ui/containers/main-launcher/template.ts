@@ -9,9 +9,9 @@ export default function template(this: MainLauncherElement): TemplateResult {
   return html`
     <ui-launcher>
       <nav slot="main">
-        <button @click=${this.hideLauncher} title="Open Launcher">
+        <!-- <button @click=${this.hideLauncher} title="Open Launcher">
           ${Grid('black')}
-        </button>
+        </button> -->
       </nav>
       <section slot="main">
         ${repeat(

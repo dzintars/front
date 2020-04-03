@@ -22,6 +22,10 @@ export class MainTaskbarElement extends connect(store, LitElement) {
     store.dispatch(getApplications())
   }
 
+  toggleAccountWidget() {
+    console.log('There')
+  }
+
   onButtonClick(): void {
     const event = new CustomEvent('launcher-click', {
       bubbles: true,

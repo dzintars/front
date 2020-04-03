@@ -1,14 +1,6 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
-import {
-  store,
-  RootState,
-  WebsocketSelectors,
-  UiSelectors,
-  hideLauncher,
-  getApplications,
-  ApplicationSelectors,
-} from '../../../store'
+import { store, RootState, WebsocketSelectors, UiSelectors, hideLauncher, ThemeSelectors } from '../../../store'
 import template from './template'
 import style from './style'
 // import { EventPathIncludes } from '../../../utils'
@@ -17,11 +9,13 @@ import style from './style'
 export class SystemShellElement extends connect(store, LitElement) {
   @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
   @property({ type: Boolean }) isLauncherVisible: boolean = false
+  @property({ type: Object }) theme: object = { '--theme-color-primary': 'pink' }
 
   mapState(state: RootState) {
     return {
       websocketState: WebsocketSelectors.state(state),
       isLauncherVisible: UiSelectors.getLauncherVisibility(state),
+      theme: ThemeSelectors.getTheme(state),
     }
   }
 
@@ -41,8 +35,19 @@ export class SystemShellElement extends connect(store, LitElement) {
   //   }
   // }
 
+  updated() {
+    const root = document.documentElement
+    Object.entries(this.theme).map(item => {
+      root.style.setProperty(String(item[0]), item[1])
+    })
+  }
+
   connectedCallback(): void {
     super.connectedCallback()
+    const root = document.documentElement
+    Object.entries(this.theme).map(item => {
+      root.style.setProperty(String(item[0]), item[1])
+    })
     // https://stackoverflow.com/a/37559790/6651080
     document.addEventListener('keydown', function(e) {
       if (e.ctrlKey && e.shiftKey && e.keyCode === 80) {

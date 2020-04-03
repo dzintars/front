@@ -1,6 +1,7 @@
 export * from './modules/websocket'
 export * from './modules/routing'
 export * from './modules/ui'
+export * from './modules/theme'
 export * from './modules/users'
 export * from './modules/applications'
 export * from './modules/organizations'

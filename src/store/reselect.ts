@@ -5,6 +5,7 @@ import * as ReselectTools from 'reselect-tools'
 import { WebsocketSelectors } from './modules/websocket'
 import { RoutingSelectors } from './modules/routing'
 import { UiSelectors } from './modules/ui'
+import { ThemeSelectors } from './modules/theme'
 import { UserSelectors } from './modules/users'
 import { ApplicationSelectors } from './modules/applications'
 import { OrganizationSelectors } from './modules/organizations'
@@ -15,6 +16,7 @@ export const startReselect = (store: Store) => {
   ReselectTools.registerSelectors(WebsocketSelectors)
   ReselectTools.registerSelectors(RoutingSelectors)
   ReselectTools.registerSelectors(UiSelectors)
+  ReselectTools.registerSelectors(ThemeSelectors)
   ReselectTools.registerSelectors(UserSelectors)
   ReselectTools.registerSelectors(ApplicationSelectors)
   ReselectTools.registerSelectors(OrganizationSelectors)

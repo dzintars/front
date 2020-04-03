@@ -3,6 +3,8 @@ import { css } from 'lit-element'
 export default css`
   :host {
     display: block;
+    position: fixed;
+    top: 4rem;
   }
   :host([hidden]) {
     display: none;

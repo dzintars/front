@@ -8,6 +8,7 @@ import {
   toggleAccountWidget,
   Application,
   displayLauncher,
+  switchTheme,
 } from '../../../store'
 import template from './template'
 import style from './style'
@@ -31,6 +32,10 @@ export class AppHomeElement extends connect(store, LitElement) {
 
   toggleAccountWidget(): void {
     store.dispatch(toggleAccountWidget())
+  }
+
+  switchTheme(): void {
+    store.dispatch(switchTheme())
   }
 
   protected render(): TemplateResult {
