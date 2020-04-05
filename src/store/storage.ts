@@ -38,6 +38,7 @@ export const storageMiddleware: Middleware<Dispatch> = (store: MiddlewareAPI) =>
         state: {
           users: state.users,
           // applications: state.applications,
+          theme: state.theme,
         },
       }
       localStorage.setItem(storageKey, JSON.stringify(cache))
