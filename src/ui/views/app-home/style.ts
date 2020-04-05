@@ -14,12 +14,12 @@ export default css`
     box-sizing: border-box;
     /* border: 10px solid pink; */
     /* overflow: hidden; */
-    /* background: var(--color-gainsboro-10l); */
+    background: var(--theme-color-primary);
   }
 
   app-taskbar {
     height: 4rem;
-    border-bottom: 1px solid dodgerblue;
+    border-bottom: 1px solid var(--theme-color-primary-3d, red);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -33,18 +33,24 @@ export default css`
     justify-content: center;
     height: var(--size-sl);
     width: var(--size-sl);
-    background-color: var(--color-gray-60);
-    border: 1px solid var(--color-gray-80);
+    background-color: var(--theme-color-primary-1d);
+    border: 1px solid var(--theme-color-primary-2d);
     outline: none;
+    color: var(--theme-color-primary-10d);
   }
   button:hover {
-    background-color: var(--color-gray-70);
+    background-color: var(--theme-color-primary-3d);
   }
   button:active {
-    background-color: var(--color-gray-80);
+    background-color: var(--theme-color-primary-4d);
   }
   svg {
     width: 2rem;
     height: 2rem;
+    fill: var(--theme-color-primary-10d);
+  }
+  h2 {
+    margin: 0 2rem;
+    color: var(--theme-color-primary-10d);
   }
 `

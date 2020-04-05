@@ -1,3 +1,5 @@
 export interface ThemeState {
-  readonly theme: {}
+  readonly active: string
+  readonly light: object
+  readonly dark: object
 }

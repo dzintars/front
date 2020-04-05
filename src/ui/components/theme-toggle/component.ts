@@ -14,12 +14,12 @@ export class ThemeToggleElement extends LitElement {
 
   toggleTheme() {
     let theme
-    if (localStorage.getItem('theme') === 'light') {
-      localStorage.setItem('theme', 'dark')
+    if (localStorage.getItem('theme') === 'themeLight') {
+      localStorage.setItem('theme', 'themeDark')
       theme = themeDark
       this.btnTitle = 'Light'
-    } else if (localStorage.getItem('theme') === 'dark') {
-      localStorage.setItem('theme', 'light')
+    } else if (localStorage.getItem('theme') === 'themeDark') {
+      localStorage.setItem('theme', 'themeLight')
       theme = themeLight
       this.btnTitle = 'Dark'
     }
@@ -34,9 +34,9 @@ export class ThemeToggleElement extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    if (localStorage.getItem('theme') === 'light') {
+    if (localStorage.getItem('theme') === 'themeLight') {
       this.btnTitle = 'Dark'
-    } else if (localStorage.getItem('theme') === 'dark') {
+    } else if (localStorage.getItem('theme') === 'themeDark') {
       this.btnTitle = 'Light'
     }
   }

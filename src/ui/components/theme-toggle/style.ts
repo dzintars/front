@@ -10,15 +10,15 @@ export default css`
   button {
     height: var(--size-xs);
     border: none;
-    background: var(--lt-color-light);
+    background: var(--theme-color-primary);
     border-radius: var(--app-button-radius);
-    color: var(--lt-color-light-10d);
+    color: var(--theme-color-primary-10d);
     padding: 0 1em;
     font-size: var(--text-md);
     outline: none;
   }
   button:hover {
-    background: var(--lt-color-light-2d);
+    background: var(--theme-color-primary-2d);
     cursor: pointer;
   }
 `
