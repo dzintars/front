@@ -5,6 +5,7 @@ export default css`
     display: block;
     box-sizing: border-box;
     /* border: 10px solid dodgerblue; */
+    background: var(--theme-color-primary);
   }
 
   system-router {

@@ -4,6 +4,8 @@ export enum ThemeTypes {
 
 interface SwitchThemeAction {
   readonly type: ThemeTypes.SWITCH
+  readonly meta: object
+  readonly payload: object
 }
 
 export type ThemeActionTypes = SwitchThemeAction

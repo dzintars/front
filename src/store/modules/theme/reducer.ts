@@ -26,6 +26,7 @@ const initialState: ThemeState = {
 export default (state: ThemeState = initialState, action: ThemeActionTypes): ThemeState => {
   switch (action.type) {
     case ThemeTypes.SWITCH:
+      // TODO: Conditional (ternary) operator
       if (state.active === 'light') {
         return {
           ...state,

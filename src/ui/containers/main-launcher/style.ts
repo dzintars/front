@@ -1,13 +1,21 @@
 import { css } from 'lit-element'
 
 export default css`
-  :host {
-    display: block;
-    position: fixed;
-    top: 4rem;
-  }
   :host([hidden]) {
     display: none;
+  }
+  :host {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 4rem;
+    background: var(--theme-color-primary);
+    /* border: 10px solid var(--color-dodgerblue-main); */
+    color: var(--color-gray-210);
+    box-shadow: var(--shadow-64);
+    box-sizing: border-box;
+    height: calc(100% - 4rem);
+    width: 30%;
   }
 
   ui-launcher {

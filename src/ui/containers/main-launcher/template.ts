@@ -3,25 +3,23 @@ import { MainLauncherElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
 import { Grid } from '../../assets/svg'
 import '../../components/application-shortcut'
-import '../../elements/ui-launcher'
+// import '../../elements/ui-launcher'
 
 export default function template(this: MainLauncherElement): TemplateResult {
   return html`
-    <ui-launcher>
-      <nav slot="main">
-        <!-- <button @click=${this.hideLauncher} title="Open Launcher">
+    <nav slot="main">
+      <!-- <button @click=${this.hideLauncher} title="Open Launcher">
           ${Grid('black')}
         </button> -->
-      </nav>
-      <section slot="main">
-        ${repeat(
-          this.applications,
-          app => app.uuid,
-          app => html`
-            <application-shortcut slot="main" .key=${app.uuid} .title=${app.title}></application-shortcut>
-          `
-        )}
-      </section>
-    </ui-launcher>
+    </nav>
+    <section slot="main">
+      ${repeat(
+        this.applications,
+        app => app.uuid,
+        app => html`
+          <application-shortcut slot="main" .key=${app.uuid} .title=${app.title}></application-shortcut>
+        `
+      )}
+    </section>
   `
 }

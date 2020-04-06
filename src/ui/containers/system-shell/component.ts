@@ -9,7 +9,7 @@ import style from './style'
 export class SystemShellElement extends connect(store, LitElement) {
   @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
   @property({ type: Boolean }) isLauncherVisible: boolean = false
-  @property({ type: Object }) theme: object = { '--theme-color-primary': 'pink' }
+  @property({ type: Object }) theme: object = {}
 
   mapState(state: RootState) {
     return {
@@ -36,18 +36,20 @@ export class SystemShellElement extends connect(store, LitElement) {
   // }
 
   updated() {
+    // Update the theme custom properties
     const root = document.documentElement
     Object.entries(this.theme).map(item => {
+      // console.log(typeof item[0]) // TIL: The way to check type
       root.style.setProperty(String(item[0]), item[1])
     })
   }
 
   connectedCallback(): void {
     super.connectedCallback()
-    const root = document.documentElement
-    Object.entries(this.theme).map(item => {
-      root.style.setProperty(String(item[0]), item[1])
-    })
+    // const root = document.documentElement
+    // Object.entries(this.theme).map(item => {
+    //   root.style.setProperty(String(item[0]), item[1])
+    // })
     // https://stackoverflow.com/a/37559790/6651080
     document.addEventListener('keydown', function(e) {
       if (e.ctrlKey && e.shiftKey && e.keyCode === 80) {

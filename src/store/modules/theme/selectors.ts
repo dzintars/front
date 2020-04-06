@@ -9,10 +9,11 @@ const getState = (state: RootState): ThemeState => state.theme
 export namespace ThemeSelectors {
   // export const getTheme = createSelector([getState], state => state.active.theme)
   export const getTheme = createSelector([getState], state => {
-    if (state.active === 'dark') {
-      return state.dark
-    }
-    return state.light
+    return state.active === 'dark' ? state.dark : state.light
+    // if (state.active === 'dark') {
+    //   return state.dark
+    // }
+    // return state.light
   })
   // export const getAccountWidgetVisibility = createSelector([getState], launcher => launcher.isAccountWidgetDisplayed)
 }

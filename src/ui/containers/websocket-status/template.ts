@@ -8,7 +8,7 @@ export default function template(): TemplateResult {
       `
     case 'WEBSOCKET_CONNECTED':
       return html`
-        <div style="background-color: green;"><p style="color: white;">Connected</p></div>
+        <div style="background-color: hsla(101, 100%, 38%, 1);"><p style="color: white;">Connected</p></div>
       `
     default:
       return html`
