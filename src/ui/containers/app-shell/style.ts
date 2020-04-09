@@ -36,7 +36,7 @@ export default css`
   }
 
   action-center {
-    width: 20%;
+    width: 25%;
     border-left: 0.01em solid var(--theme-color-primary-3d, red);
   }
   .icon {
