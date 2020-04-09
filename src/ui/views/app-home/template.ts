@@ -1,10 +1,11 @@
 import { html, TemplateResult } from 'lit-element'
 import { AppHomeElement } from './component'
-import '../../containers/ui-statusbar-connected'
+import '../../components/leaflet-map'
 
 export default function template(this: AppHomeElement): TemplateResult {
   return html`
-    <main></main>
-    <ui-statusbar-connected></ui-statusbar-connected>
+    <main>
+      <leaflet-map></leaflet-map>
+    </main>
   `
 }

@@ -19,4 +19,7 @@ export default css`
     height: 100%;
     width: 100%;
   }
+  main-launcher {
+    z-index: 1;
+  }
 `

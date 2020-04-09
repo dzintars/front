@@ -398,6 +398,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/geojson@npm:*":
+  version: 7946.0.7
+  resolution: "@types/geojson@npm:7946.0.7"
+  checksum: 2/b0a614f58a169069d9978af24c4b816bc7140a722829d8786ad1ff22d8362b429c56170326c836ce661a0307f8e35820a055966c2eedc21b62671a56c472263e
+  languageName: node
+  linkType: hard
+
 "@types/glob@npm:^7.1.1":
   version: 7.1.1
   resolution: "@types/glob@npm:7.1.1"
@@ -462,6 +469,15 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 2/66e9ac0143ec521522c7bb670301e9836ee886207eeed1aab6d4854a1b19b404ab3a54cd8d449f9b1f13acc357f540be96f8ac2d1e86e301eab52ae0f9a4066f
+  languageName: node
+  linkType: hard
+
+"@types/leaflet@npm:^1.5.12":
+  version: 1.5.12
+  resolution: "@types/leaflet@npm:1.5.12"
+  dependencies:
+    "@types/geojson": "*"
+  checksum: 2/17946ba5a01f7aa284333eae6b45f2fa55fcf43502332c714a1da3608c62abd1a3fae913047202f0169f9de922f480abb91bdedd8c5df8fbbf5734b7a7c50d95
   languageName: node
   linkType: hard
 
@@ -4290,6 +4306,7 @@ __metadata:
     "@commitlint/config-conventional": latest
     "@types/eslint": latest
     "@types/html-webpack-plugin": latest
+    "@types/leaflet": ^1.5.12
     "@types/mini-css-extract-plugin": latest
     "@types/node": latest
     "@types/optimize-css-assets-webpack-plugin": latest
@@ -4314,6 +4331,7 @@ __metadata:
     html-webpack-plugin: latest
     husky: latest
     json-server: latest
+    leaflet: ^1.6.0
     lint-staged: latest
     lit-element: latest
     lit-html: ^1.1.2
@@ -4343,6 +4361,9 @@ __metadata:
     webpack-cli: ^3.3.11
     webpack-dev-server: latest
     webpack-merge: latest
+  dependenciesMeta:
+    webpack-dev-server:
+      unplugged: true
   languageName: unknown
   linkType: soft
 
@@ -6133,6 +6154,13 @@ fsevents@^1.2.7:
   dependencies:
     invert-kv: ^2.0.0
   checksum: 2/147695e053a0193d82eb75d199089e0563fa27773d1d3c8cbec6c7bc16edcb8bc01949a3f2e687b853999711107e9adba2f4dc266bb65f536b8ac50a5eeceaab
+  languageName: node
+  linkType: hard
+
+"leaflet@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "leaflet@npm:1.6.0"
+  checksum: 2/de9cc64bfaa767fb2a6a437f5621aafc356f4201cded36a25d8c4e3802085638791e737d127e4d9981b678f802b6757e8053936baad68c62bf80f39b0d063d4b
   languageName: node
   linkType: hard
 

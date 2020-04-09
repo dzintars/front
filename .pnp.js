@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/config-conventional", "npm:8.3.4"],
             ["@types/eslint", "npm:6.1.8"],
             ["@types/html-webpack-plugin", "npm:3.2.2"],
+            ["@types/leaflet", "npm:1.5.12"],
             ["@types/mini-css-extract-plugin", "npm:0.9.1"],
             ["@types/node", "npm:13.7.4"],
             ["@types/optimize-css-assets-webpack-plugin", "npm:5.0.1"],
@@ -62,6 +63,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["html-webpack-plugin", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:3.2.0"],
             ["husky", "npm:4.2.3"],
             ["json-server", "npm:0.16.0"],
+            ["leaflet", "npm:1.6.0"],
             ["lint-staged", "npm:10.0.7"],
             ["lit-element", "npm:2.2.1"],
             ["lit-html", "npm:1.1.2"],
@@ -547,6 +549,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/geojson", [
+        ["npm:7946.0.7", {
+          "packageLocation": "./.yarn/cache/@types-geojson-npm-7946.0.7-22fd23fc31-2.zip/node_modules/@types/geojson/",
+          "packageDependencies": [
+            ["@types/geojson", "npm:7946.0.7"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/glob", [
         ["npm:7.1.1", {
           "packageLocation": "./.yarn/cache/@types-glob-npm-7.1.1-10bfc8b49b-2.zip/node_modules/@types/glob/",
@@ -619,6 +630,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-json5-npm-0.0.29-f63a7916bd-2.zip/node_modules/@types/json5/",
           "packageDependencies": [
             ["@types/json5", "npm:0.0.29"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/leaflet", [
+        ["npm:1.5.12", {
+          "packageLocation": "./.yarn/cache/@types-leaflet-npm-1.5.12-e51240b62d-2.zip/node_modules/@types/leaflet/",
+          "packageDependencies": [
+            ["@types/leaflet", "npm:1.5.12"],
+            ["@types/geojson", "npm:7946.0.7"]
           ],
           "linkType": "HARD",
         }]
@@ -4944,6 +4965,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@commitlint/config-conventional", "npm:8.3.4"],
             ["@types/eslint", "npm:6.1.8"],
             ["@types/html-webpack-plugin", "npm:3.2.2"],
+            ["@types/leaflet", "npm:1.5.12"],
             ["@types/mini-css-extract-plugin", "npm:0.9.1"],
             ["@types/node", "npm:13.7.4"],
             ["@types/optimize-css-assets-webpack-plugin", "npm:5.0.1"],
@@ -4968,6 +4990,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["html-webpack-plugin", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:3.2.0"],
             ["husky", "npm:4.2.3"],
             ["json-server", "npm:0.16.0"],
+            ["leaflet", "npm:1.6.0"],
             ["lint-staged", "npm:10.0.7"],
             ["lit-element", "npm:2.2.1"],
             ["lit-html", "npm:1.1.2"],
@@ -6973,6 +6996,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["lcid", "npm:2.0.0"],
             ["invert-kv", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["leaflet", [
+        ["npm:1.6.0", {
+          "packageLocation": "./.yarn/cache/leaflet-npm-1.6.0-ff46533b69-2.zip/node_modules/leaflet/",
+          "packageDependencies": [
+            ["leaflet", "npm:1.6.0"]
           ],
           "linkType": "HARD",
         }]
@@ -12693,7 +12725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ]],
       ["webpack-dev-server", [
         ["virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:3.10.3", {
-          "packageLocation": "./.yarn/$$virtual/webpack-dev-server-virtual-85423d99a7/0/cache/webpack-dev-server-npm-3.10.3-c02c5d42a6-2.zip/node_modules/webpack-dev-server/",
+          "packageLocation": "./.yarn/unplugged/webpack-dev-server-virtual-85423d99a7/node_modules/webpack-dev-server/",
           "packageDependencies": [
             ["webpack-dev-server", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:3.10.3"],
             ["ansi-html", "npm:0.0.7"],

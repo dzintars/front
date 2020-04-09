@@ -1,43 +1,13 @@
 import { css } from 'lit-element'
 
 export default css`
-  :host([hidden]) {
-    display: none;
-  }
   :host {
     display: flex;
     flex-direction: column;
-    background: var(--theme-color-primary);
-    /* border: 5px dotted green; */
-  }
-  main {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-  }
-  app-home {
-    flex: 1;
-  }
-
-  app-taskbar {
-    height: var(--size-sl);
-    border-bottom: 0.01em solid var(--theme-color-primary-3d, red);
-    display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    background-color: var(--theme-color-primary, red);
-  }
-  .taskbar-middle {
-    padding: 0 1rem;
-  }
-  app-shortcuts {
-    width: var(--size-sl);
-    border-right: 0.01em solid var(--theme-color-primary-3d, red);
-  }
-
-  action-center {
-    width: 20%;
-    border-left: 0.01em solid var(--theme-color-primary-3d, red);
+    /* border: 5px dotted green; */
+    box-sizing: border-box;
   }
   .icon {
     display: flex;
@@ -80,17 +50,5 @@ export default css`
     stroke-width: 0.1em;
     fill: none;
     align-items: center;
-  }
-  button span {
-    margin: 0 0.6rem;
-  }
-  h2 {
-    margin: 0;
-    color: var(--theme-color-primary-10d);
-    font-weight: 700;
-  }
-  ui-statusbar-connected {
-    border-top: 1px solid var(--theme-color-primary-3d);
-    height: 1.4rem;
   }
 `

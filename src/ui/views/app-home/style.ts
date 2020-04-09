@@ -19,9 +19,12 @@ export default css`
 
   main {
     flex: 1;
+    display: flex;
+    flex-direction: row;
   }
-  ui-statusbar-connected {
-    border-top: 1px solid var(--theme-color-primary-3d);
-    height: 1.4rem;
+  leaflet-map {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
   }
 `
