@@ -116,6 +116,13 @@ export const Icon = (icon: string, title: string): SVGTemplateResult => {
           <path d="M55.5 32C55.5 44.9787 44.9787 55.5 32 55.5C19.0213 55.5 8.5 44.9787 8.5 32C8.5 19.0213 19.0213 8.5 32 8.5C44.9787 8.5 55.5 19.0213 55.5 32Z"/>
         </svg>
       `
+    case icon === 'user':
+      return svg`
+        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="presentation">
+          <circle cx="32" cy="22" r="14"/>>
+          <path d="M52 56c0-11.046-8.954-20-20-20s-20 8.954-20 20"/>
+        </svg>
+      `
     default:
       return svg``
   }

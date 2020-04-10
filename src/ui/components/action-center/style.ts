@@ -24,8 +24,10 @@ export default css`
     flex-direction: row;
   }
   nav {
-    width: 2rem;
+    min-width: var(--size-l);
     border-right: 1px solid var(--theme-color-primary-3d);
+    box-sizing: border-box;
+    font-size: 1rem;
   }
   footer {
     display: flex;
@@ -50,6 +52,7 @@ export default css`
       0 9px 46px 8px rgba(0, 0, 0, 0.12);
     background: var(--lt-color-light);
     margin: 2rem;
+    color: var(--theme-color-primary-10d);
   }
   .fieldset {
     display: flex;
@@ -108,5 +111,40 @@ export default css`
     .container {
       width: 280px;
     }
+  }
+
+  nav button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: var(--size-m);
+    min-width: var(--size-m);
+    width: var(--size-m);
+    background-color: var(--theme-color-primary);
+    /* border: 1px solid var(--theme-color-primary-10d); */
+    border: none;
+    outline: none;
+    /* margin: 0 1rem; */
+    padding: 0;
+
+    border-radius: 2.4rem;
+    color: var(--theme-color-primary-10d);
+  }
+  nav button:hover {
+    background-color: var(--theme-color-primary-2d);
+  }
+  nav button:active {
+    background-color: var(--theme-color-primary-2d);
+  }
+  button svg {
+    width: 0.9em;
+    height: 0.9em;
+    /* height: var(--size-s); */
+    /* fill: var(--theme-color-primary-10d); */
+    stroke: var(--theme-color-primary-10d);
+    stroke-width: 0.1em;
+    fill: none;
+    align-items: center;
   }
 `

@@ -1,11 +1,13 @@
 import { html, TemplateResult } from 'lit-element'
 import { ActionCenterElement } from './component'
+import { Icon } from '../../assets/svg'
 
 export default function template(this: ActionCenterElement): TemplateResult {
   return html`
-    <header>Action Center</header>
     <main>
-      <nav></nav>
+      <nav>
+        <button>${Icon('user', 'Account')}</button>
+      </nav>
       <div>
         <div class="container">
           <form id="signup_form" name="signup" method="POST" novalidate action="">
@@ -42,8 +44,5 @@ export default function template(this: ActionCenterElement): TemplateResult {
         </div>
       </div>
     </main>
-    <footer>
-      <p>Sign Out</p>
-    </footer>
   `
 }

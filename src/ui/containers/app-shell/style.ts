@@ -14,30 +14,34 @@ export default css`
     display: flex;
     flex-direction: row;
     flex: 1;
+    background-color: var(--theme-color-primary-1d);
   }
   app-home {
     flex: 1;
+    background-color: var(--theme-color-primary-1d);
   }
 
   app-taskbar {
-    height: var(--size-sl);
+    min-height: var(--size-l);
     border-bottom: 0.01em solid var(--theme-color-primary-3d, red);
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--theme-color-primary, red);
+    background-color: var(--theme-color-primary);
   }
   .taskbar-middle {
     padding: 0 1rem;
   }
   app-shortcuts {
-    width: var(--size-sl);
+    min-width: var(--size-l);
     border-right: 0.01em solid var(--theme-color-primary-3d, red);
+    background-color: var(--theme-color-primary);
   }
 
   action-center {
     width: 25%;
     border-left: 0.01em solid var(--theme-color-primary-3d, red);
+    background-color: var(--theme-color-primary);
   }
   .icon {
     display: flex;
@@ -91,6 +95,6 @@ export default css`
   }
   ui-statusbar-connected {
     border-top: 1px solid var(--theme-color-primary-3d);
-    height: 1.4rem;
+    height: calc(var(--size-m, 2.25rem) / 2);
   }
 `

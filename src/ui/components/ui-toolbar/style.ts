@@ -6,7 +6,9 @@ export default css`
   }
   :host {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    /* border: 5px dotted green; */
+    min-height: var(--size-m);
   }
 `

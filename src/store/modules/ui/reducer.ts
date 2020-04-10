@@ -5,7 +5,7 @@ export { UiState }
 
 const initialState: UiState = {
   isLauncherDisplayed: false,
-  isActionCenterDisplayed: false,
+  isActionCenterDisplayed: true,
   isAccountWidgetDisplayed: false,
   application: {
     state: false,
