@@ -11,5 +11,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["ESNext", "dom", "dom.iterable"]
-  }
+  },
+  "exclude": ["./src/trash*"]
 }

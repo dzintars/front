@@ -8,14 +8,14 @@ export default css`
     display: block;
     padding: 1rem;
     box-sizing: border-box;
-    border: 1px solid var(--color-gray-40);
     border-radius: 6px;
-    background: var(--color-gray-30);
-    box-shadow: var(--shadow-4);
+    background-color: var(--theme-color-primary-1d);
+    box-shadow: var(--theme-shadow-4);
+    color: var(--theme-color-primary-10d);
   }
 
   :host(:hover) {
     background-color: var(--color-gray-40);
-    box-shadow: var(--shadow-16);
+    box-shadow: var(--theme-shadow-16);
   }
 `

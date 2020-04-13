@@ -13,8 +13,8 @@ export default css`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: var(--size-sl);
-    width: var(--size-sl);
+    height: var(--theme-size-l);
+    width: var(--theme-size-l);
     /* border: 0.01em solid var(--theme-color-primary-3d, red); */
     box-sizing: border-box;
   }
@@ -23,8 +23,8 @@ export default css`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: var(--size-m);
-    min-width: var(--size-m);
+    height: var(--theme-size-m);
+    min-width: var(--theme-size-m);
     /* width: auto; */
     background-color: var(--theme-color-primary);
     /* border: 1px solid var(--theme-color-primary-10d); */
@@ -43,8 +43,8 @@ export default css`
     background-color: var(--theme-color-primary-2d);
   }
   svg {
-    width: var(--size-s);
-    height: var(--size-s);
+    width: var(--theme-icon-size-m);
+    height: var(--theme-icon-size-m);
     /* fill: var(--theme-color-primary-10d); */
     stroke: var(--theme-color-primary-10d);
     stroke-width: 0.1em;

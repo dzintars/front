@@ -1,10 +1,10 @@
 import { html, TemplateResult } from 'lit-element'
 import { AppShellElement } from './component'
-import { DzintarsDev, User, Apps, Grid, Gear, Icon } from '../../assets/svg'
+import { Apps, Gear, Icon } from '../../assets/svg'
 import '../../containers/app-taskbar'
-import '../../views/app-home'
-import '../../components/action-center'
 import '../../components/app-shortcuts'
+import '../../components/action-center'
+import '../../views/app-home'
 import '../../containers/ui-statusbar-connected'
 
 export default function template(this: AppShellElement): TemplateResult {
@@ -16,7 +16,15 @@ export default function template(this: AppShellElement): TemplateResult {
         </button>
       </div>
       <div class="taskbar-middle" slot="middle">
-        <h2>Home</h2>
+        <div class="left">
+          <h2>Home</h2>
+        </div>
+        <div class="mid">
+          <div class="fieldset">
+            <input id="customer_name" name="customerName" type="text" tabindex="1" />
+          </div>
+        </div>
+        <div class="right"></div>
       </div>
       <button slot="right" @click=${this.toggleActionCenter} title="Action Center">
         ${Gear()}

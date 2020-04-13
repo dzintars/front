@@ -1,4 +1,4 @@
-import { LitElement, property, customElement, TemplateResult, html, CSSResultArray } from 'lit-element'
+import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
 import {
   store,
@@ -12,6 +12,7 @@ import {
   displayLauncher,
   switchTheme,
 } from '../../../store'
+import { Theme } from '../../assets/style'
 import template from './template'
 import style from './style'
 
@@ -84,6 +85,10 @@ export class AppShellElement extends connect(store, LitElement) {
   }
 
   public static get styles(): CSSResultArray {
-    return [style]
+    return [Theme, style]
+  }
+  // Turn off shadowDOM
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('disable-shadow') ? this : super.createRenderRoot()
   }
 }

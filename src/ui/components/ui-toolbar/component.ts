@@ -1,4 +1,5 @@
 import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
+import { Theme } from '../../assets/style'
 import template from './template'
 import style from './style'
 
@@ -11,6 +12,6 @@ export class UiToolbarElement extends LitElement {
   }
 
   public static get styles(): CSSResultArray {
-    return [style]
+    return [Theme, style]
   }
 }

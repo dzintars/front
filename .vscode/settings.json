@@ -10,6 +10,7 @@
       "source.fixAll.eslint": false
     }
   },
+  "files.autoSave": "off",
   "[typescript]": {
     // "editor.tabSize": 2, // Potentially overlaps with Editorconfig extension
     "editor.formatOnSave": true,

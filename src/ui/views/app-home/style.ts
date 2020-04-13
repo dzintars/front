@@ -6,6 +6,7 @@ export default css`
   }
 
   :host {
+    --color-accent-110: var(--theme-color-accent-110, red);
     height: 100%;
     min-height: 100%;
     width: 100%;
@@ -16,7 +17,8 @@ export default css`
   }
   ui-toolbar {
     border-bottom: 0.01em solid var(--theme-color-primary-3d, red);
-    background-color: var(--theme-color-primary);
+    /* background-color: var(--theme-color-primary); */
+    --background-color: var(--color-accent-110);
   }
   main {
     flex: 1;

@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { MainTaskbarElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
-import { DzintarsDev, User, Apps, Grid } from '../../assets/svg'
+import { User, Apps, Grid } from '../../assets/svg'
 import '../../elements/ui-taskbar'
 
 export default function template(this: MainTaskbarElement): TemplateResult {
@@ -12,9 +12,6 @@ export default function template(this: MainTaskbarElement): TemplateResult {
           <button @click="${this.displayLauncher}" id="launcher" class="launcher" title="Open Launcher">
             ${Grid('black')}
           </button>
-          <div class="logo">
-            ${DzintarsDev()}
-          </div>
           <ul>
             <li>Home</li>
             <li>Solutions</li>

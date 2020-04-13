@@ -15,6 +15,7 @@ import {
   startApplication,
   selectApplication,
 } from '../../../store'
+import { Theme } from '../../assets/style'
 import template from './template'
 import style from './style'
 
@@ -92,7 +93,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   }
 
   public static get styles(): CSSResultArray {
-    return [style]
+    return [Theme, style]
   }
 }
 

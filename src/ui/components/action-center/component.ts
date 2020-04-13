@@ -1,4 +1,5 @@
 import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
+import { Buttons } from '../../assets/style'
 import template from './template'
 import style from './style'
 
@@ -38,6 +39,6 @@ export class ActionCenterElement extends LitElement {
   }
 
   public static get styles(): CSSResultArray {
-    return [style]
+    return [Buttons, style]
   }
 }

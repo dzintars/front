@@ -1,11 +1,12 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, WebsocketSelectors, UiSelectors, hideLauncher, ThemeSelectors } from '../../../store'
+import { Theme } from '../../assets/style'
 import template from './template'
 import style from './style'
 // import { EventPathIncludes } from '../../../utils'
 
-@customElement('system-shell' as any)
+@customElement('system-shell')
 export class SystemShellElement extends connect(store, LitElement) {
   @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
   @property({ type: Boolean }) isLauncherVisible: boolean = false
@@ -21,7 +22,7 @@ export class SystemShellElement extends connect(store, LitElement) {
 
   mapEvents() {
     return {
-      'application-shortcut-click': (e: CustomEvent) => hideLauncher(),
+      'application-shortcut-click': () => hideLauncher(),
     }
   }
 
@@ -35,7 +36,7 @@ export class SystemShellElement extends connect(store, LitElement) {
   //   }
   // }
 
-  updated() {
+  updated(): void {
     // Update the theme custom properties
     const root = document.documentElement
     Object.entries(this.theme).map(item => {
@@ -77,6 +78,10 @@ export class SystemShellElement extends connect(store, LitElement) {
   }
 
   public static get styles(): CSSResultArray {
-    return [style]
+    return [Theme, style]
+  }
+  // Turn off shadowDOM
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }

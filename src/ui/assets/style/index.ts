@@ -1,3 +1,3 @@
 // export * from './inputs';
 export { Buttons } from './buttons'
-export * from './theme'
+export { Theme } from './theme'
