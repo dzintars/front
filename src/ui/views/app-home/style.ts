@@ -6,7 +6,8 @@ export default css`
   }
 
   :host {
-    --color-accent-110: var(--theme-color-accent-110, red);
+    --color-base: var(--theme-color-base);
+    --color-accent: var(--theme-color-accent);
     height: 100%;
     min-height: 100%;
     width: 100%;
@@ -16,9 +17,14 @@ export default css`
     background: var(--theme-color-primary);
   }
   ui-toolbar {
-    border-bottom: 0.01em solid var(--theme-color-primary-3d, red);
-    /* background-color: var(--theme-color-primary); */
-    --background-color: var(--color-accent-110);
+    border-bottom: 0.01em solid var(--theme-color-primary-3d);
+    /* background-color: var(--color-base); */
+    --color-base: var(--color-base);
+    height: 3rem;
+  }
+  button {
+    border: none;
+    background-color: var(--color-accent);
   }
   main {
     flex: 1;

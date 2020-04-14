@@ -14,7 +14,8 @@ export const Theme = css`
     --theme-color-white: hsla(0, 100%, 100%, 1);
     --theme-color-black: hsla(0, 0%, 0%, 1);
     /* Theme Base - Used for base layout, backgrounds, inputs */
-    --theme-color-base: var(--root-color-base);
+    --theme-color-base: var(--root-color-base, hsla(215, 14%, 19%, 1));
+    --theme-color-accent: var(--root-color-accent, hsla(215, 100%, 50%, 1));
 
     --theme-color-base-10: hsla(var(--theme-color-base-hue, 0), 100%, 95%, 1);
     --theme-color-base-20: hsla(var(--theme-color-base-hue, 0), 100%, 91%, 1);

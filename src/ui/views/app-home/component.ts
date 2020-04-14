@@ -24,8 +24,7 @@ export class AppHomeElement extends connect(store, LitElement) {
     // console.log(Theme)
     return [Theme, style]
   }
-  // Turn off shadowDOM
-  // createRenderRoot(): HTMLElement {
-  //   return this
-  // }
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
+  }
 }

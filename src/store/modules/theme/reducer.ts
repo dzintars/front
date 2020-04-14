@@ -15,7 +15,8 @@ const initialState: ThemeState = {
     '--theme-color-primary-4d': 'hsl(var(--theme-color-hue) 0% 82%)', // #D1D1D1
     '--theme-color-primary-10d': 'hsl(var(--theme-color-hue) 0% 0%)', // #000000 (black)
 
-    '--root-color-base': 'hsl(0, 0%, 100%)',
+    '--root-color-base': 'hsla(0, 0%, 100%, 1)',
+    '--root-color-accent': 'hsla(315, 100%, 50%, 1)',
   },
   dark: {
     '--theme-color-hue': '215', // #FFFFFF (white)
@@ -27,7 +28,8 @@ const initialState: ThemeState = {
     '--theme-color-primary-4d': 'hsl(var(--theme-color-hue) 9% 26%)',
     '--theme-color-primary-10d': 'hsl(var(--theme-color-hue) 3% 63%)',
 
-    '--root-color-base': 'hsl(215, 14%, 19%)',
+    '--root-color-base': 'hsla(215, 14%, 19%, 1)',
+    '--root-color-accent': 'hsla(215, 100%, 50%, 1)',
   },
 }
 

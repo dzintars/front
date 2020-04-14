@@ -21,7 +21,7 @@ export default function template(this: AppShellElement): TemplateResult {
         </div>
         <div class="mid">
           <div class="fieldset">
-            <input id="customer_name" name="customerName" type="text" tabindex="1" />
+            <input id="customer_name" name="customerName" type="text" />
           </div>
         </div>
         <div class="right"></div>

@@ -1,0 +1,8 @@
+.button,
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  display: inline-block;
+  padding: var(--theme-spacing-wide-s, 0 0.6rem);
+}

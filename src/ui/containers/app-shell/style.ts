@@ -6,7 +6,7 @@ export default css`
   }
   :host {
     --size-l: var(--theme-size-l);
-    --color-base: var(--theme-color-base, yellow);
+    --color-base: var(--theme-color-base);
     display: flex;
     flex-direction: column;
     background: var(--color-base);
