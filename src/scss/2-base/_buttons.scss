@@ -3,6 +3,38 @@ button,
 input[type='submit'],
 input[type='reset'],
 input[type='button'] {
+  --size-xs: 1.625rem; // 26px
+  --size-s: 1.875rem; // 30px
+  --size-m: 2.25rem; // 36px
+  --size-l: 2.75rem; // 44px
+  --size-xl: 3.5rem; // 56px
+  --border-radius-s: 0.25em;
+  --border-radius-m: 0.25em;
+  --border-radius-l: 0.5em;
   display: inline-block;
-  padding: var(--theme-spacing-wide-s, 0 0.6rem);
+  border: none;
+  align-items: center;
+  &.xs {
+    height: var(--size-xs);
+  }
+  &.s {
+    height: var(--size-s);
+  }
+  &.m {
+    height: var(--size-m);
+    border-radius: var(--border-radius-m);
+    &.icn {
+      width: var(--size-m);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &.l {
+    height: var(--size-l);
+  }
+  &.xl {
+    height: var(--size-xl);
+  }
 }

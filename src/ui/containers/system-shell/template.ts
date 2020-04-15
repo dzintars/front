@@ -16,11 +16,11 @@ export default function template(this: SystemShellElement): TemplateResult {
               <main-launcher id="main-launcher"></main-launcher>
             `
           : ``}
-        <app-shell></app-shell>
+        <app-shell noshadow></app-shell>
       `
     default:
       return html`
-        <div style="background-color: red;"><p style="color: white;">Disconnectedx</p></div>
+        <div style="background-color: red;"><p style="color: white;">Disconnected</p></div>
       `
   }
 }

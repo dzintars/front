@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { MainTaskbarElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
-import { User, Apps, Grid } from '../../assets/svg'
+import { Icon, User, Grid } from '../../assets/svg'
 import '../../elements/ui-taskbar'
 
 export default function template(this: MainTaskbarElement): TemplateResult {
@@ -22,7 +22,7 @@ export default function template(this: MainTaskbarElement): TemplateResult {
         </div>
         <div class="actions">
           <button class="btn" title="Applications" @click=${this.toggleAccountWidget}>
-            ${Apps()}
+            ${Icon('apps', '')}
           </button>
           <button class="btn" title="Sign In" @click=${this.toggleAccountWidget}>
             ${User()}
@@ -31,7 +31,7 @@ export default function template(this: MainTaskbarElement): TemplateResult {
       </nav>
     </ui-taskbar>
     <button @click="${this.displayLauncher}" id="launcher" class="launcher" title="Open Launcher">
-      ${Grid('black')}
+      ${Icon('apps', '')}
     </button>
     <ul>
       ${repeat(

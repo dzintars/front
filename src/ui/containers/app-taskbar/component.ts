@@ -1,5 +1,13 @@
 import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
-import { store, RootState, Application, ApplicationSelectors, displayLauncher } from '../../../store'
+import {
+  store,
+  RootState,
+  UiSelectors,
+  toggleAccountWidget,
+  toggleActionCenter,
+  displayLauncher,
+  switchTheme,
+} from '../../../store'
 import { connect } from '../../../utils/connect'
 import { Theme } from '../../assets/style'
 import template from './template'
@@ -7,8 +15,30 @@ import style from './style'
 
 @customElement('app-taskbar')
 export class AppTaskbarElement extends connect(store, LitElement) {
+  @property({ type: Boolean }) isActionWidgetDisplayed: boolean = false
+  @property({ type: Boolean }) isActionCenterDisplayed: boolean = false
+
+  mapState(state: RootState) {
+    return {
+      isActionWidgetDisplayed: UiSelectors.getAccountWidgetVisibility(state),
+      isActionCenterDisplayed: UiSelectors.getActionCenterVisibility(state),
+    }
+  }
+
   displayLauncher(): void {
     store.dispatch(displayLauncher())
+  }
+
+  toggleAccountWidget(): void {
+    store.dispatch(toggleAccountWidget())
+  }
+
+  toggleActionCenter(): void {
+    store.dispatch(toggleActionCenter())
+  }
+
+  switchTheme(): void {
+    store.dispatch(switchTheme())
   }
 
   protected render(): TemplateResult {
@@ -18,8 +48,7 @@ export class AppTaskbarElement extends connect(store, LitElement) {
   public static get styles(): CSSResultArray {
     return [Theme, style]
   }
-  // Turn off shadowDOM
   createRenderRoot(): Element | ShadowRoot {
-    return this.hasAttribute('disable-shadow') ? this : super.createRenderRoot()
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }

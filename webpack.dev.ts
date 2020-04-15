@@ -58,7 +58,7 @@ const config: webpack.Configuration = merge(common, {
         use: [
           // Order of the loaders are important!
           { loader: 'style-loader' }, // 3. Inject styles into DOM
-          { loader: 'css-loader', options: { modules: true } }, // 2. Turns CSS into commonjs
+          { loader: 'css-loader', options: { modules: false } }, // 2. Turns CSS into commonjs (CSS Modules - it has some issues when On)
           { loader: 'sass-loader' }, // 1. Turns SCSS into CSS
         ],
         // include: /src/,

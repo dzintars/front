@@ -10,5 +10,13 @@
 system-shell {
   height: 100vh;
   width: 100vw;
-  box-sizing: border-box;
+}
+
+// *******************************
+// CH02 - App Shell
+// *******************************
+
+app-shell {
+  height: 100%;
+  width: 100%;
 }

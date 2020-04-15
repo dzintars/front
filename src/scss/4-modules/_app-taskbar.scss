@@ -1,0 +1,21 @@
+app-taskbar {
+  // all: revert;
+  --size-l: var(--theme-size-l);
+  height: var(--size-l);
+  min-height: var(--size-l);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // background-color: var(--color-base-600);
+  border-bottom: 0.01em solid var(--color-base);
+  div {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &.middle {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+}

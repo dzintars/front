@@ -9,6 +9,7 @@
 
 :root {
   --theme-color-base: var(--root-color-base, green);
+  --theme-color-base-600: var(--root-color-base-600, hsla(215, 100%, 5%, 1));
   --theme-color-accent: var(--root-color-accent, yellow);
   // Global hue
   --theme-color-base-hue: 0;

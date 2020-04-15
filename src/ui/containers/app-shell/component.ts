@@ -1,17 +1,6 @@
 import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
-import {
-  store,
-  RootState,
-  Application,
-  ApplicationSelectors,
-  getApplications,
-  UiSelectors,
-  toggleAccountWidget,
-  toggleActionCenter,
-  displayLauncher,
-  switchTheme,
-} from '../../../store'
+import { store, RootState, Application, ApplicationSelectors, UiSelectors, getApplications } from '../../../store'
 import { Theme } from '../../assets/style'
 import template from './template'
 import style from './style'
@@ -24,31 +13,13 @@ import style from './style'
 export class AppShellElement extends connect(store, LitElement) {
   @property({ type: String }) key: string = '9a30119-d673-4978-b393-f608fe28ae07'
   @property({ type: Object }) entities: { [uuid: string]: Application } = {}
-  @property({ type: Boolean }) isActionWidgetDisplayed: boolean = false
   @property({ type: Boolean }) isActionCenterDisplayed: boolean = false
 
   mapState(state: RootState) {
     return {
       entities: ApplicationSelectors.entities(state),
-      isActionWidgetDisplayed: UiSelectors.getAccountWidgetVisibility(state),
       isActionCenterDisplayed: UiSelectors.getActionCenterVisibility(state),
     }
-  }
-
-  displayLauncher(): void {
-    store.dispatch(displayLauncher())
-  }
-
-  toggleAccountWidget(): void {
-    store.dispatch(toggleAccountWidget())
-  }
-
-  toggleActionCenter(): void {
-    store.dispatch(toggleActionCenter())
-  }
-
-  switchTheme(): void {
-    store.dispatch(switchTheme())
   }
 
   constructor() {
@@ -87,8 +58,8 @@ export class AppShellElement extends connect(store, LitElement) {
   public static get styles(): CSSResultArray {
     return [Theme, style]
   }
-  // Turn off shadowDOM
+
   createRenderRoot(): Element | ShadowRoot {
-    return this.hasAttribute('disable-shadow') ? this : super.createRenderRoot()
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }

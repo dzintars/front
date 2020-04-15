@@ -36,27 +36,6 @@ export const User = (): SVGTemplateResult => svg`
   </svg>
 `
 
-export const Apps = (): SVGTemplateResult => svg`
-  <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-    <circle cx="51" cy="51" r="6"/>
-    <circle cx="32" cy="51" r="6"/>
-    <circle cx="13" cy="51" r="6"/>
-    <circle cx="51" cy="32" r="6"/>
-    <circle cx="32" cy="32" r="6"/>
-    <circle cx="13" cy="32" r="6"/>
-    <circle cx="51" cy="13" r="6"/>
-    <circle cx="32" cy="13" r="6"/>
-    <circle cx="13" cy="13" r="6"/>
-  </svg>
-`
-
-export const Gear = (): SVGTemplateResult => svg`
-  <svg width="64" height="64" viewBox="0 0 64 64">
-    <path d="M31.9999 39.7715C36.292 39.7715 39.7714 36.2921 39.7714 32.0001C39.7714 27.708 36.292 24.2286 31.9999 24.2286C27.7079 24.2286 24.2285 27.708 24.2285 32.0001C24.2285 36.2921 27.7079 39.7715 31.9999 39.7715Z"/>
-    <path d="M44.2057 12.3503L37.2243 9.5L33.4962 15.367H30.4921L26.7875 9.5L19.7705 11.8991L21.3138 19.1912L19.1884 21.3171L12.4205 19.8088L9.52341 26.8043L15.3655 30.5217V33.4195L9.5 37.2318L12.4209 44.2034L19.1888 42.707L21.3134 44.8325L19.8063 51.5907L26.7879 54.4884L30.5037 48.6448H33.567L37.2358 54.5L44.2057 51.5904L42.6865 44.8091L44.8118 42.6951L51.6622 44.215L54.4881 37.2197L48.6344 33.5025V30.498L54.5 26.7803L51.5798 19.8091L44.8118 21.3174L42.6859 19.1674L44.2057 12.3503Z"/>
-  </svg>
-`
-
 export const Icon = (icon: string, title: string): SVGTemplateResult => {
   switch (icon !== '') {
     case icon === 'gear':
@@ -105,6 +84,20 @@ export const Icon = (icon: string, title: string): SVGTemplateResult => {
           <path d="M52 56c0-11.046-8.954-20-20-20s-20 8.954-20 20"/>
         </svg>
       `
+    case icon === 'apps':
+      return svg`
+      <svg width="64" height="64" viewBox="0 0 64 64">
+        <circle cx="51" cy="51" r="6"/>
+        <circle cx="32" cy="51" r="6"/>
+        <circle cx="13" cy="51" r="6"/>
+        <circle cx="51" cy="32" r="6"/>
+        <circle cx="32" cy="32" r="6"/>
+        <circle cx="13" cy="32" r="6"/>
+        <circle cx="51" cy="13" r="6"/>
+        <circle cx="32" cy="13" r="6"/>
+        <circle cx="13" cy="13" r="6"/>
+      </svg>
+    `
     default:
       return svg``
   }

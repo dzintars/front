@@ -14,12 +14,12 @@ export default css`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background: var(--theme-color-primary);
+    /* background: var(--theme-color-primary); */
   }
   ui-toolbar {
     border-bottom: 0.01em solid var(--theme-color-primary-3d);
     /* background-color: var(--color-base); */
-    --color-base: var(--color-base);
+    /* --color-base: var(--color-base); */
     height: 3rem;
   }
   button {

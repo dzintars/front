@@ -1,0 +1,26 @@
+app-shell {
+  --color-base: var(--theme-color-base, dodgerblue);
+  --color-base-600: var(--theme-color-base-600, dodgerblue);
+  --color-success-10: var(--theme-color-success-10);
+  --size-xxs: 1.375rem; // 22px
+  --size-xs: 1.625rem; // 26px
+  --size-s: 1.875rem; // 30px
+  --size-m: 2.25rem; // 36px
+  --size-l: 2.75rem; // 44px
+  --size-xl: 3.5rem; // 56px
+  display: flex;
+  flex-direction: column;
+  // background-color: var(--color-base);
+
+  main {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    // background-color: var(--color-base);
+    /* height: 100%; */
+  }
+  ui-statusbar-connected {
+    border-top: 0.01em solid var(--color-base);
+    height: var(--size-xxs);
+  }
+}

@@ -30,24 +30,8 @@ svg path {
 body {
   position: relative;
   display: grid;
-  //    grid-template-columns: 1fr;
-  //    grid-template-rows: 1fr;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr;
   place-items: center center;
   overflow: hidden;
-}
-
-app-shell {
-  height: 100%;
-  width: 100%;
-}
-
-system-router {
-  display: flex;
-  height: 100%;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-app-shell {
-  height: 100%;
-  width: 100%;
 }

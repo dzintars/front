@@ -5,7 +5,9 @@ import { Icon } from '../../assets/svg'
 
 export default function template(this: AppShortcutsElement): TemplateResult {
   return html`
-    <slot></slot>
+    <div class="icon">
+      <button>${Icon('arrow-left', 'Back')}</button>
+    </div>
     ${repeat(
       this.modules.order,
       key => html`
