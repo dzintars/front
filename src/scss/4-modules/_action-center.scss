@@ -2,4 +2,14 @@ action-center {
   width: 25%;
   border-left: 0.01em solid var(--theme-color-base-100);
   background-color: var(--theme-color-base-110);
+  @include media('>phone', '<=tablet') {
+    // width: 50%;
+    background-color: var(--theme-color-accent-110);
+  }
 }
+
+// @media (min-width: $breakpoint-tablet) {
+//   action-center {
+//     width: 50%;
+//   }
+// }

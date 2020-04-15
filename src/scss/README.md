@@ -5,6 +5,10 @@
 The order of the imports matter.
 You can't use an variables, if those are not imported before. As an example.
 
+[Write Better Media Queries with Sass](https://davidwalsh.name/write-media-queries-sass)
+
+[link](https://css-tricks.com/approaches-media-queries-sass/)
+
 --theme-color-base-10: hsla(200, 8%, 92%, 1);
 --theme-color-base-20: hsla(204, 6%, 85%, 1);
 --theme-color-base-30: hsla(197, 6%, 77%, 1);

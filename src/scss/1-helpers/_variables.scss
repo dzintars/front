@@ -145,3 +145,11 @@
   --theme-shadow-16: 0 6.4px 14.4px 0 rgba(0, 0, 0, 0.132), 0 1.2px 3.6px 0 rgba(0, 0, 0, 0.108); // Teaching callouts, Search results dropdown, Hover cards, Tooltips
   --theme-shadow-64: 0 25.6px 57.6px 0 rgba(0, 0, 0, 0.22), 0 4.8px 14.4px 0 rgba(0, 0, 0, 0.18); // Panels, Pop up dialogs
 }
+
+// *******************************
+// CH02 - Breakpoint Variables
+// *******************************
+
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 768px;
+$brakepoint-desktop: 1024px;

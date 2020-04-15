@@ -5,18 +5,19 @@ export default css`
     display: none;
   }
   :host {
-    --size-l: var(--theme-size-l);
+    display: block;
+    /* --size-l: var(--theme-size-l);
     --shadow-64: var(--theme-shadow-64);
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: var(--size-l);
+    top: var(--theme-size-l);
     left: 1rem;
-    background-color: var(--theme-color-primary);
+    background-color: var(--theme-color-base-110);
     box-shadow: var(--shadow-64);
     box-sizing: border-box;
-    height: calc(100% - var(--size-l) - 1rem);
-    width: 600px;
+    height: calc(100% - var(--theme-size-l) - 1rem);
+    width: 600px; */
   }
 
   section {

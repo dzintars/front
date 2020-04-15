@@ -1,0 +1,19 @@
+// https://davidwalsh.name/write-media-queries-sass
+
+@mixin mobile {
+  @media (min-width: #{$brakepoint-mobile}) and (max-width: #{$brakepoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$brakepoint-tablet}) and (max-width: #{$brakepoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$brakepoint-desktop}) {
+    @content;
+  }
+}

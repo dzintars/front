@@ -21,7 +21,11 @@ export default css`
   }
   button {
     border: none;
-    background-color: var(--color-accent);
+    background-color: var(--theme-color-base-100);
+    color: var(--theme-color-base-60);
+    height: 26px;
+    margin-right: 5px;
+    border-radius: 3px;
   }
   main {
     flex: 1;

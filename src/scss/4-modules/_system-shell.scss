@@ -1,3 +1,19 @@
 system-shell {
   // background: var(--theme-color-primary);
+  main-launcher {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: var(--theme-size-l);
+    background-color: var(--theme-color-base-110);
+    box-shadow: var(--theme-shadow-64);
+    height: calc(100% - var(--theme-size-l) - 1rem);
+    width: 600px;
+    // border: 3px solid dodgerblue;
+    z-index: 1;
+    @include media('>phone', '<=tablet') {
+      width: calc(100% - 9rem);
+      height: calc(100% - 16rem);
+    }
+  }
 }
