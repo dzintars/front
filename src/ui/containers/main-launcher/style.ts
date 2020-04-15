@@ -11,10 +11,11 @@ export default css`
     flex-direction: column;
     position: fixed;
     top: var(--size-l);
+    left: 1rem;
     background-color: var(--theme-color-primary);
     box-shadow: var(--shadow-64);
     box-sizing: border-box;
-    height: calc(100% - var(--size-l));
+    height: calc(100% - var(--size-l) - 1rem);
     width: 600px;
   }
 

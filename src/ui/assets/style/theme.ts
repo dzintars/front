@@ -17,7 +17,7 @@ export const Theme = css`
     --theme-color-base: var(--root-color-base, hsla(215, 14%, 19%, 1));
     --theme-color-accent: var(--root-color-accent, hsla(215, 100%, 50%, 1));
 
-    --theme-color-base-10: hsla(var(--theme-color-base-hue, 0), 100%, 95%, 1);
+    /* --theme-color-base-10: hsla(var(--theme-color-base-hue, 0), 100%, 95%, 1);
     --theme-color-base-20: hsla(var(--theme-color-base-hue, 0), 100%, 91%, 1);
     --theme-color-base-30: hsla(var(--theme-color-base-hue, 0), 100%, 86%, 1);
     --theme-color-base-40: hsla(var(--theme-color-base-hue, 0), 100%, 82%, 1);
@@ -37,7 +37,7 @@ export const Theme = css`
     --theme-color-base-180: hsla(var(--theme-color-base-hue, 0), 100%, 18%, 1);
     --theme-color-base-190: hsla(var(--theme-color-base-hue, 0), 100%, 14%, 1);
     --theme-color-base-200: hsla(var(--theme-color-base-hue, 0), 100%, 9%, 1);
-    --theme-color-base-210: hsla(var(--theme-color-base-hue, 0), 100%, 5%, 1);
+    --theme-color-base-210: hsla(var(--theme-color-base-hue, 0), 100%, 5%, 1); */
     /* Theme Accent - Used for default buttons, UI borders, icons */
     --theme-color-accent-10: hsla(var(--theme-color-accent-hue, 215), 100%, 95%, 1);
     --theme-color-accent-20: hsla(var(--theme-color-accent-hue, 215), 100%, 91%, 1);

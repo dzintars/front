@@ -13,14 +13,11 @@ export default css`
     width: 100%;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    /* background: var(--theme-color-primary); */
+    background: var(--theme-color-base-130);
   }
   ui-toolbar {
-    border-bottom: 0.01em solid var(--theme-color-primary-3d);
-    /* background-color: var(--color-base); */
-    /* --color-base: var(--color-base); */
-    height: 3rem;
+    border-bottom: 0.01em solid var(--theme-color-base-100);
+    padding: 0 4px;
   }
   button {
     border: none;
@@ -44,14 +41,14 @@ export default css`
   .container.left .projects {
     flex: 1;
     margin-bottom: 4px;
-    border: 0.01em solid var(--theme-color-primary-3d, red);
+    border: 0.01em solid var(--theme-color-base-100, red);
   }
   .container.left .orders {
     flex: 2;
-    border: 0.01em solid var(--theme-color-primary-3d, red);
+    border: 0.01em solid var(--theme-color-base-100, red);
   }
   .container.right {
-    border: 0.01em solid var(--theme-color-primary-3d, red);
+    border: 0.01em solid var(--theme-color-base-100, red);
   }
   leaflet-map {
     width: 100%;
