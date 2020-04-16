@@ -9,6 +9,9 @@ export default function template(this: ActionCenterElement): TemplateResult {
         <button class="m icn" title="Accounts">
           <i>${Icon('user', 'Account')}</i>
         </button>
+        <button class="m icn" title="Theme">
+          <i>${Icon('palette', '')}</i>
+        </button>
       </nav>
       <div></div>
     </main>

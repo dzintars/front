@@ -98,6 +98,17 @@ export const Icon = (icon: string, title: string): SVGTemplateResult => {
         <circle cx="13" cy="13" r="6"/>
       </svg>
     `
+    case icon === 'palette':
+      return svg`
+        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.822 12.096C19.822 7.62472 16.1973 4 11.726 4C7.25467 4 1.61584 9.94724 4.70954 13.1755C6.86848 14.7947 7.53984 11.1885 10.2687 13.2835C12.9976 15.3784 10.1067 19.1126 12.2657 19.6523C16.5836 20.1921 19.822 16.5674 19.822 12.096Z"/>
+          <circle cx="7.32973" cy="10.0561" r="1.2"/>
+          <circle cx="10.622" cy="7.6561" r="1.2"/>
+          <circle cx="15.0627" cy="8.8561" r="1.2"/>
+          <circle cx="16.2627" cy="13.2" r="1.2"/>
+          <circle cx="13.8628" cy="16.4217" r="1.2"/>
+        </svg>
+    `
     default:
       return svg``
   }

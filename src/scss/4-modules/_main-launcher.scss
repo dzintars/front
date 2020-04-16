@@ -9,6 +9,18 @@ main-launcher {
   width: 600px;
   // border: 3px solid dodgerblue;
   z-index: 1;
+  section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    application-shortcut {
+      margin: 1rem;
+      width: 200px;
+    }
+    application-shortcut:hover {
+      background-color: var(--theme-color-base-100);
+    }
+  }
   @include media('>phone', '<=tablet') {
     width: calc(100% - 9rem);
     height: calc(100% - 16rem);

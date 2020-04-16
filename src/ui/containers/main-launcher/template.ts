@@ -12,12 +12,12 @@ export default function template(this: MainLauncherElement): TemplateResult {
           ${Grid('black')}
         </button> -->
     </nav>
-    <section slot="main">
+    <section>
       ${repeat(
         this.applications,
         app => app.uuid,
         app => html`
-          <application-shortcut slot="main" .key=${app.uuid} .title=${app.title}></application-shortcut>
+          <application-shortcut .key=${app.uuid} .title=${app.title}></application-shortcut>
         `
       )}
     </section>

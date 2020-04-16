@@ -22,7 +22,7 @@ export default function template(this: AppHomeElement): TemplateResult {
         <ui-panel class="orders">Orders</ui-panel>
       </div>
       <div class="container right">
-        <!-- <leaflet-map></leaflet-map> -->
+        <leaflet-map></leaflet-map>
       </div>
     </main>
   `

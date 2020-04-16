@@ -14,7 +14,7 @@ export default function template(this: AppShortcutsElement): TemplateResult {
       this.modules.order,
       key => html`
         <div class="icon">
-          <button class="m icn">
+          <button class="m icn" title="${this.modules.entities[key].name}">
             <i>${Icon(this.modules.entities[key].icon, this.modules.entities[key].name)}</i>
           </button>
         </div>
