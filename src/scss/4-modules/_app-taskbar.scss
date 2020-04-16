@@ -30,6 +30,11 @@ app-taskbar {
         box-sizing: border-box;
         width: var(--size-l);
       }
+      @include media('>phone', '<=tablet') {
+        h2 {
+          display: none;
+        }
+      }
     }
     &.middle {
       flex: 1;

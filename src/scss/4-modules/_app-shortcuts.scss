@@ -1,6 +1,19 @@
 app-shortcuts {
-  width: var(--size-l);
-  min-width: var(--size-l);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: var(--theme-size-l);
+  min-width: var(--theme-size-l);
   border-right: 0.01em solid var(--theme-color-base-100);
   background-color: var(--theme-color-base-110);
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--theme-size-l);
+    width: var(--theme-size-l);
+    /* border: 0.01em solid var(--theme-color-primary-3d, red); */
+    box-sizing: border-box;
+  }
 }

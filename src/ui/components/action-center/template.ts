@@ -6,7 +6,7 @@ export default function template(this: ActionCenterElement): TemplateResult {
   return html`
     <main>
       <nav>
-        <button>
+        <button class="m icn" title="Accounts">
           <i>${Icon('user', 'Account')}</i>
         </button>
       </nav>

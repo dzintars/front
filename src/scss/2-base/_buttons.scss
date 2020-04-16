@@ -29,6 +29,10 @@ input[type='button'] {
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: unset;
+      &:hover {
+        background-color: var(--theme-color-base-140);
+      }
     }
   }
   &.l {

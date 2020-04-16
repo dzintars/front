@@ -41,4 +41,7 @@ export class ActionCenterElement extends LitElement {
   public static get styles(): CSSResultArray {
     return [Buttons, style]
   }
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
+  }
 }

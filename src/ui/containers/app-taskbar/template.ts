@@ -19,7 +19,7 @@ export default function template(this: AppTaskbarElement): TemplateResult {
     </div>
     <div class="right">
       <button class="m icn" @click=${this.toggleActionCenter} title="Action Center">
-        <i class="m">${Icon('gear', 'Action Center')}</i>
+        <i class="m">${Icon('gear', '')}</i>
       </button>
       <button class="m" @click=${this.switchTheme}>
         <span>Theme</span>

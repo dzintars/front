@@ -6,13 +6,17 @@ import { Icon } from '../../assets/svg'
 export default function template(this: AppShortcutsElement): TemplateResult {
   return html`
     <div class="icon">
-      <button>${Icon('arrow-left', 'Back')}</button>
+      <button class="m icn">
+        <i>${Icon('arrow-left', 'Back')}</i>
+      </button>
     </div>
     ${repeat(
       this.modules.order,
       key => html`
         <div class="icon">
-          <button>${Icon(this.modules.entities[key].icon, this.modules.entities[key].name)}</button>
+          <button class="m icn">
+            <i>${Icon(this.modules.entities[key].icon, this.modules.entities[key].name)}</i>
+          </button>
         </div>
       `
     )}
