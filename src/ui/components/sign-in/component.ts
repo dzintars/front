@@ -2,8 +2,8 @@ import { LitElement, customElement, TemplateResult, CSSResultArray } from 'lit-e
 import template from './template'
 import style from './style'
 
-@customElement('app-signup')
-export class AppSignupElement extends LitElement {
+@customElement('sign-in')
+export class SignInElement extends LitElement {
   get userFullNameInput() {
     return this.shadowRoot.getElementById('customer_name') as HTMLInputElement
   }

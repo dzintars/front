@@ -16,9 +16,10 @@ main-launcher {
     application-shortcut {
       margin: 1rem;
       width: 200px;
+      background-color: var(--theme-color-base-100);
     }
     application-shortcut:hover {
-      background-color: var(--theme-color-base-100);
+      background-color: var(--theme-color-base-90);
     }
   }
   @include media('>phone', '<=tablet') {

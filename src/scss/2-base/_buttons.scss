@@ -28,6 +28,7 @@ input[type='button'] {
   &.m {
     height: var(--size-m);
     border-radius: var(--border-radius-m);
+    font-size: 1rem;
     &.icn {
       width: var(--size-m);
       border-radius: 50%;
