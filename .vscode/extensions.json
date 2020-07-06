@@ -4,7 +4,11 @@
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",
     "streetsidesoftware.code-spell-checker",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "arcanis.vscode-zipfs"
   ],
-  "unwantedRecommendations": ["hookyqr.beautify", "dbaeumer.jshint"]
+  "unwantedRecommendations": [
+    "hookyqr.beautify",
+    "dbaeumer.jshint"
+  ]
 }

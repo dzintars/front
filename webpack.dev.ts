@@ -36,9 +36,9 @@ const config: webpack.Configuration = merge(common, {
     allowedHosts: ['dev.oswee.com'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
     http2: true,
     https: {
-      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey1.pem'),
-      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
-      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey.pem'),
+      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain.pem'),
+      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain.pem'),
     },
     // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
     // disableHostCheck: true, // Probably not needed if allowedHosts is used
