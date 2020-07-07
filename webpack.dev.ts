@@ -77,7 +77,7 @@ const config: webpack.Configuration = merge(common, {
           loader: 'file-loader',
           options: {
             outputPath: '/img',
-            name: '[name].[hash].[ext]',
+            name: '[name].[contentHash].[ext]',
           },
         },
       },

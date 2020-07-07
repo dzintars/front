@@ -27,13 +27,20 @@
     "./web/app"
   ],
   "cSpell.words": [
+    "Dzintars",
     "Editorconfig",
     "Hygen",
+    "Klavins",
     "ROADMAP",
     "bigint",
+    "commitlint",
+    "devtools",
     "lintstaged",
     "monorepository",
-    "npmignore"
+    "npmignore",
+    "pnpify",
+    "tslib",
+    "yarnpkg"
   ],
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "eslint.nodePath": ".yarn/sdks",

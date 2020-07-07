@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "Advanced boilerplate and sample app with Lit Element, Redux, Redux-Saga, Reselect, SCSS.",
   "author": "Dzintars Klavins",
   "license": "ISC",
@@ -33,7 +33,6 @@
     }
   },
   "dependencies": {
-    "@types/leaflet": "^1.5.12",
     "history": "^4.10.1",
     "leaflet": "^1.6.0",
     "lit-element": "latest",
@@ -48,6 +47,7 @@
     "@commitlint/config-conventional": "latest",
     "@types/eslint": "latest",
     "@types/html-webpack-plugin": "latest",
+    "@types/leaflet": "^1.5.12",
     "@types/mini-css-extract-plugin": "latest",
     "@types/node": "latest",
     "@types/optimize-css-assets-webpack-plugin": "latest",
@@ -90,8 +90,11 @@
     "tslib": "latest",
     "typescript": "latest",
     "webpack": "next",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "beta",
     "webpack-dev-server": "latest",
     "webpack-merge": "latest"
+  },
+  "resolutions": {
+    "@types/webpack": "^4.41.17"
   }
 }
