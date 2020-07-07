@@ -50,4 +50,4 @@ By following these steps i got project running after fresh Fedora install. Mby i
 
 5. Install dependencies `yarn install`
 
-Enable PnP for VS Code `yarn dlx @yarnpkg/pnpify --sdk vscode`. When popup will show up, press `Allow`.
+6. Enable PnP for VS Code `yarn dlx @yarnpkg/pnpify --sdk vscode`. When popup will show up, press `Allow`.

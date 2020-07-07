@@ -20,7 +20,7 @@ export default function template(this: SystemShellElement): TemplateResult {
       `
     default:
       return html`
-        <div style="background-color: red;"><p style="color: white;">Disconnected</p></div>
+        <div style="background-color: red;"><p style="color: white;">WSS connection lost</p></div>
       `
   }
 }
