@@ -90,11 +90,8 @@
     "tslib": "latest",
     "typescript": "latest",
     "webpack": "next",
-    "webpack-cli": "beta",
+    "webpack-cli": "3",
     "webpack-dev-server": "latest",
     "webpack-merge": "latest"
-  },
-  "resolutions": {
-    "@types/webpack": "^4.41.17"
   }
 }
