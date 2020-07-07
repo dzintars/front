@@ -11,6 +11,9 @@
     }
   },
   "files.autoSave": "off",
+  "files.exclude": {
+    "**/.git": false
+  },
   "[typescript]": {
     // "editor.tabSize": 2, // Potentially overlaps with Editorconfig extension
     "editor.formatOnSave": true,
