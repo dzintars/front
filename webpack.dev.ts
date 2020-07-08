@@ -83,6 +83,16 @@ const config: webpack.Configuration = merge(common, {
       },
     ],
   },
+  // TODO: Learn this! https://github.com/webpack/webpack/issues/10534
+  stats: {
+    assetsSort: '!size',
+    children: false,
+    usedExports: false,
+    modules: false,
+    entrypoints: false,
+    // Hide source maps from output
+    excludeAssets: [/\.*\.map/],
+  },
 })
 
 export default config
