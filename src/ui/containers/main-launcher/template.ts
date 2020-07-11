@@ -4,6 +4,7 @@ import { repeat } from 'lit-html/directives/repeat'
 import { Grid } from '../../assets/svg'
 import '../../components/application-shortcut'
 // import '../../elements/ui-launcher'
+import '../../elements/ui-avatar'
 
 export default function template(this: MainLauncherElement): TemplateResult {
   return html`
@@ -12,6 +13,11 @@ export default function template(this: MainLauncherElement): TemplateResult {
           ${Grid('black')}
         </button> -->
     </nav>
+    <div class="account">
+      <ui-avatar src="src/ui/assets/img/avatars/me-48.png" alt="Dzintars Klavins"></ui-avatar>
+      <p>Guest</p>
+      <button>Sign In</button>
+    </div>
     <section>
       ${repeat(
         this.applications,

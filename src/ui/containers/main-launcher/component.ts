@@ -54,7 +54,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
     this.dispatchEvent(event)
   }
 
-  changeState() {
+  changeState(): void {
     store.dispatch(hideLauncher())
   }
 

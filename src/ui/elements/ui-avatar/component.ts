@@ -2,20 +2,21 @@ import { LitElement, customElement, property, TemplateResult } from 'lit-element
 import template from './template'
 import style from './style'
 
-@customElement('my-component')
-export class MyComponentElement extends LitElement {
+@customElement('ui-avatar')
+export class UiAvatarElement extends LitElement {
   public static styles = [style]
   @property({ type: Boolean, reflect: true }) selected: boolean = false
   @property({ type: Number }) key: number = 0
-  @property({ type: String }) name: string = 'Dzintars'
+  @property({ type: String }) src: string = ''
+  @property({ type: String }) alt: string = ''
 
   onButtonClick(): void {
-    const evt = new CustomEvent('my-component-click', {
+    const evt = new CustomEvent('ui-avatar-click', {
       bubbles: true,
       composed: true,
       detail: {
         key: this.key,
-        name: this.name,
+        name: this.src,
       },
     })
     this.dispatchEvent(evt)
@@ -36,22 +37,31 @@ export class MyComponentElement extends LitElement {
     this.addEventListener('click', this.onButtonClick)
   }
 
+  disconnectedCallback(): void {
+    super.disconnectedCallback()
+    this.removeEventListener('click', this.onButtonClick)
+  }
+
   protected render(): TemplateResult {
     return template.call(this)
+  }
+
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }
 
 declare global {
   interface DocumentEventMap {
-    'my-component-click': CustomEvent<MyComponentData>
+    'ui-avatar-click': CustomEvent<UiAvatarData>
   }
 
   interface HTMLElementTagNameMap {
-    'my-component': MyComponentElement
+    'ui-avatar': UiAvatarElement
   }
 }
 
-export interface MyComponentData {
+export interface UiAvatarData {
   key: number
   name: string
 }

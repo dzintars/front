@@ -15,7 +15,6 @@ export namespace ApplicationSelectors {
 
   export const application = createSelector([selected, entities], (selected, entities) => entities[selected.uuid])
 
-
   export const component = createSelector([application], application => application.component)
 
   export const shouldFetch = createSelector(

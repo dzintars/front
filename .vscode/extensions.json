@@ -5,7 +5,13 @@
     "editorconfig.editorconfig",
     "streetsidesoftware.code-spell-checker",
     "davidanson.vscode-markdownlint",
-    "arcanis.vscode-zipfs"
+    "arcanis.vscode-zipfs",
+    "bierner.lit-html",
+    "mf.vscode-styled-components",
+    "formulahendry.auto-rename-tag",
+    "sainoba.px-to-rem",
+    "davidanson.vscode-markdownlint"
+
   ],
   "unwantedRecommendations": [
     "hookyqr.beautify",

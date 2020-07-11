@@ -10,7 +10,8 @@ const SOCKET_STATES = {
   CLOSED: 3,
 }
 
-function getCookie(cname) {
+// TODO: I think, this should be done in WSS API site. Leaving for testing.
+function getCookie(cname: string): string {
   const name = cname + '='
   const decodedCookie = decodeURIComponent(document.cookie)
   const ca = decodedCookie.split(';')
@@ -23,6 +24,7 @@ function getCookie(cname) {
       return c.substring(name.length, c.length)
     }
   }
+  // Return empty string if there is no valid cookie
   return ''
 }
 
@@ -44,6 +46,7 @@ const websocketMiddleware = ({ dispatch }) => next => {
       // Remove action metadata before sending to the server
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
+        // Send additional parameters for any message
         user: user,
       })
       // TODO: Make action Type CamelCase
