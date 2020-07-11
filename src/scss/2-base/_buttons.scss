@@ -1,14 +1,14 @@
-.button,
 button,
+.button,
 input[type='submit'],
 input[type='reset'],
 input[type='button'] {
-  --size-xs: 1.625rem; // 26px
-  --size-s: 1.875rem; // 30px
+  --size-xs: 1.75rem; // 28px
+  --size-s: 2rem; // 30px
   --size-m: 2.25rem; // 36px
   --size-l: 2.75rem; // 44px
   --size-xl: 3.5rem; // 56px
-  --border-radius-s: 0.25em;
+  --border-radius-s: 0.2em;
   --border-radius-m: 0.25em;
   --border-radius-l: 0.5em;
   display: inline-block;
@@ -16,11 +16,16 @@ input[type='button'] {
   align-items: center;
   outline: none;
   &:hover {
+    &.primary {
+      background-color: green;
+      box-shadow: var(--theme-shadow-8);
+    }
     background-color: var(--theme-color-base-90);
     color: var(--theme-color-base-30);
   }
   &.xs {
     height: var(--size-xs);
+    border-radius: var(--border-radius-s);
   }
   &.s {
     height: var(--size-s);
@@ -46,5 +51,9 @@ input[type='button'] {
   }
   &.xl {
     height: var(--size-xl);
+  }
+  &.primary {
+    background-color: var(--lt-color-primary, #006aff);
+    color: white;
   }
 }

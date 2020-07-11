@@ -5,8 +5,11 @@ export default css`
     box-sizing: border-box;
   }
   :host {
-    display: block;
+    display: flex;
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
   img {

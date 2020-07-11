@@ -3,26 +3,57 @@ main-launcher {
   flex-direction: column;
   position: fixed;
   top: var(--theme-size-l);
-  background-color: var(--theme-color-base-110);
+  left: 1rem;
+  // background-color: var(--theme-color-base-110);
+  background-color: white;
   box-shadow: var(--theme-shadow-64);
   height: calc(100% - var(--theme-size-l) - 1rem);
-  width: 300px;
+  width: 320px;
+  border-radius: 3px;
   // border: 3px solid dodgerblue;
   z-index: 1;
   .account {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     height: 4rem;
-    width: 100%;
+    width: auto;
+    margin: 8px 16px;
     padding: 8px 16px;
     box-shadow: var(--theme-shadow-8);
     background-color: white;
+    border-radius: 3px;
+    &:hover {
+      box-shadow: var(--theme-shadow-16);
+    }
     ui-avatar {
       width: 48px;
       height: 48px;
       border-radius: 50%;
+      // border: 1px solid dodgerblue;
+      box-shadow: var(--theme-shadow-8);
+      font-size: 1.25em;
+      line-height: 1;
+      font-weight: 500;
+      user-select: none;
+    }
+    .credentials {
+      flex: 1;
+      margin: 0 16px;
+      height: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .username {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+      .account-type {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
   }
   section {

@@ -9,6 +9,7 @@ export class UiAvatarElement extends LitElement {
   @property({ type: Number }) key: number = 0
   @property({ type: String }) src: string = ''
   @property({ type: String }) alt: string = ''
+  @property({ type: String }) text: string = ''
 
   onButtonClick(): void {
     const evt = new CustomEvent('ui-avatar-click', {
@@ -43,6 +44,7 @@ export class UiAvatarElement extends LitElement {
   }
 
   protected render(): TemplateResult {
+    this.text = this.textContent
     return template.call(this)
   }
 
@@ -63,5 +65,7 @@ declare global {
 
 export interface UiAvatarData {
   key: number
-  name: string
+  src: string
+  alt: string
+  text: string
 }

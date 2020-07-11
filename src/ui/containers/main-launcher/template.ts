@@ -14,9 +14,12 @@ export default function template(this: MainLauncherElement): TemplateResult {
         </button> -->
     </nav>
     <div class="account">
-      <ui-avatar src="src/ui/assets/img/avatars/me-48.png" alt="Dzintars Klavins"></ui-avatar>
-      <p>Guest</p>
-      <button>Sign In</button>
+      <ui-avatar src="src/ui/assets/img/avatars/me-48.png" alt="Dzintars Klavins">DK</ui-avatar>
+      <div class="credentials">
+        <p class="username">Guest</p>
+        <p class="account-type">Public account</p>
+      </div>
+      <button class="primary xs">Sign In</button>
     </div>
     <section>
       ${repeat(
