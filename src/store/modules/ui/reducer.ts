@@ -4,7 +4,7 @@ import { UiState } from './models'
 export { UiState }
 
 const initialState: UiState = {
-  isLauncherDisplayed: true,
+  isLauncherDisplayed: false,
   isActionCenterDisplayed: true,
   isAccountWidgetDisplayed: false,
   application: {

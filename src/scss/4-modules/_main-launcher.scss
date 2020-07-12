@@ -34,7 +34,7 @@ main-launcher {
       box-shadow: var(--theme-shadow-8);
       font-size: 1.25em;
       line-height: 1;
-      font-weight: 500;
+      font-weight: 600;
       user-select: none;
     }
     .credentials {
@@ -46,27 +46,32 @@ main-launcher {
       justify-content: center;
       .username {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 20px;
         text-transform: uppercase;
       }
       .account-type {
         font-size: 14px;
+        font-weight: 300;
         line-height: 20px;
       }
     }
   }
   section {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 1rem;
     application-shortcut {
-      margin: 1rem;
-      width: 200px;
-      background-color: var(--theme-color-base-100);
+      margin: 0 1rem;
+      width: auto;
+      background-color: white;
+      color: black;
+      transition: filter 200ms;
     }
     application-shortcut:hover {
-      background-color: var(--theme-color-base-90);
+      // background-color: var(gray, --theme-color-base-90);
+      filter: brightness(0.96);
+      // box-shadow: var(--theme-shadow-8);
     }
   }
   @include media('>phone', '<=tablet') {

@@ -14,7 +14,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
         </button> -->
     </nav>
     <div class="account">
-      <ui-avatar src="src/ui/assets/img/avatars/me-48.png" alt="Dzintars Klavins">DK</ui-avatar>
+      <ui-avatar src="src/ui/assets/img/avatars/me-48.png" alt="Dzintars Klavins"></ui-avatar>
       <div class="credentials">
         <p class="username">Guest</p>
         <p class="account-type">Public account</p>

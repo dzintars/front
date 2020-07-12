@@ -26,6 +26,8 @@ input[type='button'] {
   &.xs {
     height: var(--size-xs);
     border-radius: var(--border-radius-s);
+    font-size: 0.875rem;
+    font-weight: 400;
   }
   &.s {
     height: var(--size-s);
