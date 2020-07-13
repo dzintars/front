@@ -26,7 +26,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
         this.applications,
         app => app.uuid,
         app => html`
-          <application-shortcut .key=${app.uuid} .title=${app.title}></application-shortcut>
+          <application-shortcut .key=${app.uuid} .name=${app.title} .menuItems="${app.modules}"></application-shortcut>
         `
       )}
     </section>

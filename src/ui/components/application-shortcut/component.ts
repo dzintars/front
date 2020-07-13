@@ -5,7 +5,8 @@ import style from './style'
 @customElement('application-shortcut')
 export class ApplicationShortcutElement extends LitElement {
   @property({ type: String }) key: string = ''
-  @property({ type: String }) title: string = 'Unknown application'
+  @property({ type: String }) name: string = 'Unknown application'
+  @property({ type: Array }) menuItems: string[] = ['Item 1', 'Item 2']
 
   onHostClick(): void {
     const evt = new CustomEvent('application-shortcut-click', {
@@ -13,7 +14,7 @@ export class ApplicationShortcutElement extends LitElement {
       composed: true,
       detail: {
         key: this.key,
-        title: this.title,
+        name: this.name,
       },
     })
     this.dispatchEvent(evt)

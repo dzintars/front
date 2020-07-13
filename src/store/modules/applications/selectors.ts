@@ -17,6 +17,8 @@ export namespace ApplicationSelectors {
 
   export const component = createSelector([application], application => application.component)
 
+  export const modules = createSelector([getState], (state, id) => state.entities[id].modules)
+
   export const shouldFetch = createSelector(
     [application],
     application => application === undefined // && state.fetching === false

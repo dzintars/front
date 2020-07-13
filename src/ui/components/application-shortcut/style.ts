@@ -5,18 +5,24 @@ export default css`
     box-sizing: border-box;
   }
   :host {
-    display: block;
-    padding: 1rem;
+    display: flex;
+    flex-direction: row;
     box-sizing: border-box;
-    /* background-color: var(--theme-color-primary-1d);
-    box-shadow: var(--theme-shadow-4);
-    color: var(--theme-color-primary-10d);
-    width: auto; */
+    justify-content: space-between;
     cursor: pointer;
   }
 
   :host(:hover) {
     background-color: var(--color-gray-40);
     /* box-shadow: var(--theme-shadow-8); */
+  }
+
+  p {
+    line-height: 1;
+  }
+
+  svg {
+    stroke: black;
+    fill: white;
   }
 `
