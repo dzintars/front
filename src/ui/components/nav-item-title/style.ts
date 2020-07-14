@@ -7,17 +7,9 @@ export default css`
   :host {
     display: flex;
     flex-direction: row;
-    box-sizing: border-box;
-    justify-content: space-between;
-    cursor: pointer;
   }
 
-  :host(:hover) {
-    background-color: var(--color-gray-40);
-    /* box-shadow: var(--theme-shadow-8); */
-  }
-
-  p {
+  span {
     line-height: 1;
   }
 

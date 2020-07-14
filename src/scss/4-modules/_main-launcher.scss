@@ -1,7 +1,8 @@
 main-launcher {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  position: fixed;
+  align-items: flex-start;
   top: var(--theme-size-l);
   left: 1rem;
   // background-color: var(--theme-color-base-110);
@@ -12,13 +13,13 @@ main-launcher {
   border-radius: 3px;
   // border: 3px solid dodgerblue;
   z-index: 1;
+  padding: 0.5rem 1rem;
   .account {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 4rem;
-    width: auto;
-    margin: 8px 16px;
+    width: 100%;
     padding: 8px 16px;
     box-shadow: var(--theme-shadow-8);
     background-color: white;
@@ -57,23 +58,49 @@ main-launcher {
       }
     }
   }
-  section {
+
+  nav {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    application-shortcut {
-      margin: 0 1rem;
-      width: auto;
-      background-color: white;
-      color: black;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    nav-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      min-height: 3rem;
       transition: filter 200ms;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 2px;
     }
-    application-shortcut:hover {
+
+    nav-item:hover {
       // background-color: var(gray, --theme-color-base-90);
       filter: brightness(0.96);
       // box-shadow: var(--theme-shadow-8);
     }
+
+    nav-item-title {
+      margin: 0 1rem;
+      width: auto;
+      color: black;
+      pointer-events: none;
+    }
   }
+
+  app-flyout {
+    background-color: white;
+    position: absolute;
+    left: 98%;
+    width: 200px;
+    border-radius: 2px;
+    box-shadow: var(--theme-shadow-8);
+    padding: 0.5rem 1rem;
+  }
+
   @include media('>phone', '<=tablet') {
     width: calc(100% - 9rem);
     height: calc(100% - 16rem);

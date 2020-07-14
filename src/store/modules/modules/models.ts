@@ -6,4 +6,5 @@ export interface Module {
 export interface ModulesState {
   readonly entities: { [id: string]: Module }
   readonly ids: string[]
+  readonly highlightedModule: string
 }

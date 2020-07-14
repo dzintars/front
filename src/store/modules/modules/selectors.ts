@@ -1,12 +1,28 @@
-import { createSelector } from 'reselect'
+import { createSelector, createStructuredSelector } from 'reselect'
 import { RootState } from '../../reducer'
 
-const getState = (state: RootState) => state.modules
+// INPUT/ORIGIN SELECTORS
+const getAllModules = (state: RootState) => state.modules
+const getModuleId = (state: RootState, { moduleId }) => moduleId
 
-// TODO: Refactor namespace
-//eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace ModuleSelectors {
-  export const entities = createSelector([getState], state => state.entities)
+// MEMOIZED SELECTORS
+export const selectAllModules = createSelector([getAllModules], state =>
+  state.ids.map(uuid => state.entities[uuid]).sort()
+)
 
-  export const modules = createSelector([getState], state => state.ids.map(uuid => state.entities[uuid]).sort())
-}
+export const selectModule = createSelector([selectAllModules, getModuleId], (modules, moduleId) => modules[moduleId])
+
+export const selectModuleById = createSelector([getAllModules, getModuleId], (modules, moduleId) => {
+  console.log('A', modules.entities[moduleId])
+  return modules.entities[moduleId]
+})
+
+export const selectModuleName = createSelector([selectModuleById], module => {
+  console.log('B:', module.title)
+  return module.title
+})
+
+export const selectModuleSummary = createStructuredSelector({
+  id: getModuleId,
+  // name: selectModuleName,
+})

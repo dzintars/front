@@ -16,6 +16,11 @@ app-taskbar {
   color: var(--theme-color-base-10);
   background-color: var(--theme-color-base-110);
   border-bottom: 0.01em solid var(--theme-color-base-100);
+  // TODO: No-no!
+  #launcher svg {
+    fill: white;
+    stroke: white;
+  }
   div {
     height: 100%;
     display: flex;

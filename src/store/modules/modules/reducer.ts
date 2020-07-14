@@ -6,6 +6,7 @@ export { ModulesState }
 const initialState: ModulesState = {
   entities: {},
   ids: [],
+  highlightedModule: '',
 }
 
 export default (state: ModulesState = initialState, action: ModuleActionTypes): ModulesState => {

@@ -1,26 +1,39 @@
 import { createSelector } from 'reselect'
 import { RootState } from '../../reducer'
 
-const getState = (state: RootState) => state.applications
+// INPUT SELECTORS
+const getApplications = (state: RootState) => state.applications
+const getApplicationModules = state => state.applicationModules
+const getApplicationId = (state, { getApplicationId }) => getApplicationId
 
-// TODO: Refactor namespace
-//eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace ApplicationSelectors {
-  export const selected = createSelector([getState], state => state.selected)
-  export const defaultApplication = createSelector([getState], state => state.defaultApplication)
+// MEMOIZED SELECTORS
+export const selected = createSelector([getApplications], state => state.selected)
+export const defaultApplication = createSelector([getApplications], state => state.defaultApplication)
 
-  export const entities = createSelector([getState], state => state.entities)
+export const entities = createSelector([getApplications], state => state.entities)
 
-  export const applications = createSelector([getState], state => state.ids.map(uuid => state.entities[uuid]).sort())
+export const applications = createSelector([getApplications], state =>
+  state.ids.map(uuid => state.entities[uuid]).sort()
+)
 
-  export const application = createSelector([selected, entities], (selected, entities) => entities[selected.uuid])
+export const application = createSelector([selected, entities], (selected, entities) => entities[selected.uuid])
 
-  export const component = createSelector([application], application => application.component)
+export const component = createSelector([application], application => application.component)
 
-  export const modules = createSelector([getState], (state, id) => state.entities[id].modules)
+export const modules = createSelector([getApplications], (state, id) => state.entities[id].modules)
 
-  export const shouldFetch = createSelector(
-    [application],
-    application => application === undefined // && state.fetching === false
-  )
-}
+export const shouldFetch = createSelector(
+  [application],
+  application => application === undefined // && state.fetching === false
+)
+
+// Clean
+export const selectApplication = createSelector(
+  [getApplications, getApplicationId],
+  (applications, getApplicationId) => applications[getApplicationId]
+)
+
+export const selectApplicationModules = createSelector(
+  [getApplicationModules, getApplicationId],
+  (applicationModules, applicationId) => applicationModules[applicationId] || []
+)

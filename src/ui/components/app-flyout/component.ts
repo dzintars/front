@@ -1,12 +1,20 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
+import { store, RootState, Module, ModuleSelectors } from '../../../store'
+import { connect } from '../../../utils/connect'
 import template from './template'
 import style from './style'
 
-@customElement('application-shortcut')
-export class ApplicationShortcutElement extends LitElement {
+@customElement('app-flyout')
+export class AppFlyoutElement extends connect(store, LitElement) {
   @property({ type: String }) key: string = ''
-  @property({ type: String }) name: string = 'Unknown application'
-  @property({ type: Array }) menuItems: string[] = ['Item 1', 'Item 2']
+  @property({ type: String }) label: string = 'Unspecified label'
+  @property({ type: Array }) modules: Module[]
+
+  mapState(state: RootState) {
+    return {
+      modules: ModuleSelectors.selectAllModules(state),
+    }
+  }
 
   onHostClick(): void {
     const evt = new CustomEvent('application-shortcut-click', {
@@ -14,7 +22,7 @@ export class ApplicationShortcutElement extends LitElement {
       composed: true,
       detail: {
         key: this.key,
-        name: this.name,
+        label: this.label,
       },
     })
     this.dispatchEvent(evt)
@@ -37,19 +45,23 @@ export class ApplicationShortcutElement extends LitElement {
   public static get styles(): CSSResultArray {
     return [style]
   }
+
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
+  }
 }
 
 declare global {
   interface DocumentEventMap {
-    'application-shortcut-click': CustomEvent<ApplicationShortcutData>
+    'app-flyout-click': CustomEvent<AppFlyoutData>
   }
 
   interface HTMLElementTagNameMap {
-    'application-shortcut': ApplicationShortcutElement
+    'app-flyout': AppFlyoutElement
   }
 }
 
-export interface ApplicationShortcutData {
+export interface AppFlyoutData {
   key: number
   name: string
 }
