@@ -10,7 +10,7 @@ const SOCKET_STATES = {
   CLOSED: 3,
 }
 
-// TODO: I think, this should be done in WSS API site. Leaving for testing.
+// TODO: I think, this should be done in WSS API side. Leaving for testing.
 function getCookie(cname: string): string {
   const name = cname + '='
   const decodedCookie = decodeURIComponent(document.cookie)

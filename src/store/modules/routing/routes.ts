@@ -9,6 +9,7 @@ function* homeRoute(params, queries) {
 }
 
 function* userListRoute(params, queries) {
+  console.log('hit')
   yield put(UserActions.fetchUserList())
 }
 

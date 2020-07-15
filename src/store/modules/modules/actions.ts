@@ -1,6 +1,7 @@
 import { ModuleTypes, ModuleActionTypes } from './types'
 import { ModulesState } from './models'
 
+// ACTION CREATORS
 export const getModules = (): ModuleActionTypes => ({
   type: ModuleTypes.GET,
   meta: { websocket: true },

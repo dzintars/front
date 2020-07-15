@@ -1,5 +1,5 @@
 export interface Application {
-  readonly uuid: string
+  readonly id: string
   readonly title: string
   readonly component: string
   readonly permalink: string
@@ -7,8 +7,8 @@ export interface Application {
 }
 
 export interface ApplicationsState {
-  readonly entities: { [uuid: string]: Application }
-  readonly ids: string[]
+  readonly byId: { [id: string]: Application }
+  readonly allIds: string[]
   readonly fetching: boolean
   readonly selected: {
     uuid: string
@@ -19,6 +19,6 @@ export interface ApplicationsState {
 }
 
 export interface ApplicationsX {
-  readonly entities: { [uuid: string]: Application }
-  readonly ids: string[]
+  readonly byId: { [id: string]: Application }
+  readonly allIds: string[]
 }

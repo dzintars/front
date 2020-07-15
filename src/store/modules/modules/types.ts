@@ -5,6 +5,7 @@ export enum ModuleTypes {
   GET_SUCCESS = 'MODULE_GET_SUCCESS',
 }
 
+// ACTIONS
 interface Get {
   readonly type: ModuleTypes.GET
   readonly meta: object
