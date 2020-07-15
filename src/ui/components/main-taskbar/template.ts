@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { MainTaskbarElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
-import { Icon, User, Grid } from '../../assets/svg'
+import { Icon, User, Grid } from '../../../assets/svg'
 import '../../elements/ui-taskbar'
 
 export default function template(this: MainTaskbarElement): TemplateResult {

@@ -10,6 +10,7 @@ const initialState: ApplicationsState = {
       title: 'Home Root Fallback',
       component: 'app-home',
       permalink: '/',
+      modules: [],
     },
   },
   ids: [],

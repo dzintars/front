@@ -1,7 +1,7 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, WebsocketSelectors, UiSelectors, hideLauncher, ThemeSelectors } from '../../../store'
-import { Theme } from '../../assets/style'
+import { Theme } from '../../../assets/style'
 import template from './template'
 import style from './style'
 // import { EventPathIncludes } from '../../../utils'
@@ -80,7 +80,7 @@ export class SystemShellElement extends connect(store, LitElement) {
   public static get styles(): CSSResultArray {
     return [Theme, style]
   }
-  // Turn off shadowDOM
+
   createRenderRoot(): Element | ShadowRoot {
     return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }

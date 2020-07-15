@@ -8,6 +8,8 @@ import {
   RoutingActions,
   Application,
   ApplicationSelectors,
+  Module,
+  ModuleSelectors,
   UiSelectors,
   hideLauncher,
   launcherDisplayed,
@@ -15,27 +17,33 @@ import {
   startApplication,
   selectApplication,
 } from '../../../store'
-import { Theme } from '../../assets/style'
+import { Theme } from '../../../assets/style'
 import template from './template'
 import style from './style'
+import { NavItemElementData } from '../../components/nav-item'
 
 @customElement('main-launcher')
 export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Boolean, reflect: true }) isVisible: boolean = false
   @property({ type: Object }) wrapperRef: any = this.setWrapperRef.bind(this)
   @property({ type: Array }) applications: Application[]
+  @property({ type: String }) activeNavItem: string = ''
+  @property({ type: Object }) module: Module = { id: '', title: '' }
+  @property({ type: String }) moduleName: string = ''
 
   mapState(state: RootState) {
     return {
       applications: ApplicationSelectors.applications(state),
       isVisible: UiSelectors.getLauncherVisibility(state),
+      module: ModuleSelectors.selectModuleById(state, { moduleId: '9a84c3f2-c84b-4e44-b2b5-3ad9fa1840e4' }),
+      moduleName: ModuleSelectors.selectModuleName(state, { moduleId: '9a84c3f2-c84b-4e44-b2b5-3ad9fa1840e4' }),
     }
   }
 
   // Intercept custom events from child components and call Redux action (Connect lib)
   mapEvents() {
     return {
-      'application-shortcut-click': (e: CustomEvent) => startApplication(e.detail.key),
+      'nav-item-click': (e: CustomEvent<NavItemElementData>) => startApplication(e.detail.key),
       // 'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
     }
   }
@@ -43,6 +51,20 @@ export class MainLauncherElement extends connect(store, LitElement) {
   constructor() {
     super()
     this.handleClickOutside = this.handleClickOutside.bind(this)
+    this.addEventListener('nav-item-enter', e => {
+      this.openFlyoutMenu(e)
+    })
+    this.addEventListener('nav-item-leave', e => {
+      this.hideFlyoutMenu(e)
+    })
+  }
+
+  openFlyoutMenu(e) {
+    this.activeNavItem = e.detail.key
+  }
+
+  hideFlyoutMenu(e) {
+    this.activeNavItem = ''
   }
 
   onButtonClick(): void {
@@ -54,7 +76,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
     this.dispatchEvent(event)
   }
 
-  changeState() {
+  changeState(): void {
     store.dispatch(hideLauncher())
   }
 
@@ -62,6 +84,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
     super.connectedCallback()
     document.addEventListener('mousedown', this.handleClickOutside)
     store.dispatch(launcherDisplayed())
+    console.log('Test:', this.moduleName, this.module)
   }
 
   disconnectedCallback(): void {
@@ -94,6 +117,10 @@ export class MainLauncherElement extends connect(store, LitElement) {
 
   public static get styles(): CSSResultArray {
     return [Theme, style]
+  }
+
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }
 

@@ -9,7 +9,7 @@ import {
   switchTheme,
 } from '../../../store'
 import { connect } from '../../../utils/connect'
-import { Theme } from '../../assets/style'
+import { Theme } from '../../../assets/style'
 import template from './template'
 import style from './style'
 

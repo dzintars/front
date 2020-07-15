@@ -11,6 +11,6 @@ export default css`
     flex-direction: row;
     align-items: center;
     min-height: var(--size-m);
-    background-color: var(--color-base);
+    background-color: var(--theme-color-base-110);
   }
 `

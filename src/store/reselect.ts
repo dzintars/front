@@ -8,6 +8,7 @@ import { UiSelectors } from './modules/ui'
 import { ThemeSelectors } from './modules/theme'
 import { UserSelectors } from './modules/users'
 import { ApplicationSelectors } from './modules/applications'
+import { ModuleSelectors } from './modules/modules'
 import { OrganizationSelectors } from './modules/organizations'
 
 export const startReselect = (store: Store) => {
@@ -19,5 +20,6 @@ export const startReselect = (store: Store) => {
   ReselectTools.registerSelectors(ThemeSelectors)
   ReselectTools.registerSelectors(UserSelectors)
   ReselectTools.registerSelectors(ApplicationSelectors)
+  ReselectTools.registerSelectors(ModuleSelectors)
   ReselectTools.registerSelectors(OrganizationSelectors)
 }

@@ -7,6 +7,7 @@ import theme, { ThemeState } from './modules/theme/reducer'
 import ui, { UiState } from './modules/ui/reducer'
 import users, { UserState } from './modules/users/reducer'
 import applications, { ApplicationsState } from './modules/applications/reducer'
+import modules, { ModulesState } from './modules/modules/reducer'
 import persons, { PersonsState } from './modules/persons/reducer'
 import accounts, { AccountsState } from './modules/accounts/reducer'
 import organizations, { OrganizationsState } from './modules/organizations/reducer'
@@ -20,6 +21,7 @@ export interface RootState {
   theme: ThemeState
   users: UserState
   applications: ApplicationsState
+  modules: ModulesState
   persons: PersonsState
   accounts: AccountsState
   organizations: OrganizationsState
@@ -34,6 +36,7 @@ export const rootReducer = combineReducers<RootState>({
   theme,
   users,
   applications,
+  modules,
   persons,
   accounts,
   organizations,

@@ -1,7 +1,15 @@
 import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, Application, ApplicationSelectors, UiSelectors, getApplications } from '../../../store'
-import { Theme } from '../../assets/style'
+import {
+  store,
+  RootState,
+  Application,
+  ApplicationSelectors,
+  UiSelectors,
+  getApplications,
+  getModules,
+} from '../../../store'
+import { Theme } from '../../../assets/style'
 import template from './template'
 import style from './style'
 
@@ -25,6 +33,7 @@ export class AppShellElement extends connect(store, LitElement) {
   constructor() {
     super()
     store.dispatch(getApplications())
+    store.dispatch(getModules())
   }
 
   // updated() {

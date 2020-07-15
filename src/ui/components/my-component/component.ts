@@ -31,7 +31,7 @@ export class MyComponentElement extends LitElement {
   //   this.dispatchEvent(event)
   // }
 
-  connectedCallback() {
+  connectedCallback(): void {
     super.connectedCallback()
     this.addEventListener('click', this.onButtonClick)
   }

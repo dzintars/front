@@ -22,7 +22,7 @@ export class MainTaskbarElement extends connect(store, LitElement) {
     store.dispatch(getApplications())
   }
 
-  toggleAccountWidget() {
+  toggleAccountWidget(): void {
     console.log('There')
   }
 

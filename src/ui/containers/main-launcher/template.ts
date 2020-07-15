@@ -1,23 +1,43 @@
 import { html, TemplateResult } from 'lit-element'
 import { MainLauncherElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
-import { Grid } from '../../assets/svg'
-import '../../components/application-shortcut'
+import { Grid } from '../../../assets/svg'
+import '../../components/nav-item'
+import '../../components/nav-item-title'
+import '../../components/app-flyout'
 // import '../../elements/ui-launcher'
+import '../../elements/ui-avatar'
 
 export default function template(this: MainLauncherElement): TemplateResult {
   return html`
-    <nav slot="main">
-      <!-- <button @click=${this.hideLauncher} title="Open Launcher">
-          ${Grid('black')}
-        </button> -->
-    </nav>
-    <section slot="main">
+    <div class="account">
+      <ui-avatar src="src/assets/img/avatars/me-48.png" alt="Dzintars Klavins"></ui-avatar>
+      <div class="credentials">
+        <p class="username">Guest</p>
+        <p class="account-type">Public account</p>
+      </div>
+      <button class="primary xs">Sign In</button>
+    </div>
+    <nav>
       ${repeat(
         this.applications,
         app => app.uuid,
         app => html`
-          <application-shortcut slot="main" .key=${app.uuid} .title=${app.title}></application-shortcut>
+          <nav-item .key=${app.uuid} .label=${app.title}>
+            <nav-item-title .key=${app.uuid} .label=${app.title} noshadow></nav-item-title>
+            ${app.modules
+              ? html`
+                  <p>+</p>
+                `
+              : html`
+                  <p>-</p>
+                `}
+            ${this.activeNavItem === `${app.uuid}`
+              ? html`
+                  <app-flyout></app-flyout>
+                `
+              : html``}
+          </nav-item>
         `
       )}
     </section>

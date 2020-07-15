@@ -13,14 +13,14 @@ export default function template(this: SystemShellElement): TemplateResult {
       return html`
         ${this.isLauncherVisible
           ? html`
-              <main-launcher id="main-launcher"></main-launcher>
+              <main-launcher id="main-launcher" noshadow></main-launcher>
             `
           : ``}
         <app-shell noshadow></app-shell>
       `
     default:
       return html`
-        <div style="background-color: red;"><p style="color: white;">Disconnected</p></div>
+        <div style="background-color: red;"><p style="color: white;">WSS connection lost</p></div>
       `
   }
 }

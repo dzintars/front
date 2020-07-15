@@ -10,11 +10,11 @@ export default function template(this: AppShellElement): TemplateResult {
   return html`
     <app-taskbar noshadow></app-taskbar>
     <main>
-      <app-shortcuts></app-shortcuts>
-      <app-home .applications=${this.entities}></app-home>
+      <app-shortcuts noshadow></app-shortcuts>
+      <app-home .applications=${this.entities} noshadow></app-home>
       ${this.isActionCenterDisplayed
         ? html`
-            <action-center></action-center>
+            <action-center noshadow></action-center>
           `
         : html``}
     </main>

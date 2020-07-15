@@ -16,7 +16,7 @@ const config: webpack.Configuration = merge(common, {
     new HtmlWebpackPlugin({
       template: './src/template.html',
       // template: path.resolve(__dirname, 'src', 'template.html'),
-      favicon: './src/ui/assets/favicon.ico',
+      favicon: './src/assets/favicon.ico',
       filename: './index.html',
     }),
     new webpack.HotModuleReplacementPlugin({
@@ -36,9 +36,9 @@ const config: webpack.Configuration = merge(common, {
     allowedHosts: ['dev.oswee.com'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
     http2: true,
     https: {
-      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey1.pem'),
-      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
-      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain1.pem'),
+      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey.pem'),
+      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain.pem'),
+      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain.pem'),
     },
     // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
     // disableHostCheck: true, // Probably not needed if allowedHosts is used
@@ -58,7 +58,7 @@ const config: webpack.Configuration = merge(common, {
         use: [
           // Order of the loaders are important!
           { loader: 'style-loader' }, // 3. Inject styles into DOM
-          { loader: 'css-loader', options: { modules: false } }, // 2. Turns CSS into commonjs (CSS Modules - it has some issues when On)
+          { loader: 'css-loader', options: { modules: false, url: false } }, // 2. Turns CSS into commonjs (CSS Modules - it has some issues when On)
           { loader: 'sass-loader' }, // 1. Turns SCSS into CSS
         ],
         // include: /src/,

@@ -1,4 +1,108 @@
 main-launcher {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  top: var(--theme-size-l);
+  left: 1rem;
+  // background-color: var(--theme-color-base-110);
+  background-color: white;
+  box-shadow: var(--theme-shadow-64);
+  height: calc(100% - var(--theme-size-l) - 1rem);
+  width: 320px;
+  border-radius: 3px;
+  // border: 3px solid dodgerblue;
   z-index: 1;
-  // height: 100%;
+  padding: 0.5rem 1rem;
+  .account {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    padding: 8px 16px;
+    box-shadow: var(--theme-shadow-8);
+    background-color: white;
+    border-radius: 3px;
+    &:hover {
+      box-shadow: var(--theme-shadow-16);
+    }
+    ui-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      // border: 1px solid dodgerblue;
+      box-shadow: var(--theme-shadow-8);
+      font-size: 1.25em;
+      line-height: 1;
+      font-weight: 600;
+      user-select: none;
+    }
+    .credentials {
+      flex: 1;
+      margin: 0 16px;
+      height: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .username {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        text-transform: uppercase;
+      }
+      .account-type {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    nav-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      min-height: 3rem;
+      transition: filter 200ms;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+
+    nav-item:hover {
+      // background-color: var(gray, --theme-color-base-90);
+      filter: brightness(0.96);
+      // box-shadow: var(--theme-shadow-8);
+    }
+
+    nav-item-title {
+      margin: 0 1rem;
+      width: auto;
+      color: black;
+      pointer-events: none;
+    }
+  }
+
+  app-flyout {
+    background-color: white;
+    position: absolute;
+    left: 98%;
+    width: 200px;
+    border-radius: 2px;
+    box-shadow: var(--theme-shadow-8);
+    padding: 0.5rem 1rem;
+  }
+
+  @include media('>phone', '<=tablet') {
+    width: calc(100% - 9rem);
+    height: calc(100% - 16rem);
+  }
 }

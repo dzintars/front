@@ -3,6 +3,7 @@ export interface Application {
   readonly title: string
   readonly component: string
   readonly permalink: string
+  readonly modules: string[]
 }
 
 export interface ApplicationsState {

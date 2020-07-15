@@ -20,7 +20,8 @@ app-shell {
     /* height: 100%; */
   }
   ui-statusbar-connected {
-    border-top: 0.01em solid var(--color-base);
+    border-top: 0.01em solid var(--theme-color-base-100);
     height: var(--size-xxs);
+    background-color: var(--theme-color-base-110);
   }
 }

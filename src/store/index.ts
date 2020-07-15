@@ -4,6 +4,7 @@ export * from './modules/ui'
 export * from './modules/theme'
 export * from './modules/users'
 export * from './modules/applications'
+export * from './modules/modules'
 export * from './modules/organizations'
 
 export * from './store'
