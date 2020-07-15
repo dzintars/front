@@ -14,6 +14,8 @@ sudo cp /etc/letsencrypt/live/oswee.com/privkey.pem ~/.tls/oswee.com
 sudo chown -R dzintars:dzintars ~/.tls
 ```
 
+Certificates are used by webpack-dev-server to work in HTTP/2 mode because my proxy is configured with HSTS
+
 Execute `yarn start`
 
 Webpack Config TypeScript support

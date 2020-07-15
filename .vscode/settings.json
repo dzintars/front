@@ -11,8 +11,9 @@
     }
   },
   "files.autoSave": "off",
+  // Show/hide .git directory
   "files.exclude": {
-    "**/.git": false
+    "**/.git": true
   },
   "[typescript]": {
     // "editor.tabSize": 2, // Potentially overlaps with Editorconfig extension
