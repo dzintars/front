@@ -16,7 +16,7 @@ const config: webpack.Configuration = merge(common, {
     new HtmlWebpackPlugin({
       template: './src/template.html',
       // template: path.resolve(__dirname, 'src', 'template.html'),
-      favicon: './src/ui/assets/favicon.ico',
+      favicon: './src/assets/favicon.ico',
       filename: './index.html',
     }),
     new webpack.HotModuleReplacementPlugin({

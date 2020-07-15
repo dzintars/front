@@ -24,5 +24,5 @@ export const selectModuleName = createSelector([selectModuleById], module => {
 
 export const selectModuleSummary = createStructuredSelector({
   id: getModuleId,
-  // name: selectModuleName,
+  title: selectModuleName,
 })

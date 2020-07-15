@@ -1,6 +1,6 @@
 import { html, TemplateResult } from 'lit-element'
 import { AppTaskbarElement } from './component'
-import { Icon } from '../../assets/svg'
+import { Icon } from '../../../assets/svg'
 
 export default function template(this: AppTaskbarElement): TemplateResult {
   return html`

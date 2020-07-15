@@ -1,6 +1,6 @@
 import { html, TemplateResult } from 'lit-element'
 import { ActionCenterElement } from './component'
-import { Icon } from '../../assets/svg'
+import { Icon } from '../../../assets/svg'
 import '../../views/app-signup'
 
 export default function template(this: ActionCenterElement): TemplateResult {

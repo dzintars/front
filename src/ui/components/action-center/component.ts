@@ -1,5 +1,5 @@
 import { LitElement, property, customElement, TemplateResult, CSSResultArray } from 'lit-element'
-import { Buttons } from '../../assets/style'
+import { Buttons } from '../../../assets/style'
 import template from './template'
 import style from './style'
 

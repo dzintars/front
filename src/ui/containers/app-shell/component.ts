@@ -9,7 +9,7 @@ import {
   getApplications,
   getModules,
 } from '../../../store'
-import { Theme } from '../../assets/style'
+import { Theme } from '../../../assets/style'
 import template from './template'
 import style from './style'
 

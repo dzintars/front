@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { MainLauncherElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
-import { Grid } from '../../assets/svg'
+import { Grid } from '../../../assets/svg'
 import '../../components/nav-item'
 import '../../components/nav-item-title'
 import '../../components/app-flyout'
@@ -11,7 +11,7 @@ import '../../elements/ui-avatar'
 export default function template(this: MainLauncherElement): TemplateResult {
   return html`
     <div class="account">
-      <ui-avatar src="src/ui/assets/img/avatars/me-48.png" alt="Dzintars Klavins"></ui-avatar>
+      <ui-avatar src="src/assets/img/avatars/me-48.png" alt="Dzintars Klavins"></ui-avatar>
       <div class="credentials">
         <p class="username">Guest</p>
         <p class="account-type">Public account</p>

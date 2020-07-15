@@ -14,6 +14,6 @@ const enhancer = composeEnhancers(applyMiddleware(...middleware))
 export const store = createStore(rootReducer, initialState(), enhancer)
 
 startSagas().then(() => {
-  startReselect(store)
   startRouting(store)
+  startReselect(store)
 })
