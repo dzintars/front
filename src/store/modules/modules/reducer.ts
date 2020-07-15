@@ -4,8 +4,8 @@ import { ModulesState } from './models'
 export { ModulesState }
 
 const initialState: ModulesState = {
-  entities: {},
-  ids: [],
+  byId: {},
+  allIds: [],
   highlightedModule: '',
 }
 
@@ -14,10 +14,10 @@ export default (state: ModulesState = initialState, action: ModuleActionTypes): 
     case ModuleTypes.GET_SUCCESS:
       return {
         ...state,
-        entities: {
-          ...action.payload.entities,
+        byId: {
+          ...action.payload.byId,
         },
-        ids: action.payload.ids,
+        allIds: action.payload.allIds,
       }
 
     default:

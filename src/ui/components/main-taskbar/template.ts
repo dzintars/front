@@ -36,7 +36,7 @@ export default function template(this: MainTaskbarElement): TemplateResult {
     <ul>
       ${repeat(
         this.applications,
-        app => app.uuid,
+        app => app.id,
         app => html`
           <li><a href=${app.permalink}>${app.title}</a></li>
         `

@@ -4,16 +4,16 @@ import { ApplicationsState } from './models'
 export { ApplicationsState }
 
 const initialState: ApplicationsState = {
-  entities: {
+  byId: {
     '9a30119-d673-4978-b393-f608fe28ae07': {
-      uuid: '9a30119-d673-4978-b393-f608fe28ae07',
+      id: '9a30119-d673-4978-b393-f608fe28ae07',
       title: 'Home Root Fallback',
       component: 'app-home',
       permalink: '/',
       modules: [],
     },
   },
-  ids: [],
+  allIds: [],
   fetching: false,
   selected: {
     uuid: '9a30119-d673-4978-b393-f608fe28ae07',
@@ -42,14 +42,14 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
       return {
         ...state,
         fetching: false,
-        entities: {
-          ...state.entities,
+        byId: {
+          ...state.byId,
           ...action.applications.reduce((map, application) => {
-            map[application.uuid] = application
+            map[application.id] = application
             return map
           }, {}),
         },
-        ids: action.applications.map(app => app.uuid),
+        allIds: action.applications.map(app => app.id),
       }
 
     case ApplicationTypes.LIST_FETCH_FAILURE:
@@ -62,9 +62,9 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
       return {
         ...state,
         fetching: false,
-        entities: {
-          ...state.entities,
-          [action.application.uuid]: action.application,
+        byId: {
+          ...state.byId,
+          [action.application.id]: action.application,
         },
       }
 
@@ -82,11 +82,11 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
       return {
         ...state,
         fetching: false,
-        entities: {
+        byId: {
           // ...state.entities,
-          ...action.payload.entities,
+          ...action.payload.byId,
         },
-        ids: action.payload.ids,
+        allIds: action.payload.allIds,
       }
 
     case ApplicationTypes.FETCH_FAILURE:

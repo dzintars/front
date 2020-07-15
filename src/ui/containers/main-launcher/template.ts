@@ -21,10 +21,10 @@ export default function template(this: MainLauncherElement): TemplateResult {
     <nav>
       ${repeat(
         this.applications,
-        app => app.uuid,
+        app => app.id,
         app => html`
-          <nav-item .key=${app.uuid} .label=${app.title}>
-            <nav-item-title .key=${app.uuid} .label=${app.title} noshadow></nav-item-title>
+          <nav-item .key=${app.id} .label=${app.title}>
+            <nav-item-title .key=${app.id} .label=${app.title} noshadow></nav-item-title>
             ${app.modules
               ? html`
                   <p>+</p>
@@ -32,7 +32,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
               : html`
                   <p>-</p>
                 `}
-            ${this.activeNavItem === `${app.uuid}`
+            ${this.activeNavItem === `${app.id}`
               ? html`
                   <app-flyout></app-flyout>
                 `

@@ -12,8 +12,8 @@ export class MainTaskbarElement extends connect(store, LitElement) {
 
   mapState(state: RootState) {
     return {
-      applications: ApplicationSelectors.applications(state),
-      selected: ApplicationSelectors.selected(state),
+      applications: ApplicationSelectors.selectAllApplications(state),
+      selected: ApplicationSelectors.selectSelectedApplication(state),
     }
   }
 

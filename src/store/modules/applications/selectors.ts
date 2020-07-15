@@ -2,38 +2,32 @@ import { createSelector } from 'reselect'
 import { RootState } from '../../reducer'
 
 // INPUT SELECTORS
-const getApplications = (state: RootState) => state.applications
-const getApplicationModules = state => state.applicationModules
-const getApplicationId = (state, { getApplicationId }) => getApplicationId
+const getState = (state: RootState) => state.applications
+const getApplicationId = (state: RootState, { getApplicationId }) => getApplicationId
 
 // MEMOIZED SELECTORS
-export const selected = createSelector([getApplications], state => state.selected)
-export const defaultApplication = createSelector([getApplications], state => state.defaultApplication)
+// export const shouldFetch = createSelector(
+//   [application],
+//   application => application === undefined // && state.fetching === false
+// )
 
-export const entities = createSelector([getApplications], state => state.entities)
+export const selectAllIds = createSelector([getState], state => state.allIds)
 
-export const applications = createSelector([getApplications], state =>
-  state.ids.map(uuid => state.entities[uuid]).sort()
-)
+export const selectAllApplications = createSelector([getState, selectAllIds], (state, allIds) => {
+  // To return applications in specific order, i should map over allIds
+  return allIds.map(id => state.byId[id]).sort()
+})
 
-export const application = createSelector([selected, entities], (selected, entities) => entities[selected.uuid])
-
-export const component = createSelector([application], application => application.component)
-
-export const modules = createSelector([getApplications], (state, id) => state.entities[id].modules)
-
-export const shouldFetch = createSelector(
-  [application],
-  application => application === undefined // && state.fetching === false
-)
-
-// Clean
-export const selectApplication = createSelector(
-  [getApplications, getApplicationId],
+export const selectApplicationById = createSelector(
+  [selectAllApplications, getApplicationId],
   (applications, getApplicationId) => applications[getApplicationId]
 )
 
+export const selectApplicationName = createSelector([selectApplicationById], application => application.title)
+
 export const selectApplicationModules = createSelector(
-  [getApplicationModules, getApplicationId],
-  (applicationModules, applicationId) => applicationModules[applicationId] || []
+  [selectApplicationById],
+  application => application.modules || []
 )
+
+export const selectSelectedApplication = createSelector([getState], state => state.selected)

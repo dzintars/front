@@ -9,9 +9,9 @@ export namespace ApplicationSelectors {
   export const selected = createSelector([getState], state => state.selected)
   export const defaultApplication = createSelector([getState], state => state.defaultApplication)
 
-  export const entities = createSelector([getState], state => state.entities)
+  export const entities = createSelector([getState], state => state.byId)
 
-  export const applications = createSelector([getState], state => state.ids.map(uuid => state.entities[uuid]).sort())
+  export const applications = createSelector([getState], state => state.allIds.map(id => state.byId[id]).sort())
 
   export const application = createSelector([selected, entities], (selected, entities) => entities[selected.uuid])
 
