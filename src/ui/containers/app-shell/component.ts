@@ -25,7 +25,7 @@ export class AppShellElement extends connect(store, LitElement) {
 
   mapState(state: RootState) {
     return {
-      entities: ApplicationSelectors.entities(state),
+      entities: ApplicationSelectors.selectAllApplications(state),
       isActionCenterDisplayed: UiSelectors.getActionCenterVisibility(state),
     }
   }

@@ -33,7 +33,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
 
   mapState(state: RootState) {
     return {
-      applications: ApplicationSelectors.applications(state),
+      applications: ApplicationSelectors.selectAllApplications(state),
       isVisible: UiSelectors.getLauncherVisibility(state),
       module: ModuleSelectors.selectModuleById(state, { moduleId: '9a84c3f2-c84b-4e44-b2b5-3ad9fa1840e4' }),
       moduleName: ModuleSelectors.selectModuleName(state, { moduleId: '9a84c3f2-c84b-4e44-b2b5-3ad9fa1840e4' }),
@@ -84,7 +84,8 @@ export class MainLauncherElement extends connect(store, LitElement) {
     super.connectedCallback()
     document.addEventListener('mousedown', this.handleClickOutside)
     store.dispatch(launcherDisplayed())
-    console.log('Test:', this.moduleName, this.module)
+    // console.log('Test:', this.moduleName, this.module)
+    // console.log('Applications:', this.applications)
   }
 
   disconnectedCallback(): void {
