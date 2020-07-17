@@ -4,7 +4,7 @@ import { ApplicationsState } from './models'
 export { ApplicationsState }
 
 const initialState: ApplicationsState = {
-  byId: {
+  entities: {
     '9a30119-d673-4978-b393-f608fe28ae07': {
       id: '9a30119-d673-4978-b393-f608fe28ae07',
       title: 'Home Root Fallback',
@@ -13,10 +13,10 @@ const initialState: ApplicationsState = {
       modules: [],
     },
   },
-  allIds: [],
+  ids: [],
   fetching: false,
   selected: {
-    uuid: '9a30119-d673-4978-b393-f608fe28ae07',
+    id: '9a30119-d673-4978-b393-f608fe28ae07',
     state: 0,
   },
   error: null,
@@ -30,7 +30,7 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
         ...state,
         selected: {
           ...state.selected,
-          uuid: action.uuid,
+          id: action.uuid,
           state: 0,
         },
       }
@@ -42,14 +42,14 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
       return {
         ...state,
         fetching: false,
-        byId: {
-          ...state.byId,
+        entities: {
+          ...state.entities,
           ...action.applications.reduce((map, application) => {
             map[application.id] = application
             return map
           }, {}),
         },
-        allIds: action.applications.map(app => app.id),
+        ids: action.applications.map(app => app.id),
       }
 
     case ApplicationTypes.LIST_FETCH_FAILURE:
@@ -62,8 +62,8 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
       return {
         ...state,
         fetching: false,
-        byId: {
-          ...state.byId,
+        entities: {
+          ...state.entities,
           [action.application.id]: action.application,
         },
       }
@@ -73,7 +73,7 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
         ...state,
         selected: {
           ...state.selected,
-          uuid: action.uuid,
+          id: action.uuid,
         },
       }
 
@@ -82,11 +82,11 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
       return {
         ...state,
         fetching: false,
-        byId: {
+        entities: {
           // ...state.entities,
-          ...action.payload.byId,
+          ...action.payload.entities,
         },
-        allIds: action.payload.allIds,
+        ids: action.payload.ids,
       }
 
     case ApplicationTypes.FETCH_FAILURE:

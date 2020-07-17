@@ -7,11 +7,11 @@ export interface Application {
 }
 
 export interface ApplicationsState {
-  readonly byId: { [id: string]: Application }
-  readonly allIds: string[]
+  readonly entities: { [id: string]: Application }
+  readonly ids: string[]
   readonly fetching: boolean
   readonly selected: {
-    uuid: string
+    id: string
     state: number
   }
   readonly error: Error
@@ -19,6 +19,6 @@ export interface ApplicationsState {
 }
 
 export interface ApplicationsX {
-  readonly byId: { [id: string]: Application }
-  readonly allIds: string[]
+  readonly entities: { [id: string]: Application }
+  readonly ids: string[]
 }

@@ -34,7 +34,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
                 `}
             ${this.activeNavItem === `${app.id}`
               ? html`
-                  <app-flyout></app-flyout>
+                  <app-flyout .key=${app.id} .modules=${this.modules}></app-flyout>
                 `
               : html``}
           </nav-item>
