@@ -1,4 +1,10 @@
 main-launcher {
+  --color-base: var(--theme-color-base);
+  --color-primary-1d: var(--theme-color-primary-1d);
+  --color-primary-2d: var(--theme-color-primary-2d);
+  --color-primary-3d: var(--theme-color-primary-3d);
+  --color-primary-4d: var(--theme-color-primary-4d);
+  --color-primary-10d: var(--theme-color-primary-10d);
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -6,7 +12,7 @@ main-launcher {
   top: var(--theme-size-l);
   left: 1rem;
   // background-color: var(--theme-color-base-110);
-  background-color: white;
+  background-color: var(--color-base);
   box-shadow: var(--theme-shadow-64);
   height: calc(100% - var(--theme-size-l) - 1rem);
   width: 320px;
@@ -22,7 +28,7 @@ main-launcher {
     width: 100%;
     padding: 8px 16px;
     box-shadow: var(--theme-shadow-8);
-    background-color: white;
+    background-color: var(--color-base);
     border-radius: 3px;
     &:hover {
       box-shadow: var(--theme-shadow-16);
@@ -50,11 +56,13 @@ main-launcher {
         font-weight: 400;
         line-height: 20px;
         text-transform: uppercase;
+        color: var(--color-primary-10d);
       }
       .account-type {
         font-size: 14px;
         font-weight: 300;
         line-height: 20px;
+        color: var(--color-primary-10d);
       }
     }
   }
@@ -72,7 +80,7 @@ main-launcher {
       justify-content: space-between;
       min-height: 3rem;
       transition: filter 200ms;
-      background-color: white;
+      background-color: var(--color-base);
       cursor: pointer;
       border-radius: 2px;
     }
@@ -86,13 +94,14 @@ main-launcher {
     nav-item-title {
       margin: 0 1rem;
       width: auto;
-      color: black;
+      color: var(--color-primary-10d);
       pointer-events: none;
     }
   }
 
   app-flyout {
-    background-color: white;
+    background-color: var(--color-base);
+    color: var(--color-primary-10d);
     position: absolute;
     left: 98%;
     width: 200px;

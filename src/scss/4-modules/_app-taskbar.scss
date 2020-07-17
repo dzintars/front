@@ -8,18 +8,24 @@ app-taskbar {
   --border-radius-s: 0.25em;
   --border-radius-m: 0.25em;
   --border-radius-l: 0.5em;
+  --color-base: var(--theme-color-base);
+  --color-primary-1d: var(--theme-color-primary-1d);
+  --color-primary-2d: var(--theme-color-primary-2d);
+  --color-primary-3d: var(--theme-color-primary-3d);
+  --color-primary-4d: var(--theme-color-primary-4d);
+  --color-primary-10d: var(--theme-color-primary-10d);
   height: var(--size-l);
   min-height: var(--size-l);
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: var(--theme-color-base-10);
-  background-color: var(--theme-color-base-110);
-  border-bottom: 0.01em solid var(--theme-color-base-100);
+  color: var(--color-primary-10d);
+  background-color: var(--color-base);
+  border-bottom: 0.01em solid var(--color-primary-4d);
   // TODO: No-no!
   #launcher svg {
-    fill: white;
-    stroke: white;
+    fill: var(--color-primary-10d);
+    stroke: var(--color-primary-10d);
   }
   div {
     height: 100%;
@@ -53,13 +59,13 @@ app-taskbar {
           height: 2rem;
           width: 100%;
           border-radius: 3px;
-          background: var(--theme-color-base-100);
-          border: 1px solid var(--theme-color-base-100);
+          background-color: var(--color-primary-1d);
+          border: 1px solid var(--color-primary-1d);
           padding: 0 6px;
           outline: none;
           box-sizing: border-box;
           &:focus {
-            border: 1px solid var(--theme-color-accent-110, hsl(215, 100%, 50%));
+            border: 1px solid var(--color-primary-4d, hsl(215, 100%, 50%));
           }
         }
       }

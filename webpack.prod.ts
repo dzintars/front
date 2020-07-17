@@ -13,7 +13,6 @@ const config: webpack.Configuration = merge(common, {
   output: {
     filename: '[name].[contentHash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: '/static/dist',
     publicPath: '/dist',
   },
   optimization: {
@@ -45,12 +44,13 @@ const config: webpack.Configuration = merge(common, {
         ],
       },
       {
-        test: /\.(svg|png|jpg|gif)$/,
+        test: /\.(svg|png|jpe?g|gif)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash].[ext]',
+            name: '[name].[contenthash].[ext]',
             outputPath: '/img',
+            publicPath: '/img',
           },
         },
       },

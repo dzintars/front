@@ -37,7 +37,7 @@ export const selectModulesByApplicationId = createSelector(
   [selectAllModules, selectModulesIdsByApplicationId],
   (modules, ids) => {
     // console.log('Modules: ', ids.map(id => modules[id]).sort())
-    return ids.map(id => modules[id]).sort()
+    return ids.map(id => modules[id])
   }
 )
 

@@ -8,23 +8,13 @@ import style from './style'
 export class AppFlyoutElement extends connect(store, LitElement) {
   @property({ type: String }) key: string = ''
   @property({ type: String }) label: string = 'Unspecified label'
-  @property({ type: Array }) moduleIds: string[] = ['']
-  @property({ type: Array }) allModules: Module[] = [{ id: '', title: '' }]
   @property({ type: Array }) modules: Module[] = [{ id: '', title: '' }]
 
   mapState(state: RootState) {
     return {
-      moduleIds: ApplicationSelectors.selectApplicationModules(state, {
-        applicationId: this.key,
-      }),
-      allModules: ModuleSelectors.selectAllModulesArray(state),
       modules: ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.key }),
     }
   }
-
-  // updated(): void {
-  //   this.modules = (): Module[] => this.moduleIds.map(id => this.allModules[id]).sort()
-  // }
 
   onHostClick(): void {
     const evt = new CustomEvent('application-shortcut-click', {
@@ -41,7 +31,6 @@ export class AppFlyoutElement extends connect(store, LitElement) {
   connectedCallback(): void {
     super.connectedCallback()
     this.addEventListener('click', this.onHostClick)
-    console.log(this.modules)
   }
 
   disconnectedCallback(): void {

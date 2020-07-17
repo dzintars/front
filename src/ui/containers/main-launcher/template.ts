@@ -28,15 +28,15 @@ export default function template(this: MainLauncherElement): TemplateResult {
             ${app.modules
               ? html`
                   <p>+</p>
+                  ${this.activeNavItem === `${app.id}`
+                    ? html`
+                        <app-flyout .key=${app.id} .modules=${this.modules}></app-flyout>
+                      `
+                    : html``}
                 `
               : html`
-                  <p>-</p>
+                  <p></p>
                 `}
-            ${this.activeNavItem === `${app.id}`
-              ? html`
-                  <app-flyout .key=${app.id} .modules=${this.modules}></app-flyout>
-                `
-              : html``}
           </nav-item>
         `
       )}

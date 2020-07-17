@@ -11,6 +11,12 @@ input[type='button'] {
   --border-radius-s: 0.2em;
   --border-radius-m: 0.25em;
   --border-radius-l: 0.5em;
+  --color-base: var(--theme-color-base);
+  --color-primary-1d: var(--theme-color-primary-1d);
+  --color-primary-2d: var(--theme-color-primary-2d);
+  --color-primary-3d: var(--theme-color-primary-3d);
+  --color-primary-4d: var(--theme-color-primary-4d);
+  --color-primary-10d: var(--theme-color-primary-10d);
   display: inline-block;
   border: none;
   align-items: center;
@@ -20,8 +26,8 @@ input[type='button'] {
       background-color: green;
       box-shadow: var(--theme-shadow-8);
     }
-    background-color: var(--theme-color-base-90);
-    color: var(--theme-color-base-30);
+    background-color: var(--color-primary-2d);
+    color: var(--color-primary-10d);
   }
   &.xs {
     height: var(--size-xs);
@@ -36,6 +42,10 @@ input[type='button'] {
     height: var(--size-m);
     border-radius: var(--border-radius-m);
     font-size: 1rem;
+    svg {
+      // fill: var(--color-primary-10d);
+      stroke: var(--color-primary-10d);
+    }
     &.icn {
       width: var(--size-m);
       border-radius: 50%;
@@ -44,7 +54,7 @@ input[type='button'] {
       justify-content: center;
       background-color: unset;
       &:hover {
-        background-color: var(--theme-color-base-140);
+        background-color: var(--color-primary-2d);
       }
     }
   }
