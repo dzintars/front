@@ -8,9 +8,7 @@ action-center {
   width: 25%;
   background-color: var(--color-base);
   border-left: 0.01em solid var(--color-primary-4d);
-  button {
-    margin: 4px;
-  }
+
   @include media('>phone', '<=tablet') {
     // width: 50%;
     background-color: var(--color-base);

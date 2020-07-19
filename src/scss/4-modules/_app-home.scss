@@ -21,14 +21,7 @@ app-home {
       flex-wrap: wrap;
     }
   }
-  button {
-    border: none;
-    background-color: var(--color-primary-2d);
-    color: var(--color-primary-10d);
-    height: 26px;
-    margin-right: 5px;
-    border-radius: 3px;
-  }
+
   main {
     flex: 1;
     display: flex;

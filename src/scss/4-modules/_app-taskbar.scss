@@ -19,19 +19,15 @@ app-taskbar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: var(--color-primary-10d);
   background-color: var(--color-base);
   border-bottom: 0.01em solid var(--color-primary-4d);
-  // TODO: No-no!
-  #launcher svg {
-    fill: var(--color-primary-10d);
-    stroke: var(--color-primary-10d);
-  }
+
   div {
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    // align-items: center;
+    // justify-content: center;
     &.left {
       .launcher {
         display: flex;
@@ -69,6 +65,10 @@ app-taskbar {
           }
         }
       }
+    }
+    &.right {
+      align-items: center;
+      justify-content: center;
     }
   }
 }

@@ -12,7 +12,7 @@ main-launcher {
   top: var(--theme-size-l);
   left: 1rem;
   // background-color: var(--theme-color-base-110);
-  background-color: var(--color-base);
+  background-color: var(--color-base, red);
   box-shadow: var(--theme-shadow-64);
   height: calc(100% - var(--theme-size-l) - 1rem);
   width: 320px;
@@ -104,7 +104,7 @@ main-launcher {
     color: var(--color-primary-10d);
     position: absolute;
     left: 98%;
-    width: 200px;
+    width: auto;
     border-radius: 2px;
     box-shadow: var(--theme-shadow-8);
     padding: 0.5rem 1rem;

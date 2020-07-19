@@ -5,33 +5,35 @@ export default function template(): TemplateResult {
   return html`
     <div class="container">
       <form id="signup_form" name="signup" method="POST" novalidate action="">
-        <h1>Create account</h1>
+        <h2>Create account</h2>
         <input type="hidden" name="appActionToken" value="JpvLfj2FzMZj2FoVvEDKWR29i80dN5cj3D" />
         <div class="fieldset">
-          <label for="customer_name">Your name</label>
-          <input id="customer_name" name="customerName" type="text" tabindex="1" />
+          <label for="customer_name" class="text--sm">Your name</label>
+          <input id="customer_name" name="customerName" type="text" />
         </div>
         <div class="fieldset">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="text" tabindex="2" />
+          <label for="email" class="text--sm">Email</label>
+          <input id="email" name="email" type="text" />
         </div>
         <div class="fieldset">
-          <label for="password">Password</label>
-          <input id="password" autocomplete="off" name="password" type="password" tabindex="3" />
+          <label for="password" class="text--sm">Password</label>
+          <input id="password" autocomplete="off" name="password" type="password" />
         </div>
         <div class="fieldset">
-          <p>By creating an account, you agree to Hooli's</p>
+          <p class="text--sm">By creating an account, you agree to Oswee's</p>
           <p>
-            <a href="/help/conditions_of_use" tabindex="4">Conditions of Use</a>
+            <a href="/help/conditions_of_use">Conditions of Use</a>
             and
-            <a href="/help/privacy_notice" tabindex="5">Privacy Notice</a>
+            <a href="/help/privacy_notice">Privacy Notice</a>
           </p>
-          <input id="continue" type="submit" value="Create your Hooli account" tabindex="6" />
+          <button id="continue" type="submit" class="btn">
+            <span class="text--sm">Create your Oswee account</span>
+          </button>
         </div>
         <div>
-          <p class="have-account">
+          <p class="text--sm">
             Already have an account?
-            <a href="/signin" tabindex="7">Sign in</a>
+            <a href="/signin">Sign in</a>
           </p>
         </div>
       </form>
