@@ -7,11 +7,11 @@ export default function template(this: ActionCenterElement): TemplateResult {
   return html`
     <main>
       <nav>
-        <button class="m icn" title="Accounts">
-          <i>${Icon('user', 'Account')}</i>
+        <button class="btn btn--lg" title="Accounts">
+          ${Icon('user', 'Account', 'icon-btn__icon')}
         </button>
-        <button class="m icn" title="Theme">
-          <i>${Icon('palette', 'Theme')}</i>
+        <button class="btn btn--lg" title="Theme">
+          ${Icon('palette', 'Theme', 'icon-btn__icon')}
         </button>
       </nav>
       <div>

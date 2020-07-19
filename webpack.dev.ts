@@ -30,7 +30,7 @@ const config: webpack.Configuration = merge(common, {
     port: 3000, // Can omit this, so port will be picked up randomly from available ports.
     // open: true, // Open in default browser tab automatically
     historyApiFallback: true, // Serves index file for any path
-    hot: true,
+    hot: true, // https://github.com/webpack/webpack-dev-server/issues/97#issuecomment-69726201
     compress: true,
     // https://webpack.js.org/configuration/dev-server/#devserverhttp2
     allowedHosts: ['dev.oswee.com'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
@@ -72,12 +72,12 @@ const config: webpack.Configuration = merge(common, {
         // ],
       },
       {
-        test: /\.(svg|png|jpg|gif)$/,
+        test: /\.(svg|png|jpe?g|gif)$/,
         use: {
           loader: 'file-loader',
           options: {
             outputPath: '/img',
-            name: '[name].[hash].[ext]',
+            name: '[name].[contenthash].[ext]',
           },
         },
       },

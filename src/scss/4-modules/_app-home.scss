@@ -1,28 +1,24 @@
 app-home {
-  --color-base: var(--theme-color-base);
-  --color-accent: var(--theme-color-accent);
   height: 100%;
   min-height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--theme-color-base-130);
+  background-color: $layout-background-color;
+  color: $primary-text-color;
 
   ui-toolbar {
-    border-bottom: 0.01em solid var(--theme-color-base-100);
+    border-bottom: $layout-border;
+    background-color: $layout-background-color;
     padding: 0 4px;
     @include media('>phone', '<=tablet') {
       flex-wrap: wrap;
     }
+    button {
+      margin-left: 0.5em;
+    }
   }
-  button {
-    border: none;
-    background-color: var(--theme-color-base-100);
-    color: var(--theme-color-base-60);
-    height: 26px;
-    margin-right: 5px;
-    border-radius: 3px;
-  }
+
   main {
     flex: 1;
     display: flex;
@@ -41,14 +37,14 @@ app-home {
   .container.left .projects {
     flex: 1;
     margin-bottom: 4px;
-    border: 0.01em solid var(--theme-color-base-100, red);
+    border: $layout-border;
   }
   .container.left .orders {
     flex: 2;
-    border: 0.01em solid var(--theme-color-base-100, red);
+    border: $layout-border;
   }
   .container.right {
-    border: 0.01em solid var(--theme-color-base-100, red);
+    border: $layout-border;
   }
   leaflet-map {
     width: 100%;

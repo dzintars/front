@@ -3,14 +3,14 @@ main-launcher {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  top: var(--theme-size-l);
+  top: $size-l;
   left: 1rem;
-  // background-color: var(--theme-color-base-110);
-  background-color: white;
-  box-shadow: var(--theme-shadow-64);
-  height: calc(100% - var(--theme-size-l) - 1rem);
+  background-color: $layout-background-color;
+  color: $primary-text-color;
+  box-shadow: var(--shadow-64);
+  height: calc(100% - $size-l - 1rem);
   width: 320px;
-  border-radius: 3px;
+  border-radius: $border-radius-sm;
   // border: 3px solid dodgerblue;
   z-index: 1;
   padding: 0.5rem 1rem;
@@ -18,21 +18,21 @@ main-launcher {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 4rem;
+    height: $size-xxl;
     width: 100%;
     padding: 8px 16px;
-    box-shadow: var(--theme-shadow-8);
-    background-color: white;
-    border-radius: 3px;
+    box-shadow: var(--shadow-8);
+    background-color: $layout-background-color;
+    border-radius: $border-radius-sm;
     &:hover {
-      box-shadow: var(--theme-shadow-16);
+      box-shadow: var(--shadow-16);
     }
     ui-avatar {
       width: 48px;
       height: 48px;
       border-radius: 50%;
       // border: 1px solid dodgerblue;
-      box-shadow: var(--theme-shadow-8);
+      box-shadow: var(--shadow-8);
       font-size: 1.25em;
       line-height: 1;
       font-weight: 600;
@@ -50,11 +50,13 @@ main-launcher {
         font-weight: 400;
         line-height: 20px;
         text-transform: uppercase;
+        color: $primary-text-color;
       }
       .account-type {
         font-size: 14px;
         font-weight: 300;
         line-height: 20px;
+        color: $primary-text-color;
       }
     }
   }
@@ -72,9 +74,9 @@ main-launcher {
       justify-content: space-between;
       min-height: 3rem;
       transition: filter 200ms;
-      background-color: white;
+      background-color: $layout-background-color;
       cursor: pointer;
-      border-radius: 2px;
+      border-radius: $border-radius-sm;
     }
 
     nav-item:hover {
@@ -86,18 +88,19 @@ main-launcher {
     nav-item-title {
       margin: 0 1rem;
       width: auto;
-      color: black;
+      color: $primary-text-color;
       pointer-events: none;
     }
   }
 
   app-flyout {
-    background-color: white;
+    background-color: $layout-background-color;
+    color: $primary-text-color;
     position: absolute;
     left: 98%;
-    width: 200px;
-    border-radius: 2px;
-    box-shadow: var(--theme-shadow-8);
+    width: auto;
+    border-radius: $border-radius-sm;
+    box-shadow: var(--shadow-8);
     padding: 0.5rem 1rem;
   }
 

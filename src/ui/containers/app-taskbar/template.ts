@@ -6,8 +6,14 @@ export default function template(this: AppTaskbarElement): TemplateResult {
   return html`
     <div class="left">
       <div class="launcher">
-        <button class="m icn" @click="${this.displayLauncher}" id="launcher" title="Launcher">
-          <i class="m">${Icon('apps', 'Launcher')}</i>
+        <button
+          class="btn btn--lg"
+          @click="${this.displayLauncher}"
+          id="launcher"
+          title="Launcher"
+          aria-label="Open launcher"
+        >
+          ${Icon('apps', 'Launcher', 'icon-btn__icon')}
         </button>
       </div>
       <h2>Home</h2>
@@ -18,11 +24,11 @@ export default function template(this: AppTaskbarElement): TemplateResult {
       </div>
     </div>
     <div class="right">
-      <button class="m icn" @click=${this.toggleActionCenter} title="Action Center">
-        <i class="m">${Icon('gear', '')}</i>
+      <button class="btn btn--md" @click=${this.toggleActionCenter} title="Action Center">
+        ${Icon('gear', '', 'btn__icon')} Actions
       </button>
-      <button class="m" @click=${this.switchTheme}>
-        <span>Theme</span>
+      <button class="btn btn--md" @click=${this.switchTheme}>
+        <span>Theme Switch</span>
       </button>
     </div>
   `

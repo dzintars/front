@@ -7,14 +7,14 @@ app-signup {
   box-sizing: border-box;
   .container {
     width: 320px;
-    border: 1px solid var(--main-background);
-    padding: var(--size-xs);
-    border-radius: 5px;
+    border: $layout-border;
+    padding: $size-xs;
+    border-radius: $border-radius-md;
     box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14),
       0 9px 46px 8px rgba(0, 0, 0, 0.12);
-    background: var(--lt-color-light);
+    background-color: $layout-background-color;
     margin: 2rem;
-    color: var(--theme-color-primary-10d);
+    color: $primary-text-color;
   }
   .fieldset {
     display: flex;
@@ -28,9 +28,9 @@ app-signup {
   input {
     height: 2rem;
     width: 100%;
-    border-radius: 3px;
-    background: var(--main-background);
-    border: 1px solid var(--main-background);
+    border-radius: $border-radius-sm;
+    background-color: var(--main-background, pink);
+    border: 1px solid var(--main-background, violet);
     padding: 0 6px;
     outline: none;
     box-sizing: border-box;

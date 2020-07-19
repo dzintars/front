@@ -1,31 +1,16 @@
 app-taskbar {
-  // all: revert;
-  --size-xs: 1.625rem; // 26px
-  --size-s: 1.875rem; // 30px
-  --size-m: 2.25rem; // 36px
-  --size-l: 2.75rem; // 44px
-  --size-xl: 3.5rem; // 56px
-  --border-radius-s: 0.25em;
-  --border-radius-m: 0.25em;
-  --border-radius-l: 0.5em;
-  height: var(--size-l);
-  min-height: var(--size-l);
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: var(--theme-color-base-10);
-  background-color: var(--theme-color-base-110);
-  border-bottom: 0.01em solid var(--theme-color-base-100);
-  // TODO: No-no!
-  #launcher svg {
-    fill: white;
-    stroke: white;
-  }
+  background-color: $layout-background-color;
+  border-bottom: $layout-border;
+
   div {
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    // align-items: center;
+    // justify-content: center;
     &.left {
       .launcher {
         display: flex;
@@ -33,7 +18,7 @@ app-taskbar {
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        width: var(--size-l);
+        width: $size-l;
       }
       @include media('>phone', '<=tablet') {
         h2 {
@@ -49,20 +34,11 @@ app-taskbar {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        & input {
-          height: 2rem;
-          width: 100%;
-          border-radius: 3px;
-          background: var(--theme-color-base-100);
-          border: 1px solid var(--theme-color-base-100);
-          padding: 0 6px;
-          outline: none;
-          box-sizing: border-box;
-          &:focus {
-            border: 1px solid var(--theme-color-accent-110, hsl(215, 100%, 50%));
-          }
-        }
       }
+    }
+    &.right {
+      align-items: center;
+      justify-content: center;
     }
   }
 }

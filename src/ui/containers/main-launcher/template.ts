@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { MainLauncherElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
-import { Grid } from '../../../assets/svg'
+// import { Icon } from '../../../assets/svg'
 import '../../components/nav-item'
 import '../../components/nav-item-title'
 import '../../components/app-flyout'
@@ -16,7 +16,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
         <p class="username">Guest</p>
         <p class="account-type">Public account</p>
       </div>
-      <button class="primary xs">Sign In</button>
+      <button class="btn">Sign In</button>
     </div>
     <nav>
       ${repeat(
@@ -28,15 +28,15 @@ export default function template(this: MainLauncherElement): TemplateResult {
             ${app.modules
               ? html`
                   <p>+</p>
+                  ${this.activeNavItem === `${app.id}`
+                    ? html`
+                        <app-flyout .key=${app.id} .modules=${this.modules}></app-flyout>
+                      `
+                    : html``}
                 `
               : html`
-                  <p>-</p>
+                  <p></p>
                 `}
-            ${this.activeNavItem === `${app.id}`
-              ? html`
-                  <app-flyout></app-flyout>
-                `
-              : html``}
           </nav-item>
         `
       )}

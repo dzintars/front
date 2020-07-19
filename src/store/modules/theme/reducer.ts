@@ -6,30 +6,22 @@ export { ThemeState }
 const initialState: ThemeState = {
   active: 'light',
   light: {
-    '--theme-color-hue': '0', // Base color, main theme color.
-    '--theme-color-base': 'hsl(var(--theme-color-hue) 0% 100%)', // #FFFFFF (white)
-    '--theme-color-primary': 'hsl(var(--theme-color-hue) 0% 100%)', // #FFFFFF (white)
-    '--theme-color-primary-1d': 'hsl(var(--theme-color-hue) 0% 98%)', // #FAFAFA (white)
-    '--theme-color-primary-2d': 'hsl(240 3% 94%)', // #EFEFF0 (white)
-    '--theme-color-primary-3d': 'hsl(204 15% 94%)', // #ECEFF1 (white)
-    '--theme-color-primary-4d': 'hsl(var(--theme-color-hue) 0% 82%)', // #D1D1D1
-    '--theme-color-primary-10d': 'hsl(var(--theme-color-hue) 0% 0%)', // #000000 (black)
-
-    '--root-color-base': 'hsla(0, 0%, 100%, 1)',
-    '--root-color-accent': 'hsla(315, 100%, 50%, 1)',
+    '--root-layout-background-color': 'hsla(0, 0%, 100%, 1)',
+    '--root-layout-border-color': 'hsla(213, 14%, 72%, 1)',
+    '--root-primary-cta-background-color': 'hsla(0, 0%, 100%, 1)',
+    '--root-primary-cta-text-color': 'hsla(215, 14%, 19%, 1)',
+    '--root-secondary-cta-background-color': 'hsla(215, 100%, 50%, 1)',
+    '--root-secondary-cta-text-color': 'hsla(0, 0%, 100%, 1)',
+    '--root-text-color': 'hsla(212, 14%, 19%, 1)',
   },
   dark: {
-    '--theme-color-hue': '215', // #FFFFFF (white)
-    '--theme-color-base': 'hsl(var(--theme-color-hue) 14% 19%)', // #FFFFFF (white)
-    '--theme-color-primary': 'hsl(var(--theme-color-hue) 14% 19%)',
-    '--theme-color-primary-1d': 'hsl(var(--theme-color-hue) 14% 15%)',
-    '--theme-color-primary-2d': 'hsl(var(--theme-color-hue) 14% 9%)',
-    '--theme-color-primary-3d': 'hsl(var(--theme-color-hue) 9% 26%)',
-    '--theme-color-primary-4d': 'hsl(var(--theme-color-hue) 9% 26%)',
-    '--theme-color-primary-10d': 'hsl(var(--theme-color-hue) 3% 63%)',
-
-    '--root-color-base': 'hsla(215, 14%, 19%, 1)',
-    '--root-color-accent': 'hsla(215, 100%, 50%, 1)',
+    '--root-layout-background-color': 'hsla(215, 14%, 19%, 1)',
+    '--root-layout-border-color': 'hsla(212, 14%, 24%, 1)',
+    '--root-primary-cta-background-color': 'hsla(212, 14%, 19%, 1)',
+    '--root-primary-cta-text-color': 'hsla(0, 0%, 100%, 1)',
+    '--root-secondary-cta-background-color': 'hsla(215, 100%, 50%, 1)',
+    '--root-secondary-cta-text-color': 'hsla(0, 0%, 100%, 1)',
+    '--root-text-color': 'hsla(213, 14%, 72%, 1)',
   },
 }
 

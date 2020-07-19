@@ -1,61 +1,156 @@
-button,
-.button,
-input[type='submit'],
-input[type='reset'],
-input[type='button'] {
-  --size-xs: 1.75rem; // 28px
-  --size-s: 2rem; // 30px
-  --size-m: 2.25rem; // 36px
-  --size-l: 2.75rem; // 44px
-  --size-xl: 3.5rem; // 56px
-  --border-radius-s: 0.2em;
-  --border-radius-m: 0.25em;
-  --border-radius-l: 0.5em;
-  display: inline-block;
+a,
+button {
+  font-size: var(--btn-font-size-base, 1rem);
+}
+
+a.btn {
+  text-decoration: none;
+}
+
+.btn__icon {
+  // You may wish to have your icons appear larger
+  // or smaller in relation to the text
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  margin-right: 0.5em;
+  &--end {
+    margin-right: 0;
+    margin-left: 0.5em;
+  }
+}
+
+// Base button styles
+.btn {
+  // Reset
+  text-decoration: none;
   border: none;
+  font-family: inherit;
+  cursor: pointer;
+
+  // Display
+  display: inline-flex;
   align-items: center;
-  outline: none;
-  &:hover {
-    &.primary {
-      background-color: green;
-      box-shadow: var(--theme-shadow-8);
-    }
-    background-color: var(--theme-color-base-90);
-    color: var(--theme-color-base-30);
+  justify-content: center;
+  // Optional - see "Gotchas"
+  // align-self: start;
+
+  // Visual
+  background-color: $primary-cta-background-color;
+  color: $primary-cta-text-color;
+  border-radius: $border-radius-sm;
+  box-shadow: var(--shadow-4);
+
+  // Size
+  &:not(.icon-btn) {
+    padding: var(--space-wide-s);
+    min-width: 10ch;
+    min-height: 1.2em;
   }
-  &.xs {
-    height: var(--size-xs);
-    border-radius: var(--border-radius-s);
-    font-size: 0.875rem;
-    font-weight: 400;
+
+  // Text
+  text-align: center;
+  line-height: 1.1;
+  text-transform: uppercase;
+
+  transition: 200ms all ease-in-out;
+
+  &:hover,
+  &:active {
+    filter: brightness(0.96);
   }
-  &.s {
-    height: var(--size-s);
+
+  &:focus {
+    outline-style: solid;
+    box-shadow: var(--shadow-8);
   }
-  &.m {
-    height: var(--size-m);
-    border-radius: var(--border-radius-m);
-    font-size: 1rem;
-    &.icn {
-      width: var(--size-m);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: unset;
-      &:hover {
-        background-color: var(--theme-color-base-140);
-      }
-    }
+
+  &--sm {
+    font-size: var(--btn--font-size-sm, 0.8rem);
   }
-  &.l {
-    height: var(--size-l);
+  &--md {
+    font-size: var(--btn--font-size-md, 1rem);
   }
-  &.xl {
-    height: var(--size-xl);
+  &--lg {
+    font-size: var(--btn--font-size-lg, 1.2rem);
   }
-  &.primary {
-    background-color: var(--lt-color-primary, #006aff);
-    color: white;
+}
+
+button.btn {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (-ms-high-contrast: active) {
+    border: 2px solid currentcolor;
+  }
+}
+
+a.btn,
+button.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // align-self: start; // Optional - see "Gotchas"
+
+  // Visual
+  background-color: $primary-cta-background-color;
+  color: $primary-cta-text-color;
+  border-radius: $border-radius-sm;
+  box-shadow: var(--shadow-4);
+
+  // Size
+  padding: var(--space-wide-s);
+  min-width: 8ch;
+  min-height: 1em;
+
+  // Text
+  text-align: center;
+  line-height: 1.1;
+  text-transform: uppercase;
+
+  transition: 200ms all ease-in-out;
+
+  &:hover,
+  &:active {
+    filter: brightness(0.8);
+  }
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: var(--shadow-8);
+  }
+  &--sm {
+    font-size: var(--btn--font-size-smw, 0.8rem);
+  }
+  &--md {
+    font-size: var(--btn--font-size-mdw, 0.9rem);
+  }
+  &--lg {
+    font-size: var(--btn--font-size-lgw, 1.2rem);
+  }
+  &--block {
+    width: 100%;
+  }
+}
+
+.icon-btn {
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  padding: 0.2em;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
   }
 }

@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { MainTaskbarElement } from './component'
 import { repeat } from 'lit-html/directives/repeat'
-import { Icon, User, Grid } from '../../../assets/svg'
+import { Icon } from '../../../assets/svg'
 import '../../elements/ui-taskbar'
 
 export default function template(this: MainTaskbarElement): TemplateResult {
@@ -9,8 +9,8 @@ export default function template(this: MainTaskbarElement): TemplateResult {
     <ui-taskbar>
       <nav>
         <div class="main-area">
-          <button @click="${this.displayLauncher}" id="launcher" class="launcher" title="Open Launcher">
-            ${Grid('black')}
+          <button class="btn btn--lg" @click="${this.displayLauncher}" id="launcher" title="Open Launcher">
+            ${Icon('grid', '', 'icon-btn__icon')}
           </button>
           <ul>
             <li>Home</li>
@@ -22,16 +22,16 @@ export default function template(this: MainTaskbarElement): TemplateResult {
         </div>
         <div class="actions">
           <button class="btn" title="Applications" @click=${this.toggleAccountWidget}>
-            ${Icon('apps', '')}
+            ${Icon('apps', 'icon-btn__icon')}
           </button>
           <button class="btn" title="Sign In" @click=${this.toggleAccountWidget}>
-            ${User()}
+            ${Icon('user', '', 'icon-btn__icon')}
           </button>
         </div>
       </nav>
     </ui-taskbar>
     <button @click="${this.displayLauncher}" id="launcher" class="launcher" title="Open Launcher">
-      ${Icon('apps', '')}
+      ${Icon('apps', '', 'icon-btn__icon')}
     </button>
     <ul>
       ${repeat(

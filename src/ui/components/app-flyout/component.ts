@@ -1,5 +1,5 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
-import { store, RootState, Module, ModuleSelectors } from '../../../store'
+import { store, RootState, Module, ModuleSelectors, ApplicationSelectors, Application } from '../../../store'
 import { connect } from '../../../utils/connect'
 import template from './template'
 import style from './style'
@@ -8,11 +8,11 @@ import style from './style'
 export class AppFlyoutElement extends connect(store, LitElement) {
   @property({ type: String }) key: string = ''
   @property({ type: String }) label: string = 'Unspecified label'
-  @property({ type: Array }) modules: Module[]
+  @property({ type: Array }) modules: Module[] = [{ id: '', title: '' }]
 
   mapState(state: RootState) {
     return {
-      modules: ModuleSelectors.selectAllModules(state),
+      modules: ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.key }),
     }
   }
 

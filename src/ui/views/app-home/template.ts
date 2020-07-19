@@ -7,14 +7,14 @@ import '../../elements/ui-panel'
 export default function template(this: AppHomeElement): TemplateResult {
   return html`
     <ui-toolbar>
-      <button>New Project</button>
-      <button>New Order</button>
-      <button>New Route</button>
-      <button>Import</button>
-      <button>Delete</button>
-      <button>Geo-Code</button>
-      <button>Export</button>
-      <button>Preview</button>
+      <button class="btn">New Project</button>
+      <button class="btn">New Order</button>
+      <button class="btn">New Route</button>
+      <button class="btn">Import</button>
+      <button class="btn">Delete</button>
+      <button class="btn">Geo-Code</button>
+      <button class="btn">Export</button>
+      <button class="btn">Preview</button>
     </ui-toolbar>
     <main>
       <div class="container left">

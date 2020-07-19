@@ -4,6 +4,6 @@ import { LauncherAccountElement } from './component'
 export default function template(this: LauncherAccountElement): TemplateResult {
   return html`
     <p>Hello from ${this.name}</p>
-    <button @click=${this.onButtonClick}>Select me</button>
+    <button class="btn" @click=${this.onButtonClick}>Select me</button>
   `
 }

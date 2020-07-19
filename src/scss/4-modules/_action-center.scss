@@ -1,12 +1,10 @@
 action-center {
   width: 25%;
-  border-left: 0.01em solid var(--theme-color-base-100);
-  background-color: var(--theme-color-base-110);
-  button {
-    margin: 4px;
-  }
+  background-color: $layout-background-color;
+  border-left: $layout-border;
+
   @include media('>phone', '<=tablet') {
     // width: 50%;
-    background-color: var(--theme-color-accent-110);
+    background-color: $layout-background-color;
   }
 }
