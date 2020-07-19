@@ -15,18 +15,18 @@ app-shell {
   --size-xl: 3.5rem; // 56px
   display: flex;
   flex-direction: column;
-  // background-color: var(--color-base);
+  // background-color: $layout-background-color;
 
   main {
     display: flex;
     flex-direction: row;
     flex: 1;
-    // background-color: var(--color-base);
+    // background-color: $layout-background-color;
     /* height: 100%; */
   }
   ui-statusbar-connected {
-    border-top: 0.01em solid var(--color-primary-4d);
     height: var(--size-xxs);
-    background-color: var(--color-base);
+    background-color: $layout-background-color;
+    border-top: $layout-border;
   }
 }

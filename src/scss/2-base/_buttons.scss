@@ -1,13 +1,10 @@
-:root {
-  --color-base: var(red);
-  --color-base-text: var(--theme-color-base-text, black);
-  --btn-radius: var(--theme-border-radius-s);
-  --space-wide-s: 0.25em 0.5em;
+a,
+button {
+  font-size: var(--btn-font-size-base, 1rem);
+}
 
-  --btn-font-size: 1em;
-  --btn-sm: calc(var(--btn-font-size) - 0.2em);
-  --btn-md: calc(var(--btn-font-size) + 0.2em);
-  --btn-lg: calc(var(--btn-font-size) + 0.4em);
+a.btn {
+  text-decoration: none;
 }
 
 .btn__icon {
@@ -40,11 +37,10 @@
   // align-self: start;
 
   // Visual
-  font-size: 1.5rem;
-  background-color: var(--color-base, red);
-  color: var(--color-base-text, white);
+  background-color: var(--color-btn-base, blue);
+  color: var(--color-text-base, white);
   border-radius: var(--btn-radius);
-  box-shadow: var(--theme-shadow-4);
+  box-shadow: var(--shadow-4);
 
   // Size
   &:not(.icon-btn) {
@@ -57,7 +53,7 @@
   text-align: center;
   line-height: 1.1;
 
-  transition: 220ms all ease-in-out;
+  transition: 200ms all ease-in-out;
 
   &:hover,
   &:active {
@@ -66,21 +62,18 @@
 
   &:focus {
     outline-style: solid;
-    box-shadow: var(--theme-shadow-8);
+    box-shadow: var(--shadow-8);
   }
 
-  &--small {
-    font-size: 1.15rem;
+  &--sm {
+    font-size: var(--btn--font-size-sm, 0.8rem);
   }
-}
-
-a,
-button {
-  font-size: 1rem;
-}
-
-a.btn {
-  text-decoration: none;
+  &--md {
+    font-size: var(--btn--font-size-md, 1rem);
+  }
+  &--lg {
+    font-size: var(--btn--font-size-lg, 1.2rem);
+  }
 }
 
 button.btn {
@@ -103,14 +96,14 @@ button.btn {
   // align-self: start; // Optional - see "Gotchas"
 
   // Visual
-  background-color: var(--color-base, red);
-  color: var(--color-base-text);
+  background-color: $primary-cta-background-color;
+  color: $primary-cta-text-color;
   border-radius: var(--btn-radius);
-  box-shadow: var(--theme-shadow-4);
+  box-shadow: var(--shadow-4);
 
   // Size
   padding: var(--space-wide-s);
-  min-width: 10ch;
+  min-width: 8ch;
   min-height: 1em;
 
   // Text
@@ -121,22 +114,21 @@ button.btn {
 
   &:hover,
   &:active {
-    // background-color: green;
-    filter: brightness(0.96);
+    filter: brightness(0.8);
   }
   &:focus {
     outline-style: solid;
     outline-color: transparent;
-    box-shadow: var(--theme-shadow-8);
+    box-shadow: var(--shadow-8);
   }
   &--sm {
-    font-size: 0.9em;
+    font-size: var(--btn--font-size-sm, 0.8rem);
   }
   &--md {
-    font-size: 1.1em;
+    font-size: var(--btn--font-size-md, 1rem);
   }
   &--lg {
-    font-size: 1.4em;
+    font-size: var(--btn--font-size-lg, 1.2rem);
   }
   &--block {
     width: 100%;

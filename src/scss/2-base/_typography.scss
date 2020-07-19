@@ -45,6 +45,11 @@
   --body-line-height: 1.4;
 
   text-rendering: geometricPrecision;
+
+  --btn-font-size-base: 1rem;
+  --btn--font-size-sm: calc(var(--btn-font-size-base) - 0.2rem);
+  --btn--font-size-md: calc(var(--btn-font-size-base) + 0.2rem);
+  --btn--font-size-lg: calc(var(--btn-font-size-base) + 0.4rem);
 }
 
 // @include breakpoint(md) {

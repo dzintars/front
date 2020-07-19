@@ -1,11 +1,47 @@
-// *******************************
+// ************************************
 // CH01 - Color Variables
-// CH02 - Breakpoint Variables
-// *******************************
+// CH02 - Component Color Variables
+// CH03 - Borders Variables
+// CH03 - Breakpoint Variables
+// ************************************
 
-// *******************************
+// ************************************
 // CH01 - Color Variables
-// *******************************
+// ************************************
+
+$black: hsla(0, 0%, 0%, 1);
+$gunmetal-500: hsla(212, 14%, 19%, 1);
+$gunmetal-200: hsla(213, 14%, 72%, 1);
+$vermilion-500: hsla(3, 98%, 46%, 1);
+$kellygreen-500: hsla(100, 100%, 38%, 1);
+$bluetiful-500: hsla(215, 100%, 50%, 1);
+$selectiveyellow-500: hsla(44, 98%, 50%, 1);
+$white: hsla(0, 100%, 100%, 1);
+
+// ************************************
+// CH02 - Component Color Variables
+// ************************************
+
+$layout-background-color: var(--root-layout-background-color, $white);
+$layout-border-color: var(--root-layout-border-color, $gunmetal-200);
+$primary-cta-background-color: var(--root-primary-cta-background-color, $white);
+$primary-cta-text-color: var(--root-primary-cta-text-color, $black);
+$secondary-cta-background-color: var(--root-secondary-cta-background-color, $bluetiful-500);
+$secondary-cta-text-color: var(--root-secondary-cta-text-color, $white);
+
+// ************************************
+// CH03 - Borders Variables
+// ************************************
+
+$layout-border: 1px solid $layout-border-color;
+
+// ************************************
+// CH04 - Breakpoint Variables
+// ************************************
+
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 768px;
+$brakepoint-desktop: 1024px;
 
 :root {
   // Icons
@@ -24,11 +60,3 @@
   --theme-border-radius-m: 0.25em;
   --theme-border-radius-l: 0.5em;
 }
-
-// *******************************
-// CH02 - Breakpoint Variables
-// *******************************
-
-$breakpoint-mobile: 600px;
-$breakpoint-tablet: 768px;
-$brakepoint-desktop: 1024px;

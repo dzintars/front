@@ -19,8 +19,8 @@ app-taskbar {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: var(--color-base);
-  border-bottom: 0.01em solid var(--color-primary-4d);
+  background-color: $layout-background-color;
+  border-bottom: $layout-border;
 
   div {
     height: 100%;
@@ -55,8 +55,8 @@ app-taskbar {
           height: 2rem;
           width: 100%;
           border-radius: 3px;
-          background-color: var(--color-primary-1d);
-          border: 1px solid var(--color-primary-1d);
+          background-color: var(--color-primary-1d, red);
+          border: 1px solid var(--color-primary-1d, black);
           padding: 0 6px;
           outline: none;
           box-sizing: border-box;

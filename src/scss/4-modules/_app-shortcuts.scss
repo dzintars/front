@@ -11,6 +11,6 @@ app-shortcuts {
   align-items: center;
   width: var(--theme-size-l);
   min-width: var(--theme-size-l);
-  border-right: 0.01em solid var(--color-primary-4d);
-  background-color: var(--color-base);
+  background-color: $layout-background-color;
+  border-right: $layout-border;
 }
