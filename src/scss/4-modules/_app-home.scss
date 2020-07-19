@@ -5,6 +5,7 @@ app-home {
   display: flex;
   flex-direction: column;
   background-color: $layout-background-color;
+  color: $primary-text-color;
 
   ui-toolbar {
     border-bottom: $layout-border;

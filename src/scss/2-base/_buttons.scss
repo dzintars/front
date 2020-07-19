@@ -37,9 +37,9 @@ a.btn {
   // align-self: start;
 
   // Visual
-  background-color: var(--color-btn-base, blue);
-  color: var(--color-text-base, white);
-  border-radius: var(--btn-radius);
+  background-color: $primary-cta-background-color;
+  color: $primary-cta-text-color;
+  border-radius: $border-radius-sm;
   box-shadow: var(--shadow-4);
 
   // Size
@@ -52,6 +52,7 @@ a.btn {
   // Text
   text-align: center;
   line-height: 1.1;
+  text-transform: uppercase;
 
   transition: 200ms all ease-in-out;
 
@@ -98,7 +99,7 @@ button.btn {
   // Visual
   background-color: $primary-cta-background-color;
   color: $primary-cta-text-color;
-  border-radius: var(--btn-radius);
+  border-radius: $border-radius-sm;
   box-shadow: var(--shadow-4);
 
   // Size
@@ -109,6 +110,7 @@ button.btn {
   // Text
   text-align: center;
   line-height: 1.1;
+  text-transform: uppercase;
 
   transition: 200ms all ease-in-out;
 
@@ -122,13 +124,13 @@ button.btn {
     box-shadow: var(--shadow-8);
   }
   &--sm {
-    font-size: var(--btn--font-size-sm, 0.8rem);
+    font-size: var(--btn--font-size-smw, 0.8rem);
   }
   &--md {
-    font-size: var(--btn--font-size-md, 1rem);
+    font-size: var(--btn--font-size-mdw, 0.9rem);
   }
   &--lg {
-    font-size: var(--btn--font-size-lg, 1.2rem);
+    font-size: var(--btn--font-size-lgw, 1.2rem);
   }
   &--block {
     width: 100%;

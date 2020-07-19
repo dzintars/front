@@ -1,16 +1,8 @@
 app-shortcuts {
-  --color-base: var(--theme-color-base);
-  --color-primary-1d: var(--theme-color-primary-1d);
-  --color-primary-2d: var(--theme-color-primary-2d);
-  --color-primary-3d: var(--theme-color-primary-3d);
-  --color-primary-4d: var(--theme-color-primary-4d);
-  --color-primary-10d: var(--theme-color-primary-10d);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: var(--theme-size-l);
-  min-width: var(--theme-size-l);
   background-color: $layout-background-color;
   border-right: $layout-border;
 }

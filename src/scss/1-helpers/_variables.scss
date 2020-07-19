@@ -1,8 +1,9 @@
 // ************************************
 // CH01 - Color Variables
-// CH02 - Component Color Variables
-// CH03 - Borders Variables
-// CH03 - Breakpoint Variables
+// CH02 - Font Variables
+// CH03 - Component Color Variables
+// CH04 - Borders Variables
+// CH05 - Breakpoint Variables
 // ************************************
 
 // ************************************
@@ -19,44 +20,53 @@ $selectiveyellow-500: hsla(44, 98%, 50%, 1);
 $white: hsla(0, 100%, 100%, 1);
 
 // ************************************
-// CH02 - Component Color Variables
+// CH02 - Font Variables
 // ************************************
 
+$main-font: 'Open Sans', sans-serif;
+$text-base-size: 1rem;
+$text-scale-ratio: 1.2;
+
+// ************************************
+// CH03 - Size Variables
+// ************************************
+
+$size-xxs: 1.375rem; // 22px
+$size-xs: 1.625rem; // 26px
+$size-s: 1.875rem; // 30px
+$size-m: 2.25rem; // 36px
+$size-l: 2.75rem; // 44px
+$size-xl: 3.5rem; // 56px
+$size-xxl: 4rem; // 56px
+
+// ************************************
+// CH04 - Component Color Variables
+// ************************************
+
+// Layout
 $layout-background-color: var(--root-layout-background-color, $white);
 $layout-border-color: var(--root-layout-border-color, $gunmetal-200);
+// Buttons
 $primary-cta-background-color: var(--root-primary-cta-background-color, $white);
 $primary-cta-text-color: var(--root-primary-cta-text-color, $black);
 $secondary-cta-background-color: var(--root-secondary-cta-background-color, $bluetiful-500);
 $secondary-cta-text-color: var(--root-secondary-cta-text-color, $white);
+// Text
+$primary-text-color: var(--root-text-color, $gunmetal-500);
 
 // ************************************
-// CH03 - Borders Variables
+// CH05 - Borders Variables
 // ************************************
 
 $layout-border: 1px solid $layout-border-color;
+$border-radius-sm: 0.2em;
+$border-radius-md: 0.3em;
+$border-radius-lg: 0.5em;
 
 // ************************************
-// CH04 - Breakpoint Variables
+// CH06 - Breakpoint Variables
 // ************************************
 
-$breakpoint-mobile: 600px;
+$breakpoint-mobile: 640px;
 $breakpoint-tablet: 768px;
-$brakepoint-desktop: 1024px;
-
-:root {
-  // Icons
-  --theme-icon-size-s: 1.25em;
-  --theme-icon-size-m: 1.5em;
-  --theme-icon-size-l: 2.25em;
-  // Size
-  --theme-size-xs: 1.625rem; // 26px
-  --theme-size-s: 1.875rem; // 30px
-  --theme-size-m: 2.25rem; // 36px
-  --theme-size-l: 2.75rem; // 44px
-  --theme-size-xl: 3.5rem; // 56px
-
-  // Border radius
-  --theme-border-radius-s: 0.2em;
-  --theme-border-radius-m: 0.25em;
-  --theme-border-radius-l: 0.5em;
-}
+$breakpoint-desktop: 1024px;

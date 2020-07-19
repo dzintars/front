@@ -1,22 +1,16 @@
 main-launcher {
-  --color-base: var(--theme-color-base);
-  --color-primary-1d: var(--theme-color-primary-1d);
-  --color-primary-2d: var(--theme-color-primary-2d);
-  --color-primary-3d: var(--theme-color-primary-3d);
-  --color-primary-4d: var(--theme-color-primary-4d);
-  --color-primary-10d: var(--theme-color-primary-10d);
   position: fixed;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  top: var(--theme-size-l);
+  top: $size-l;
   left: 1rem;
-  // background-color: var(--theme-color-base-110);
-  background-color: var(--color-base, red);
-  box-shadow: var(--theme-shadow-64);
-  height: calc(100% - var(--theme-size-l) - 1rem);
+  background-color: $layout-background-color;
+  color: $primary-text-color;
+  box-shadow: var(--shadow-64);
+  height: calc(100% - $size-l - 1rem);
   width: 320px;
-  border-radius: 3px;
+  border-radius: $border-radius-sm;
   // border: 3px solid dodgerblue;
   z-index: 1;
   padding: 0.5rem 1rem;
@@ -24,21 +18,21 @@ main-launcher {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 4rem;
+    height: $size-xxl;
     width: 100%;
     padding: 8px 16px;
-    box-shadow: var(--theme-shadow-8);
-    background-color: var(--color-base);
-    border-radius: 3px;
+    box-shadow: var(--shadow-8);
+    background-color: $layout-background-color;
+    border-radius: $border-radius-sm;
     &:hover {
-      box-shadow: var(--theme-shadow-16);
+      box-shadow: var(--shadow-16);
     }
     ui-avatar {
       width: 48px;
       height: 48px;
       border-radius: 50%;
       // border: 1px solid dodgerblue;
-      box-shadow: var(--theme-shadow-8);
+      box-shadow: var(--shadow-8);
       font-size: 1.25em;
       line-height: 1;
       font-weight: 600;
@@ -56,13 +50,13 @@ main-launcher {
         font-weight: 400;
         line-height: 20px;
         text-transform: uppercase;
-        color: var(--color-primary-10d);
+        color: $primary-text-color;
       }
       .account-type {
         font-size: 14px;
         font-weight: 300;
         line-height: 20px;
-        color: var(--color-primary-10d);
+        color: $primary-text-color;
       }
     }
   }
@@ -80,9 +74,9 @@ main-launcher {
       justify-content: space-between;
       min-height: 3rem;
       transition: filter 200ms;
-      background-color: var(--color-base);
+      background-color: $layout-background-color;
       cursor: pointer;
-      border-radius: 2px;
+      border-radius: $border-radius-sm;
     }
 
     nav-item:hover {
@@ -94,19 +88,19 @@ main-launcher {
     nav-item-title {
       margin: 0 1rem;
       width: auto;
-      color: var(--color-primary-10d);
+      color: $primary-text-color;
       pointer-events: none;
     }
   }
 
   app-flyout {
-    background-color: var(--color-base);
-    color: var(--color-primary-10d);
+    background-color: $layout-background-color;
+    color: $primary-text-color;
     position: absolute;
     left: 98%;
     width: auto;
-    border-radius: 2px;
-    box-shadow: var(--theme-shadow-8);
+    border-radius: $border-radius-sm;
+    box-shadow: var(--shadow-8);
     padding: 0.5rem 1rem;
   }
 

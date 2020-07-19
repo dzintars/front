@@ -1,16 +1,10 @@
 action-center {
-  --color-base: var(--theme-color-base);
-  --color-primary-1d: var(--theme-color-primary-1d);
-  --color-primary-2d: var(--theme-color-primary-2d);
-  --color-primary-3d: var(--theme-color-primary-3d);
-  --color-primary-4d: var(--theme-color-primary-4d);
-  --color-primary-10d: var(--theme-color-primary-10d);
   width: 25%;
   background-color: $layout-background-color;
   border-left: $layout-border;
 
   @include media('>phone', '<=tablet') {
     // width: 50%;
-    background-color: var(--color-base);
+    background-color: $layout-background-color;
   }
 }

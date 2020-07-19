@@ -20,3 +20,17 @@ app-shell {
   height: 100%;
   width: 100%;
 }
+
+app-taskbar {
+  height: $size-l;
+  min-height: $size-l;
+}
+
+ui-statusbar-connected {
+  height: $size-xxs;
+}
+
+app-shortcuts {
+  width: $size-l;
+  min-width: $size-l;
+}

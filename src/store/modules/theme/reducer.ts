@@ -12,6 +12,7 @@ const initialState: ThemeState = {
     '--root-primary-cta-text-color': 'hsla(215, 14%, 19%, 1)',
     '--root-secondary-cta-background-color': 'hsla(215, 100%, 50%, 1)',
     '--root-secondary-cta-text-color': 'hsla(0, 0%, 100%, 1)',
+    '--root-text-color': 'hsla(212, 14%, 19%, 1)',
   },
   dark: {
     '--root-layout-background-color': 'hsla(215, 14%, 19%, 1)',
@@ -20,6 +21,7 @@ const initialState: ThemeState = {
     '--root-primary-cta-text-color': 'hsla(0, 0%, 100%, 1)',
     '--root-secondary-cta-background-color': 'hsla(215, 100%, 50%, 1)',
     '--root-secondary-cta-text-color': 'hsla(0, 0%, 100%, 1)',
+    '--root-text-color': 'hsla(213, 14%, 72%, 1)',
   },
 }
 
