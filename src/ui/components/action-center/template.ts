@@ -14,9 +14,7 @@ export default function template(this: ActionCenterElement): TemplateResult {
           ${Icon('palette', 'Theme', 'icon-btn__icon')}
         </button>
       </nav>
-      <div>
-        <app-signup noshadow></app-signup>
-      </div>
+      <div></div>
     </main>
   `
 }
