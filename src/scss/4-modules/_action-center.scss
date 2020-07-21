@@ -7,4 +7,9 @@ action-center {
     // width: 50%;
     background-color: $layout-background-color;
   }
+  nav {
+    width: $size-l;
+    display: flex;
+    flex-direction: column;
+  }
 }

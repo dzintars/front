@@ -11,12 +11,14 @@
 // ************************************
 
 $black: hsla(0, 0%, 0%, 1);
+$gunmetal-550: hsla(215, 15%, 16%, 1);
 $gunmetal-500: hsla(212, 14%, 19%, 1);
 $gunmetal-200: hsla(213, 14%, 72%, 1);
+$gunmetal-100: hsla(200, 14%, 96%, 1);
 $vermilion-500: hsla(3, 98%, 46%, 1);
 $kellygreen-500: hsla(100, 100%, 38%, 1);
 $bluetiful-500: hsla(215, 100%, 50%, 1);
-$selectiveyellow-500: hsla(44, 98%, 50%, 1);
+$selectiveyellow-500: rgb(42, 37, 22);
 $white: hsla(0, 100%, 100%, 1);
 
 // ************************************
@@ -24,16 +26,25 @@ $white: hsla(0, 100%, 100%, 1);
 // ************************************
 
 $main-font: 'Open Sans', sans-serif;
-$text-base-size: 1rem;
-$text-scale-ratio: 1.2;
+
+$modularscale: (
+  base: 1em,
+  ratio: 1.25,
+);
+
+$font-weight-1: 300;
+$font-weight-2: 400;
+$font-weight-3: 600;
+$font-weight-4: 700;
+$font-weight-5: 800;
 
 // ************************************
 // CH03 - Size Variables
 // ************************************
 
-$size-xxs: 1.375rem; // 22px
-$size-xs: 1.625rem; // 26px
-$size-s: 1.875rem; // 30px
+$size-xxs: 1.25rem; // 20px
+$size-xs: 1.5rem; // 24px
+$size-s: 2rem; // 32px
 $size-m: 2.25rem; // 36px
 $size-l: 2.75rem; // 44px
 $size-xl: 3.5rem; // 56px
@@ -44,21 +55,22 @@ $size-xxl: 4rem; // 56px
 // ************************************
 
 // Layout
-$layout-background-color: var(--root-layout-background-color, $white);
-$layout-border-color: var(--root-layout-border-color, $gunmetal-200);
+$layout-background-color: var(--root-layout-background-color, #{$white});
+$layout-border-color: var(--root-layout-border-color, #{$gunmetal-100});
 // Buttons
-$primary-cta-background-color: var(--root-primary-cta-background-color, $white);
-$primary-cta-text-color: var(--root-primary-cta-text-color, $black);
-$secondary-cta-background-color: var(--root-secondary-cta-background-color, $bluetiful-500);
-$secondary-cta-text-color: var(--root-secondary-cta-text-color, $white);
+$primary-cta-background-color: var(--root-primary-cta-background-color, #{$gunmetal-100});
+$primary-cta-text-color: var(--root-primary-cta-text-color, #{$black});
+$secondary-cta-background-color: var(--root-secondary-cta-background-color, #{$bluetiful-500});
+$secondary-cta-text-color: var(--root-secondary-cta-text-color, #{$white});
 // Text
-$primary-text-color: var(--root-text-color, $gunmetal-500);
+$primary-text-color: var(--root-text-color, #{$gunmetal-500});
 
 // ************************************
 // CH05 - Borders Variables
 // ************************************
 
 $layout-border: 1px solid $layout-border-color;
+
 $border-radius-sm: 0.2em;
 $border-radius-md: 0.3em;
 $border-radius-lg: 0.5em;
