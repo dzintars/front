@@ -8,7 +8,9 @@ export default function template(this: AppFlyoutElement): TemplateResult {
       this.modules,
       module => module.id,
       module => html`
-        <p>${module.title}</p>
+        <div>
+          <p>${module.title}</p>
+        </div>
       `
     )}
   `

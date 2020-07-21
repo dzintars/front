@@ -5,4 +5,11 @@ app-shortcuts {
   align-items: center;
   background-color: $layout-background-color;
   border-right: $layout-border;
+  .icon {
+    height: $size-l;
+    width: $size-l;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

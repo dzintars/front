@@ -1,6 +1,6 @@
 a,
 button {
-  font-size: var(--btn-font-size-base, 1rem);
+  font-size: var(--font-size-base, 1rem);
 }
 
 a.btn {
@@ -8,8 +8,6 @@ a.btn {
 }
 
 .btn__icon {
-  // You may wish to have your icons appear larger
-  // or smaller in relation to the text
   width: 1em;
   height: 1em;
   fill: none;
@@ -44,8 +42,8 @@ a.btn {
 
   // Size
   &:not(.icon-btn) {
-    padding: var(--space-wide-s);
-    min-width: 10ch;
+    padding: 0.5em 0.75em;
+    min-width: 8ch;
     min-height: 1.2em;
   }
 
@@ -67,13 +65,16 @@ a.btn {
   }
 
   &--sm {
-    font-size: var(--btn--font-size-sm, 0.8rem);
+    font-size: var(--font-xs, 0.8rem);
   }
   &--md {
-    font-size: var(--btn--font-size-md, 1rem);
+    font-size: var(--font-sm, 1rem);
   }
   &--lg {
-    font-size: var(--btn--font-size-lg, 1.2rem);
+    font-size: var(--font-md, 1rem);
+  }
+  &--xl {
+    font-size: var(--font-lg, 1.8rem);
   }
 }
 
@@ -103,9 +104,9 @@ button.btn {
   box-shadow: var(--shadow-4);
 
   // Size
-  padding: var(--space-wide-s);
-  min-width: 8ch;
-  min-height: 1em;
+  padding: 0.2em;
+  // min-width: 8ch;
+  // min-height: 1em;
 
   // Text
   text-align: center;
@@ -124,13 +125,16 @@ button.btn {
     box-shadow: var(--shadow-8);
   }
   &--sm {
-    font-size: var(--btn--font-size-smw, 0.8rem);
+    font-size: var(--font-xs, 0.8rem);
   }
   &--md {
-    font-size: var(--btn--font-size-mdw, 0.9rem);
+    font-size: var(--font-xs, 1rem);
   }
   &--lg {
-    font-size: var(--btn--font-size-lgw, 1.2rem);
+    font-size: var(--font-sm, 1rem);
+  }
+  &--xl {
+    font-size: var(--font-xxl, 1.8rem);
   }
   &--block {
     width: 100%;

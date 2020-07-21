@@ -4,7 +4,14 @@ app-taskbar {
   align-items: center;
   background-color: $layout-background-color;
   border-bottom: $layout-border;
-
+  h1 {
+    padding: 0 0.5em;
+  }
+  @include media('>phone', '<=tablet') {
+    h1 {
+      display: none;
+    }
+  }
   div {
     height: 100%;
     display: flex;
@@ -19,11 +26,6 @@ app-taskbar {
         justify-content: center;
         box-sizing: border-box;
         width: $size-l;
-      }
-      @include media('>phone', '<=tablet') {
-        h2 {
-          display: none;
-        }
       }
     }
     &.middle {

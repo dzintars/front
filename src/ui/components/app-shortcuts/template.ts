@@ -6,7 +6,7 @@ import { Icon } from '../../../assets/svg'
 export default function template(this: AppShortcutsElement): TemplateResult {
   return html`
     <div class="icon">
-      <button class="icon-btn btn--lg">
+      <button class="btn icon-btn btn--xl">
         ${Icon('arrow-left', 'Back', 'icon-btn__icon')}
       </button>
     </div>
@@ -14,7 +14,7 @@ export default function template(this: AppShortcutsElement): TemplateResult {
       this.modules.order,
       key => html`
         <div class="icon">
-          <button class="icon-btn btn--lg" title="${this.modules.entities[key].name}">
+          <button class="btn icon-btn btn--xl" title="${this.modules.entities[key].name}">
             ${Icon(this.modules.entities[key].icon, this.modules.entities[key].name, 'icon-btn__icon')}
           </button>
         </div>

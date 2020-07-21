@@ -1,44 +1,36 @@
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 // https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd
 
 :root {
-  /* type scale */
-  --text-xs: calc(#{$text-base-size} / (#{$text-scale-ratio} * #{$text-scale-ratio}));
-  --text-sm: calc(#{$text-base-size} / #{$text-scale-ratio});
-  --text-md: calc(#{$text-base-size} * #{$text-scale-ratio});
-  --text-lg: calc(#{$text-base-size} * #{$text-scale-ratio} * #{$text-scale-ratio});
-  --text-xl: calc(#{$text-base-size} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio});
-  --text-xxl: calc(
-    #{$text-base-size} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio}
-  );
-  --text-xxxl: calc(
-    #{$text-base-size} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio} * #{$text-scale-ratio}
-  );
+  // Body font size
+  --font-size-base: 1rem;
 
-  /* line-height */
+  // Font scale
+  --font-scale-ratio: 1.125;
+  --font-xs: calc(var(--font-size-base) / var(--font-scale-ratio) / var(--font-scale-ratio));
+  --font-sm: calc(var(--font-xs) * var(--font-scale-ratio));
+  --font-md: calc(var(--font-sm) * var(--font-scale-ratio));
+  --font-lg: calc(var(--font-md) * var(--font-scale-ratio));
+  --font-xl: calc(var(--font-lg) * var(--font-scale-ratio));
+  --font-xxl: calc(var(--font-xl) * var(--font-scale-ratio));
+  --font-xxxl: calc(var(--font-xxl) * var(--font-scale-ratio));
+
+  // Line height
   --heading-line-height: 1.2;
   --body-line-height: 1.4;
 
   text-rendering: geometricPrecision;
-
-  --btn-font-size-base: 1rem;
-  --btn--font-size-sm: calc(var(--btn-font-size-base) - 0.2rem);
-  --btn--font-size-md: calc(var(--btn-font-size-base) + 0.2rem);
-  --btn--font-size-lg: calc(var(--btn-font-size-base) + 0.4rem);
 }
 
 // @include breakpoint(md) {
 //   :root {
-//     $text-base-size: 1.25em;
-//     $text-scale-ratio: 1.25;
+//     --font-size-base: 1.25rem;
+//     --font-scale-ratio: 1.25;
 //   }
 // }
 
 body {
-  font-size: $text-base-size;
+  font-size: var(--font-size-base, 1rem);
   font-family: $main-font;
   color: $primary-text-color;
 }
@@ -49,42 +41,42 @@ h3,
 h4,
 form legend {
   color: $primary-text-color;
-  margin-bottom: var(--space-xxs);
+  // margin-bottom: var(--space-xxs);
   line-height: var(--heading-line-height);
 }
 
 /* text size */
 .text--xxxl {
-  font-size: var(--text-xxxl);
+  font-size: var(--font-xxxl);
 }
 
 h1,
 .text--xxl {
-  font-size: var(--text-xxl);
+  font-size: var(--font-xxl);
 }
 
 h2,
 .text--xl {
-  font-size: var(--text-xl);
+  font-size: var(--font-xl);
 }
 
 h3,
 .text--lg {
-  font-size: var(--text-lg);
+  font-size: var(--font-lg);
 }
 
 h4,
 .text--md {
-  font-size: var(--text-md);
+  font-size: var(--font-md);
 }
 
 .text--sm,
 small {
-  font-size: var(--text-sm);
+  font-size: var(--font-sm);
 }
 
 .text--xs {
-  font-size: var(--text-xs);
+  font-size: var(--font-xs);
 }
 
 p {

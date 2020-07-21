@@ -24,13 +24,13 @@ export default function template(this: MainLauncherElement): TemplateResult {
         app => app.id,
         app => html`
           <nav-item .key=${app.id} .label=${app.title}>
-            <nav-item-title .key=${app.id} .label=${app.title} noshadow></nav-item-title>
+            <nav-item-title .key=${app.id} .label=${app.title}></nav-item-title>
             ${app.modules
               ? html`
                   <p>+</p>
                   ${this.activeNavItem === `${app.id}`
                     ? html`
-                        <app-flyout .key=${app.id} .modules=${this.modules}></app-flyout>
+                        <app-flyout .key=${app.id} .modules=${this.modules} noshadow></app-flyout>
                       `
                     : html``}
                 `
