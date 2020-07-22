@@ -52,7 +52,7 @@ a.btn {
   line-height: 1.1;
   text-transform: uppercase;
 
-  transition: 200ms all ease-in-out;
+  transition: $transition-15 all ease-in-out;
 
   &:hover,
   &:active {
@@ -110,10 +110,10 @@ button.btn {
 
   // Text
   text-align: center;
-  line-height: 1.1;
+  line-height: 1;
   text-transform: uppercase;
 
-  transition: 200ms all ease-in-out;
+  transition: $transition-15 all ease-in-out;
 
   &:hover,
   &:active {
@@ -142,18 +142,18 @@ button.btn {
 }
 
 .icon-btn {
-  width: 1.2em;
-  height: 1.2em;
+  width: 1.4em;
+  height: 1.4em;
   border-radius: 50%;
-  padding: 0.2em;
+  // padding: 0.2em;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &__icon {
-    width: 1em;
-    height: 1em;
+    width: 1.2em;
+    height: 1.2em;
     fill: none;
     stroke: currentColor;
   }

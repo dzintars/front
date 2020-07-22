@@ -3,11 +3,11 @@ Spacing
 -------------------------------- */
 
 :root {
-  --space-xs: 0.25rem;
+  // --space-xs: 0.25rem;
   --space-s: 0.5rem;
   --space-m: 1rem;
   --space-l: 1.5rem;
-  --space-xl: 2.5rem;
+  // --space-xl: 2.5rem;
   // Spacing wide - mostly used as paddings or margins
   --space-wide-xs: calc(var(--space-xs, 0.25rem) / 2) var(--space-xs, 0.25rem);
   --space-wide-s: calc(var(--space-s, 0.5rem) / 2) var(--space-s, 0.5rem);

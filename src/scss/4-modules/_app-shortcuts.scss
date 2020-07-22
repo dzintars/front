@@ -6,10 +6,11 @@ app-shortcuts {
   background-color: $layout-background-color;
   border-right: $layout-border;
   .icon {
-    height: $size-l;
+    height: auto;
     width: $size-l;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 0.5em;
   }
 }

@@ -7,7 +7,7 @@ const initialState: ThemeState = {
   active: 'light',
   light: {
     '--root-layout-background-color': 'hsla(0, 0%, 100%, 1)',
-    '--root-layout-border-color': 'hsla(213, 14%, 72%, 1)',
+    '--root-layout-border-color': 'hsla(200, 14%, 96%, 1)',
     '--root-primary-cta-background-color': 'hsla(200, 14%, 96%, 1)',
     '--root-primary-cta-text-color': 'hsla(215, 14%, 19%, 1)',
     '--root-secondary-cta-background-color': 'hsla(215, 100%, 50%, 1)',
