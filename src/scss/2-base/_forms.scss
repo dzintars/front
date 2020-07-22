@@ -1,0 +1,21 @@
+form {
+  fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em 0;
+  }
+  label {
+    font-size: var(--font-xs);
+    font-weight: $font-weight-3;
+  }
+  input {
+    width: 100%;
+    font-size: var(--font-sm);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: $border-radius-sm;
+    background-color: $primary-cta-background-color;
+  }
+}

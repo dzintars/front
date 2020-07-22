@@ -28,6 +28,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Array }) applications: Application[]
   @property({ type: String }) activeNavItem: string = ''
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'test' }]
+  @property({ type: String }) activeView: string = 'signin'
 
   mapState(state: RootState) {
     return {

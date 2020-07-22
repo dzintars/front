@@ -11,6 +11,10 @@ export class OverlayAgentElement extends LitElement {
   public static get styles(): CSSResultArray {
     return [style]
   }
+
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
+  }
 }
 
 declare global {
