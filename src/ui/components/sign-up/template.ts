@@ -26,12 +26,12 @@ export default function template(): TemplateResult {
             and
             <a href="/help/privacy_notice">Privacy Notice</a>
           </p>
-          <button class="btn btn--lg btn--block" id="continue">Create your Oswee account</button>
+          <button class="btn btn--lg btn--block btn--secondary" id="continue">Create your Oswee account</button>
         </div>
         <div>
           <p class="have-account">
             Already have an account?
-            <a class="btn btn--lg btn--block" href="/signin">Sign in</a>
+            <a class="btn btn--lg btn--block btn--success" @click="${this.onSignIn}">Sign In</a>
           </p>
         </div>
       </form>

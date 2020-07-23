@@ -31,6 +31,14 @@ export class SignUpElement extends LitElement {
     return this.userPasswordInput.value
   }
 
+  onSignIn(): void {
+    const evt = new CustomEvent('sign-in-click', {
+      bubbles: true,
+      composed: true,
+    })
+    this.dispatchEvent(evt)
+  }
+
   protected render(): TemplateResult {
     return template.call(this)
   }
@@ -42,4 +50,20 @@ export class SignUpElement extends LitElement {
   createRenderRoot(): Element | ShadowRoot {
     return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
+}
+
+declare global {
+  interface DocumentEventMap {
+    // 'sign-up-click': CustomEvent<SignUpData>
+    'sign-in-click': CustomEvent<SignUpData>
+  }
+
+  interface HTMLElementTagNameMap {
+    'sign-up': SignUpElement
+  }
+}
+
+export interface SignUpData {
+  key: number
+  name: string
 }

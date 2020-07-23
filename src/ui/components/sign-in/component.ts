@@ -39,6 +39,14 @@ export class SignInElement extends LitElement {
     this.dispatchEvent(evt)
   }
 
+  onSignIn(): void {
+    const evt = new CustomEvent('sign-in-click', {
+      bubbles: true,
+      composed: true,
+    })
+    this.dispatchEvent(evt)
+  }
+
   protected render(): TemplateResult {
     return template.call(this)
   }
@@ -55,6 +63,7 @@ export class SignInElement extends LitElement {
 declare global {
   interface DocumentEventMap {
     'sign-up-click': CustomEvent<SignInData>
+    'sign-in-click': CustomEvent<SignInData>
   }
 
   interface HTMLElementTagNameMap {
