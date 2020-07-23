@@ -20,8 +20,8 @@ Technology stack I choose for this project:
 - Husky ........... To watch Git hooks and run scripts on Git actions.
 - Lint-Staged ..... To lint only staged files. Executed by Husky hooks.
 - Commitlint ...... To format your Git commit messages and enabling things like automatic changelogs, etc.
-- Json-Server ..... For mocking data API.
-- \*Hygen .......... Code generator to create Ducks or Component boilerplate. (Not implemented yet)
+- \*Json-Server ... For mocking data API. (not used anymore due to HTTP/2 limitations)
+- \*Hygen ......... Code generator to create Ducks or Component boilerplate. (Not implemented yet)
 
 > Explicit is better than smart.
 
