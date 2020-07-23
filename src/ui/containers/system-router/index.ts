@@ -4,6 +4,7 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, RoutingSelectors } from '../../../store'
+import '../../views/view-error'
 
 @customElement('system-router')
 export class SystemRouterElement extends connect(store, LitElement) {
