@@ -35,7 +35,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
             this.applications,
             app => app.id,
             app => html`
-              <nav-item .key=${app.id} .label=${app.title}>
+              <nav-item .key=${app.id} .label=${app.title} .permalink=${app.permalink}>
                 <nav-item-title .key=${app.id} .label=${app.title}></nav-item-title>
                 ${app.modules
                   ? html`
