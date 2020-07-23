@@ -22,7 +22,7 @@ export class SystemShellElement extends connect(store, LitElement) {
 
   mapEvents() {
     return {
-      'application-shortcut-click': () => hideLauncher(),
+      'nav-item-click': () => hideLauncher(),
     }
   }
 

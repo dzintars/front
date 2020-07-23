@@ -30,6 +30,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'test' }]
   @property({ type: String }) activeView: string = ''
 
+  // Map state to props (Connect lib)
   mapState(state: RootState) {
     return {
       applications: ApplicationSelectors.selectAllApplicationsArray(state),
@@ -40,7 +41,8 @@ export class MainLauncherElement extends connect(store, LitElement) {
   // Intercept custom events from child components and call Redux action (Connect lib)
   mapEvents() {
     return {
-      'nav-item-click': (e: CustomEvent<NavItemElementData>) => startApplication(e.detail.key),
+      // 'nav-item-click': (e: CustomEvent<NavItemElementData>) => startApplication(e.detail.key),
+      'nav-item-click': (e: CustomEvent<NavItemElementData>) => RoutingActions.push(e.detail.permalink),
       // 'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
     }
   }

@@ -4,21 +4,14 @@ import style from './style'
 
 @customElement('sign-in')
 export class SignInElement extends LitElement {
-  get userFullNameInput() {
-    return this.shadowRoot.getElementById('customer_name') as HTMLInputElement
-  }
-
+  private emailInput: HTMLInputElement | null = null
+  private passwordInput: HTMLInputElement | null = null
   get userEmailInput() {
-    return this.shadowRoot.getElementById('email') as HTMLInputElement
+    return this.shadowRoot.getElementById('user_email') as HTMLInputElement
   }
 
   get userPasswordInput() {
     return this.shadowRoot.getElementById('password') as HTMLInputElement
-  }
-
-  get userFullName() {
-    // Use the input getter, and get the value property from the input element
-    return this.userFullNameInput.value
   }
 
   get userEmail() {
@@ -45,6 +38,15 @@ export class SignInElement extends LitElement {
       composed: true,
     })
     this.dispatchEvent(evt)
+  }
+
+  firstUpdated() {
+    if (!this.shadowRoot) return
+
+    setTimeout(() => {
+      if (!this.userEmailInput) return
+      this.userEmailInput.focus()
+    }, 0)
   }
 
   protected render(): TemplateResult {

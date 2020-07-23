@@ -6,6 +6,7 @@ import style from './style'
 export class NavItemElement extends LitElement {
   @property({ type: String }) key: string = ''
   @property({ type: String }) label: string = 'Unspecified label'
+  @property({ type: String }) permalink: string = '/'
 
   constructor() {
     super()
@@ -20,6 +21,7 @@ export class NavItemElement extends LitElement {
       detail: {
         key: this.key,
         label: this.label,
+        permalink: this.permalink,
       },
     })
     this.dispatchEvent(evt)
@@ -32,6 +34,7 @@ export class NavItemElement extends LitElement {
       detail: {
         key: this.key,
         label: this.label,
+        permalink: this.permalink,
       },
     })
     this.dispatchEvent(evt)
@@ -64,4 +67,5 @@ declare global {
 export interface NavItemElementData {
   key: string
   label: string
+  permalink: string
 }
