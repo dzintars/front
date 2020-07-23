@@ -7,11 +7,14 @@ app-shell {
     display: flex;
     flex-direction: row;
     flex: 1;
-    // background-color: $layout-background-color;
+    background-color: $layout-background-color;
     /* height: 100%; */
   }
   ui-statusbar-connected {
     background-color: $layout-background-color;
     border-top: $layout-border;
+  }
+  app-home {
+    width: 100%;
   }
 }

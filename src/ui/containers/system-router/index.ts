@@ -4,11 +4,11 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, RoutingSelectors } from '../../../store'
+import '../app-shell'
 import '../../views/view-error'
 import '../../views/view-signin'
 import '../../views/view-signup'
-import '../app-shell'
-// import '../../views/app-home'
+import '../../views/view-dispatch-consignments'
 
 @customElement('system-router')
 export class SystemRouterElement extends connect(store, LitElement) {
@@ -34,22 +34,35 @@ export class SystemRouterElement extends connect(store, LitElement) {
       action: () => `<app-shell noshadow></app-shell>`,
     },
     {
-      path: 'dispatch',
+      path: '/dispatch',
       children: [
         {
-          path: '/',
-          action: () => `<app-home></app-home>`,
+          path: '',
+          action: ctx => `<app-shell data=${ctx.baseUrl} noshadow></app-shell>`,
         },
         {
           path: '/zones',
           children: [
             {
-              path: '/',
-              action: () => `<app-users></app-users>`,
+              path: '',
+              action: () => `<app-shell noshadow></app-shell>`,
             },
             {
               path: '/:id',
-              action: () => `<app-users></app-users>`,
+              action: () => `<app-shell noshadow></app-shell>`,
+            },
+          ],
+        },
+        {
+          path: '/consignments',
+          children: [
+            {
+              path: '',
+              action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
+            },
+            {
+              path: '/:id',
+              action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
             },
           ],
         },
@@ -67,6 +80,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
       path: '/forgot-password',
       action: () => `<app-forgot-password></app-forgot-password>`,
     },
+    { path: '(.*)', action: () => '<h1>Not Found</h1>' },
   ]
 
   createRenderRoot(): this {
