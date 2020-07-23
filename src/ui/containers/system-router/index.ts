@@ -5,6 +5,10 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 import { connect } from '../../../utils/connect'
 import { store, RootState, RoutingSelectors } from '../../../store'
 import '../../views/view-error'
+import '../../views/view-signin'
+import '../../views/view-signup'
+import '../app-shell'
+// import '../../views/app-home'
 
 @customElement('system-router')
 export class SystemRouterElement extends connect(store, LitElement) {
@@ -27,20 +31,20 @@ export class SystemRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<app-users></app-users>`,
+      action: () => `<app-shell noshadow></app-shell>`,
     },
     {
-      path: '/apps',
+      path: 'dispatch',
       children: [
         {
-          path: '',
-          action: () => `<app-apps><h1 slot="workspace">Apps</h1></app-apps>`,
+          path: '/',
+          action: () => `<app-home></app-home>`,
         },
         {
-          path: '/users',
+          path: '/zones',
           children: [
             {
-              path: '',
+              path: '/',
               action: () => `<app-users></app-users>`,
             },
             {
@@ -53,11 +57,11 @@ export class SystemRouterElement extends connect(store, LitElement) {
     },
     {
       path: '/signin',
-      action: () => `<app-signin></app-signin>`,
+      action: () => `<view-signin noshadow></view-signin>`,
     },
     {
       path: '/signup',
-      action: () => `<app-signup></app-signup>`,
+      action: () => `<view-signup noshadow></view-signup>`,
     },
     {
       path: '/forgot-password',

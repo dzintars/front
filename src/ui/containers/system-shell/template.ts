@@ -1,7 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { SystemShellElement } from './component'
 import '../../containers/main-launcher'
-import '../../containers/app-shell'
+// import '../../containers/app-shell'
 import '../system-router'
 
 export default function template(this: SystemShellElement): TemplateResult {
@@ -18,7 +18,7 @@ export default function template(this: SystemShellElement): TemplateResult {
             `
           : ``}
         <system-router></system-router>
-        <app-shell noshadow></app-shell>
+        <!-- <app-shell noshadow></app-shell> -->
       `
     default:
       return html`
