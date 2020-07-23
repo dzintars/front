@@ -26,7 +26,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<app-home></app-home>`,
+      action: () => `<app-users></app-users>`,
     },
     {
       path: '/apps',
@@ -40,11 +40,11 @@ export class SystemRouterElement extends connect(store, LitElement) {
           children: [
             {
               path: '',
-              action: () => `<app-users><view-user-list slot="workspace"></view-user-list></app-users>`,
+              action: () => `<app-users></app-users>`,
             },
             {
               path: '/:id',
-              action: () => `<app-users><view-user-detail slot="workspace"></view-user-detail></app-users>`,
+              action: () => `<app-users></app-users>`,
             },
           ],
         },
@@ -52,15 +52,15 @@ export class SystemRouterElement extends connect(store, LitElement) {
     },
     {
       path: '/signin',
-      action: () => `<app-signin><h1 slot="workspace">Signin</h1></app-signin>`,
+      action: () => `<app-signin></app-signin>`,
     },
     {
       path: '/signup',
-      action: () => `<app-signup><h1 slot="workspace">Signup</h1></app-signup>`,
+      action: () => `<app-signup></app-signup>`,
     },
     {
       path: '/forgot-password',
-      action: () => `<app-forgot-password><h1 slot="workspace">Forgot Password</h1></app-forgot-password>`,
+      action: () => `<app-forgot-password></app-forgot-password>`,
     },
   ]
 

@@ -20,7 +20,7 @@ export default function template(): TemplateResult {
       <div>
         <p>
           New to Oswee?
-          <a class="btn btn--lg btn--block btn--success" href="/signup" @click="${this.onSignUp}">
+          <a class="btn btn--lg btn--block btn--success" @click="${this.onSignUp}">
             Create your Oswee account
           </a>
         </p>
