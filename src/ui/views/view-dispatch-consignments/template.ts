@@ -1,10 +1,10 @@
 import { html, TemplateResult } from 'lit-element'
-import { AppHomeElement } from './component'
+import { ViewDispatchConsignmentsElement } from './component'
 import '../../components/leaflet-map'
 import '../../components/ui-toolbar'
 import '../../elements/ui-panel'
 
-export default function template(this: AppHomeElement): TemplateResult {
+export default function template(this: ViewDispatchConsignmentsElement): TemplateResult {
   return html`
     <ui-toolbar>
       <button class="btn btn--md">New Project</button>

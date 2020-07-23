@@ -4,8 +4,8 @@ import { Theme } from '../../../assets/style'
 import template from './template'
 import style from './style'
 
-@customElement('app-home')
-export class AppHomeElement extends connect(store, LitElement) {
+@customElement('view-dispatch-consignments')
+export class ViewDispatchConsignmentsElement extends connect(store, LitElement) {
   // public static styles = [Theme, style]
   @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
   @property({ type: Object }) applications: { [uuid: string]: Application } = {}

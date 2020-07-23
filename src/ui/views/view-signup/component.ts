@@ -1,9 +1,9 @@
-import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
+import { LitElement, customElement, TemplateResult, CSSResultArray } from 'lit-element'
 import template from './template'
 import style from './style'
 
-@customElement('overlay-agent' as any)
-export class OverlayAgentElement extends LitElement {
+@customElement('view-signup')
+export class ViewSignUpElement extends LitElement {
   protected render(): TemplateResult {
     return template.call(this)
   }
@@ -19,6 +19,6 @@ export class OverlayAgentElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'overlay-agent': OverlayAgentElement
+    'view-signup': ViewSignUpElement
   }
 }

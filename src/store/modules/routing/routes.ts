@@ -9,7 +9,7 @@ function* homeRoute(params, queries) {
 }
 
 function* userListRoute(params, queries) {
-  console.log('hit')
+  console.log('Users Hit')
   yield put(UserActions.fetchUserList())
 }
 
@@ -19,6 +19,7 @@ function* userRoute(params, queries) {
 }
 
 function* applicationListRoute(params, queries) {
+  console.log('Apps Hit')
   yield put(getApplications())
 }
 

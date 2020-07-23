@@ -6,13 +6,12 @@ export default css`
   }
   :host {
     height: 100%;
-    min-height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
   }
-  .container {
+  /* .container {
     width: 320px;
     border: 1px solid var(--main-background);
     padding: var(--size-xs);
@@ -80,5 +79,5 @@ export default css`
     .container {
       width: 280px;
     }
-  }
+  } */
 `

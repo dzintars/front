@@ -4,6 +4,11 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, RoutingSelectors } from '../../../store'
+import '../app-shell'
+import '../../views/view-error'
+import '../../views/view-signin'
+import '../../views/view-signup'
+import '../../views/view-dispatch-consignments'
 
 @customElement('system-router')
 export class SystemRouterElement extends connect(store, LitElement) {
@@ -26,25 +31,38 @@ export class SystemRouterElement extends connect(store, LitElement) {
   private routes = [
     {
       path: '/',
-      action: () => `<app-home></app-home>`,
+      action: () => `<app-shell noshadow></app-shell>`,
     },
     {
-      path: '/apps',
+      path: '/dispatch',
       children: [
         {
           path: '',
-          action: () => `<app-apps><h1 slot="workspace">Apps</h1></app-apps>`,
+          action: ctx => `<app-shell data=${ctx.baseUrl} noshadow></app-shell>`,
         },
         {
-          path: '/users',
+          path: '/zones',
           children: [
             {
               path: '',
-              action: () => `<app-users><view-user-list slot="workspace"></view-user-list></app-users>`,
+              action: () => `<app-shell noshadow></app-shell>`,
             },
             {
               path: '/:id',
-              action: () => `<app-users><view-user-detail slot="workspace"></view-user-detail></app-users>`,
+              action: () => `<app-shell noshadow></app-shell>`,
+            },
+          ],
+        },
+        {
+          path: '/consignments',
+          children: [
+            {
+              path: '',
+              action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
+            },
+            {
+              path: '/:id',
+              action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
             },
           ],
         },
@@ -52,16 +70,17 @@ export class SystemRouterElement extends connect(store, LitElement) {
     },
     {
       path: '/signin',
-      action: () => `<app-signin><h1 slot="workspace">Signin</h1></app-signin>`,
+      action: () => `<view-signin noshadow></view-signin>`,
     },
     {
       path: '/signup',
-      action: () => `<app-signup><h1 slot="workspace">Signup</h1></app-signup>`,
+      action: () => `<view-signup noshadow></view-signup>`,
     },
     {
       path: '/forgot-password',
-      action: () => `<app-forgot-password><h1 slot="workspace">Forgot Password</h1></app-forgot-password>`,
+      action: () => `<app-forgot-password></app-forgot-password>`,
     },
+    { path: '(.*)', action: () => '<h1>Not Found</h1>' },
   ]
 
   createRenderRoot(): this {

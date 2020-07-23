@@ -28,6 +28,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Array }) applications: Application[]
   @property({ type: String }) activeNavItem: string = ''
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'test' }]
+  @property({ type: String }) activeView: string = ''
 
   mapState(state: RootState) {
     return {
@@ -53,6 +54,12 @@ export class MainLauncherElement extends connect(store, LitElement) {
     this.addEventListener('nav-item-leave', e => {
       this.hideFlyoutMenu(e)
     })
+    this.addEventListener('sign-up-click', e => {
+      this.activeView = 'signup'
+    })
+    this.addEventListener('sign-in-click', e => {
+      this.activeView = 'signin'
+    })
   }
 
   openFlyoutMenu(e) {
@@ -70,6 +77,14 @@ export class MainLauncherElement extends connect(store, LitElement) {
       detail: {},
     })
     this.dispatchEvent(event)
+  }
+
+  onSignIn(): void {
+    const evt = new CustomEvent('sign-in-click', {
+      bubbles: true,
+      composed: true,
+    })
+    this.dispatchEvent(evt)
   }
 
   changeState(): void {
@@ -120,7 +135,16 @@ export class MainLauncherElement extends connect(store, LitElement) {
 }
 
 declare global {
+  interface DocumentEventMap {
+    'sign-in-click': CustomEvent<MainLauncherData>
+  }
+
   interface HTMLElementTagNameMap {
     'main-launcher': MainLauncherElement
   }
+}
+
+export interface MainLauncherData {
+  key: number
+  name: string
 }

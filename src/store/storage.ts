@@ -21,7 +21,7 @@ declare global {
 }
 
 const storageKey = `my-app`
-const storageVersion = '20200722-1'
+const storageVersion = '20200722-2'
 const shouldPersist = (type: string) => true // type.startsWith('CART_') || type.startsWith('ORDER_')
 
 export const storageMiddleware: Middleware<Dispatch> = (store: MiddlewareAPI) => next => (action: AnyAction) => {
