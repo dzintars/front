@@ -27,13 +27,6 @@
     "json:server": "json-server --port 3002 --watch src/store/db.json",
     "wp": "webpack --display-error-details"
   },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
-  },
   "dependenciesMeta": {
     "webpack-dev-server": {
       "unplugged": true
