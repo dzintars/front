@@ -4,7 +4,7 @@ import { html, TemplateResult } from 'lit-element'
 export default function template(): TemplateResult {
   return html`
     <h1>Sign In</h1>
-    <p>Welcome to Oswee</p>
+    <p>Welcome back!</p>
     <form id="signin_form" name="signin" novalidate action="">
       <fieldset>
         <label for="user_email">Email</label>
@@ -20,7 +20,9 @@ export default function template(): TemplateResult {
       <div>
         <p>
           New to Oswee?
-          <a class="btn btn--lg btn--block btn--success" href="/signup" @click="${this.onSignUp}">Sign Up</a>
+          <a class="btn btn--lg btn--block btn--success" href="/signup" @click="${this.onSignUp}">
+            Create your Oswee account
+          </a>
         </p>
       </div>
     </form>

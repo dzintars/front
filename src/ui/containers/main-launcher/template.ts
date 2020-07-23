@@ -28,7 +28,7 @@ export default function template(this: MainLauncherElement): TemplateResult {
             <p class="username">Guest</p>
             <p class="account-type">Public account</p>
           </div>
-          <button class="btn">Sign In</button>
+          <button class="btn btn--md btn--secondary" @click=${this.onSignIn}>Sign In</button>
         </div>
         <nav>
           ${repeat(

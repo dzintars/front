@@ -28,7 +28,7 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Array }) applications: Application[]
   @property({ type: String }) activeNavItem: string = ''
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'test' }]
-  @property({ type: String }) activeView: string = 'signin'
+  @property({ type: String }) activeView: string = ''
 
   mapState(state: RootState) {
     return {
@@ -79,6 +79,14 @@ export class MainLauncherElement extends connect(store, LitElement) {
     this.dispatchEvent(event)
   }
 
+  onSignIn(): void {
+    const evt = new CustomEvent('sign-in-click', {
+      bubbles: true,
+      composed: true,
+    })
+    this.dispatchEvent(evt)
+  }
+
   changeState(): void {
     store.dispatch(hideLauncher())
   }
@@ -127,7 +135,16 @@ export class MainLauncherElement extends connect(store, LitElement) {
 }
 
 declare global {
+  interface DocumentEventMap {
+    'sign-in-click': CustomEvent<MainLauncherData>
+  }
+
   interface HTMLElementTagNameMap {
     'main-launcher': MainLauncherElement
   }
+}
+
+export interface MainLauncherData {
+  key: number
+  name: string
 }
