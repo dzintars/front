@@ -22,7 +22,6 @@ export class AppShellElement extends connect(store, LitElement) {
   @property({ type: String }) key: string = '9a30119-d673-4978-b393-f608fe28ae07'
   @property({ type: Object }) entities: { [uuid: string]: Application } = {}
   @property({ type: Boolean }) isActionCenterDisplayed: boolean = false
-  @property({ type: Object }) datax: object = {}
 
   mapState(state: RootState) {
     return {
@@ -33,7 +32,6 @@ export class AppShellElement extends connect(store, LitElement) {
 
   constructor() {
     super()
-    console.log(this.datax)
     store.dispatch(getApplications())
     store.dispatch(getModules())
   }

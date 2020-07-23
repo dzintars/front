@@ -30,39 +30,44 @@ export class SystemRouterElement extends connect(store, LitElement) {
 
   private routes = [
     {
-      path: '/',
-      action: () => `<app-shell noshadow></app-shell>`,
-    },
-    {
-      path: '/dispatch',
+      path: '',
       children: [
         {
           path: '',
-          action: ctx => `<app-shell data=${ctx.baseUrl} noshadow></app-shell>`,
+          action: () => `<app-shell noshadow></app-shell>`,
         },
         {
-          path: '/zones',
+          path: '/dispatch',
           children: [
             {
               path: '',
               action: () => `<app-shell noshadow></app-shell>`,
             },
             {
-              path: '/:id',
-              action: () => `<app-shell noshadow></app-shell>`,
+              path: '/zones',
+              children: [
+                {
+                  path: '',
+                  action: () => `<app-shell noshadow></app-shell>`,
+                },
+                {
+                  path: '/:id',
+                  action: () => `<app-shell noshadow></app-shell>`,
+                },
+              ],
             },
-          ],
-        },
-        {
-          path: '/consignments',
-          children: [
             {
-              path: '',
-              action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
-            },
-            {
-              path: '/:id',
-              action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
+              path: '/consignments',
+              children: [
+                {
+                  path: '',
+                  action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
+                },
+                {
+                  path: '/:id',
+                  action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
+                },
+              ],
             },
           ],
         },
