@@ -54,6 +54,12 @@ export class MainLauncherElement extends connect(store, LitElement) {
     this.addEventListener('nav-item-leave', e => {
       this.hideFlyoutMenu(e)
     })
+    this.addEventListener('sign-up-click', e => {
+      this.activeView = 'signup'
+    })
+    this.addEventListener('sign-in-click', e => {
+      this.activeView = 'signin'
+    })
   }
 
   openFlyoutMenu(e) {

@@ -139,6 +139,14 @@ button.btn {
   &--block {
     width: 100%;
   }
+  &--secondary {
+    background-color: $secondary-cta-background-color;
+    color: $secondary-cta-text-color;
+  }
+  &--success {
+    background-color: $kellygreen-500;
+    color: $secondary-cta-text-color;
+  }
 }
 
 .icon-btn {

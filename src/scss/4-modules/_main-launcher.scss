@@ -8,12 +8,12 @@ main-launcher {
   background-color: $layout-background-color;
   color: $primary-text-color;
   box-shadow: var(--shadow-64);
-  height: calc(100% - $size-l - 1rem);
+  height: calc(100% - #{$size-l} - 1rem);
   width: 320px;
   border-radius: $border-radius-sm;
   // border: 3px solid dodgerblue;
   z-index: 1;
-  padding: 0.5rem 1rem;
+  padding: 1.5em 1em;
   .account {
     display: flex;
     flex-direction: row;
@@ -118,5 +118,10 @@ main-launcher {
   @include media('>phone', '<=tablet') {
     width: calc(100% - 9rem);
     height: calc(100% - 16rem);
+  }
+
+  sign-in,
+  sign-up {
+    width: 100%;
   }
 }
