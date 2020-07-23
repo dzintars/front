@@ -5,11 +5,11 @@ import style from './style'
 @customElement('sign-up')
 export class SignUpElement extends LitElement {
   get userFullNameInput() {
-    return this.shadowRoot.getElementById('customer_name') as HTMLInputElement
+    return this.shadowRoot.getElementById('user_name') as HTMLInputElement
   }
 
   get userEmailInput() {
-    return this.shadowRoot.getElementById('email') as HTMLInputElement
+    return this.shadowRoot.getElementById('user_email') as HTMLInputElement
   }
 
   get userPasswordInput() {
@@ -37,6 +37,11 @@ export class SignUpElement extends LitElement {
       composed: true,
     })
     this.dispatchEvent(evt)
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.userFullNameInput.focus()
   }
 
   protected render(): TemplateResult {

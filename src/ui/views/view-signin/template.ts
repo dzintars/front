@@ -4,6 +4,6 @@ import '../../components/sign-in'
 
 export default function template(this: ViewSignInElement): TemplateResult {
   return html`
-    <sign-in noshadow></sign-in>
+    <sign-in></sign-in>
   `
 }
