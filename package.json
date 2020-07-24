@@ -26,7 +26,10 @@
     "format:prettier": "prettier \"**/*.ts\" --write",
     "json:server": "json-server --port 3002 --watch src/store/db.json",
     "wp": "webpack --display-error-details",
-    "generate:component": "hygen component new"
+    "generate:element": "hygen element new",
+    "generate:component": "hygen component new",
+    "generate:container": "hygen container new",
+    "generate:view": "hygen view new"
   },
   "dependenciesMeta": {
     "webpack-dev-server": {
