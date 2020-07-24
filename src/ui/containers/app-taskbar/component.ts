@@ -48,6 +48,7 @@ export class AppTaskbarElement extends connect(store, LitElement) {
   public static get styles(): CSSResultArray {
     return [Theme, style]
   }
+
   createRenderRoot(): Element | ShadowRoot {
     return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }

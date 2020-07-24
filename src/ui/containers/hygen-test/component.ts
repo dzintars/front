@@ -1,10 +1,3 @@
----
-to: src/ui/containers/<%= tag %>/component.ts
----
-<%
-  className = h.changeCase.pascal(tag) + 'Element'
-  interfaceName = h.changeCase.pascal(tag) + 'Data'
--%>
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
@@ -14,8 +7,8 @@ import style from './style'
 import { Theme } from '../../../assets/style'
 // import { NavItemElementData } from '../../components/nav-item'
 
-@customElement('<%= tag %>')
-export class <%= className %> extends connect(store, LitElement) {
+@customElement('hygen-test')
+export class HygenTestElement extends connect(store, LitElement) {
   @property({ type: Boolean }) isVisible: boolean = false
   @property({ type: String }) name: string = 'container'
 
@@ -34,7 +27,7 @@ export class <%= className %> extends connect(store, LitElement) {
   }
 
   onHostClick(): void {
-    const event = new CustomEvent('<%= tag %>-click', {
+    const event = new CustomEvent('hygen-test-click', {
       bubbles: true,
       composed: true,
       detail: {},
@@ -57,15 +50,15 @@ export class <%= className %> extends connect(store, LitElement) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    '<%= tag %>': <%= className %>
+    'hygen-test': HygenTestElement
   }
 
   interface DocumentEventMap {
-    '<%= tag %>-click': CustomEvent<<%= interfaceName %>>
+    'hygen-test-click': CustomEvent<HygenTestData>
   }
 }
 
-export interface <%= interfaceName %> {
+export interface HygenTestData {
   isVisible: boolean
   name: string
 }

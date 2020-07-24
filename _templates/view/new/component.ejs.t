@@ -18,6 +18,10 @@ export class <%= className %> extends LitElement {
   protected render(): TemplateResult {
     return template.call(this)
   }
+
+  createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
+  }
 }
 
 declare global {
