@@ -9,9 +9,9 @@ Technology stack I choose for this project:
 
 - Yarn 2 Berry .... Let's try something new!
 - PnP ............. Let's try something new!
-- TypeScript ...... Type safety is must have and great DX in your IDE is nice to have.
+- TypeScript ...... Type safety is must have and great DX in your IDE is also nice to have.
 - ESLint .......... Just linter to make your code better.
-- Prettier ........ Code formatter to make your code nicely formated.
+- Prettier ........ OPINIONATED code formatter to make your code nicely formatted.
 - WebPack ......... Simply because I am not willing to learn Rollup.
 - LitElement ...... Really great library with bright future to write native Web Components.
 - Redux ........... State management for complex applications.
@@ -19,7 +19,7 @@ Technology stack I choose for this project:
 - Reselect ........ For creating memoized, composable store selector functions.
 - Husky ........... To watch Git hooks and run scripts on Git actions.
 - Lint-Staged ..... To lint only staged files. Executed by Husky hooks.
-- Commitlint ...... To format your Git commit messages and enabling things like automatic changelogs, etc.
+- Commitlint ...... To format your Git commit messages and enabling things like automatic changelog, etc.
 - Hygen ........... Code generator to create Ducks or Component boilerplate.
 - \*Json-Server ... For mocking data API. (not used anymore due to HTTP/2 limitations)
 
