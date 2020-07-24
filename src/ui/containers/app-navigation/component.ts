@@ -1,21 +1,22 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, UiSelectors } from '../../../store'
+import { store, RootState, Module, ModuleSelectors } from '../../../store'
 import template from './template'
 import style from './style'
 import { Theme } from '../../../assets/style'
 // import { NavItemElementData } from '../../components/nav-item'
 
-@customElement('hygen-test')
-export class HygenTestElement extends connect(store, LitElement) {
-  @property({ type: Boolean }) isVisible: boolean = false
+@customElement('app-navigation')
+export class AppNavigationElement extends connect(store, LitElement) {
+  @property({ type: String }) appid: string = '54789c07-bb43-4db4-8b2d-1a8e1f8c67f1'
+  @property({ type: Array }) modules: Module[] = [{ id: '', title: '' }]
   @property({ type: String }) name: string = 'container'
 
   // Map state to props (Connect lib)
   mapState(state: RootState) {
     return {
-      isVisible: UiSelectors.getLauncherVisibility(state),
+      modules: ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.appid }),
     }
   }
 
@@ -27,7 +28,7 @@ export class HygenTestElement extends connect(store, LitElement) {
   }
 
   onHostClick(): void {
-    const event = new CustomEvent('hygen-test-click', {
+    const event = new CustomEvent('app-navigation-click', {
       bubbles: true,
       composed: true,
       detail: {},
@@ -50,15 +51,15 @@ export class HygenTestElement extends connect(store, LitElement) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'hygen-test': HygenTestElement
+    'app-navigation': AppNavigationElement
   }
 
   interface DocumentEventMap {
-    'hygen-test-click': CustomEvent<HygenTestData>
+    'app-navigation-click': CustomEvent<AppNavigationData>
   }
 }
 
-export interface HygenTestData {
-  isVisible: boolean
+export interface AppNavigationData {
+  appid: string
   name: string
 }

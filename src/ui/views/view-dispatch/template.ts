@@ -1,6 +1,7 @@
 import { html, TemplateResult } from 'lit-element'
 import { ViewDispatchElement } from './component'
 import '../../containers/app-taskbar'
+import '../../containers/app-navigation'
 
 export default function template(this: ViewDispatchElement): TemplateResult {
   return html`
@@ -11,5 +12,6 @@ export default function template(this: ViewDispatchElement): TemplateResult {
       ${this.name}.
     </p>
     <a href="/">Home</a>
+    <app-navigation></app-navigation>
   `
 }
