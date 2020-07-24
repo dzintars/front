@@ -4,37 +4,30 @@ to: src/ui/components/<%= tag %>/component.ts
 <%
   className = h.changeCase.pascal(tag) + 'Element'
 -%>
-import { LitElement, customElement, html, property, css } from 'lit-element'
-import { connect } from '@captaincodeman/redux-connect-element'
-import { store, RootState, User, UserSelectors } from '../store'
+import { LitElement, customElement, property, TemplateResult } from 'lit-element'
+import template from './template'
+import style from './style'
 
 @customElement('<%= tag %>')
-export class <%= className %> extends connect(
-  store,
-  LitElement
-) {
-  @property({ type: Object })
-  user: User
+export class <%= className %> extends LitElement {
+  public static styles = [style]
+  @property({ type: Boolean, reflect: true }) selected: boolean = false
+  @property({ type: Number }) key: number = 0
+  @property({ type: String }) name: string = 'Component'
 
-  mapState(state: RootState) {
-    return {
-      user: UserSelectors.user(state),
-    }
-  }
-
-  render() {
-    const u = this.user
-
-    return html`
-      <div>Hello ${u.name} and greetings from &lt;<%= tag %>&gt;!</div>
-    `
-  }
-
-  static get styles() {
-    return css`
-      :host {
-        display: block;
-      }
-    `
+  protected render(): TemplateResult {
+    return template.call(this)
   }
 }
+
+declare global {
+  interface HTMLElementTagNameMap {
+    '<%= tag %>': <%= className %>
+  }
+}
+
+export interface ComponentData {
+  key: number
+  name: string
+}
+

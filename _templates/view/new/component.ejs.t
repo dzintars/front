@@ -1,9 +1,18 @@
+---
+to: src/ui/views/<%= tag %>/component.ts
+---
+<%
+  className = h.changeCase.pascal(tag) + 'Element'
+-%>
 import { LitElement, customElement, html, property, css } from 'lit-element'
 import { connect } from '@captaincodeman/redux-connect-element'
 import { store, RootState, User, UserSelectors } from '../store'
 
-@customElement('hygen-test')
-export class HygenTestElement extends connect(store, LitElement) {
+@customElement('<%= tag %>')
+export class <%= className %> extends connect(
+  store,
+  LitElement
+) {
   @property({ type: Object })
   user: User
 
@@ -17,7 +26,7 @@ export class HygenTestElement extends connect(store, LitElement) {
     const u = this.user
 
     return html`
-      <div>Hello ${u.name} and greetings from &lt;hygen-test&gt;!</div>
+      <div>Hello ${u.name} and greetings from &lt;<%= tag %>&gt;!</div>
     `
   }
 
