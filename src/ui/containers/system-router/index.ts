@@ -8,6 +8,7 @@ import '../app-shell'
 import '../../views/view-error'
 import '../../views/view-signin'
 import '../../views/view-signup'
+import '../../views/view-dispatch'
 import '../../views/view-dispatch-consignments'
 
 @customElement('system-router')
@@ -41,7 +42,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
           children: [
             {
               path: '',
-              action: () => `<app-shell noshadow></app-shell>`,
+              action: () => `<view-dispatch noshadow></view-dispatch>`,
             },
             {
               path: '/zones',

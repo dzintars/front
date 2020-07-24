@@ -1,15 +1,9 @@
----
-to: src/ui/views/<%= tag %>/component.ts
----
-<%
-  className = h.changeCase.pascal(tag) + 'Element'
--%>
 import { LitElement, customElement, property, TemplateResult } from 'lit-element'
 import template from './template'
 import style from './style'
 
-@customElement('<%= tag %>')
-export class <%= className %> extends LitElement {
+@customElement('view-dispatch')
+export class ViewDispatchElement extends LitElement {
   public static styles = [style]
   @property({ type: Boolean, reflect: true }) selected: boolean = false
   @property({ type: Number }) key: number = 0
@@ -22,7 +16,7 @@ export class <%= className %> extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    '<%= tag %>': <%= className %>
+    'view-dispatch': ViewDispatchElement
   }
 }
 

@@ -1,6 +1,3 @@
----
-to: src/ui/views/<%= tag %>/style.ts
----
 import { css } from 'lit-element'
 
 export default css`
