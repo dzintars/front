@@ -9,7 +9,7 @@ export default function template(this: AppFlyoutElement): TemplateResult {
       module => module.id,
       module => html`
         <div>
-          <p>${module.title}</p>
+          <a href=${module.id}><p>${module.title}</p></a>
         </div>
       `
     )}

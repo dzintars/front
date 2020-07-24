@@ -25,7 +25,8 @@
     "format:eslint": "eslint --ext .ts,.js,.html . --fix",
     "format:prettier": "prettier \"**/*.ts\" --write",
     "json:server": "json-server --port 3002 --watch src/store/db.json",
-    "wp": "webpack --display-error-details"
+    "wp": "webpack --display-error-details",
+    "generate:component": "hygen component new"
   },
   "dependenciesMeta": {
     "webpack-dev-server": {
@@ -70,6 +71,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "latest",
     "husky": "latest",
+    "hygen": "latest",
     "json-server": "latest",
     "lint-staged": "latest",
     "lit-scss-loader": "^1.0.0",
