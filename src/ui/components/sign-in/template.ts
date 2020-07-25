@@ -6,17 +6,17 @@ export default function template(): TemplateResult {
     <h1>Sign In</h1>
     <p>Welcome back!</p>
     <form id="signin_form" name="signin" novalidate action="">
-      <fieldset>
+      <section>
         <label for="user_email">Email</label>
         <input id="user_email" name="userEmail" type="email" />
-      </fieldset>
-      <fieldset>
+      </section>
+      <section>
         <label for="password">Password</label>
         <input id="password" autocomplete="off" name="password" type="password" />
-      </fieldset>
-      <fieldset>
+      </section>
+      <section>
         <button class="btn btn--lg btn--block btn--secondary" id="continue">Sign In</button>
-      </fieldset>
+      </section>
       <div>
         <p>
           New to Oswee?
