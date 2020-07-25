@@ -6,18 +6,18 @@ export default function template(): TemplateResult {
       <h1>Create new account</h1>
       <p>Welcome to Oswee</p>
       <form id="signin_form" name="signin" novalidate action="">
-        <fieldset>
+        <section>
           <label for="user_name">Your name</label>
           <input id="user_name" name="userName" type="text" />
-        </fieldset>
-        <fieldset>
+        </section>
+        <section>
           <label for="user_email">Email</label>
           <input id="user_email" name="userEmail" type="email" />
-        </fieldset>
-        <fieldset>
+        </section>
+        <section>
           <label for="password">Password</label>
           <input id="password" autocomplete="off" name="password" type="password" />
-        </fieldset>
+        </section>
         <div>
           <p>By creating an account, you agree to Oswee's</p>
           <p>

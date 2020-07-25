@@ -9,7 +9,7 @@ export default function template(this: AppNavigationElement): TemplateResult {
       module => module.id,
       module => html`
         <div>
-          <a href="${this.pathname}/${module.id}"><p>${module.title}</p></a>
+          <a href="${this.pathname}/${module.permalink}"><p>${module.title}</p></a>
         </div>
       `
     )}

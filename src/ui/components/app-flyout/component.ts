@@ -8,7 +8,7 @@ import style from './style'
 export class AppFlyoutElement extends connect(store, LitElement) {
   @property({ type: String }) key: string = ''
   @property({ type: String }) label: string = 'Unspecified label'
-  @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Flyout' }]
+  @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Flyout', permalink: 'permalink' }]
 
   mapState(state: RootState) {
     return {
