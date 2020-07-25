@@ -53,3 +53,5 @@ By following these steps i got project running after fresh Fedora install. Mby i
 5. Install dependencies `yarn install`
 
 6. Enable PnP for VS Code `yarn dlx @yarnpkg/pnpify --sdk vscode`. When popup will show up, press `Allow`.
+
+7. `yarn start` to start the dev server or refer to the `package.json` for available scripts. Dev server will fail if there are issues with domains, port, and TLS certificates.
