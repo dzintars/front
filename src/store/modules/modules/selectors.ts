@@ -4,8 +4,8 @@ import { RootState } from '../../reducer'
 // INPUT/BASE/ORIGIN SELECTORS
 const getState = (state: RootState) => state.modules
 const getApplications = (state: RootState) => state.applications.entities
-const getModuleId = (state: RootState, { moduleId }) => moduleId
-const getApplicationId = (state: RootState, { applicationId }) => applicationId
+const getModuleId = (state: RootState, { moduleId }): string => moduleId
+const getApplicationId = (state: RootState, { applicationId }): string => applicationId
 
 // MEMOIZED SELECTORS
 export const selectAllIds = createSelector([getState], state => state.ids)
@@ -28,7 +28,7 @@ export const selectModuleName = createSelector([selectModuleById], module => {
 export const selectModulesIdsByApplicationId = createSelector(
   [getApplications, getApplicationId],
   (applications, id) => {
-    // console.log('Modules: ', application.modules)
+    console.log('Modules: ', applications[id].modules)
     return applications[id].modules || []
   }
 )

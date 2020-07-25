@@ -6,5 +6,6 @@ export default css`
   }
   :host {
     display: block;
+    border: 1px solid red;
   }
 `

@@ -1,7 +1,8 @@
 import { html, TemplateResult } from 'lit-element'
 import { ViewDispatchElement } from './component'
 import '../../containers/app-taskbar'
-import '../../containers/app-navigation'
+import '../../containers/app-navigation-connected'
+import '../../components/app-navigation'
 
 export default function template(this: ViewDispatchElement): TemplateResult {
   return html`
@@ -12,6 +13,6 @@ export default function template(this: ViewDispatchElement): TemplateResult {
       ${this.name}.
     </p>
     <a href="/">Home</a>
-    <app-navigation></app-navigation>
+    <app-navigation appid="54789c07-bb43-4db4-8b2d-1a8e1f8c67f1" noshadow></app-navigation>
   `
 }

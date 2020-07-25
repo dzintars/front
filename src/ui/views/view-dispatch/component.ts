@@ -1,13 +1,21 @@
 import { LitElement, customElement, property, TemplateResult } from 'lit-element'
+import { connect } from '../../../utils/connect'
+import { store, RootState, ModuleSelectors, getApplications, getModules } from '../../../store'
 import template from './template'
 import style from './style'
 
 @customElement('view-dispatch')
-export class ViewDispatchElement extends LitElement {
+export class ViewDispatchElement extends connect(store, LitElement) {
   public static styles = [style]
   @property({ type: Boolean, reflect: true }) selected: boolean = false
   @property({ type: Number }) key: number = 0
   @property({ type: String }) name: string = 'view'
+
+  constructor() {
+    super()
+    store.dispatch(getApplications())
+    store.dispatch(getModules())
+  }
 
   protected render(): TemplateResult {
     return template.call(this)
