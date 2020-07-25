@@ -10,14 +10,10 @@ export class AppNavigationElement extends LitElement {
     return 'app-navigation'
   }
 
+  @property({ type: String }) pathname: string
   @property({ type: String }) appid: string = ''
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Module' }]
   @property({ type: String }) name: string = 'component'
-
-  connectedCallback() {
-    super.connectedCallback()
-    console.log('AppID:', this.modules)
-  }
 
   protected render(): TemplateResult {
     return template.call(this)

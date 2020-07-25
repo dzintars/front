@@ -3,9 +3,10 @@ import { connect } from '../../../utils/connect'
 import { store, RootState, ModuleSelectors, getApplications, getModules } from '../../../store'
 import template from './template'
 import style from './style'
+import { ViewBaseElement } from '../view-base'
 
 @customElement('view-dispatch')
-export class ViewDispatchElement extends connect(store, LitElement) {
+export class ViewDispatchElement extends connect(store, ViewBaseElement) {
   public static styles = [style]
   @property({ type: Boolean, reflect: true }) selected: boolean = false
   @property({ type: Number }) key: number = 0
@@ -21,9 +22,9 @@ export class ViewDispatchElement extends connect(store, LitElement) {
     return template.call(this)
   }
 
-  createRenderRoot(): Element | ShadowRoot {
-    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
-  }
+  // createRenderRoot(): Element | ShadowRoot {
+  //   return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
+  // }
 }
 
 declare global {

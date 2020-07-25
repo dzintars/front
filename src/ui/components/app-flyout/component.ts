@@ -10,11 +10,11 @@ export class AppFlyoutElement extends connect(store, LitElement) {
   @property({ type: String }) label: string = 'Unspecified label'
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Flyout' }]
 
-  // mapState(state: RootState) {
-  //   return {
-  //     modules: ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.key }),
-  //   }
-  // }
+  mapState(state: RootState) {
+    return {
+      modules: ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.key }),
+    }
+  }
 
   onHostClick(): void {
     const evt = new CustomEvent('application-shortcut-click', {
