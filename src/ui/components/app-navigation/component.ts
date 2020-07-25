@@ -12,7 +12,7 @@ export class AppNavigationElement extends LitElement {
 
   @property({ type: String }) pathname: string
   @property({ type: String }) appid: string = ''
-  @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Module' }]
+  @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Module', permalink: '' }]
   @property({ type: String }) name: string = 'component'
 
   protected render(): TemplateResult {

@@ -1,6 +1,7 @@
 export interface Module {
   readonly id: string
   readonly title: string
+  readonly permalink: string
 }
 
 export interface ModulesState {
