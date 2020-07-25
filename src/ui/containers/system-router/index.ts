@@ -43,6 +43,8 @@ export class SystemRouterElement extends connect(store, LitElement) {
             {
               path: '',
               action: () => `<view-dispatch noshadow></view-dispatch>`,
+              // action: () => import(/* webpackChunkName: "view-dispatch" */ '../../views/view-dispatch'),
+              // load: () => ViewDispatchElement,
             },
             {
               path: '/zones',
