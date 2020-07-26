@@ -4,12 +4,12 @@ import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, RoutingSelectors } from '../../../store'
-import '../app-shell'
-import '../../views/view-error'
-import '../../views/view-signin'
-import '../../views/view-signup'
+// import '../app-shell'
 import '../../views/view-dispatch'
 import '../../views/view-dispatch-consignments'
+import '../../views/view-signin'
+import '../../views/view-signup'
+import '../../views/view-error'
 
 @customElement('system-router')
 export class SystemRouterElement extends connect(store, LitElement) {
@@ -31,11 +31,11 @@ export class SystemRouterElement extends connect(store, LitElement) {
 
   private routes = [
     {
-      path: '',
+      path: '/',
       children: [
         {
           path: '',
-          action: () => `<app-shell noshadow></app-shell>`,
+          action: () => `<view-dispatch noshadow></view-dispatch>`,
         },
         {
           path: '/dispatch',
@@ -51,11 +51,11 @@ export class SystemRouterElement extends connect(store, LitElement) {
               children: [
                 {
                   path: '',
-                  action: () => `<app-shell noshadow></app-shell>`,
+                  action: () => `<view-dispatch noshadow></view-dispatch>`,
                 },
                 {
                   path: '/:id',
-                  action: () => `<app-shell noshadow></app-shell>`,
+                  action: () => `<view-dispatch noshadow></view-dispatch>`,
                 },
               ],
             },

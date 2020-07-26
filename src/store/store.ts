@@ -8,7 +8,7 @@ import { startSagas } from './sagas'
 import { startRouting } from './modules/routing/middleware'
 import { startReselect } from './reselect'
 
-const composeEnhancers = composeWithDevTools({ actionsBlacklist: [] })
+const composeEnhancers = composeWithDevTools({ actionsBlacklist: [], trace: true })
 const enhancer = composeEnhancers(applyMiddleware(...middleware))
 
 export const store = createStore(rootReducer, initialState(), enhancer)

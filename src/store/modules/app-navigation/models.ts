@@ -18,8 +18,3 @@ export interface ApplicationsState {
   readonly defaultApplication: string
   readonly currentApplication: string
 }
-
-export interface ApplicationsX {
-  readonly entities: { [id: string]: Application }
-  readonly ids: string[]
-}

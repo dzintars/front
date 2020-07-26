@@ -33,8 +33,3 @@ export const selectApplicationModules = createSelector([selectApplicationById], 
 })
 
 export const selectSelectedApplication = createSelector([getState], state => state.selected)
-
-export const ApplicationSelectors = {
-  selectFetchState,
-  selectSelectedApplicationId,
-}

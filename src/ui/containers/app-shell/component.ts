@@ -30,11 +30,11 @@ export class AppShellElement extends connect(store, LitElement) {
     }
   }
 
-  constructor() {
-    super()
-    store.dispatch(getApplications())
-    store.dispatch(getModules())
-  }
+  // constructor() {
+  //   super()
+  //   store.dispatch(getApplications())
+  //   store.dispatch(getModules())
+  // }
 
   // updated() {
   //   const app = document.createElement('app-home')

@@ -1,14 +1,14 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
-import { store, RootState, Module, ModuleSelectors, ApplicationSelectors, Application } from '../../../store'
+import { store, RootState, Module, ModuleSelectors } from '../../../store'
 import { connect } from '../../../utils/connect'
 import template from './template'
 import style from './style'
 
 @customElement('app-flyout')
 export class AppFlyoutElement extends connect(store, LitElement) {
-  @property({ type: String }) key: string = ''
-  @property({ type: String }) label: string = 'Unspecified label'
-  @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Flyout', permalink: 'permalink' }]
+  @property({ type: String }) key: string
+  @property({ type: String }) label: string
+  @property({ type: Array }) modules: Module[]
 
   mapState(state: RootState) {
     return {

@@ -27,7 +27,6 @@ export class MainLauncherElement extends connect(store, LitElement) {
   @property({ type: Object }) wrapperRef: any = this.setWrapperRef.bind(this)
   @property({ type: Array }) applications: Application[]
   @property({ type: String }) activeNavItem: string = ''
-  @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'test', permalink: 'permalink' }]
   @property({ type: String }) activeView: string = ''
 
   // Map state to props (Connect lib)

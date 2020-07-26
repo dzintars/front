@@ -4,7 +4,7 @@ import { repeat } from 'lit-html/directives/repeat'
 // import { Icon } from '../../../assets/svg'
 import '../../components/nav-item'
 import '../../components/nav-item-title'
-import '../../components/app-flyout'
+// import '../../components/app-flyout'
 import '../../components/sign-in'
 import '../../components/sign-up'
 // import '../../elements/ui-launcher'
@@ -28,23 +28,23 @@ export default function template(this: MainLauncherElement): TemplateResult {
             <p class="username">Guest</p>
             <p class="account-type">Public account</p>
           </div>
-          <button class="btn btn--md btn--secondary" @click=${this.onSignIn}>Sign In</button>
+          <button class="btn btn--md btn--secondary" @click="${this.onSignIn}">Sign In</button>
         </div>
         <nav>
           ${repeat(
             this.applications,
             app => app.id,
             app => html`
-              <nav-item .key=${app.id} .label=${app.title} .permalink=${app.permalink}>
-                <nav-item-title .key=${app.id} .label=${app.title}></nav-item-title>
+              <nav-item .key="${app.id}" .label="${app.title}" .permalink="${app.permalink}">
+                <nav-item-title .key="${app.id}" .label="${app.title}"></nav-item-title>
                 ${app.modules
                   ? html`
                       <p>+</p>
-                      ${this.activeNavItem === `${app.id}`
+                      <!-- ${this.activeNavItem === `${app.id}`
                         ? html`
-                            <app-flyout .key=${app.id} .modules=${this.modules} noshadow></app-flyout>
+                            <app-flyout .key="${app.id}" noshadow></app-flyout>
                           `
-                        : html``}
+                        : html``} -->
                     `
                   : html`
                       <p></p>

@@ -1,6 +1,6 @@
 import { html, TemplateResult } from 'lit-element'
 import { SystemShellElement } from './component'
-import '../../containers/main-launcher'
+// import '../../containers/main-launcher'
 // import '../../containers/app-shell'
 import '../system-router'
 
@@ -12,11 +12,11 @@ export default function template(this: SystemShellElement): TemplateResult {
       `
     case 'WEBSOCKET_CONNECTED':
       return html`
-        ${this.isLauncherVisible
+        <!-- ${this.isLauncherVisible
           ? html`
               <main-launcher id="main-launcher" noshadow></main-launcher>
             `
-          : ``}
+          : ``} -->
         <system-router></system-router>
         <!-- <app-shell noshadow></app-shell> -->
       `

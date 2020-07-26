@@ -1,6 +1,6 @@
+import { storageMiddleware } from './storage'
 import { historyMiddleware } from './modules/routing/middleware'
 import websocketMiddleware from './modules/websocket/middleware'
 import { sagaMiddleware } from './sagas'
-import { storageMiddleware } from './storage'
 
-export const middleware = [storageMiddleware, historyMiddleware, websocketMiddleware, sagaMiddleware]
+export const middleware = [storageMiddleware, websocketMiddleware, historyMiddleware, sagaMiddleware]

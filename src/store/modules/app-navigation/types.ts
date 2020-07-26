@@ -1,4 +1,4 @@
-import { Application, ApplicationsX } from './models'
+import { Application, ApplicationsState } from './models'
 
 export enum ApplicationTypes {
   SELECT = 'APPLICATION_SELECT',
@@ -89,7 +89,7 @@ interface Get {
 
 interface GetSuccess {
   readonly type: ApplicationTypes.GET_SUCCESS
-  readonly payload: ApplicationsX
+  readonly payload: ApplicationsState
 }
 
 export type ApplicationActionTypes =

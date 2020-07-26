@@ -2,10 +2,12 @@ import { put } from 'redux-saga/effects'
 
 import { UserActions } from '../users'
 import { fetchApplicationList, getApplications } from '../applications'
+import { getModules } from '../modules'
 
 function* homeRoute(params, queries) {
   // Get list of the applications from the
   yield put(getApplications())
+  yield put(getModules())
 }
 
 function* userListRoute(params, queries) {
@@ -19,13 +21,14 @@ function* userRoute(params, queries) {
 }
 
 function* applicationListRoute(params, queries) {
-  console.log('Apps Hit')
+  console.log('Dispatch route hit!')
   yield put(getApplications())
+  yield put(getModules())
 }
 
 export const routes = [
   { path: '/', route: homeRoute },
-  { path: '/users', route: userListRoute },
-  { path: '/users/:id', route: userRoute },
-  { path: '/apps', route: applicationListRoute },
+  // { path: '/users', route: userListRoute },
+  // { path: '/users/:id', route: userRoute },
+  // { path: '/dispatch', route: applicationListRoute },
 ]
