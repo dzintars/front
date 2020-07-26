@@ -1,9 +1,14 @@
 export interface Application {
   readonly id: string
   readonly title: string
-  readonly component: string
   readonly permalink: string
   readonly modules: string[]
+}
+
+export interface Module {
+  readonly id: string
+  readonly title: string
+  readonly permalink: string
 }
 
 export interface ApplicationsState {

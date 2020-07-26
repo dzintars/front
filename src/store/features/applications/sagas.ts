@@ -1,9 +1,10 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects'
 import { ApplicationTypes } from './types'
-import { fetchApplicationListRequest, fetchApplicationListSuccess, fetchApplicationListFailure } from './actions'
-import { ApplicationSelectors } from './selectors'
-import { Application } from './models'
-import { API } from './api'
+import { getApplications } from './actions'
+// import { fetchApplicationListRequest, fetchApplicationListSuccess, fetchApplicationListFailure } from './actions'
+// import { ApplicationSelectors } from './selectors'
+// import { Application } from './models'
+// import { API } from './api'
 
 // function* selectApplicationSaga(action: ReturnType<typeof ApplicationActions.selectApplication>) {
 //   const { id } = action.payload
@@ -30,19 +31,28 @@ import { API } from './api'
 //   }
 // }
 
-function* fetchApplicationListSaga(action) {
-  yield put(fetchApplicationListRequest())
-  try {
-    const applications = yield call(API.fetchApplications)
-    yield put(fetchApplicationListSuccess(applications))
-  } catch (err) {
-    console.error(err)
-    yield put(fetchApplicationListFailure(err))
-  }
+// function* fetchApplicationListSaga(action) {
+//   yield put(fetchApplicationListRequest())
+//   try {
+//     const applications = yield call(API.fetchApplications)
+//     yield put(fetchApplicationListSuccess(applications))
+//   } catch (err) {
+//     console.error(err)
+//     yield put(fetchApplicationListFailure(err))
+//   }
+// }
+
+// function* fetchApplicationListListener() {
+//   yield takeLatest(ApplicationTypes.LIST_FETCH, fetchApplicationListSaga)
+// }
+
+function* testSaga() {
+  console.log('Test saga')
+  yield put(getApplications())
 }
 
-function* fetchApplicationListListener() {
-  yield takeLatest(ApplicationTypes.LIST_FETCH, fetchApplicationListSaga)
+function* loadModules() {
+  yield takeLatest(ApplicationTypes.START, testSaga)
 }
 
 // export async function fetchApplication(id: string) {
@@ -70,4 +80,4 @@ function* fetchApplicationListListener() {
 // }
 
 // export default [selectApplicationListener, fetchApplicationListListener, fetchApplicationListener]
-export default [fetchApplicationListListener]
+export default [loadModules]
