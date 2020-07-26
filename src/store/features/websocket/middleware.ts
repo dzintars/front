@@ -48,7 +48,7 @@ const websocketMiddleware = ({ dispatch }) => next => {
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
         // Force message augmentation (optional)
-        user: user,
+        // user: user,
       })
       // TODO: Make action Type CamelCase
       websocket.send(JSON.stringify(cleanAction))

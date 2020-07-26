@@ -1,25 +1,19 @@
-export interface Application {
-  readonly id: string
-  readonly title: string
-  readonly permalink: string
-  readonly modules: string[]
-}
-
-export interface Module {
+export interface AppModule {
   readonly id: string
   readonly title: string
   readonly permalink: string
 }
 
-export interface ApplicationsState {
-  readonly entities: { [id: string]: Application }
+export interface AppNavigationState {
+  readonly entities: { [id: string]: AppModule }
   readonly ids: string[]
   readonly fetching: boolean
-  readonly selected: {
-    id: string
-    state: number
-  }
+  readonly selected: string
+  readonly applicationId: string
   readonly error: Error
-  readonly defaultApplication: string
-  readonly currentApplication: string
+}
+
+export interface AppModules {
+  readonly entities: { [id: string]: AppModule }
+  readonly ids: string[]
 }

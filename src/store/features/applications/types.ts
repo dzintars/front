@@ -83,8 +83,8 @@ interface FailedApplication {
 
 interface Get {
   readonly type: ApplicationTypes.GET
-  readonly meta: object
   readonly payload: object
+  readonly meta: object
 }
 
 interface GetSuccess {

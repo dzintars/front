@@ -5,6 +5,7 @@ import { all, spawn, call } from 'redux-saga/effects'
 import route from './features/routing/sagas'
 // import users from './modules/users/sagas'
 import applications from './features/applications/sagas'
+import appModules from './features/app-navigation/sagas'
 // import organizations from './modules/organizations/sagas'
 
 export const rootSagas = {
@@ -13,6 +14,7 @@ export const rootSagas = {
   // users,
   applications,
   // organizations,
+  appModules,
 }
 
 export const sagaMiddleware = createSagaMiddleware()

@@ -55,6 +55,7 @@
     "@types/mini-css-extract-plugin": "latest",
     "@types/node": "latest",
     "@types/optimize-css-assets-webpack-plugin": "latest",
+    "@types/redux-logger": "latest",
     "@types/terser-webpack-plugin": "latest",
     "@types/webpack": "latest",
     "@types/webpack-cleanup-plugin": "latest",

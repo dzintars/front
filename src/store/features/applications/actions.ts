@@ -53,8 +53,8 @@ export const startApplication = (id: string): ApplicationActionTypes => ({
 
 export const getApplications = (): ApplicationActionTypes => ({
   type: ApplicationTypes.GET,
-  meta: { websocket: true },
   payload: { stakeholder: '54322' },
+  meta: { websocket: true },
 })
 
 export const getApplicationsSuccess = (payload: ApplicationsX): ApplicationActionTypes => ({

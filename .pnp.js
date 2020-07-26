@@ -58,6 +58,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:5.0.1"
       ],
       [
+        "@types/redux-logger",
+        "npm:3.0.8"
+      ],
+      [
         "@types/terser-webpack-plugin",
         "npm:2.2.0"
       ],
@@ -284,6 +288,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/mini-css-extract-plugin", "npm:0.9.1"],
             ["@types/node", "npm:13.7.4"],
             ["@types/optimize-css-assets-webpack-plugin", "npm:5.0.1"],
+            ["@types/redux-logger", "npm:3.0.8"],
             ["@types/terser-webpack-plugin", "npm:2.2.0"],
             ["@types/webpack", "npm:4.41.6"],
             ["@types/webpack-cleanup-plugin", "npm:0.5.2"],
@@ -984,6 +989,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-range-parser-npm-1.2.3-c06253b351-092fabae0e.zip/node_modules/@types/range-parser/",
           "packageDependencies": [
             ["@types/range-parser", "npm:1.2.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/redux-logger", [
+        ["npm:3.0.8", {
+          "packageLocation": "./.yarn/cache/@types-redux-logger-npm-3.0.8-a0dfb9798c-c7b7a41da5.zip/node_modules/@types/redux-logger/",
+          "packageDependencies": [
+            ["@types/redux-logger", "npm:3.0.8"],
+            ["redux", "npm:4.0.5"]
           ],
           "linkType": "HARD",
         }]
@@ -5394,6 +5409,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/mini-css-extract-plugin", "npm:0.9.1"],
             ["@types/node", "npm:13.7.4"],
             ["@types/optimize-css-assets-webpack-plugin", "npm:5.0.1"],
+            ["@types/redux-logger", "npm:3.0.8"],
             ["@types/terser-webpack-plugin", "npm:2.2.0"],
             ["@types/webpack", "npm:4.41.6"],
             ["@types/webpack-cleanup-plugin", "npm:0.5.2"],

@@ -565,6 +565,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/redux-logger@npm:latest":
+  version: 3.0.8
+  resolution: "@types/redux-logger@npm:3.0.8"
+  dependencies:
+    redux: ^4.0.0
+  checksum: c7b7a41da5002ff3fc7d76edce5c0cd87139ca307223dcbfa6bc97e7acca2a61ceb420b7246106ba76746cd95a6da347017d14ee2f03eefd2e850079e1c9c7fc
+  languageName: node
+  linkType: hard
+
 "@types/relateurl@npm:*":
   version: 0.2.28
   resolution: "@types/relateurl@npm:0.2.28"
@@ -4509,6 +4518,7 @@ __metadata:
     "@types/mini-css-extract-plugin": latest
     "@types/node": latest
     "@types/optimize-css-assets-webpack-plugin": latest
+    "@types/redux-logger": latest
     "@types/terser-webpack-plugin": latest
     "@types/webpack": latest
     "@types/webpack-cleanup-plugin": latest
@@ -9414,7 +9424,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"redux@npm:^4.0.4, redux@npm:^4.0.5":
+"redux@npm:^4.0.0, redux@npm:^4.0.4, redux@npm:^4.0.5":
   version: 4.0.5
   resolution: "redux@npm:4.0.5"
   dependencies:

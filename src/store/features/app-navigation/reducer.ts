@@ -1,95 +1,37 @@
-import { ApplicationTypes, ApplicationActionTypes } from './types'
-import { ApplicationsState } from './models'
+import { AppNavigationTypes, AppNavigationActionTypes } from './types'
+import { AppNavigationState } from './models'
 
-export { ApplicationsState }
+export { AppNavigationState }
 
-const initialState: ApplicationsState = {
+const initialState: AppNavigationState = {
   entities: {},
   ids: [],
   fetching: false,
-  selected: {
-    id: '',
-    state: 0,
-  },
+  selected: '',
+  applicationId: '',
   error: null,
-  defaultApplication: '',
-  currentApplication: '',
 }
 
-export default (state: ApplicationsState = initialState, action: ApplicationActionTypes): ApplicationsState => {
+export default (state: AppNavigationState = initialState, action: AppNavigationActionTypes): AppNavigationState => {
   switch (action.type) {
-    case ApplicationTypes.SELECT:
+    case AppNavigationTypes.SELECT_MODULE:
       return {
         ...state,
-        selected: {
-          ...state.selected,
-          id: action.id,
-          state: 0,
-        },
+        selected: action.payload.id,
       }
 
-    case ApplicationTypes.LIST_FETCH_REQUEST:
+    case AppNavigationTypes.LIST_FETCH_MODULES_REQUEST:
       return { ...state, fetching: true, error: null }
 
-    case ApplicationTypes.LIST_FETCH_SUCCESS:
+    case AppNavigationTypes.LIST_FETCH_MODULES_SUCCESS:
       return {
         ...state,
         fetching: false,
         entities: {
-          ...state.entities,
-          ...action.applications.reduce((map, application) => {
-            map[application.id] = application
-            return map
-          }, {}),
-        },
-        ids: action.applications.map(app => app.id),
-      }
-
-    case ApplicationTypes.LIST_FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.error }
-
-    case ApplicationTypes.FETCH_REQUEST:
-      return { ...state, fetching: true, error: null }
-
-    case ApplicationTypes.FETCH_SUCCESS:
-      return {
-        ...state,
-        fetching: false,
-        entities: {
-          ...state.entities,
-          [action.application.id]: action.application,
-        },
-      }
-
-    case ApplicationTypes.START:
-      return {
-        ...state,
-        selected: {
-          ...state.selected,
-          id: action.id,
-        },
-      }
-
-    case ApplicationTypes.GET:
-      return {
-        ...state,
-        fetching: true,
-      }
-
-    case ApplicationTypes.GET_SUCCESS:
-      // console.log('APP_GET_OK', action.payload)
-      return {
-        ...state,
-        fetching: false,
-        entities: {
-          // ...state.entities,
           ...action.payload.entities,
         },
         ids: action.payload.ids,
       }
-
-    case ApplicationTypes.FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.error }
 
     default:
       return state

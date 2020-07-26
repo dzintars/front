@@ -6,6 +6,7 @@ export * from './features/users'
 export * from './features/applications'
 export * from './features/modules'
 export * from './features/organizations'
+export * from './features/app-navigation'
 
 export * from './store'
 export * from './reducer'

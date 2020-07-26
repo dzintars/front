@@ -1,112 +1,71 @@
-import { Application, ApplicationsState } from './models'
+import { AppModule, AppModules } from './models'
 
-export enum ApplicationTypes {
-  SELECT = 'APPLICATION_SELECT',
+export enum AppNavigationTypes {
+  SELECT_MODULE = 'APP_NAVIGATION__SELECT_MODULE',
 
-  LIST_FETCH = 'APPLICATION_LIST_FETCH',
-  LIST_FETCH_REQUEST = 'APPLICATION_LIST_FETCH_REQUEST',
-  LIST_FETCH_SUCCESS = 'APPLICATION_LIST_FETCH_SUCCESS',
-  LIST_FETCH_FAILURE = 'APPLICATION_LIST_FETCH_FAILURE',
+  LIST_FETCH_MODULES = 'APP_NAVIGATION__LIST_FETCH_MODULES',
+  LIST_FETCH_MODULES_REQUEST = 'APP_NAVIGATION__LIST_FETCH_MODULES_REQUEST',
+  LIST_FETCH_MODULES_SUCCESS = 'APP_NAVIGATION__LIST_FETCH_MODULES_SUCCESS',
+  LIST_FETCH_MODULES_FAILURE = 'APP_NAVIGATION__LIST_FETCH_MODULES_FAILURE',
 
-  FETCH = 'APPLICATION_FETCH',
-  FETCH_REQUEST = 'APPLICATION_FETCH_REQUEST',
-  FETCH_SUCCESS = 'APPLICATION_FETCH_SUCCESS',
-  FETCH_FAILURE = 'APPLICATION_FETCH_FAILURE',
-
-  START = 'APPLICATION_START',
-  STARTING = 'APPLICATION_STARTING', // Show the loader while loading the data
-  STARTED = 'APPLICATION_STARTED',
-  STOP = 'APPLICATION_STOP',
-  STOPPED = 'APPLICATION_STOPPED',
-  FAILED = 'APPLICATION_FAILED', // Show the error if any or RBAC restrictions
-
-  GET = 'APPLICATION_GET',
-  GET_SUCCESS = 'APPLICATION_GET_SUCCESS',
+  FETCH_MODULE = 'APP_NAVIGATION__FETCH_MODULE',
+  FETCH_MODULE_REQUEST = 'APP_NAVIGATION__FETCH_MODULE_REQUEST',
+  FETCH_MODULE_SUCCESS = 'APP_NAVIGATION__FETCH_MODULE_SUCCESS',
+  FETCH_MODULE_FAILURE = 'APP_NAVIGATION__FETCH_MODULE_FAILURE',
 }
 
-interface Select {
-  readonly type: ApplicationTypes.SELECT
-  readonly id: string
+interface SelectModule {
+  readonly type: AppNavigationTypes.SELECT_MODULE
+  readonly payload: {
+    id: string
+  }
   readonly meta: object
 }
-interface ListFetch {
-  readonly type: ApplicationTypes.LIST_FETCH
+interface ListFetchModules {
+  readonly type: AppNavigationTypes.LIST_FETCH_MODULES
 }
-interface ListFetchRequest {
-  readonly type: ApplicationTypes.LIST_FETCH_REQUEST
-}
-interface ListFetchSuccess {
-  readonly type: ApplicationTypes.LIST_FETCH_SUCCESS
-  readonly applications: Application[]
-}
-interface ListFetchFailure {
-  readonly type: ApplicationTypes.LIST_FETCH_FAILURE
-  readonly error: Error
-}
-interface Fetch {
-  readonly type: ApplicationTypes.FETCH
-  readonly id: string
-}
-interface FetchRequest {
-  readonly type: ApplicationTypes.FETCH_REQUEST
-  readonly id: string
-}
-interface FetchSuccess {
-  readonly type: ApplicationTypes.FETCH_SUCCESS
-  readonly application: Application
-}
-interface FetchFailure {
-  readonly type: ApplicationTypes.FETCH_FAILURE
-  readonly id: string
-  readonly error: Error
-}
-
-interface StartApplication {
-  readonly type: ApplicationTypes.START
-  readonly id: string
-}
-interface StartingApplication {
-  readonly type: ApplicationTypes.STARTING
-}
-interface StartedApplication {
-  readonly type: ApplicationTypes.STARTED
-}
-interface StopApplication {
-  readonly type: ApplicationTypes.STOP
-}
-interface StoppedApplication {
-  readonly type: ApplicationTypes.STOPPED
-}
-interface FailedApplication {
-  readonly type: ApplicationTypes.FAILED
-}
-
-interface Get {
-  readonly type: ApplicationTypes.GET
+interface ListFetchModulesRequest {
+  readonly type: AppNavigationTypes.LIST_FETCH_MODULES_REQUEST
   readonly meta: object
+}
+interface ListFetchModulesSuccess {
+  readonly type: AppNavigationTypes.LIST_FETCH_MODULES_SUCCESS
+  readonly payload: AppModules
+}
+interface ListFetchModulesFailure {
+  readonly type: AppNavigationTypes.LIST_FETCH_MODULES_FAILURE
+  readonly payload: {
+    error: Error
+  }
+}
+interface FetchModule {
+  readonly type: AppNavigationTypes.FETCH_MODULE
   readonly payload: object
 }
-
-interface GetSuccess {
-  readonly type: ApplicationTypes.GET_SUCCESS
-  readonly payload: ApplicationsState
+interface FetchModuleRequest {
+  readonly type: AppNavigationTypes.FETCH_MODULE_REQUEST
+  readonly payload: object
+}
+interface FetchModuleSuccess {
+  readonly type: AppNavigationTypes.FETCH_MODULE_SUCCESS
+  readonly payload: {
+    module: AppModule
+  }
+}
+interface FetchModuleFailure {
+  readonly type: AppNavigationTypes.FETCH_MODULE_FAILURE
+  readonly payload: {
+    error: Error
+  }
 }
 
-export type ApplicationActionTypes =
-  | Select
-  | ListFetch
-  | ListFetchRequest
-  | ListFetchSuccess
-  | ListFetchFailure
-  | Fetch
-  | FetchRequest
-  | FetchSuccess
-  | FetchFailure
-  | StartApplication
-  | StartingApplication
-  | StartedApplication
-  | StopApplication
-  | StoppedApplication
-  | FailedApplication
-  | Get
-  | GetSuccess
+export type AppNavigationActionTypes =
+  | SelectModule
+  | ListFetchModules
+  | ListFetchModulesRequest
+  | ListFetchModulesSuccess
+  | ListFetchModulesFailure
+  | FetchModule
+  | FetchModuleRequest
+  | FetchModuleSuccess
+  | FetchModuleFailure
