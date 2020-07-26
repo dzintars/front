@@ -16,6 +16,7 @@ export interface ApplicationsState {
   }
   readonly error: Error
   readonly defaultApplication: string
+  readonly currentApplication: string
 }
 
 export interface ApplicationsX {

@@ -1,8 +1,7 @@
-import { AppNavigationElement } from '../../components/app-navigation'
 // import { customElement, property } from 'lit-element'
-// import { connect } from '@captaincodeman/redux-connect-element'
+import { AppNavigationElement } from '../../components/app-navigation'
 import { connect } from '../../../utils/connect'
-import { store, RootState, ModuleSelectors, RoutingSelectors } from '../../../store'
+import { store, RootState, ApplicationSelectors, ModuleSelectors, RoutingSelectors } from '../../../store'
 
 // @customElement('app-navigation-connected')
 export class AppNavigationConnectedElement extends connect(store, AppNavigationElement) {
@@ -10,7 +9,12 @@ export class AppNavigationConnectedElement extends connect(store, AppNavigationE
   mapState(state: RootState) {
     return {
       pathname: RoutingSelectors.pathname(state),
-      modules: ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.appid }),
+      isApplicationsFetching: ApplicationSelectors.selectFetchState(state),
+      isModulesFetching: ModuleSelectors.selectFetchState(state),
+      modules:
+        this.isApplicationsFetching && this.isModulesFetching
+          ? ``
+          : ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.appid }),
     }
   }
 }

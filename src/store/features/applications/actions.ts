@@ -1,9 +1,9 @@
 import { ApplicationTypes, ApplicationActionTypes } from './types'
 import { Application, ApplicationsX } from './models'
 
-export const selectApplication = (uuid: string): ApplicationActionTypes => ({
+export const selectApplication = (id: string): ApplicationActionTypes => ({
   type: ApplicationTypes.SELECT,
-  uuid,
+  id,
   meta: { websocket: true },
 })
 
@@ -25,14 +25,14 @@ export const fetchApplicationListFailure = (error: Error): ApplicationActionType
   error,
 })
 
-export const fetchApplication = (uuid: string): ApplicationActionTypes => ({
+export const fetchApplication = (id: string): ApplicationActionTypes => ({
   type: ApplicationTypes.FETCH,
-  uuid,
+  id,
 })
 
-export const fetchApplicationRequest = (uuid: string): ApplicationActionTypes => ({
+export const fetchApplicationRequest = (id: string): ApplicationActionTypes => ({
   type: ApplicationTypes.FETCH_REQUEST,
-  uuid,
+  id,
 })
 
 export const fetchApplicationSuccess = (application: Application): ApplicationActionTypes => ({
@@ -40,21 +40,21 @@ export const fetchApplicationSuccess = (application: Application): ApplicationAc
   application,
 })
 
-export const fetchApplicationFailure = (uuid: string, error: Error): ApplicationActionTypes => ({
+export const fetchApplicationFailure = (id: string, error: Error): ApplicationActionTypes => ({
   type: ApplicationTypes.FETCH_FAILURE,
-  uuid,
+  id,
   error,
 })
 
-export const startApplication = (uuid: string): ApplicationActionTypes => ({
+export const startApplication = (id: string): ApplicationActionTypes => ({
   type: ApplicationTypes.START,
-  uuid,
+  id,
 })
 
 export const getApplications = (): ApplicationActionTypes => ({
   type: ApplicationTypes.GET,
-  meta: { websocket: true },
   payload: { stakeholder: '54322' },
+  meta: { websocket: true },
 })
 
 export const getApplicationsSuccess = (payload: ApplicationsX): ApplicationActionTypes => ({

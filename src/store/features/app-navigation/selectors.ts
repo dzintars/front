@@ -3,13 +3,11 @@ import { RootState } from '../../reducer'
 
 // INPUT/BASE SELECTORS
 const getState = (state: RootState) => state.applications
-const getApplicationId = (state: RootState, { applicationId }) => applicationId
+// const getApplicationId = (state: RootState, { applicationId }) => applicationId
 
 // MEMOIZED SELECTORS
-// export const shouldFetch = createSelector(
-//   [application],
-//   application => application === undefined // && state.fetching === false
-// )
+export const selectFetchState = createSelector([getState], state => state.fetching)
+export const selectSelectedApplicationId = createSelector([getState], state => state.selected.id)
 
 export const selectAllIds = createSelector([getState], state => state.ids)
 export const selectAllApplications = createSelector([getState], state => state.entities)
@@ -20,10 +18,10 @@ export const selectAllApplicationsArray = createSelector([getState, selectAllIds
 })
 
 export const selectApplicationById = createSelector(
-  [selectAllApplications, getApplicationId],
-  (applications, getApplicationId) => {
+  [selectAllApplications, selectSelectedApplicationId],
+  (entities, id) => {
     // console.log('Applications: ', applications[getApplicationId])
-    return applications[getApplicationId]
+    return entities[id]
   }
 )
 
@@ -35,3 +33,8 @@ export const selectApplicationModules = createSelector([selectApplicationById], 
 })
 
 export const selectSelectedApplication = createSelector([getState], state => state.selected)
+
+export const AppNavigationSelectors = {
+  selectFetchState,
+  selectSelectedApplicationId,
+}

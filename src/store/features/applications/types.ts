@@ -26,7 +26,7 @@ export enum ApplicationTypes {
 
 interface Select {
   readonly type: ApplicationTypes.SELECT
-  readonly uuid: string
+  readonly id: string
   readonly meta: object
 }
 interface ListFetch {
@@ -45,11 +45,11 @@ interface ListFetchFailure {
 }
 interface Fetch {
   readonly type: ApplicationTypes.FETCH
-  readonly uuid: string
+  readonly id: string
 }
 interface FetchRequest {
   readonly type: ApplicationTypes.FETCH_REQUEST
-  readonly uuid: string
+  readonly id: string
 }
 interface FetchSuccess {
   readonly type: ApplicationTypes.FETCH_SUCCESS
@@ -57,13 +57,13 @@ interface FetchSuccess {
 }
 interface FetchFailure {
   readonly type: ApplicationTypes.FETCH_FAILURE
-  readonly uuid: string
+  readonly id: string
   readonly error: Error
 }
 
 interface StartApplication {
   readonly type: ApplicationTypes.START
-  readonly uuid: string
+  readonly id: string
 }
 interface StartingApplication {
   readonly type: ApplicationTypes.STARTING
@@ -83,8 +83,8 @@ interface FailedApplication {
 
 interface Get {
   readonly type: ApplicationTypes.GET
-  readonly meta: object
   readonly payload: object
+  readonly meta: object
 }
 
 interface GetSuccess {

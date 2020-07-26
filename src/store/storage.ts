@@ -56,9 +56,9 @@ export const initialState = (): any => {
   const cache = JSON.parse(json)
   if (cache.version !== storageVersion) return undefined
 
-  const age_ms = Date.now() - new Date(cache.timestamp).getTime()
-  const age_days = age_ms / 1000 / 60 / 60 / 24
-  if (age_days > 365) return undefined
+  const ageMs = Date.now() - new Date(cache.timestamp).getTime()
+  const ageDays = ageMs / 1000 / 60 / 60 / 24
+  if (ageDays > 365) return undefined
 
   return cache.state as RootState
 }

@@ -4,23 +4,16 @@ import { ApplicationsState } from './models'
 export { ApplicationsState }
 
 const initialState: ApplicationsState = {
-  entities: {
-    '9a30119-d673-4978-b393-f608fe28ae07': {
-      id: '9a30119-d673-4978-b393-f608fe28ae07',
-      title: 'Home Root Fallback',
-      component: 'app-home',
-      permalink: '/',
-      modules: [],
-    },
-  },
+  entities: {},
   ids: [],
   fetching: false,
   selected: {
-    id: '9a30119-d673-4978-b393-f608fe28ae07',
+    id: '',
     state: 0,
   },
   error: null,
-  defaultApplication: '9a30119-d673-4978-b393-f608fe28ae07',
+  defaultApplication: '',
+  currentApplication: '',
 }
 
 export default (state: ApplicationsState = initialState, action: ApplicationActionTypes): ApplicationsState => {
@@ -30,7 +23,7 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
         ...state,
         selected: {
           ...state.selected,
-          id: action.uuid,
+          id: action.id,
           state: 0,
         },
       }
@@ -73,8 +66,14 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
         ...state,
         selected: {
           ...state.selected,
-          id: action.uuid,
+          id: action.id,
         },
+      }
+
+    case ApplicationTypes.GET:
+      return {
+        ...state,
+        fetching: true,
       }
 
     case ApplicationTypes.GET_SUCCESS:

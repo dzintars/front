@@ -42,12 +42,13 @@ const websocketMiddleware = ({ dispatch }) => next => {
   })
 
   return action => {
+    // TODO: What if we receive an action before connection is established?
     if (websocket.readyState === SOCKET_STATES.OPEN && action.meta && action.meta.websocket) {
       // Remove action metadata before sending to the server
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
-        // Send additional parameters for any message
-        user: user,
+        // Force message augmentation (optional)
+        // user: user,
       })
       // TODO: Make action Type CamelCase
       websocket.send(JSON.stringify(cleanAction))

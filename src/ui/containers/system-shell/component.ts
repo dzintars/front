@@ -47,6 +47,7 @@ export class SystemShellElement extends connect(store, LitElement) {
 
   connectedCallback(): void {
     super.connectedCallback()
+
     // const root = document.documentElement
     // Object.entries(this.theme).map(item => {
     //   root.style.setProperty(String(item[0]), item[1])

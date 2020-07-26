@@ -565,6 +565,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/redux-logger@npm:latest":
+  version: 3.0.8
+  resolution: "@types/redux-logger@npm:3.0.8"
+  dependencies:
+    redux: ^4.0.0
+  checksum: c7b7a41da5002ff3fc7d76edce5c0cd87139ca307223dcbfa6bc97e7acca2a61ceb420b7246106ba76746cd95a6da347017d14ee2f03eefd2e850079e1c9c7fc
+  languageName: node
+  linkType: hard
+
 "@types/relateurl@npm:*":
   version: 0.2.28
   resolution: "@types/relateurl@npm:0.2.28"
@@ -3186,6 +3195,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deep-diff@npm:^0.3.5":
+  version: 0.3.8
+  resolution: "deep-diff@npm:0.3.8"
+  checksum: debaca1f9513b9c4dc64dbbcb23b6bc697e8dfa8e1cac8169542676408bfb803078255f82cc51c973cf1f0e18332f06c056c9dc5eab1cf777086e38930e597c1
+  languageName: node
+  linkType: hard
+
 "deep-equal@npm:^1.0.1":
   version: 1.1.1
   resolution: "deep-equal@npm:1.1.1"
@@ -4502,6 +4518,7 @@ __metadata:
     "@types/mini-css-extract-plugin": latest
     "@types/node": latest
     "@types/optimize-css-assets-webpack-plugin": latest
+    "@types/redux-logger": latest
     "@types/terser-webpack-plugin": latest
     "@types/webpack": latest
     "@types/webpack-cleanup-plugin": latest
@@ -4537,6 +4554,7 @@ __metadata:
     query-string: latest
     redux: ^4.0.5
     redux-devtools-extension: latest
+    redux-logger: latest
     redux-saga: ^1.1.3
     reselect: ^4.0.0
     reselect-tools: ^0.0.7
@@ -9388,6 +9406,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"redux-logger@npm:latest":
+  version: 3.0.6
+  resolution: "redux-logger@npm:3.0.6"
+  dependencies:
+    deep-diff: ^0.3.5
+  checksum: cc54fe7def447262864badc7703a2a978cf25085f123a144c0032f97947c36c4da452d7cdcece54179913091ffe2b991e1103c37eec4a1283d17044878ae74a3
+  languageName: node
+  linkType: hard
+
 "redux-saga@npm:^1.1.3":
   version: 1.1.3
   resolution: "redux-saga@npm:1.1.3"
@@ -9397,7 +9424,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"redux@npm:^4.0.4, redux@npm:^4.0.5":
+"redux@npm:^4.0.0, redux@npm:^4.0.4, redux@npm:^4.0.5":
   version: 4.0.5
   resolution: "redux@npm:4.0.5"
   dependencies:

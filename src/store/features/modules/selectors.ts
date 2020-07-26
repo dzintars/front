@@ -8,6 +8,9 @@ const getModuleId = (state: RootState, { moduleId }): string => moduleId
 const getApplicationId = (state: RootState, { applicationId }): string => applicationId
 
 // MEMOIZED SELECTORS
+export const selectFetchState = createSelector([getState], state => state.fetching)
+export const selectSelectedModuleId = createSelector([getState], state => state.selected.id)
+
 export const selectAllIds = createSelector([getState], state => state.ids)
 export const selectAllModules = createSelector([getState], state => state.entities)
 
@@ -28,7 +31,9 @@ export const selectModuleName = createSelector([selectModuleById], module => {
 export const selectModulesIdsByApplicationId = createSelector(
   [getApplications, getApplicationId],
   (applications, id) => {
-    // console.log('Modules: ', applications[id].modules)
+    // console.log('ModulesIDs ID: ', id)
+    // console.log('ModulesIDs Apps: ', applications)
+    // console.log('ModulesIDs: ', applications[id].modules)
     return applications[id].modules || []
   }
 )
@@ -36,8 +41,11 @@ export const selectModulesIdsByApplicationId = createSelector(
 export const selectModulesByApplicationId = createSelector(
   [selectAllModules, selectModulesIdsByApplicationId],
   (modules, ids) => {
-    // console.log('Modules: ', ids.map(id => modules[id]).sort())
-    return ids.map(id => modules[id])
+    // console.log(
+    //   'Modules: ',
+    //   ids.map(id => modules[id])
+    // )
+    return ids.map(id => modules[id]) || []
   }
 )
 

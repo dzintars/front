@@ -1,6 +1,7 @@
-import { historyMiddleware } from './modules/routing/middleware'
-import websocketMiddleware from './modules/websocket/middleware'
-import { sagaMiddleware } from './sagas'
+import logger from 'redux-logger'
 import { storageMiddleware } from './storage'
+import { historyMiddleware } from './features/routing/middleware'
+import websocketMiddleware from './features/websocket/middleware'
+import { sagaMiddleware } from './sagas'
 
-export const middleware = [storageMiddleware, historyMiddleware, websocketMiddleware, sagaMiddleware]
+export const middleware = [logger, storageMiddleware, websocketMiddleware, historyMiddleware, sagaMiddleware]
