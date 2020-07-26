@@ -198,6 +198,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:2.13.8"
       ],
       [
+        "redux-logger",
+        "npm:3.0.6"
+      ],
+      [
         "redux-saga",
         "npm:1.1.3"
       ],
@@ -315,6 +319,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["query-string", "npm:6.11.0"],
             ["redux", "npm:4.0.5"],
             ["redux-devtools-extension", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:2.13.8"],
+            ["redux-logger", "npm:3.0.6"],
             ["redux-saga", "npm:1.1.3"],
             ["reselect", "npm:4.0.0"],
             ["reselect-tools", "npm:0.0.7"],
@@ -3945,6 +3950,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["deep-diff", [
+        ["npm:0.3.8", {
+          "packageLocation": "./.yarn/cache/deep-diff-npm-0.3.8-a2a66d74dd-debaca1f95.zip/node_modules/deep-diff/",
+          "packageDependencies": [
+            ["deep-diff", "npm:0.3.8"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["deep-equal", [
         ["npm:1.1.1", {
           "packageLocation": "./.yarn/cache/deep-equal-npm-1.1.1-67ff9c29b9-cc6a0009ce.zip/node_modules/deep-equal/",
@@ -5415,6 +5429,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["query-string", "npm:6.11.0"],
             ["redux", "npm:4.0.5"],
             ["redux-devtools-extension", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:2.13.8"],
+            ["redux-logger", "npm:3.0.6"],
             ["redux-saga", "npm:1.1.3"],
             ["reselect", "npm:4.0.0"],
             ["reselect-tools", "npm:0.0.7"],
@@ -10737,6 +10752,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
           "packagePeers": [
             "redux"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["redux-logger", [
+        ["npm:3.0.6", {
+          "packageLocation": "./.yarn/cache/redux-logger-npm-3.0.6-4c0c652262-cc54fe7def.zip/node_modules/redux-logger/",
+          "packageDependencies": [
+            ["redux-logger", "npm:3.0.6"],
+            ["deep-diff", "npm:0.3.8"]
           ],
           "linkType": "HARD",
         }]
