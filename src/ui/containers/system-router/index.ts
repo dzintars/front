@@ -7,6 +7,7 @@ import { store, RootState, RoutingSelectors } from '../../../store'
 // import '../app-shell'
 import '../../views/view-dispatch'
 import '../../views/view-dispatch-consignments'
+import '../../views/view-sales'
 import '../../views/view-signin'
 import '../../views/view-signup'
 import '../../views/view-error'
@@ -71,6 +72,15 @@ export class SystemRouterElement extends connect(store, LitElement) {
                   action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
                 },
               ],
+            },
+          ],
+        },
+        {
+          path: '/sales',
+          children: [
+            {
+              path: '',
+              action: () => `<view-sales noshadow></view-sales>`,
             },
           ],
         },
