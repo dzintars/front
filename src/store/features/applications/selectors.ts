@@ -34,7 +34,10 @@ export const selectApplicationModules = createSelector([selectApplicationById], 
 
 export const selectSelectedApplication = createSelector([getState], state => state.selected)
 
+const selectDefaultApplicationModule = createSelector([selectApplicationById], application => application.defaultModule)
+
 export const ApplicationSelectors = {
   selectFetchState,
   selectSelectedApplicationId,
+  selectDefaultApplicationModule,
 }

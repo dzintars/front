@@ -11,16 +11,10 @@ export class ViewDispatchElement extends connect(store, ViewBaseElement) {
 
   connectedCallback(): void {
     super.connectedCallback()
-    store.dispatch(startApplication(this.appid))
+    // store.dispatch(startApplication(this.appid))
     // store.dispatch(getApplications())
-    store.dispatch(getModules())
+    // store.dispatch(getModules())
   }
-
-  // constructor() {
-  //   super()
-  //   store.dispatch(getApplications())
-  //   store.dispatch(getModules())
-  // }
 
   protected render(): TemplateResult {
     return template.call(this)

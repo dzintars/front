@@ -1,3 +1,4 @@
+import { createAction, ActionsUnion } from '../../actions'
 import { AppNavigationTypes, AppNavigationActionTypes } from './types'
 import { AppModule, AppModules } from './models'
 
@@ -69,3 +70,14 @@ export const AppNavigationActions = {
   fetchModuleSuccess,
   fetchModuleFailure,
 }
+
+export const ModxActions = {
+  fetchModulesList: () => createAction(AppNavigationTypes.LIST_FETCH_MODULES),
+  fetchModulesListRequest: () => createAction(AppNavigationTypes.LIST_FETCH_MODULES_REQUEST),
+  fetchModulesListSuccess: (payload: AppModules) =>
+    createAction(AppNavigationTypes.LIST_FETCH_MODULES_SUCCESS, payload),
+  fetchModulesListFailure: (error: Error) =>
+    createAction(AppNavigationTypes.LIST_FETCH_MODULES_FAILURE, { payload: { error } }),
+}
+
+export type ModxActions = ActionsUnion<typeof ModxActions>
