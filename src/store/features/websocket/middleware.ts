@@ -10,26 +10,6 @@ const SOCKET_STATES = {
   CLOSED: 3,
 }
 
-// TODO: I think, this should be done in WSS API side. Leaving for testing.
-function getCookie(cname: string): string {
-  const name = cname + '='
-  const decodedCookie = decodeURIComponent(document.cookie)
-  const ca = decodedCookie.split(';')
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i]
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1)
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length)
-    }
-  }
-  // Return empty string if there is no valid cookie
-  return ''
-}
-
-const user = getCookie('user')
-
 const websocketMiddleware = ({ dispatch }) => next => {
   const websocket = new WebSocket(wsApi)
   Object.assign(websocket, {
@@ -48,7 +28,6 @@ const websocketMiddleware = ({ dispatch }) => next => {
       const cleanAction = Object.assign({}, action, {
         meta: undefined,
         // Force message augmentation (optional)
-        // user: user,
       })
       // TODO: Make action Type CamelCase
       websocket.send(JSON.stringify(cleanAction))
