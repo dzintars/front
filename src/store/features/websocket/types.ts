@@ -23,7 +23,7 @@ interface Send {
   readonly type: WebsocketTypes.SEND
   readonly payload: {
     type: string
-    payload: object
+    payload?: object
   }
 }
 interface Disconnect {

@@ -1,4 +1,5 @@
 import { WebsocketTypes, WebsocketActionTypes } from './types'
+import { ActionWithPayload } from '../../actions'
 
 export const websocketConnect = (url: string): WebsocketActionTypes => ({
   type: WebsocketTypes.CONNECT,

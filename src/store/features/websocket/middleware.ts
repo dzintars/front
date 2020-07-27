@@ -11,20 +11,14 @@ const websocketMiddleware = ({ dispatch }) => next => {
         websocket.onopen = (): void => dispatch(websocketConnected())
         break
       case WebsocketTypes.CONNECTED:
-        // console.log(action)
         websocket.onmessage = (event): void => dispatch(JSON.parse(event.data))
         websocket.onerror = (error): void => console.log(`WS Error: ${error} `)
         websocket.onclose = (): void => dispatch(websocketDisconnected())
         break
       case WebsocketTypes.SEND: {
-        console.log(action)
-        // const cleanAction = Object.assign({}, action, {
-        //   meta: undefined,
-        //   // Force message augmentation (optional)
-        // })
         const message = {
           type: action.payload.type,
-          payload: action.payload.payload,
+          payload: action.payload.payload ? action.payload.payload : undefined,
         }
         websocket.send(JSON.stringify(message))
         break
