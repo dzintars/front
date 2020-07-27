@@ -4,6 +4,8 @@ export interface Application {
   readonly component: string
   readonly permalink: string
   readonly modules: string[]
+  readonly defaultModule: string
+  readonly lastModule: string
 }
 
 export interface ApplicationsState {

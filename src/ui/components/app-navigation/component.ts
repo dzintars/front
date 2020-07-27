@@ -1,5 +1,5 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
-import { Module, store, fetchModulesList } from '../../../store'
+import { Module } from '../../../store'
 import template from './template'
 import style from './style'
 import { Theme } from '../../../assets/style'
@@ -17,10 +17,9 @@ export class AppNavigationElement extends LitElement {
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Home Root Fallback', permalink: '/' }]
   @property({ type: String }) name: string = 'component'
 
-  connectedCallback() {
-    super.connectedCallback()
-    store.dispatch(fetchModulesList())
-  }
+  // connectedCallback() {
+  //   super.connectedCallback()
+  // }
 
   protected render(): TemplateResult {
     return template.call(this)

@@ -1,6 +1,14 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
 import { connect } from '../../../utils/connect'
-import { store, RootState, WebsocketSelectors, UiSelectors, hideLauncher, ThemeSelectors } from '../../../store'
+import {
+  store,
+  RootState,
+  WebsocketSelectors,
+  UiSelectors,
+  hideLauncher,
+  ThemeSelectors,
+  websocketConnect,
+} from '../../../store'
 import { Theme } from '../../../assets/style'
 import template from './template'
 import style from './style'
@@ -47,7 +55,7 @@ export class SystemShellElement extends connect(store, LitElement) {
 
   connectedCallback(): void {
     super.connectedCallback()
-
+    store.dispatch(websocketConnect('wss://api.oswee.com'))
     // const root = document.documentElement
     // Object.entries(this.theme).map(item => {
     //   root.style.setProperty(String(item[0]), item[1])

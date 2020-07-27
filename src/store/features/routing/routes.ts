@@ -1,13 +1,16 @@
 import { put } from 'redux-saga/effects'
 
 import { UserActions } from '../users'
+import { websocketConnect } from '../websocket'
 import { fetchApplicationList, getApplications } from '../applications'
+import { fetchModulesList } from '../app-navigation'
 import { getModules } from '../modules'
 
 function* homeRoute(params, queries) {
   // Get list of the applications from the
-  yield put(getApplications())
-  yield put(getModules())
+  yield put(websocketConnect('wss://api.oswee.com'))
+  // yield put(getApplications())
+  // yield put(getModules())
 }
 
 function* userListRoute(params, queries) {
@@ -22,12 +25,13 @@ function* userRoute(params, queries) {
 
 function* applicationListRoute(params, queries) {
   console.log('Dispatch route hit!')
-  yield put(getApplications())
-  yield put(getModules())
+  yield put(fetchModulesList())
+  // yield put(getApplications())
+  // yield put(getModules())
 }
 
 export const routes = [
-  { path: '/', route: homeRoute },
+  // { path: '/', route: homeRoute },
   // { path: '/users', route: userListRoute },
   // { path: '/users/:id', route: userRoute },
   // { path: '/dispatch', route: applicationListRoute },

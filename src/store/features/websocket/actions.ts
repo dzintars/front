@@ -1,7 +1,10 @@
 import { WebsocketTypes, WebsocketActionTypes } from './types'
 
-export const websocketConnect = (): WebsocketActionTypes => ({
+export const websocketConnect = (url: string): WebsocketActionTypes => ({
   type: WebsocketTypes.CONNECT,
+  payload: {
+    url,
+  },
 })
 
 export const websocketConnecting = (): WebsocketActionTypes => ({
@@ -10,6 +13,14 @@ export const websocketConnecting = (): WebsocketActionTypes => ({
 
 export const websocketConnected = (): WebsocketActionTypes => ({
   type: WebsocketTypes.CONNECTED,
+})
+
+export const websocketSend = (type: string, payload: object): WebsocketActionTypes => ({
+  type: WebsocketTypes.SEND,
+  payload: {
+    type,
+    payload,
+  },
 })
 
 export const websocketDisconnect = (): WebsocketActionTypes => ({

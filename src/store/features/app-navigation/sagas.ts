@@ -1,9 +1,13 @@
-import { put, takeLatest } from 'redux-saga/effects'
+import { put, takeLatest, take, call, delay } from 'redux-saga/effects'
 import { AppNavigationTypes } from './types'
-import { fetchModulesListRequest } from './actions'
+import { ModxActions } from './actions'
+import { fetchModules } from './api'
+import { websocketSend } from '../websocket'
 
-function* listFetchModulesSaga() {
-  yield put(fetchModulesListRequest())
+function* listFetchModulesSaga(action: ReturnType<typeof ModxActions.fetchModulesListRequest>) {
+  console.log('Worker saga hit')
+  yield delay(1000)
+  yield put(websocketSend('APP_NAVIGATION__LIST_FETCH_MODULES_REQUEST', {}))
 }
 
 function* listFetchModulesListener() {
