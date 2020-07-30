@@ -29,7 +29,7 @@ export class AppNavigationElement extends LitElement {
     return [Theme, style]
   }
 
-  createRenderRoot(): Element | ShadowRoot {
+  protected createRenderRoot(): Element | ShadowRoot {
     return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }
