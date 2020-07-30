@@ -4,8 +4,8 @@ import { AppNavigationState } from './models'
 export { AppNavigationState }
 
 const initialState: AppNavigationState = {
-  entities: {},
-  ids: [],
+  entities: { '1': { id: '1', title: 'Module', permalink: 'modules' } },
+  ids: ['1'],
   fetching: false,
   selected: '',
   applicationId: '',

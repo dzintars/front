@@ -11,6 +11,7 @@ import { createAction, ActionsUnion } from '../../actions'
 import { <%= featureTypes %>, <%= featureActionTypes %> } from './types'
 import { <%= featureState %> } from './models'
 
+// ACTION CREATORS
 const select = (id: string): <%= featureActionTypes %> => ({
   type: <%= featureTypes %>.SELECT,
   payload: {

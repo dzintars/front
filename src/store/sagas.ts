@@ -3,6 +3,7 @@ import { all, spawn, call } from 'redux-saga/effects'
 
 // HYGEN.IO: INJECT IMPORT HERE
 import route from './features/routing/sagas'
+import system from './features/system/sagas'
 // import users from './modules/users/sagas'
 import applications from './features/applications/sagas'
 import appModules from './features/app-navigation/sagas'
@@ -11,6 +12,7 @@ import appModules from './features/app-navigation/sagas'
 export const rootSagas = {
   // HYGEN.IO: INJECT ROOT SAGA HERE
   route,
+  system,
   // users,
   applications,
   // organizations,

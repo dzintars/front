@@ -4,6 +4,7 @@ import * as ReselectTools from 'reselect-tools'
 // HYGEN.IO: INJECT IMPORT HERE
 import { WebsocketSelectors } from './features/websocket'
 import { RoutingSelectors } from './features/routing'
+import { SystemSelectors } from './features/system'
 import { UiSelectors } from './features/ui'
 import { ThemeSelectors } from './features/theme'
 import { UserSelectors } from './features/users'
@@ -16,6 +17,7 @@ export const startReselect = (store: Store) => {
   // HYGEN.IO: INJECT SELECTORS HERE
   ReselectTools.registerSelectors(WebsocketSelectors)
   ReselectTools.registerSelectors(RoutingSelectors)
+  ReselectTools.registerSelectors(SystemSelectors)
   ReselectTools.registerSelectors(UiSelectors)
   ReselectTools.registerSelectors(ThemeSelectors)
   ReselectTools.registerSelectors(UserSelectors)
