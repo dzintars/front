@@ -5,6 +5,7 @@ import { websocketSend } from '../websocket'
 
 function* listFetchModulesSaga(action: ReturnType<typeof ModxActions.fetchModulesListRequest>) {
   console.log('Worker hit', action)
+  // yield put({ ...action, type: `REMOTE_${action.type}` })
   // TODO: No no!
   yield delay(1000)
   yield put(websocketSend('APP_NAVIGATION__LIST_FETCH_MODULES_REQUEST', null))

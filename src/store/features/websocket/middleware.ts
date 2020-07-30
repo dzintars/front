@@ -1,12 +1,15 @@
 import { websocketConnected, websocketDisconnected } from './actions'
 import { WebsocketTypes, WebsocketActionTypes } from './types'
 
-let websocket: WebSocket
+let websocket: WebSocket = null
 
 const websocketMiddleware = ({ dispatch }) => next => {
   return (action: WebsocketActionTypes) => {
     switch (action.type) {
       case WebsocketTypes.CONNECT:
+        if (websocket !== null) {
+          websocket.close()
+        }
         websocket = new WebSocket(action.payload.url)
         websocket.onopen = (): void => dispatch(websocketConnected())
         break
@@ -24,7 +27,13 @@ const websocketMiddleware = ({ dispatch }) => next => {
         break
       }
       case WebsocketTypes.DISCONNECT:
-        websocket.close()
+        if (websocket !== null) {
+          websocket.close()
+        }
+        websocket = null
+        break
+      case WebsocketTypes.DISCONNECTED:
+        // TODO: Retry connection if configured
         break
       default:
         break
