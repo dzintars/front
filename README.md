@@ -17,6 +17,7 @@ Technology stack I choose for this project:
 - Redux ........... State management for complex applications.
 - Redux-Saga ...... To make asynchronous side-effects easy and testable.
 - Reselect ........ For creating memoized, composable store selector functions.
+- WebSockets ...... Primary API. Event Sourced flow by exchanging pure actions.
 - Husky ........... To watch Git hooks and run scripts on Git actions.
 - Lint-Staged ..... To lint only staged files. Executed by Husky hooks.
 - Commitlint ...... To format your Git commit messages and enabling things like automatic changelog, etc.
