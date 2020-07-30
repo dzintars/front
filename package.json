@@ -29,7 +29,8 @@
     "generate:element": "hygen element new",
     "generate:component": "hygen component new",
     "generate:container": "hygen container new",
-    "generate:view": "hygen view new"
+    "generate:view": "hygen view new",
+    "generate:feature": "hygen feature new"
   },
   "dependenciesMeta": {
     "webpack-dev-server": {
