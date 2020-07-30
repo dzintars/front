@@ -1,12 +1,12 @@
 module.exports = {
   prompt: ({ prompter, args }) => {
     return new Promise((resolve, reject) => {
-      if (!args.tag) {
+      if (!args.feature) {
         prompter
           .prompt({
             type: 'input',
-            name: 'tag',
-            message: 'Tag name of the view (e.g. my-elem)?',
+            name: 'feature',
+            message: 'Feature name of the redux feature (e.g. my-feature or myfeature)?',
           })
           .then(values => {
             resolve({ ...args, ...values })
@@ -15,7 +15,7 @@ module.exports = {
         resolve({ ...args })
       }
     }).then(values => {
-      if (values.tag.indexOf('-') <= 0) throw new Error('tag must contain hyphen')
+      // if (values.feature.indexOf('-') <= 0) throw new Error('feature must contain hyphen')
       return values
     })
   },
