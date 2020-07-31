@@ -1,11 +1,12 @@
-import { AppNavigationTypes, AppNavigationActionTypes } from './types'
-import { AppNavigationState } from './models'
+import { AppNavigationTypes } from './constants'
+import { AppNavigationActionTypes, AppNavigationState } from './types'
+// import { AppNavigationState } from './models'
 
 export { AppNavigationState }
 
 const initialState: AppNavigationState = {
-  entities: {},
-  ids: [],
+  entities: { '1': { id: '1', title: 'Module', permalink: 'modules' } },
+  ids: ['1'],
   fetching: false,
   selected: '',
   applicationId: '',
@@ -27,6 +28,15 @@ export default (state: AppNavigationState = initialState, action: AppNavigationA
       return {
         ...state,
         fetching: false,
+        entities: {
+          ...action.payload.entities,
+        },
+        ids: action.payload.ids,
+      }
+
+    case AppNavigationTypes.LIST_MODULES_RESPONSE:
+      return {
+        ...state,
         entities: {
           ...action.payload.entities,
         },

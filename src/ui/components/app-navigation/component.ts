@@ -12,8 +12,8 @@ export class AppNavigationElement extends LitElement {
 
   @property({ type: String }) pathname: string
   @property({ type: String }) appid: string
-  @property({ type: Boolean }) isApplicationsFetching: boolean = true
-  @property({ type: Boolean }) isModulesFetching: boolean = true
+  @property({ type: Boolean }) isApplicationsFetching: boolean = false
+  @property({ type: Boolean }) isModulesFetching: boolean = false
   @property({ type: Array }) modules: Module[] = [{ id: '1', title: 'Home Root Fallback', permalink: '/' }]
   @property({ type: String }) name: string = 'component'
 

@@ -6,6 +6,7 @@ import {
   WebsocketSelectors,
   UiSelectors,
   hideLauncher,
+  SystemActions,
   ThemeSelectors,
   websocketConnect,
 } from '../../../store'
@@ -56,6 +57,7 @@ export class SystemShellElement extends connect(store, LitElement) {
   connectedCallback(): void {
     super.connectedCallback()
     store.dispatch(websocketConnect('wss://api.oswee.com'))
+    store.dispatch(SystemActions.loaded())
     // const root = document.documentElement
     // Object.entries(this.theme).map(item => {
     //   root.style.setProperty(String(item[0]), item[1])

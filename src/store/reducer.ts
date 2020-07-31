@@ -3,6 +3,7 @@ import { combineReducers } from 'redux'
 // HYGEN.IO: INJECT IMPORT HERE
 import websocket, { WebsocketState } from './features/websocket/reducer'
 import route, { RoutingState } from './features/routing/reducer'
+import system, { SystemState } from './features/system/reducer'
 import theme, { ThemeState } from './features/theme/reducer'
 import ui, { UiState } from './features/ui/reducer'
 import users, { UserState } from './features/users/reducer'
@@ -18,6 +19,7 @@ export interface RootState {
   // HYGEN.IO: INJECT STATE HERE
   websocket: WebsocketState
   route: RoutingState
+  system: SystemState
   ui: UiState
   theme: ThemeState
   users: UserState
@@ -34,6 +36,7 @@ export const rootReducer = combineReducers<RootState>({
   // HYGEN.IO: INJECT REDUCER HERE
   websocket,
   route,
+  system,
   ui,
   theme,
   users,

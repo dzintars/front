@@ -6,6 +6,7 @@ import {
   RootState,
   ApplicationSelectors,
   ModuleSelectors,
+  AppNavigationSelectors,
   RoutingSelectors,
   AppNavigationActions,
 } from '../../../store'
@@ -14,7 +15,7 @@ import {
 export class AppNavigationConnectedElement extends connect(store, AppNavigationElement) {
   connectedCallback() {
     super.connectedCallback()
-    store.dispatch(AppNavigationActions.fetchModulesList())
+    store.dispatch(AppNavigationActions.loaded())
   }
 
   // Map state to props (Connect lib)
@@ -23,10 +24,7 @@ export class AppNavigationConnectedElement extends connect(store, AppNavigationE
       pathname: RoutingSelectors.pathname(state),
       isApplicationsFetching: ApplicationSelectors.selectFetchState(state),
       isModulesFetching: ModuleSelectors.selectFetchState(state),
-      // modules:
-      //   this.isApplicationsFetching && this.isModulesFetching
-      //     ? ``
-      //     : ModuleSelectors.selectModulesByApplicationId(state, { applicationId: this.appid }),
+      modules: AppNavigationSelectors.selectAllModulesArray(state),
     }
   }
 }

@@ -1,6 +1,8 @@
 import { createAction, ActionsUnion } from '../../actions'
-import { AppNavigationTypes, AppNavigationActionTypes } from './types'
-import { AppModule, AppModules } from './models'
+import { AppNavigationTypes } from './constants'
+import { AppNavigationActionTypes, AppModules, AppModule } from './types'
+// import { AppModule, AppModules } from './models'
+import { ApplicationActionTypes, ApplicationTypes } from '../applications/types'
 
 export const selectModule = (id: string): AppNavigationActionTypes => ({
   type: AppNavigationTypes.SELECT_MODULE,
@@ -59,6 +61,22 @@ export const fetchModuleFailure = (error: Error): AppNavigationActionTypes => ({
   },
 })
 
+const loaded = (): AppNavigationActionTypes => ({
+  type: AppNavigationTypes.LOADED,
+})
+
+const listModulesRequest = (id: string): AppNavigationActionTypes => ({
+  type: AppNavigationTypes.LIST_MODULES_REQUEST,
+  payload: {
+    id,
+  },
+})
+
+const listModulesResponse = (payload: AppModules): AppNavigationActionTypes => ({
+  type: AppNavigationTypes.LIST_MODULES_RESPONSE,
+  payload,
+})
+
 export const AppNavigationActions = {
   selectModule,
   fetchModulesList,
@@ -69,6 +87,9 @@ export const AppNavigationActions = {
   fetchModuleRequest,
   fetchModuleSuccess,
   fetchModuleFailure,
+  listModulesRequest,
+  listModulesResponse,
+  loaded,
 }
 
 export const ModxActions = {

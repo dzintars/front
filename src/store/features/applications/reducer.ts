@@ -4,8 +4,18 @@ import { ApplicationsState } from './models'
 export { ApplicationsState }
 
 const initialState: ApplicationsState = {
-  entities: {},
-  ids: [],
+  entities: {
+    1: {
+      id: '1',
+      title: 'Test',
+      component: 'my-component',
+      permalink: '/dispatch',
+      modules: [],
+      defaultModule: '',
+      lastModule: '',
+    },
+  },
+  ids: ['1'],
   fetching: false,
   selected: {
     id: '',
