@@ -1,18 +1,24 @@
-import { AppModule, AppModules } from './models'
+import { AppNavigationTypes } from './constants'
 
-export enum AppNavigationTypes {
-  SELECT_MODULE = 'APP_NAVIGATION__SELECT_MODULE',
+export type AppModule = Readonly<{
+  id: string
+  title: string
+  permalink: string
+}>
 
-  LIST_FETCH_MODULES = 'APP_NAVIGATION__LIST_FETCH_MODULES',
-  LIST_FETCH_MODULES_REQUEST = 'APP_NAVIGATION__LIST_FETCH_MODULES_REQUEST',
-  LIST_FETCH_MODULES_SUCCESS = 'APP_NAVIGATION__LIST_FETCH_MODULES_SUCCESS',
-  LIST_FETCH_MODULES_FAILURE = 'APP_NAVIGATION__LIST_FETCH_MODULES_FAILURE',
+export type AppModules = Readonly<{
+  entities: { [id: string]: AppModule }
+  ids: string[]
+}>
 
-  FETCH_MODULE = 'APP_NAVIGATION__FETCH_MODULE',
-  FETCH_MODULE_REQUEST = 'APP_NAVIGATION__FETCH_MODULE_REQUEST',
-  FETCH_MODULE_SUCCESS = 'APP_NAVIGATION__FETCH_MODULE_SUCCESS',
-  FETCH_MODULE_FAILURE = 'APP_NAVIGATION__FETCH_MODULE_FAILURE',
-}
+export type AppNavigationState = Readonly<{
+  entities: { [id: string]: AppModule }
+  ids: string[]
+  fetching: boolean
+  selected: string
+  applicationId: string
+  error: Error
+}>
 
 interface SelectModule {
   readonly type: AppNavigationTypes.SELECT_MODULE
@@ -28,6 +34,7 @@ interface ListFetchModulesRequest {
   readonly type: AppNavigationTypes.LIST_FETCH_MODULES_REQUEST
   readonly meta: object
 }
+
 interface ListFetchModulesSuccess {
   readonly type: AppNavigationTypes.LIST_FETCH_MODULES_SUCCESS
   readonly payload: AppModules
@@ -59,6 +66,22 @@ interface FetchModuleFailure {
   }
 }
 
+interface Loaded {
+  readonly type: AppNavigationTypes.LOADED
+}
+
+interface ListModulesRequest {
+  readonly type: AppNavigationTypes.LIST_MODULES_REQUEST
+  readonly payload: {
+    id: string
+  }
+}
+
+interface ListModulesResponse {
+  readonly type: AppNavigationTypes.LIST_MODULES_RESPONSE
+  readonly payload: AppModules
+}
+
 export type AppNavigationActionTypes =
   | SelectModule
   | ListFetchModules
@@ -69,3 +92,6 @@ export type AppNavigationActionTypes =
   | FetchModuleRequest
   | FetchModuleSuccess
   | FetchModuleFailure
+  | ListModulesRequest
+  | ListModulesResponse
+  | Loaded
