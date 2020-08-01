@@ -82,3 +82,7 @@ How to name constants
 How to name action types
 
 How to name action creators
+
+## Forms
+
+[React & Redux #15. Authentication: Login Form](https://www.youtube.com/watch?v=tIajENrOJ0o)
