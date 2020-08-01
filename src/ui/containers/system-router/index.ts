@@ -1,10 +1,11 @@
 import UniversalRouter from 'universal-router'
-import { LitElement, customElement, html, property, css, PropertyValues } from 'lit-element'
+import { LitElement, TemplateResult, CSSResult, customElement, html, property, css, PropertyValues } from 'lit-element'
 import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 // import { connect } from '@captaincodeman/redux-connect-element'
 import { connect } from '../../../utils/connect'
 import { store, RootState, RoutingSelectors } from '../../../store'
-// import '../app-shell'
+import '../../views/view-home'
+import '../../containers/view-home-connected'
 import '../../views/view-dispatch'
 import '../../containers/view-dispatch-connected'
 import '../../views/view-dispatch-consignments'
@@ -38,14 +39,14 @@ export class SystemRouterElement extends connect(store, LitElement) {
       children: [
         {
           path: '',
-          action: () => `<view-dispatch noshadow></view-dispatch>`,
+          action: (): string => `<view-home noshadow>Test</view-home>`,
         },
         {
           path: '/dispatch',
           children: [
             {
               path: '',
-              action: () => `<view-dispatch noshadow></view-dispatch>`,
+              action: (): string => `<view-dispatch noshadow></view-dispatch>`,
               // action: () => import(/* webpackChunkName: "view-dispatch" */ '../../views/view-dispatch'),
               // load: () => ViewDispatchElement,
             },
@@ -54,11 +55,11 @@ export class SystemRouterElement extends connect(store, LitElement) {
               children: [
                 {
                   path: '',
-                  action: () => `<view-dispatch noshadow></view-dispatch>`,
+                  action: (): string => `<view-dispatch noshadow></view-dispatch>`,
                 },
                 {
                   path: '/:id',
-                  action: () => `<view-dispatch noshadow></view-dispatch>`,
+                  action: (): string => `<view-dispatch noshadow></view-dispatch>`,
                 },
               ],
             },
@@ -67,11 +68,11 @@ export class SystemRouterElement extends connect(store, LitElement) {
               children: [
                 {
                   path: '',
-                  action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
+                  action: (): string => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
                 },
                 {
                   path: '/:id',
-                  action: () => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
+                  action: (): string => `<view-dispatch-consignments noshadow></view-dispatch-consignments>`,
                 },
               ],
             },
@@ -82,7 +83,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
           children: [
             {
               path: '',
-              action: () => `<view-sales noshadow></view-sales>`,
+              action: (): string => `<view-sales noshadow></view-sales>`,
             },
           ],
         },
@@ -90,17 +91,17 @@ export class SystemRouterElement extends connect(store, LitElement) {
     },
     {
       path: '/signin',
-      action: () => `<view-signin noshadow></view-signin>`,
+      action: (): string => `<view-signin noshadow></view-signin>`,
     },
     {
       path: '/signup',
-      action: () => `<view-signup noshadow></view-signup>`,
+      action: (): string => `<view-signup noshadow></view-signup>`,
     },
     {
       path: '/forgot-password',
-      action: () => `<app-forgot-password></app-forgot-password>`,
+      action: (): string => `<app-forgot-password></app-forgot-password>`,
     },
-    { path: '(.*)', action: () => '<h1>Not Found</h1>' },
+    { path: '(.*)', action: (): string => '<h1>Not Found</h1>' },
   ]
 
   createRenderRoot(): this {
@@ -117,13 +118,13 @@ export class SystemRouterElement extends connect(store, LitElement) {
     return changedProperties.has('view')
   }
 
-  render() {
+  render(): TemplateResult {
     return html`
       ${unsafeHTML(this.view)}
     `
   }
 
-  static get styles() {
+  static get styles(): CSSResult {
     return css`
       :host {
         display: block;

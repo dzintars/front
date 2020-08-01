@@ -20,11 +20,11 @@ export class <%= className %> extends LitElement {
     return template.call(this)
   }
 
-  static get styles(): CSSResultArray {
+  public static get styles(): CSSResultArray {
     return [style]
   }
 
-  createRenderRoot(): Element | ShadowRoot {
+  protected createRenderRoot(): Element | ShadowRoot {
     return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }
