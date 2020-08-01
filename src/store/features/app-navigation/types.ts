@@ -68,6 +68,9 @@ interface FetchModuleFailure {
 
 interface Loaded {
   readonly type: AppNavigationTypes.LOADED
+  readonly payload: {
+    appid: string
+  }
 }
 
 interface ListModulesRequest {

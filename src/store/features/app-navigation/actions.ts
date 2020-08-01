@@ -61,8 +61,11 @@ export const fetchModuleFailure = (error: Error): AppNavigationActionTypes => ({
   },
 })
 
-const loaded = (): AppNavigationActionTypes => ({
+const loaded = (appid: string): AppNavigationActionTypes => ({
   type: AppNavigationTypes.LOADED,
+  payload: {
+    appid,
+  },
 })
 
 const listModulesRequest = (id: string): AppNavigationActionTypes => ({

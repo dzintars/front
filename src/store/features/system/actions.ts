@@ -1,6 +1,6 @@
-import { createAction, ActionsUnion } from '../../actions'
+// import { createAction, ActionsUnion } from '../../actions'
 import { SystemTypes, SystemActionTypes } from './types'
-import { SystemState } from './models'
+// import { SystemState } from './models'
 
 // ACTION CREATORS
 const select = (id: string): SystemActionTypes => ({
@@ -10,9 +10,11 @@ const select = (id: string): SystemActionTypes => ({
   },
 })
 
-export const SystemActions = {
-  select: (id: string) => createAction(SystemTypes.SELECT, { id }),
-  loaded: () => createAction(SystemTypes.LOADED, null),
-}
+const loaded = (): SystemActionTypes => ({
+  type: SystemTypes.LOADED,
+})
 
-export type SystemActions = ActionsUnion<typeof SystemActions>
+export const SystemActions = {
+  select,
+  loaded,
+}

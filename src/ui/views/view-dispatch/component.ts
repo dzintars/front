@@ -11,7 +11,7 @@ export class ViewDispatchElement extends connect(store, ViewBaseElement) {
 
   connectedCallback(): void {
     super.connectedCallback()
-    // store.dispatch(startApplication(this.appid))
+    store.dispatch(startApplication(this.appid))
     // store.dispatch(getApplications())
     // store.dispatch(getModules())
   }

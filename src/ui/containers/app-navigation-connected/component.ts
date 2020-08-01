@@ -15,7 +15,8 @@ import {
 export class AppNavigationConnectedElement extends connect(store, AppNavigationElement) {
   connectedCallback() {
     super.connectedCallback()
-    store.dispatch(AppNavigationActions.loaded())
+    console.log(this.appid)
+    store.dispatch(AppNavigationActions.loaded(this.appid))
   }
 
   // Map state to props (Connect lib)
@@ -24,6 +25,7 @@ export class AppNavigationConnectedElement extends connect(store, AppNavigationE
       pathname: RoutingSelectors.pathname(state),
       isApplicationsFetching: ApplicationSelectors.selectFetchState(state),
       isModulesFetching: ModuleSelectors.selectFetchState(state),
+      appid: AppNavigationSelectors.selectCurrentApplicationId(state),
       modules: AppNavigationSelectors.selectAllModulesArray(state),
     }
   }

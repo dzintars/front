@@ -7,13 +7,13 @@ import style from './style'
 
 @customElement('view-sales')
 export class ViewSalesElement extends connect(store, ViewBaseElement) {
-  @property({ type: String }) appid: string = '178025e-a209-4c50-8c34-36d35f36494c'
+  @property({ type: String }) appid: string = 'c178025e-a209-4c50-8c34-36d35f36494c'
 
   connectedCallback(): void {
     super.connectedCallback()
     store.dispatch(startApplication(this.appid))
-    store.dispatch(getApplications())
-    store.dispatch(getModules())
+    // store.dispatch(getApplications())
+    // store.dispatch(getModules())
   }
 
   protected render(): TemplateResult {

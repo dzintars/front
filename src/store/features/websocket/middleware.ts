@@ -21,8 +21,9 @@ const websocketMiddleware = ({ dispatch }) => next => {
       case WebsocketTypes.SEND: {
         const message = {
           type: action.payload.type,
-          payload: action.payload.payload ? action.payload.payload : undefined,
+          payload: action.payload.payload,
         }
+        console.log('WSS Message: ', message)
         websocket.send(JSON.stringify(message))
         break
       }
