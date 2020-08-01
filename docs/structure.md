@@ -14,6 +14,7 @@ Components should be structured in 4 directories:
 **Components** are larger pieces of UI elements, like sidebars, menus, panels, modals, etc. Components can import and use Elements. Components has no any idea about the store or where is data coming from. Components later could be extracted into stand-alone component library with it's own Storybook, etc.
 
 **Views** composes Components into complete view and are responsible for the general layout. Where the main menu sits, where the every menu, panel, sidebar, footer are located etc. Views are rendered by the router. Views can be extended by Containers to implement some data handling logic.
+In theory, Views later could be extracted into MPAs.
 
 **Containers** extends Components and Views. Containers handles all the data logic and are directly connected to the store. Containers does map state to props, maps events to actions, etc.
 
