@@ -16,7 +16,7 @@ Components should be decoupled from data layer. Design System should be establis
 
 Also, websocket allows to think in terms of RPC's (Remote Procedure Calls) which IMO brings in really great DX and scalability options. And Redux is a great mate of this party.
 
-Backend will be composed of several Go services, like Source API gateway, Sink API Gateway for message broadcasting, Kafka, Redis and some other technologies. This comes from CQRS, Event Sourcing and DDD world.
+Backend will be composed of several Go services, like Source API gateway, Sink API Gateway for message broadcasting, Kafka, Redis and some other technologies. This comes from CQRS, Task Based UI, Event Sourcing and DDD world.
 
 In some rough early tests, this proves to be viable option and seems working pretty well.
 
