@@ -1,20 +1,12 @@
-import { customElement, TemplateResult, CSSResultArray, property } from 'lit-element'
-import { ViewBaseElement } from '../view-base'
-import { connect } from '../../../utils/connect'
-import { store, RootState, ModuleSelectors, getApplications, getModules, startApplication } from '../../../store'
+import { TemplateResult, CSSResultArray, property, LitElement } from 'lit-element'
 import template from './template'
 import style from './style'
 
-@customElement('view-dispatch')
-export class ViewDispatchElement extends connect(store, ViewBaseElement) {
-  @property({ type: String }) appid: string = '54789c07-bb43-4db4-8b2d-1a8e1f8c67f1'
-
-  connectedCallback(): void {
-    super.connectedCallback()
-    store.dispatch(startApplication(this.appid))
-    // store.dispatch(getApplications())
-    // store.dispatch(getModules())
+export class ViewDispatchElement extends LitElement {
+  static get is() {
+    return 'view-dispatch'
   }
+  @property({ type: String }) appid: string = '54789c07-bb43-4db4-8b2d-1a8e1f8c67f1'
 
   protected render(): TemplateResult {
     return template.call(this)
@@ -22,6 +14,10 @@ export class ViewDispatchElement extends connect(store, ViewBaseElement) {
 
   public static get styles(): CSSResultArray {
     return [style]
+  }
+
+  protected createRenderRoot(): Element | ShadowRoot {
+    return this.hasAttribute('noshadow') ? this : super.createRenderRoot()
   }
 }
 
