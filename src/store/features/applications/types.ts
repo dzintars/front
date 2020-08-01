@@ -63,7 +63,9 @@ interface FetchFailure {
 
 interface StartApplication {
   readonly type: ApplicationTypes.START
-  readonly id: string
+  readonly payload: {
+    id: string
+  }
 }
 interface StartingApplication {
   readonly type: ApplicationTypes.STARTING

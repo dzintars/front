@@ -7,15 +7,24 @@ const initialState: ApplicationsState = {
   entities: {
     1: {
       id: '1',
-      title: 'Test',
+      title: 'Dispatch',
       component: 'my-component',
       permalink: '/dispatch',
       modules: [],
       defaultModule: '',
       lastModule: '',
     },
+    2: {
+      id: '2',
+      title: 'Sales',
+      component: 'my-component',
+      permalink: '/sales',
+      modules: [],
+      defaultModule: '',
+      lastModule: '',
+    },
   },
-  ids: ['1'],
+  ids: ['1', '2'],
   fetching: false,
   selected: {
     id: '',
@@ -74,10 +83,7 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
     case ApplicationTypes.START:
       return {
         ...state,
-        selected: {
-          ...state.selected,
-          id: action.id,
-        },
+        currentApplication: action.payload.id,
       }
 
     case ApplicationTypes.GET:

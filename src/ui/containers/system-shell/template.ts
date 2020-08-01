@@ -5,11 +5,17 @@ import '../system-router'
 
 export default function template(this: SystemShellElement): TemplateResult {
   return html`
-    ${this.isLauncherVisible
+    ${this.websocketState
       ? html`
-          <main-launcher id="main-launcher" noshadow></main-launcher>
+          ${this.isLauncherVisible
+            ? html`
+                <main-launcher id="main-launcher" noshadow></main-launcher>
+              `
+            : ``}
+          <system-router></system-router>
         `
-      : ``}
-    <system-router></system-router>
+      : html`
+          <h1>Connecting</h1>
+        `}
   `
 }

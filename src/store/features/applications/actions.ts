@@ -48,7 +48,9 @@ export const fetchApplicationFailure = (id: string, error: Error): ApplicationAc
 
 export const startApplication = (id: string): ApplicationActionTypes => ({
   type: ApplicationTypes.START,
-  id,
+  payload: {
+    id,
+  },
 })
 
 export const getApplications = (): ApplicationActionTypes => ({

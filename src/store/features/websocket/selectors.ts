@@ -7,4 +7,5 @@ const getState = (state: RootState) => state.websocket
 //eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace WebsocketSelectors {
   export const state = createSelector([getState], state => state.state)
+  export const selectConnectedState = createSelector([getState], state => state.connected)
 }

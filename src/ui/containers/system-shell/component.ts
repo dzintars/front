@@ -17,13 +17,13 @@ import style from './style'
 
 @customElement('system-shell')
 export class SystemShellElement extends connect(store, LitElement) {
-  @property({ type: String }) websocketState: string = WebsocketSelectors.state.toString()
+  @property({ type: Boolean }) websocketState: boolean = false
   @property({ type: Boolean }) isLauncherVisible: boolean = false
   @property({ type: Object }) theme: object = {}
 
   mapState(state: RootState) {
     return {
-      websocketState: WebsocketSelectors.state(state),
+      websocketState: WebsocketSelectors.selectConnectedState(state),
       isLauncherVisible: UiSelectors.getLauncherVisibility(state),
       theme: ThemeSelectors.getTheme(state),
     }

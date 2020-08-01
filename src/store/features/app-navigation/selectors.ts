@@ -3,6 +3,7 @@ import { RootState } from '../../reducer'
 
 // INPUT/BASE SELECTORS
 const getState = (state: RootState) => state.appModules
+const getApplicationState = (state: RootState) => state.applications
 
 // MEMOIZED SELECTORS
 export const selectFetchState = createSelector([getState], state => state.fetching)
@@ -23,7 +24,10 @@ export const selectModuleById = createSelector([selectAllModules, selectSelected
 
 export const selectModuleName = createSelector([selectModuleById], application => application.title)
 
+const selectCurrentApplicationId = createSelector([getApplicationState], state => state.currentApplication)
+
 export const AppNavigationSelectors = {
   selectFetchState,
   selectAllModulesArray,
+  selectCurrentApplicationId,
 }
