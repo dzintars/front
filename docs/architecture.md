@@ -14,7 +14,7 @@ General idea is to have SPA front-end with potential to split ot into MPA.
 
 Components should be decoupled from data layer. Design System should be established and documented. To enable real-time capabilities WebSockets will be utilized. There will be some REST endpoints for things like authentication and authorization, but primarily API channel will be websocket. These days and moreover taking in account that this applications strives towards enterprise domains keeping like 1M open connections is not a big deal from hardware perspective, but it's a huge deal from user perspective. IMO pure real-time applications will be must-have in the near future. REST is not capable to bring that level of interactivity without support of huge infrastructure.
 
-Also, websocket allows to think in terms of RPC's (Remote Procedure Calls) which IMO brings in really great DX and scalability options. And Redux id a great mate of this party.
+Also, websocket allows to think in terms of RPC's (Remote Procedure Calls) which IMO brings in really great DX and scalability options. And Redux is a great mate of this party.
 
 Backend will be composed of several Go services, like Source API gateway, Sink API Gateway for message broadcasting, Kafka, Redis and some other technologies. This comes from CQRS, Event Sourcing and DDD world.
 
