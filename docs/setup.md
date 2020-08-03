@@ -22,7 +22,8 @@ Webpack Config TypeScript support
 
 [Documentation](https://webpack.js.org/configuration/configuration-languages/#typescript)
 
-PnP
+## PnP
+
 https://next.yarnpkg.com/advanced/pnpify#vscode-support
 
 https://next.yarnpkg.com/advanced/editor-sdks#vscode
@@ -48,7 +49,7 @@ By following these steps i got project running after fresh Fedora install. Mby i
 
    https://github.com/yarnpkg/berry/issues/1142
 
-4. Set the yarn version to the bleeding edge `yarn set version from sources`
+4. Set the yarn version to the bleeding edge `yarn set version berry` or `yarn set version from sources`
 
 5. Install dependencies `yarn install`
 
