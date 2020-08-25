@@ -4,8 +4,8 @@ import {
   store,
   RootState,
   WebsocketSelectors,
-  UiSelectors,
-  hideLauncher,
+  LauncherSelectors,
+  LauncherActions,
   SystemActions,
   ThemeSelectors,
   websocketConnect,
@@ -24,14 +24,14 @@ export class SystemShellElement extends connect(store, LitElement) {
   mapState(state: RootState) {
     return {
       websocketState: WebsocketSelectors.selectConnectedState(state),
-      isLauncherVisible: UiSelectors.getLauncherVisibility(state),
+      isLauncherVisible: LauncherSelectors.getLauncherVisibility(state),
       theme: ThemeSelectors.getTheme(state),
     }
   }
 
   mapEvents() {
     return {
-      'nav-item-click': () => hideLauncher(),
+      'nav-item-click': () => LauncherActions.hideLauncher(),
     }
   }
 
@@ -63,17 +63,17 @@ export class SystemShellElement extends connect(store, LitElement) {
     //   root.style.setProperty(String(item[0]), item[1])
     // })
     // https://stackoverflow.com/a/37559790/6651080
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.ctrlKey && e.shiftKey && e.keyCode === 80) {
         e.stopPropagation()
         e.preventDefault()
         // console.log(e)
       }
     })
-    document.addEventListener('launcher-click', function(e) {
+    document.addEventListener('launcher-click', function (e) {
       console.log('launcher-click received', e)
     })
-    document.addEventListener('application-shortcut-click', function(e) {
+    document.addEventListener('application-shortcut-click', function (e) {
       console.log('start-application-click received', e)
     })
     // this.addEventListener('click', function(e: any) {

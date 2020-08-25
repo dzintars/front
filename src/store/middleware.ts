@@ -4,4 +4,4 @@ import { historyMiddleware } from './features/routing/middleware'
 import websocketMiddleware from './features/websocket/middleware'
 import { sagaMiddleware } from './sagas'
 
-export const middleware = [logger, storageMiddleware, websocketMiddleware, historyMiddleware, sagaMiddleware]
+export const middleware = [storageMiddleware, websocketMiddleware, historyMiddleware, sagaMiddleware]

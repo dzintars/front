@@ -1,6 +1,4 @@
 import { LitElement, customElement, property, TemplateResult, CSSResultArray } from 'lit-element'
-// import { connect } from '@captaincodeman/redux-connect-element'
-import { connect } from '../../../utils/connect'
 import { EventPathIncludes } from '../../../utils'
 import {
   store,
@@ -10,9 +8,7 @@ import {
   ApplicationSelectors,
   Module,
   UiSelectors,
-  hideLauncher,
-  launcherDisplayed,
-  launcherHidden,
+  LauncherActions,
   startApplication,
   selectApplication,
 } from '../../../store'
@@ -21,30 +17,33 @@ import template from './template'
 import style from './style'
 import { NavItemElementData } from '../../components/nav-item'
 
-@customElement('main-launcher')
-export class MainLauncherElement extends connect(store, LitElement) {
+// @customElement('main-launcher')
+export class MainLauncherElement extends LitElement {
+  static get is(): string {
+    return 'main-launcher'
+  }
   @property({ type: Boolean, reflect: true }) isVisible: boolean = false
   @property({ type: Object }) wrapperRef: any = this.setWrapperRef.bind(this)
   @property({ type: Array }) applications: Application[]
   @property({ type: String }) activeNavItem: string = ''
   @property({ type: String }) activeView: string = ''
 
-  // Map state to props (Connect lib)
-  mapState(state: RootState) {
-    return {
-      applications: ApplicationSelectors.selectAllApplicationsArray(state),
-      isVisible: UiSelectors.getLauncherVisibility(state),
-    }
-  }
+  // // Map state to props (Connect lib)
+  // mapState(state: RootState) {
+  //   return {
+  //     applications: ApplicationSelectors.selectAllApplicationsArray(state),
+  //     isVisible: UiSelectors.getLauncherVisibility(state),
+  //   }
+  // }
 
-  // Intercept custom events from child components and call Redux action (Connect lib)
-  mapEvents() {
-    return {
-      // 'nav-item-click': (e: CustomEvent<NavItemElementData>) => startApplication(e.detail.key),
-      'nav-item-click': (e: CustomEvent<NavItemElementData>) => RoutingActions.push(e.detail.permalink),
-      // 'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
-    }
-  }
+  // // Intercept custom events from child components and call Redux action (Connect lib)
+  // mapEvents() {
+  //   return {
+  //     // 'nav-item-click': (e: CustomEvent<NavItemElementData>) => startApplication(e.detail.key),
+  //     'nav-item-click': (e: CustomEvent<NavItemElementData>) => RoutingActions.push(e.detail.permalink),
+  //     // 'application-shortcut-click': (e: CustomEvent) => RoutingActions.push(e.detail.key),
+  //   }
+  // }
 
   constructor() {
     super()
@@ -55,10 +54,10 @@ export class MainLauncherElement extends connect(store, LitElement) {
     this.addEventListener('nav-item-leave', e => {
       this.hideFlyoutMenu(e)
     })
-    this.addEventListener('sign-up-click', e => {
+    this.addEventListener('sign-up-click', () => {
       this.activeView = 'signup'
     })
-    this.addEventListener('sign-in-click', e => {
+    this.addEventListener('sign-in-click', () => {
       this.activeView = 'signin'
     })
   }
@@ -89,19 +88,20 @@ export class MainLauncherElement extends connect(store, LitElement) {
   }
 
   changeState(): void {
-    store.dispatch(hideLauncher())
+    store.dispatch(LauncherActions.hideLauncher())
   }
 
   connectedCallback(): void {
     super.connectedCallback()
     document.addEventListener('mousedown', this.handleClickOutside)
-    store.dispatch(launcherDisplayed())
+    // store.dispatch(launcherDisplayed())
+    console.log('connected')
   }
 
   disconnectedCallback(): void {
     super.disconnectedCallback()
     document.removeEventListener('mousedown', this.handleClickOutside)
-    store.dispatch(launcherHidden())
+    // store.dispatch(launcherHidden())
   }
 
   setWrapperRef(node): void {
@@ -109,18 +109,19 @@ export class MainLauncherElement extends connect(store, LitElement) {
   }
 
   handleClickOutside(e: Event): void {
+    // Exclude launcher button (#launcher) (Don't like this)
     if (this.getRootNode().contains(this) && !e.composedPath().includes(this) && !EventPathIncludes(e, '#launcher')) {
-      store.dispatch(hideLauncher())
+      store.dispatch(LauncherActions.hideLauncher())
     }
   }
 
   hideLauncher(): void {
-    store.dispatch(hideLauncher())
+    store.dispatch(LauncherActions.hideLauncher())
   }
 
-  sendWs(): void {
-    store.dispatch(selectApplication('10578886-1033-4d2c-a8df-65452c62573b'))
-  }
+  // sendWs(): void {
+  //   store.dispatch(selectApplication('10578886-1033-4d2c-a8df-65452c62573b'))
+  // }
 
   protected render(): TemplateResult {
     return template.call(this)
