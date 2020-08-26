@@ -63,3 +63,8 @@ export const getApplicationsSuccess = (payload: ApplicationsX): ApplicationActio
   type: ApplicationTypes.GET_SUCCESS,
   payload,
 })
+
+export const listApplicationsResponse = (payload: ApplicationsX): ApplicationActionTypes => ({
+  type: ApplicationTypes.LIST_APPLICATIONS_RESPONSE,
+  payload,
+})

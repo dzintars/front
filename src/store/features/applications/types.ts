@@ -22,6 +22,7 @@ export enum ApplicationTypes {
 
   GET = 'APPLICATION__GET',
   GET_SUCCESS = 'APPLICATION__GET_SUCCESS',
+  LIST_APPLICATIONS_RESPONSE = 'APPLICATION__LIST_APPLICATIONS_RESPONSE',
 }
 
 interface Select {
@@ -94,6 +95,11 @@ interface GetSuccess {
   readonly payload: ApplicationsX
 }
 
+interface ListApplicationsResponse {
+  readonly type: ApplicationTypes.LIST_APPLICATIONS_RESPONSE
+  readonly payload: ApplicationsX
+}
+
 export type ApplicationActionTypes =
   | Select
   | ListFetch
@@ -112,3 +118,4 @@ export type ApplicationActionTypes =
   | FailedApplication
   | Get
   | GetSuccess
+  | ListApplicationsResponse

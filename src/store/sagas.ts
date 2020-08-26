@@ -4,7 +4,7 @@ import { all, spawn, call } from 'redux-saga/effects'
 // HYGEN.IO: INJECT IMPORT HERE
 import route from './features/routing/sagas'
 import system from './features/system/sagas'
-// import users from './modules/users/sagas'
+import launcher from './features/launcher/sagas'
 import applications from './features/applications/sagas'
 import appModules from './features/app-navigation/sagas'
 // import organizations from './modules/organizations/sagas'
@@ -13,7 +13,7 @@ export const rootSagas = {
   // HYGEN.IO: INJECT ROOT SAGA HERE
   route,
   system,
-  // users,
+  launcher,
   applications,
   // organizations,
   appModules,
@@ -29,7 +29,7 @@ export async function startSagas() {
     function* saga(): any {
       yield all(
         sagas.map(saga =>
-          spawn(function*() {
+          spawn(function* () {
             while (true) {
               try {
                 yield call(saga)

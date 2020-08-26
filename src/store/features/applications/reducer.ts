@@ -113,6 +113,18 @@ export default (state: ApplicationsState = initialState, action: ApplicationActi
         ids: action.payload.ids,
       }
 
+    case ApplicationTypes.LIST_APPLICATIONS_RESPONSE:
+      // console.log('APP_GET_OK', action.payload)
+      return {
+        ...state,
+        fetching: false,
+        entities: {
+          // ...state.entities,
+          ...action.payload.entities,
+        },
+        ids: action.payload.ids,
+      }
+
     case ApplicationTypes.FETCH_FAILURE:
       return { ...state, fetching: false, error: action.error }
 
