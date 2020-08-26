@@ -47,7 +47,7 @@ import { getApplications } from './actions'
 // }
 
 function* testSaga() {
-  console.log('Test saga')
+  // console.log('Test saga')
   yield put(getApplications())
 }
 

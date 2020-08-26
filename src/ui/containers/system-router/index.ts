@@ -14,6 +14,7 @@ import '../../containers/view-sales-connected'
 import '../../views/view-signin'
 import '../../views/view-signup'
 import '../../views/view-error'
+import '../../views/view-not-found'
 
 @customElement('system-router')
 export class SystemRouterElement extends connect(store, LitElement) {
@@ -101,7 +102,7 @@ export class SystemRouterElement extends connect(store, LitElement) {
       path: '/forgot-password',
       action: (): string => `<app-forgot-password></app-forgot-password>`,
     },
-    { path: '(.*)', action: (): string => '<h1>Not Found</h1>' },
+    { path: '(.*)', action: (): string => `<view-not-found noshadow></view-not-found>` },
   ]
 
   createRenderRoot(): this {
