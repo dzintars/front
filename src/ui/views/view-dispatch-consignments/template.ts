@@ -1,11 +1,13 @@
 import { html, TemplateResult } from 'lit-element'
 import { ViewDispatchConsignmentsElement } from './component'
+import '../../containers/app-taskbar'
 import '../../components/leaflet-map'
 import '../../components/ui-toolbar'
 import '../../elements/ui-panel'
 
 export default function template(this: ViewDispatchConsignmentsElement): TemplateResult {
   return html`
+    <app-taskbar noshadow></app-taskbar>
     <ui-toolbar>
       <button class="btn btn--md">New Project</button>
       <button class="btn btn--md">New Order</button>
