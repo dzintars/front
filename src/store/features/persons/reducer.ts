@@ -1,58 +1,51 @@
-import { PersonTypes, PersonActionTypes } from './types'
-import { PersonsState } from './models'
+import { Person } from './models'
 
-export { PersonsState }
+import { createReducer, createEntityAdapter } from '@reduxjs/toolkit'
+import {
+  selectPerson,
+  fetchPersonListSuccess,
+  fetchPersonListFailure,
+  fetchPersonListRequest,
+  fetchPersonSuccess,
+  fetchPersonFailure,
+  fetchPersonRequest,
+} from './actions'
 
-const initialState: PersonsState = {
-  entities: {},
-  ids: [],
-  fetching: false,
-  selected: '',
-  error: null,
-}
+const personEntityAdapter = createEntityAdapter<Person>({
+  selectId: person => person.uuid,
+})
 
-export default (state: PersonsState = initialState, action: PersonActionTypes): PersonsState => {
-  switch (action.type) {
-    case PersonTypes.SELECT:
-      return { ...state, selected: action.uuid }
-
-    case PersonTypes.LIST_FETCH_REQUEST:
-      return { ...state, fetching: true, error: null }
-
-    case PersonTypes.LIST_FETCH_SUCCESS:
-      return {
-        ...state,
-        fetching: false,
-        entities: {
-          ...state.entities,
-          ...action.persons.reduce((map, person) => {
-            map[person.uuid] = person
-            return map
-          }, {}),
-        },
-        ids: action.persons.map(person => person.uuid),
-      }
-
-    case PersonTypes.LIST_FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.error }
-
-    case PersonTypes.FETCH_REQUEST:
-      return { ...state, fetching: true, error: null }
-
-    case PersonTypes.FETCH_SUCCESS:
-      return {
-        ...state,
-        fetching: false,
-        entities: {
-          ...state.entities,
-          [action.person.uuid]: action.person,
-        },
-      }
-
-    case PersonTypes.FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.error }
-
-    default:
-      return state
+const reducer = createReducer(
+  personEntityAdapter.getInitialState({
+    fetching: false,
+    selected: '',
+    error: null,
+  }),
+  builder => {
+    builder
+      .addCase(selectPerson, (state, action) => {
+        state.selected = action.payload
+      })
+      .addCase(fetchPersonListRequest, state => {
+        state.fetching = true
+        state.error = null
+      })
+      .addCase(fetchPersonListSuccess, personEntityAdapter.setAll)
+      .addCase(fetchPersonListFailure, (state, action) => {
+        state.fetching = false
+        state.error = action.payload
+      })
+      .addCase(fetchPersonRequest, state => {
+        state.fetching = true
+        state.error = null
+      })
+      .addCase(fetchPersonSuccess, personEntityAdapter.upsertOne) // this previously had a bug, you were forgetting to add the uuid to `ids` if it wasn't in there before
+      .addCase(fetchPersonFailure, (state, action) => {
+        state.fetching = false
+        state.error = action.payload
+      })
   }
-}
+)
+
+export default reducer
+export type PersonsState = ReturnType<typeof reducer>

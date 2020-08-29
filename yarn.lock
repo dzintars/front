@@ -312,6 +312,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@reduxjs/toolkit@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "@reduxjs/toolkit@npm:1.4.0"
+  dependencies:
+    immer: ^7.0.3
+    redux: ^4.0.0
+    redux-thunk: ^2.3.0
+    reselect: ^4.0.0
+  checksum: d7ef94402868abedc497ee386089a14992c54e163dfc99ed0cf13de7e616f86748c0b9f0d7555e7685144aa8f10216b19e0dbcce5c2aeea1d753b45865545df3
+  languageName: node
+  linkType: hard
+
 "@sindresorhus/is@npm:^0.14.0":
   version: 0.14.0
   resolution: "@sindresorhus/is@npm:0.14.0"
@@ -4692,6 +4704,7 @@ __metadata:
   resolution: "front@workspace:."
   dependencies:
     "@commitlint/config-conventional": latest
+    "@reduxjs/toolkit": ^1.4.0
     "@types/eslint": latest
     "@types/html-webpack-plugin": latest
     "@types/leaflet": ^1.5.12
@@ -5709,6 +5722,13 @@ fsevents@~2.1.2:
   version: 5.1.8
   resolution: "ignore@npm:5.1.8"
   checksum: b08e3d5b5d94eca13475f29a5d47d221060e9cdd7e38d7647088e29d90130669a970fecbc4cdb41b8fa295c6673740c729d3dc05dadc381f593efb42282cbf9f
+  languageName: node
+  linkType: hard
+
+"immer@npm:^7.0.3":
+  version: 7.0.8
+  resolution: "immer@npm:7.0.8"
+  checksum: 7fdd7e33c019e72a79a36ac1ff397f5a2e897a29bc97b27e4d2a10b669bc59defbc97730ebba929dee11e23ca14abf02381a68528bdce5369c3a8320984cbec0
   languageName: node
   linkType: hard
 
@@ -9532,6 +9552,13 @@ fsevents@~2.1.2:
   dependencies:
     "@redux-saga/core": ^1.1.3
   checksum: eef6cb6661b1a333c40fb24910029846e650621a77106281996b71c3eb283b2ba0d7f53c3e6d0e8e2711226d1a9840c3efb43d6319978524dc4fd7072dfa26c8
+  languageName: node
+  linkType: hard
+
+"redux-thunk@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "redux-thunk@npm:2.3.0"
+  checksum: 2d7210b88cef244384ab15bfe0c0f79a7d5a2fe059825da121121ec75378b175860695fafd5265386a0fd4b86212cc49e5972825f7bc9f803ad8753229f0258b
   languageName: node
   linkType: hard
 

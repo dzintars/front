@@ -1,46 +1,22 @@
-import { PersonTypes, PersonActionTypes } from './types'
+import { PersonTypes } from './types'
 import { Person } from './models'
 
-export const selectPerson = (uuid: string): PersonActionTypes => ({
-  type: PersonTypes.SELECT,
-  uuid,
-})
+import { createAction } from '@reduxjs/toolkit'
 
-export const fetchPersonList = (): PersonActionTypes => ({
-  type: PersonTypes.LIST_FETCH,
-})
+export const selectPerson = createAction<string>(PersonTypes.SELECT)
 
-export const fetchPersonListRequest = (): PersonActionTypes => ({
-  type: PersonTypes.LIST_FETCH_REQUEST,
-})
+export const fetchPersonList = createAction(PersonTypes.LIST_FETCH)
 
-export const fetchPersonListSuccess = (persons: Person[]): PersonActionTypes => ({
-  type: PersonTypes.LIST_FETCH_SUCCESS,
-  persons,
-})
+export const fetchPersonListRequest = createAction(PersonTypes.LIST_FETCH_REQUEST)
 
-export const fetchPersonListFailure = (error: Error): PersonActionTypes => ({
-  type: PersonTypes.LIST_FETCH_FAILURE,
-  error,
-})
+export const fetchPersonListSuccess = createAction<Person[]>(PersonTypes.LIST_FETCH_SUCCESS)
 
-export const fetchPerson = (uuid: string): PersonActionTypes => ({
-  type: PersonTypes.FETCH,
-  uuid,
-})
+export const fetchPersonListFailure = createAction<Error>(PersonTypes.LIST_FETCH_FAILURE)
 
-export const fetchPersonRequest = (uuid: string): PersonActionTypes => ({
-  type: PersonTypes.FETCH_REQUEST,
-  uuid,
-})
+export const fetchPerson = createAction<string>(PersonTypes.FETCH)
 
-export const fetchPersonSuccess = (person: Person): PersonActionTypes => ({
-  type: PersonTypes.FETCH_SUCCESS,
-  person,
-})
+export const fetchPersonRequest = createAction<string>(PersonTypes.FETCH_REQUEST)
 
-export const fetchPersonFailure = (uuid: string, error: Error): PersonActionTypes => ({
-  type: PersonTypes.FETCH_FAILURE,
-  uuid,
-  error,
-})
+export const fetchPersonSuccess = createAction<Person>(PersonTypes.FETCH_SUCCESS)
+
+export const fetchPersonFailure = createAction<{ uuid: string; error: Error }>(PersonTypes.FETCH_FAILURE)

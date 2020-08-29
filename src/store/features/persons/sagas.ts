@@ -1,6 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { PersonTypes } from './types'
-import { fetchPersonListRequest, fetchPersonListSuccess, fetchPersonListFailure } from './actions'
+import { fetchPersonListRequest, fetchPersonListSuccess, fetchPersonListFailure, fetchPersonList } from './actions'
 import { API } from './api'
 
 function* fetchPersonListSaga(action) {
@@ -15,7 +14,7 @@ function* fetchPersonListSaga(action) {
 }
 
 function* fetchPersonListListener() {
-  yield takeLatest(PersonTypes.LIST_FETCH, fetchPersonListSaga)
+  yield takeLatest(fetchPersonList, fetchPersonListSaga)
 }
 
 export default [fetchPersonListListener]
