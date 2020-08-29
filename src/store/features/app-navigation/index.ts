@@ -1,5 +1,5 @@
-import * as AppNavigationSelectors from './selectors'
+// import * as AppNavigationSelectors from './selectors'
 
 export * from './actions'
 // export * from './models'
-export * from './selectors'
+export { AppNavigationSelectors } from './selectors'

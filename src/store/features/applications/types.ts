@@ -23,6 +23,7 @@ export enum ApplicationTypes {
   GET = 'APPLICATION__GET',
   GET_SUCCESS = 'APPLICATION__GET_SUCCESS',
   LIST_APPLICATIONS_RESPONSE = 'APPLICATION__LIST_APPLICATIONS_RESPONSE',
+  ListApplicationsResponse = 'ListApplicationsResponse',
 }
 
 interface Select {
@@ -96,7 +97,7 @@ interface GetSuccess {
 }
 
 interface ListApplicationsResponse {
-  readonly type: ApplicationTypes.LIST_APPLICATIONS_RESPONSE
+  readonly type: ApplicationTypes.ListApplicationsResponse
   readonly payload: ApplicationsX
 }
 

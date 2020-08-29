@@ -1,9 +1,10 @@
 import { createAction, ActionsUnion } from '../../actions'
 import { AppNavigationTypes } from './constants'
-import { AppNavigationActionTypes, AppModules, AppModule } from './types'
-// import { AppModule, AppModules } from './models'
+import { AppNavigationActionTypes } from './types'
+import { AppModule, AppModules } from './models'
 import { ApplicationActionTypes, ApplicationTypes } from '../applications/types'
 
+// ACTION CREATORS
 export const selectModule = (id: string): AppNavigationActionTypes => ({
   type: AppNavigationTypes.SELECT_MODULE,
   payload: {
@@ -77,6 +78,11 @@ const listModulesRequest = (id: string): AppNavigationActionTypes => ({
 
 const listModulesResponse = (payload: AppModules): AppNavigationActionTypes => ({
   type: AppNavigationTypes.LIST_MODULES_RESPONSE,
+  payload,
+})
+
+const listModulesRpcResponse = (payload: AppModules): AppNavigationActionTypes => ({
+  type: AppNavigationTypes.ListModulesResponse,
   payload,
 })
 

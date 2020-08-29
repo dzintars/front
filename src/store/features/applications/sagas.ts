@@ -1,6 +1,7 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects'
 import { ApplicationTypes } from './types'
 import { getApplications } from './actions'
+import { WebsocketActions } from '../websocket'
 // import { fetchApplicationListRequest, fetchApplicationListSuccess, fetchApplicationListFailure } from './actions'
 // import { ApplicationSelectors } from './selectors'
 // import { Application } from './models'
@@ -48,7 +49,7 @@ import { getApplications } from './actions'
 
 function* testSaga() {
   // console.log('Test saga')
-  yield put(getApplications())
+  // yield put(WebsocketActions.SendRpc('ApplicationsService', 'ListApplicationsRequest', {}))
 }
 
 function* loadModules() {

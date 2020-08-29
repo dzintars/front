@@ -14,7 +14,18 @@ const websocketMiddleware = ({ dispatch }) => next => {
         websocket.onopen = (): void => dispatch(websocketConnected())
         break
       case WebsocketTypes.CONNECTED:
-        websocket.onmessage = (event): void => dispatch(JSON.parse(event.data))
+        websocket.onmessage = (event): void => {
+          // console.log(event.data)
+          /**
+           * envelope represents an raw websocket message
+           */
+          const envelope = JSON.parse(event.data)
+          const action = {
+            type: envelope.rpc,
+            payload: envelope.message,
+          }
+          dispatch(action)
+        }
         websocket.onerror = (error): void => console.log(`WS Error: ${error} `)
         websocket.onclose = (): void => dispatch(websocketDisconnected())
         break
@@ -24,6 +35,16 @@ const websocketMiddleware = ({ dispatch }) => next => {
           payload: action.payload.payload,
         }
         console.log('WSS Message: ', message)
+        websocket.send(JSON.stringify(message))
+        break
+      }
+      case WebsocketTypes.SEND_RPC: {
+        const message = {
+          service: action.payload.service,
+          rpc: action.payload.rpc,
+          message: action.payload.message,
+        }
+        // console.log('WSS Message: ', message)
         websocket.send(JSON.stringify(message))
         break
       }

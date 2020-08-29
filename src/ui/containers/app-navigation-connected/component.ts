@@ -15,18 +15,19 @@ import {
 export class AppNavigationConnectedElement extends connect(store, AppNavigationElement) {
   connectedCallback() {
     super.connectedCallback()
-    console.log(this.appid)
+    console.log('App Navigation Connected:', this.appid)
     store.dispatch(AppNavigationActions.loaded(this.appid))
   }
 
   // Map state to props (Connect lib)
   mapState(state: RootState) {
     return {
-      pathname: RoutingSelectors.pathname(state),
+      // pathname: RoutingSelectors.pathname(state),
       isApplicationsFetching: ApplicationSelectors.selectFetchState(state),
       isModulesFetching: ModuleSelectors.selectFetchState(state),
       appid: AppNavigationSelectors.selectCurrentApplicationId(state),
       modules: AppNavigationSelectors.selectAllModulesArray(state),
+      // pathname: AppNavigationSelectors.selectCurrentApplicationPermalink(state),
     }
   }
 }

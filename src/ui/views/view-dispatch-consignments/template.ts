@@ -4,6 +4,8 @@ import '../../containers/app-taskbar'
 import '../../components/leaflet-map'
 import '../../components/ui-toolbar'
 import '../../elements/ui-panel'
+import '../../components/app-navigation'
+import '../../containers/app-navigation-connected'
 
 export default function template(this: ViewDispatchConsignmentsElement): TemplateResult {
   return html`
@@ -19,6 +21,7 @@ export default function template(this: ViewDispatchConsignmentsElement): Templat
       <button class="btn btn--md">Preview</button>
     </ui-toolbar>
     <main>
+      <app-navigation .appid="${this.appid}" noshadow></app-navigation>
       <div class="container left">
         <ui-panel class="projects">Projects</ui-panel>
         <ui-panel class="orders">Orders</ui-panel>
