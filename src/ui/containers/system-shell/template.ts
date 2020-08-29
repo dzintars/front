@@ -1,6 +1,6 @@
 import { html, TemplateResult } from 'lit-element'
 import { SystemShellElement } from './component'
-import '../../containers/main-launcher'
+import '../main-launcher-connected'
 import '../system-router'
 
 export default function template(this: SystemShellElement): TemplateResult {

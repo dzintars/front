@@ -5,7 +5,7 @@ import {
   UiSelectors,
   toggleAccountWidget,
   toggleActionCenter,
-  displayLauncher,
+  LauncherActions,
   switchTheme,
 } from '../../../store'
 import { connect } from '../../../utils/connect'
@@ -26,7 +26,7 @@ export class AppTaskbarElement extends connect(store, LitElement) {
   }
 
   displayLauncher(): void {
-    store.dispatch(displayLauncher())
+    store.dispatch(LauncherActions.displayLauncher())
   }
 
   toggleAccountWidget(): void {

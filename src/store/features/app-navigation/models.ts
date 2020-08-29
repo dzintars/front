@@ -1,10 +1,19 @@
-// export interface AppModule {
-//   readonly id: string
-//   readonly title: string
-//   readonly permalink: string
-// }
+export type AppModule = Readonly<{
+  id: string
+  title: string
+  permalink: string
+}>
 
-// export interface AppModules {
-//   readonly entities: { [id: string]: AppModule }
-//   readonly ids: string[]
-// }
+export type AppModules = Readonly<{
+  entities: { [id: string]: AppModule }
+  ids: string[]
+}>
+
+export type AppNavigationState = Readonly<{
+  entities: { [id: string]: AppModule }
+  ids: string[]
+  fetching: boolean
+  selected: string
+  applicationId: string
+  error: Error
+}>

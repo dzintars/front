@@ -1,24 +1,5 @@
 import { AppNavigationTypes } from './constants'
-
-export type AppModule = Readonly<{
-  id: string
-  title: string
-  permalink: string
-}>
-
-export type AppModules = Readonly<{
-  entities: { [id: string]: AppModule }
-  ids: string[]
-}>
-
-export type AppNavigationState = Readonly<{
-  entities: { [id: string]: AppModule }
-  ids: string[]
-  fetching: boolean
-  selected: string
-  applicationId: string
-  error: Error
-}>
+import { AppModule, AppModules } from './models'
 
 interface SelectModule {
   readonly type: AppNavigationTypes.SELECT_MODULE
@@ -27,9 +8,11 @@ interface SelectModule {
   }
   readonly meta: object
 }
+
 interface ListFetchModules {
   readonly type: AppNavigationTypes.LIST_FETCH_MODULES
 }
+
 interface ListFetchModulesRequest {
   readonly type: AppNavigationTypes.LIST_FETCH_MODULES_REQUEST
   readonly meta: object
@@ -39,26 +22,31 @@ interface ListFetchModulesSuccess {
   readonly type: AppNavigationTypes.LIST_FETCH_MODULES_SUCCESS
   readonly payload: AppModules
 }
+
 interface ListFetchModulesFailure {
   readonly type: AppNavigationTypes.LIST_FETCH_MODULES_FAILURE
   readonly payload: {
     error: Error
   }
 }
+
 interface FetchModule {
   readonly type: AppNavigationTypes.FETCH_MODULE
   readonly payload: object
 }
+
 interface FetchModuleRequest {
   readonly type: AppNavigationTypes.FETCH_MODULE_REQUEST
   readonly payload: object
 }
+
 interface FetchModuleSuccess {
   readonly type: AppNavigationTypes.FETCH_MODULE_SUCCESS
   readonly payload: {
     module: AppModule
   }
 }
+
 interface FetchModuleFailure {
   readonly type: AppNavigationTypes.FETCH_MODULE_FAILURE
   readonly payload: {
@@ -85,6 +73,11 @@ interface ListModulesResponse {
   readonly payload: AppModules
 }
 
+interface ListModulesRpcResponse {
+  readonly type: AppNavigationTypes.ListModulesResponse
+  readonly payload: AppModules
+}
+
 export type AppNavigationActionTypes =
   | SelectModule
   | ListFetchModules
@@ -98,3 +91,4 @@ export type AppNavigationActionTypes =
   | ListModulesRequest
   | ListModulesResponse
   | Loaded
+  | ListModulesRpcResponse

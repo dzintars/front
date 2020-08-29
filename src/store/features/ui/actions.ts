@@ -1,32 +1,5 @@
 import { UiTypes, UiActionTypes } from './types'
 
-export const toggleLauncher = (): UiActionTypes => ({
-  type: UiTypes.LAUNCHER_TOGGLE,
-  meta: { websocket: true },
-})
-
-export const displayLauncher = (): UiActionTypes => ({
-  type: UiTypes.LAUNCHER_DISPLAY,
-  meta: { websocket: true },
-  payload: { stakeholder: '12345' },
-})
-
-export const hideLauncher = (): UiActionTypes => ({
-  type: UiTypes.LAUNCHER_HIDE,
-  meta: { websocket: true },
-  payload: { stakeholder: '54322' },
-})
-
-export const launcherDisplayed = (): UiActionTypes => ({
-  type: UiTypes.LAUNCHER_DISPLAYED,
-  meta: { websocket: false },
-})
-
-export const launcherHidden = (): UiActionTypes => ({
-  type: UiTypes.LAUNCHER_HIDDEN,
-  meta: { websocket: false },
-})
-
 export const toggleAccountWidget = (): UiActionTypes => ({
   type: UiTypes.ACCOUNT_WIDGET_TOGGLE,
 })

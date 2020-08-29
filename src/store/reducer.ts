@@ -6,6 +6,7 @@ import route, { RoutingState } from './features/routing/reducer'
 import system, { SystemState } from './features/system/reducer'
 import theme, { ThemeState } from './features/theme/reducer'
 import ui, { UiState } from './features/ui/reducer'
+import launcher, { LauncherState } from './features/launcher/reducer'
 import users, { UserState } from './features/users/reducer'
 import applications, { ApplicationsState } from './features/applications/reducer'
 import modules, { ModulesState } from './features/modules/reducer'
@@ -21,6 +22,7 @@ export interface RootState {
   route: RoutingState
   system: SystemState
   ui: UiState
+  launcher: LauncherState
   theme: ThemeState
   users: UserState
   applications: ApplicationsState
@@ -38,6 +40,7 @@ export const rootReducer = combineReducers<RootState>({
   route,
   system,
   ui,
+  launcher,
   theme,
   users,
   applications,

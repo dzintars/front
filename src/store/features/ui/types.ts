@@ -1,10 +1,4 @@
 export enum UiTypes {
-  LAUNCHER_TOGGLE = 'UI_LAUNCHER_TOGGLE',
-  LAUNCHER_DISPLAY = 'UI_LAUNCHER_DISPLAY',
-  LAUNCHER_DISPLAYED = 'UI_LAUNCHER_DISPLAYED',
-  LAUNCHER_HIDE = 'UI_LAUNCHER_HIDE',
-  LAUNCHER_HIDDEN = 'UI_LAUNCHER_HIDDEN',
-
   ACCOUNT_WIDGET_TOGGLE = 'UI_ACCOUNT_WIDGET_TOGGLE',
   ACCOUNT_WIDGET_DISPLAY = 'UI_ACCOUNT_WIDGET_DISPLAY',
 
@@ -21,28 +15,6 @@ export enum UiTypes {
   ACTION_CENTER_HIDDEN = 'UI_ACTION_CENTER_HIDDEN',
 }
 
-interface ToggleLauncherAction {
-  readonly type: UiTypes.LAUNCHER_TOGGLE
-  readonly meta: object
-}
-interface DisplayLauncherAction {
-  readonly type: UiTypes.LAUNCHER_DISPLAY
-  readonly meta: object
-  readonly payload: object
-}
-interface HideLauncherAction {
-  readonly type: UiTypes.LAUNCHER_HIDE
-  readonly meta: object
-  readonly payload: object
-}
-interface LauncherDisplayedAction {
-  readonly type: UiTypes.LAUNCHER_DISPLAYED
-  readonly meta: object
-}
-interface LauncherHiddenAction {
-  readonly type: UiTypes.LAUNCHER_HIDDEN
-  readonly meta: object
-}
 interface ToggleAccountWidgetAction {
   readonly type: UiTypes.ACCOUNT_WIDGET_TOGGLE
 }
@@ -87,11 +59,6 @@ interface ActionCenterHiddenAction {
 }
 
 export type UiActionTypes =
-  | ToggleLauncherAction
-  | DisplayLauncherAction
-  | LauncherDisplayedAction
-  | HideLauncherAction
-  | LauncherHiddenAction
   | ToggleAccountWidgetAction
   | DisplayAccountWidgetAction
   | LoadApplicationAction

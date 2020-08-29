@@ -8,37 +8,34 @@ const getModuleId = (state: RootState, { moduleId }): string => moduleId
 const getApplicationId = (state: RootState, { applicationId }): string => applicationId
 
 // MEMOIZED SELECTORS
-export const selectFetchState = createSelector([getState], state => state.fetching)
-export const selectSelectedModuleId = createSelector([getState], state => state.selected.id)
+const selectFetchState = createSelector([getState], state => state.fetching)
+const selectSelectedModuleId = createSelector([getState], state => state.selected.id)
 
-export const selectAllIds = createSelector([getState], state => state.ids)
-export const selectAllModules = createSelector([getState], state => state.entities)
+const selectAllModuleIds = createSelector([getState], state => state.ids)
+const selectAllModules = createSelector([getState], state => state.entities)
 
-export const selectAllModulesArray = createSelector([getState, selectAllIds], (state, allIds) =>
+const selectAllModulesArray = createSelector([getState, selectAllModuleIds], (state, allIds) =>
   allIds.map(id => state.entities[id]).sort()
 )
 
-export const selectModuleById = createSelector([getState, getModuleId], (modules, moduleId) => {
+const selectModuleById = createSelector([getState, getModuleId], (modules, moduleId) => {
   // console.log('A', modules.entities[moduleId])
   return modules.entities[moduleId]
 })
 
-export const selectModuleName = createSelector([selectModuleById], module => {
+const selectModuleName = createSelector([selectModuleById], module => {
   // console.log('B:', module.title)
   return module.title
 })
 
-export const selectModulesIdsByApplicationId = createSelector(
-  [getApplications, getApplicationId],
-  (applications, id) => {
-    // console.log('ModulesIDs ID: ', id)
-    // console.log('ModulesIDs Apps: ', applications)
-    // console.log('ModulesIDs: ', applications[id].modules)
-    return applications[id].modules || []
-  }
-)
+const selectModulesIdsByApplicationId = createSelector([getApplications, getApplicationId], (applications, id) => {
+  // console.log('ModulesIDs ID: ', id)
+  // console.log('ModulesIDs Apps: ', applications)
+  // console.log('ModulesIDs: ', applications[id].modules)
+  return applications[id].modules || []
+})
 
-export const selectModulesByApplicationId = createSelector(
+const selectModulesByApplicationId = createSelector(
   [selectAllModules, selectModulesIdsByApplicationId],
   (modules, ids) => {
     // console.log(
@@ -49,7 +46,20 @@ export const selectModulesByApplicationId = createSelector(
   }
 )
 
-export const selectModuleSummary = createStructuredSelector({
+const selectModuleSummary = createStructuredSelector({
   id: getModuleId,
   title: selectModuleName,
 })
+
+export const ModuleSelectors = {
+  selectFetchState,
+  selectSelectedModuleId,
+  selectAllModuleIds,
+  selectAllModules,
+  selectAllModulesArray,
+  selectModuleById,
+  selectModuleName,
+  selectModulesIdsByApplicationId,
+  selectModulesByApplicationId,
+  selectModuleSummary,
+}

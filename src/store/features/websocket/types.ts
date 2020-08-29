@@ -3,6 +3,7 @@ export enum WebsocketTypes {
   CONNECTING = 'WEBSOCKET__CONNECTING',
   CONNECTED = 'WEBSOCKET__CONNECTED',
   SEND = 'WEBSOCKET__SEND',
+  SEND_RPC = 'WEBSOCKET__SEND_RPC',
   DISCONNECT = 'WEBSOCKET__DISCONNECT',
   DISCONNECTED = 'WEBSOCKET__DISCONNECTED',
   ERROR = 'WEBSOCKET__ERROR',
@@ -27,6 +28,14 @@ interface Send {
     payload?: object
   }
 }
+interface SendRpc {
+  readonly type: WebsocketTypes.SEND_RPC
+  readonly payload: {
+    service: string
+    rpc: string
+    message?: object
+  }
+}
 interface Disconnect {
   readonly type: WebsocketTypes.DISCONNECT
 }
@@ -41,4 +50,4 @@ interface Error {
   }
 }
 
-export type WebsocketActionTypes = Connect | Connecting | Connected | Send | Disconnect | Disconnected | Error
+export type WebsocketActionTypes = Connect | Connecting | Connected | Send | SendRpc | Disconnect | Disconnected | Error

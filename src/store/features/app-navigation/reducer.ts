@@ -1,6 +1,6 @@
 import { AppNavigationTypes } from './constants'
-import { AppNavigationActionTypes, AppNavigationState } from './types'
-// import { AppNavigationState } from './models'
+import { AppNavigationActionTypes } from './types'
+import { AppNavigationState } from './models'
 
 export { AppNavigationState }
 
@@ -35,6 +35,14 @@ export default (state: AppNavigationState = initialState, action: AppNavigationA
       }
 
     case AppNavigationTypes.LIST_MODULES_RESPONSE:
+      return {
+        ...state,
+        entities: {
+          ...action.payload.entities,
+        },
+        ids: action.payload.ids,
+      }
+    case AppNavigationTypes.ListModulesResponse:
       return {
         ...state,
         entities: {
