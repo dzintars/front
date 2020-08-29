@@ -3,6 +3,7 @@
   "editor.formatOnPaste": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.rulers": [80,120],
+  "[git-commit]": {"editor.rulers": [50]},
   "[javascript]": {
     // "editor.tabSize": 2, // Potentially overlaps with Editorconfig extension
     "editor.formatOnSave": true,
