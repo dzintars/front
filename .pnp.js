@@ -34,6 +34,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:9.1.1"
       ],
       [
+        "@reduxjs/toolkit",
+        "npm:1.4.0"
+      ],
+      [
         "@types/eslint",
         "npm:7.2.0"
       ],
@@ -282,6 +286,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@commitlint/config-conventional", "npm:9.1.1"],
+            ["@reduxjs/toolkit", "npm:1.4.0"],
             ["@types/eslint", "npm:7.2.0"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
             ["@types/leaflet", "npm:1.5.17"],
@@ -687,6 +692,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@redux-saga-types-npm-1.1.0-2c2f416e43-2097b26331.zip/node_modules/@redux-saga/types/",
           "packageDependencies": [
             ["@redux-saga/types", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@reduxjs/toolkit", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/@reduxjs-toolkit-npm-1.4.0-facdfe8cbf-d7ef944028.zip/node_modules/@reduxjs/toolkit/",
+          "packageDependencies": [
+            ["@reduxjs/toolkit", "npm:1.4.0"],
+            ["immer", "npm:7.0.8"],
+            ["redux", "npm:4.0.5"],
+            ["redux-thunk", "npm:2.3.0"],
+            ["reselect", "npm:4.0.0"]
           ],
           "linkType": "HARD",
         }]
@@ -5587,6 +5605,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["front", "workspace:."],
             ["@commitlint/config-conventional", "npm:9.1.1"],
+            ["@reduxjs/toolkit", "npm:1.4.0"],
             ["@types/eslint", "npm:7.2.0"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
             ["@types/leaflet", "npm:1.5.17"],
@@ -6679,6 +6698,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["ignore-walk", "npm:3.0.3"],
             ["minimatch", "npm:3.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["immer", [
+        ["npm:7.0.8", {
+          "packageLocation": "./.yarn/cache/immer-npm-7.0.8-92a17bff33-7fdd7e33c0.zip/node_modules/immer/",
+          "packageDependencies": [
+            ["immer", "npm:7.0.8"]
           ],
           "linkType": "HARD",
         }]
@@ -10897,6 +10925,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["redux-saga", "npm:1.1.3"],
             ["@redux-saga/core", "npm:1.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["redux-thunk", [
+        ["npm:2.3.0", {
+          "packageLocation": "./.yarn/cache/redux-thunk-npm-2.3.0-a5eb89e35e-2d7210b88c.zip/node_modules/redux-thunk/",
+          "packageDependencies": [
+            ["redux-thunk", "npm:2.3.0"]
           ],
           "linkType": "HARD",
         }]

@@ -1,58 +1,56 @@
-import { PersonTypes, PersonActionTypes } from './types'
-import { PersonsState } from './models'
+import { Person } from './models'
 
-export { PersonsState }
+import { createSlice, createEntityAdapter, PayloadAction } from '@reduxjs/toolkit'
 
-const initialState: PersonsState = {
-  entities: {},
-  ids: [],
-  fetching: false,
-  selected: '',
-  error: null,
-}
+export const personEntityAdapter = createEntityAdapter<Person>({
+  selectId: person => person.uuid,
+})
 
-export default (state: PersonsState = initialState, action: PersonActionTypes): PersonsState => {
-  switch (action.type) {
-    case PersonTypes.SELECT:
-      return { ...state, selected: action.uuid }
+const slice = createSlice({
+  name: 'persons',
+  initialState: personEntityAdapter.getInitialState({
+    fetching: false,
+    selected: '',
+    error: null,
+  }),
+  reducers: {
+    selectPerson(state, action: PayloadAction<string>) {
+      state.selected = action.payload
+    },
+    fetchPersonList() {}, // just create an action, the reducer does nothing
+    fetchPersonListRequest(state) {
+      state.fetching = true
+      state.error = null
+    },
+    fetchPersonListSuccess: personEntityAdapter.setAll,
+    fetchPersonListFailure(state, action: PayloadAction<Error>) {
+      state.fetching = false
+      state.error = action.payload
+    },
+    fetchPerson() {},
+    fetchPersonRequest(state) {
+      state.fetching = true
+      state.error = null
+    },
+    fetchPersonSuccess: personEntityAdapter.upsertOne, // this previously had a bug, you were forgetting to add the uuid to `ids` if it wasn't in there before
+    fetchPersonFailure(state, action) {
+      state.fetching = false
+      state.error = action.payload
+    },
+  },
+})
 
-    case PersonTypes.LIST_FETCH_REQUEST:
-      return { ...state, fetching: true, error: null }
+export default slice.reducer
+export type PersonsState = ReturnType<typeof slice.reducer>
 
-    case PersonTypes.LIST_FETCH_SUCCESS:
-      return {
-        ...state,
-        fetching: false,
-        entities: {
-          ...state.entities,
-          ...action.persons.reduce((map, person) => {
-            map[person.uuid] = person
-            return map
-          }, {}),
-        },
-        ids: action.persons.map(person => person.uuid),
-      }
-
-    case PersonTypes.LIST_FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.error }
-
-    case PersonTypes.FETCH_REQUEST:
-      return { ...state, fetching: true, error: null }
-
-    case PersonTypes.FETCH_SUCCESS:
-      return {
-        ...state,
-        fetching: false,
-        entities: {
-          ...state.entities,
-          [action.person.uuid]: action.person,
-        },
-      }
-
-    case PersonTypes.FETCH_FAILURE:
-      return { ...state, fetching: false, error: action.error }
-
-    default:
-      return state
-  }
-}
+export const {
+  fetchPersonFailure,
+  fetchPersonListFailure,
+  fetchPersonListRequest,
+  fetchPersonListSuccess,
+  fetchPersonRequest,
+  fetchPersonSuccess,
+  selectPerson,
+  fetchPerson,
+  fetchPersonList,
+} = slice.actions

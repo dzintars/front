@@ -1,40 +1,22 @@
 import { combineReducers } from 'redux'
 
 // HYGEN.IO: INJECT IMPORT HERE
-import websocket, { WebsocketState } from './features/websocket/reducer'
-import route, { RoutingState } from './features/routing/reducer'
-import system, { SystemState } from './features/system/reducer'
-import theme, { ThemeState } from './features/theme/reducer'
-import ui, { UiState } from './features/ui/reducer'
-import launcher, { LauncherState } from './features/launcher/reducer'
-import users, { UserState } from './features/users/reducer'
-import applications, { ApplicationsState } from './features/applications/reducer'
-import modules, { ModulesState } from './features/modules/reducer'
-import persons, { PersonsState } from './features/persons/reducer'
-import accounts, { AccountsState } from './features/accounts/reducer'
-import organizations, { OrganizationsState } from './features/organizations/reducer'
-import orders, { OrdersState } from './features/orders/reducer'
-import appModules, { AppNavigationState } from './features/app-navigation/reducer'
+import websocket from './features/websocket/reducer'
+import route from './features/routing/reducer'
+import system from './features/system/reducer'
+import theme from './features/theme/reducer'
+import ui from './features/ui/reducer'
+import launcher from './features/launcher/reducer'
+import users from './features/users/reducer'
+import applications from './features/applications/reducer'
+import modules from './features/modules/reducer'
+import persons from './features/persons/reducer'
+import accounts from './features/accounts/reducer'
+import organizations from './features/organizations/reducer'
+import orders from './features/orders/reducer'
+import appModules from './features/app-navigation/reducer'
 
-export interface RootState {
-  // HYGEN.IO: INJECT STATE HERE
-  websocket: WebsocketState
-  route: RoutingState
-  system: SystemState
-  ui: UiState
-  launcher: LauncherState
-  theme: ThemeState
-  users: UserState
-  applications: ApplicationsState
-  modules: ModulesState
-  persons: PersonsState
-  accounts: AccountsState
-  organizations: OrganizationsState
-  orders: OrdersState
-  appModules: AppNavigationState
-}
-
-export const rootReducer = combineReducers<RootState>({
+export const rootReducer = combineReducers({
   // HYGEN.IO: INJECT REDUCER HERE
   websocket,
   route,
@@ -51,3 +33,4 @@ export const rootReducer = combineReducers<RootState>({
   orders,
   appModules,
 })
+export type RootState = ReturnType<typeof rootReducer>
