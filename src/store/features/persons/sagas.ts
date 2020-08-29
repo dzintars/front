@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { fetchPersonListRequest, fetchPersonListSuccess, fetchPersonListFailure, fetchPersonList } from './actions'
+import { fetchPersonListRequest, fetchPersonListSuccess, fetchPersonListFailure, fetchPersonList } from './reducer'
 import { API } from './api'
 
 function* fetchPersonListSaga(action) {
