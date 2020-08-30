@@ -4,6 +4,7 @@ import path from 'path'
 import fs from 'fs'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import merge from 'webpack-merge'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 const config: webpack.Configuration = merge(common, {
   mode: 'development',
@@ -22,6 +23,7 @@ const config: webpack.Configuration = merge(common, {
     new webpack.HotModuleReplacementPlugin({
       // Options...
     }),
+    new BundleAnalyzerPlugin(),
   ],
   devtool: 'source-map',
   devServer: {
