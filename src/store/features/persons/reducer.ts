@@ -17,7 +17,9 @@ const slice = createSlice({
     selectPerson(state, action: PayloadAction<string>) {
       state.selected = action.payload
     },
-    fetchPersonList() {}, // just create an action, the reducer does nothing
+    fetchPersonList() {
+      // do nothing
+    }, // just create an action, the reducer does nothing
     fetchPersonListRequest(state) {
       state.fetching = true
       state.error = null
@@ -27,7 +29,9 @@ const slice = createSlice({
       state.fetching = false
       state.error = action.payload
     },
-    fetchPerson() {},
+    fetchPerson() {
+      // do nothing
+    },
     fetchPersonRequest(state) {
       state.fetching = true
       state.error = null
