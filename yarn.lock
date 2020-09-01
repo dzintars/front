@@ -256,6 +256,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@oswee/test-npm-private-package@npm:0.0.7":
+  version: 0.0.7
+  resolution: "@oswee/test-npm-private-package@npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"
+  checksum: ceede52980084543070fd5a9174625cbce00423d3148d8bebc60a1a203e6fe91cfbbe4580ee3cc0324417ce08a4ccb518d0abd19d9a0fee985382d3af3e8366f
+  languageName: node
+  linkType: hard
+
 "@redux-saga/core@npm:^1.1.3":
   version: 1.1.3
   resolution: "@redux-saga/core@npm:1.1.3"
@@ -4692,6 +4699,7 @@ __metadata:
   resolution: "front@workspace:."
   dependencies:
     "@commitlint/config-conventional": latest
+    "@oswee/test-npm-private-package": 0.0.7
     "@types/eslint": latest
     "@types/html-webpack-plugin": latest
     "@types/leaflet": ^1.5.12

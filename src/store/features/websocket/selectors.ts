@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect'
 import { RootState } from '../../reducer'
+import { WebsocketState } from './reducer'
 
-const getState = (state: RootState) => state.websocket
+const getState = (state: RootState): WebsocketState => state.websocket
 
 // TODO: Refactor namespace
 //eslint-disable-next-line @typescript-eslint/no-namespace

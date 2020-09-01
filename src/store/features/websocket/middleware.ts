@@ -38,6 +38,10 @@ const websocketMiddleware = ({ dispatch }) => next => {
         websocket.send(JSON.stringify(message))
         break
       }
+      /**
+       * Testing RPC style message format. Eventually this action will replace
+       * WebsocketTypes.SEND.
+       */
       case WebsocketTypes.SEND_RPC: {
         const message = {
           service: action.payload.service,

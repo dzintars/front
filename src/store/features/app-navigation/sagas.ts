@@ -9,7 +9,15 @@ function* workerSaga(action) {
   // yield put({ ...action, type: `REMOTE_${action.type}` })
   // TODO: No no!
   // yield delay(1000)
-  yield put(WebsocketActions.SendRpc('ModulesService', 'ListModulesRequest', { parent: action.payload.appid }))
+
+  /**
+   * Ideally message payload shape should be defined in protobufs and
+   * shared between backend and frontend.
+   */
+  const listModulesRequestPayload = {
+    parent: action.payload.appid,
+  }
+  yield put(WebsocketActions.SendRpc('ModulesService', 'ListModulesRequest', listModulesRequestPayload))
 }
 
 function* watcherSaga() {

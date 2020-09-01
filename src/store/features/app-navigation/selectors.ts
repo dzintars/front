@@ -44,6 +44,12 @@ const selectCurrentApplicationPermalink = createSelector(
   }
 )
 
+/**
+ * I am namespacing selectors to avoid naming collisions because all selectors
+ * are imported from single `store`.
+ * Not using TS namespaces because ESLint recommendations and requires
+ * `eslint-disable-next-line @typescript-eslint/no-namespace`
+ */
 export const AppNavigationSelectors = {
   selectFetchState,
   selectSelectedModuleId,

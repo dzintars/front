@@ -38,6 +38,7 @@
     }
   },
   "dependencies": {
+    "@oswee/test-npm-private-package": "0.0.7",
     "@types/leaflet": "^1.5.12",
     "history": "^4.10.1",
     "leaflet": "^1.6.0",

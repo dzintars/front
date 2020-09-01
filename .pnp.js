@@ -34,6 +34,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:9.1.1"
       ],
       [
+        "@oswee/test-npm-private-package",
+        "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"
+      ],
+      [
         "@types/eslint",
         "npm:7.2.0"
       ],
@@ -282,6 +286,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@commitlint/config-conventional", "npm:9.1.1"],
+            ["@oswee/test-npm-private-package", "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"],
             ["@types/eslint", "npm:7.2.0"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
             ["@types/leaflet", "npm:1.5.17"],
@@ -622,6 +627,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@npmcli/move-file", "npm:1.0.1"],
             ["mkdirp", "npm:1.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@oswee/test-npm-private-package", [
+        ["npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c", {
+          "packageLocation": "./.yarn/cache/@oswee-test-npm-private-package-npm-0.0.7-29db0c80c2-ceede52980.zip/node_modules/@oswee/test-npm-private-package/",
+          "packageDependencies": [
+            ["@oswee/test-npm-private-package", "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"]
           ],
           "linkType": "HARD",
         }]
@@ -5587,6 +5601,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["front", "workspace:."],
             ["@commitlint/config-conventional", "npm:9.1.1"],
+            ["@oswee/test-npm-private-package", "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"],
             ["@types/eslint", "npm:7.2.0"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
             ["@types/leaflet", "npm:1.5.17"],
