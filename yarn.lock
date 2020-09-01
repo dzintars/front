@@ -220,6 +220,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dzintars/npm-test-pkg@npm:0.0.8":
+  version: 0.0.8
+  resolution: "@dzintars/npm-test-pkg@npm:0.0.8::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.8%2F62419cdbd10565252b75934e7acbd31287f27b5af2c1071cb535c07dedeb80d4"
+  checksum: 06f48d5c34deec1ff80e46d530aafe42255fcc352a97d332ce7a1174b125527b0ae6022b0382daf879d0c57ecd1c1d19abed08a205370f7fbaddd3f5e98054bf
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.3":
   version: 2.1.3
   resolution: "@nodelib/fs.scandir@npm:2.1.3"
@@ -4699,6 +4706,7 @@ __metadata:
   resolution: "front@workspace:."
   dependencies:
     "@commitlint/config-conventional": latest
+    "@dzintars/npm-test-pkg": 0.0.8
     "@oswee/test-npm-private-package": 0.0.7
     "@types/eslint": latest
     "@types/html-webpack-plugin": latest

@@ -38,7 +38,7 @@
     }
   },
   "dependencies": {
-    "@oswee/test-npm-private-package": "0.0.7",
+    "@dzintars/npm-test-pkg": "0.0.8",
     "@types/leaflet": "^1.5.12",
     "history": "^4.10.1",
     "leaflet": "^1.6.0",
@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "latest",
+    "@oswee/test-npm-private-package": "0.0.7",
     "@types/eslint": "latest",
     "@types/html-webpack-plugin": "latest",
     "@types/mini-css-extract-plugin": "latest",

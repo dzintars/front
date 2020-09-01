@@ -34,6 +34,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:9.1.1"
       ],
       [
+        "@dzintars/npm-test-pkg",
+        "npm:0.0.8::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.8%2F62419cdbd10565252b75934e7acbd31287f27b5af2c1071cb535c07dedeb80d4"
+      ],
+      [
         "@oswee/test-npm-private-package",
         "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"
       ],
@@ -286,6 +290,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@commitlint/config-conventional", "npm:9.1.1"],
+            ["@dzintars/npm-test-pkg", "npm:0.0.8::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.8%2F62419cdbd10565252b75934e7acbd31287f27b5af2c1071cb535c07dedeb80d4"],
             ["@oswee/test-npm-private-package", "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"],
             ["@types/eslint", "npm:7.2.0"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
@@ -586,6 +591,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@commitlint-types-npm-9.1.2-9efd131e62-8141d7c945.zip/node_modules/@commitlint/types/",
           "packageDependencies": [
             ["@commitlint/types", "npm:9.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@dzintars/npm-test-pkg", [
+        ["npm:0.0.8::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.8%2F62419cdbd10565252b75934e7acbd31287f27b5af2c1071cb535c07dedeb80d4", {
+          "packageLocation": "./.yarn/cache/@dzintars-npm-test-pkg-npm-0.0.8-4a6d861e1b-06f48d5c34.zip/node_modules/@dzintars/npm-test-pkg/",
+          "packageDependencies": [
+            ["@dzintars/npm-test-pkg", "npm:0.0.8::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.8%2F62419cdbd10565252b75934e7acbd31287f27b5af2c1071cb535c07dedeb80d4"]
           ],
           "linkType": "HARD",
         }]
@@ -5601,6 +5615,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["front", "workspace:."],
             ["@commitlint/config-conventional", "npm:9.1.1"],
+            ["@dzintars/npm-test-pkg", "npm:0.0.8::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.8%2F62419cdbd10565252b75934e7acbd31287f27b5af2c1071cb535c07dedeb80d4"],
             ["@oswee/test-npm-private-package", "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"],
             ["@types/eslint", "npm:7.2.0"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
