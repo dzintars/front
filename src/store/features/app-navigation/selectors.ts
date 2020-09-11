@@ -28,7 +28,7 @@ const selectModuleById = createSelector([selectAllModules, selectSelectedModuleI
   return entities[id]
 })
 
-const selectModuleName = createSelector([selectModuleById], application => application.title)
+const selectModuleName = createSelector([selectModuleById], application => application.getTitle())
 
 const selectCurrentApplicationId = createSelector([getApplicationState], state => state.currentApplication)
 

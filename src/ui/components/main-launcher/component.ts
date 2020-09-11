@@ -111,7 +111,7 @@ export class MainLauncherElement extends LitElement {
   handleClickOutside(e: Event): void {
     // Exclude launcher button (#launcher) (Don't like this)
     if (this.getRootNode().contains(this) && !e.composedPath().includes(this) && !EventPathIncludes(e, '#launcher')) {
-      store.dispatch(LauncherActions.hideLauncher())
+      store.dispatch(LauncherActions.hideLauncher()) // Don't do this there
     }
   }
 

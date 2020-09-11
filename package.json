@@ -38,8 +38,10 @@
     }
   },
   "dependencies": {
-    "@dzintars/npm-test-pkg": "0.0.9",
+    "@dzintars/npm-test-pkg": "0.0.10",
+    "@types/google-protobuf": "latest",
     "@types/leaflet": "^1.5.12",
+    "google-protobuf": "latest",
     "history": "^4.10.1",
     "leaflet": "^1.6.0",
     "lit-element": "latest",

@@ -220,10 +220,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dzintars/npm-test-pkg@npm:0.0.9":
-  version: 0.0.9
-  resolution: "@dzintars/npm-test-pkg@npm:0.0.9::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.9%2Fd2dc97c206ead33e80296a9697a0fd6fe0d05707e176d4fdf0622788abf7615b"
-  checksum: c33a9ac995f024b9ce3c010444cb68cb20840f09e222a77312be25fba9d33515317252ba436d88a065a621635866c8c44d05749b74f66c489832ac3724ca7fa9
+"@dzintars/npm-test-pkg@npm:0.0.10":
+  version: 0.0.10
+  resolution: "@dzintars/npm-test-pkg@npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.10%2Fe6c12d60def3983531e64543bc0a651c2ba588c550f322d78f9f1de86e4de8df"
+  checksum: 3c706d6c101cd347372fa2a6fdbd44c6bedc6f1b21246a0e9fee131f5f1cba8786b58246c51bafbb5eb132c284794de7f48b29e7112acc3e25ae4162c8d7e889
   languageName: node
   linkType: hard
 
@@ -490,6 +490,13 @@ __metadata:
     "@types/minimatch": "*"
     "@types/node": "*"
   checksum: 633bf1dda9a30899b233ed6b97c75cdd59f2ee856a12240c85474ce6889e26b3b3520b62de56f6bb61824af0ef51b311a0cae305f27ba0de8ddc4898a3673d42
+  languageName: node
+  linkType: hard
+
+"@types/google-protobuf@npm:latest":
+  version: 3.7.3
+  resolution: "@types/google-protobuf@npm:3.7.3"
+  checksum: bea0fea95a63d03a874b20ebf76068d582997e4ba0bc9238cab598cd06f9183c5db0e5f39a5273418a4394c830b775d11056a3290a4b4390469205e96f878661
   languageName: node
   linkType: hard
 
@@ -4706,9 +4713,10 @@ __metadata:
   resolution: "front@workspace:."
   dependencies:
     "@commitlint/config-conventional": latest
-    "@dzintars/npm-test-pkg": 0.0.9
+    "@dzintars/npm-test-pkg": 0.0.10
     "@oswee/test-npm-private-package": 0.0.7
     "@types/eslint": latest
+    "@types/google-protobuf": latest
     "@types/html-webpack-plugin": latest
     "@types/leaflet": ^1.5.12
     "@types/mini-css-extract-plugin": latest
@@ -4731,6 +4739,7 @@ __metadata:
     extract-loader: ^4.0.3
     file-loader: ^5.1.0
     fork-ts-checker-webpack-plugin: ^4.0.4
+    google-protobuf: latest
     history: ^4.10.1
     html-loader: ^0.5.5
     html-webpack-plugin: latest
@@ -5141,6 +5150,13 @@ fsevents@~2.1.2:
     lodash: ~4.17.10
     minimatch: ~3.0.2
   checksum: c4f8d628b1781c57ea2fcea34ed1b2ad6eff0afc267117d42c6c80e391855d6610ac5a67deae5ce73e885b3082ec0a844d1478cd3d5999a66803980a3a51e066
+  languageName: node
+  linkType: hard
+
+"google-protobuf@npm:latest":
+  version: 3.13.0
+  resolution: "google-protobuf@npm:3.13.0"
+  checksum: 044c27256919d74a017195145af23bdfafbc6b63bb2a00c2770b08364c9c20f38d419dfea833352592619f8343f1f57b188a21213e0edfa2cfabba78333c0bc8
   languageName: node
   linkType: hard
 

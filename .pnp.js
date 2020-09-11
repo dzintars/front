@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],
       [
         "@dzintars/npm-test-pkg",
-        "npm:0.0.9::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.9%2Fd2dc97c206ead33e80296a9697a0fd6fe0d05707e176d4fdf0622788abf7615b"
+        "npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.10%2Fe6c12d60def3983531e64543bc0a651c2ba588c550f322d78f9f1de86e4de8df"
       ],
       [
         "@oswee/test-npm-private-package",
@@ -44,6 +44,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "@types/eslint",
         "npm:7.2.0"
+      ],
+      [
+        "@types/google-protobuf",
+        "npm:3.7.3"
       ],
       [
         "@types/html-webpack-plugin",
@@ -132,6 +136,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "fork-ts-checker-webpack-plugin",
         "npm:4.1.6"
+      ],
+      [
+        "google-protobuf",
+        "npm:3.13.0"
       ],
       [
         "history",
@@ -290,9 +298,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@commitlint/config-conventional", "npm:9.1.1"],
-            ["@dzintars/npm-test-pkg", "npm:0.0.9::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.9%2Fd2dc97c206ead33e80296a9697a0fd6fe0d05707e176d4fdf0622788abf7615b"],
+            ["@dzintars/npm-test-pkg", "npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.10%2Fe6c12d60def3983531e64543bc0a651c2ba588c550f322d78f9f1de86e4de8df"],
             ["@oswee/test-npm-private-package", "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"],
             ["@types/eslint", "npm:7.2.0"],
+            ["@types/google-protobuf", "npm:3.7.3"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
             ["@types/leaflet", "npm:1.5.17"],
             ["@types/mini-css-extract-plugin", "npm:0.9.1"],
@@ -315,6 +324,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["extract-loader", "npm:4.0.3"],
             ["file-loader", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:5.1.0"],
             ["fork-ts-checker-webpack-plugin", "npm:4.1.6"],
+            ["google-protobuf", "npm:3.13.0"],
             ["history", "npm:4.10.1"],
             ["html-loader", "npm:0.5.5"],
             ["html-webpack-plugin", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:4.3.0"],
@@ -596,10 +606,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@dzintars/npm-test-pkg", [
-        ["npm:0.0.9::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.9%2Fd2dc97c206ead33e80296a9697a0fd6fe0d05707e176d4fdf0622788abf7615b", {
-          "packageLocation": "./.yarn/cache/@dzintars-npm-test-pkg-npm-0.0.9-04d632ede6-c33a9ac995.zip/node_modules/@dzintars/npm-test-pkg/",
+        ["npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.10%2Fe6c12d60def3983531e64543bc0a651c2ba588c550f322d78f9f1de86e4de8df", {
+          "packageLocation": "./.yarn/cache/@dzintars-npm-test-pkg-npm-0.0.10-fb3232d335-3c706d6c10.zip/node_modules/@dzintars/npm-test-pkg/",
           "packageDependencies": [
-            ["@dzintars/npm-test-pkg", "npm:0.0.9::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.9%2Fd2dc97c206ead33e80296a9697a0fd6fe0d05707e176d4fdf0622788abf7615b"]
+            ["@dzintars/npm-test-pkg", "npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.10%2Fe6c12d60def3983531e64543bc0a651c2ba588c550f322d78f9f1de86e4de8df"]
           ],
           "linkType": "HARD",
         }]
@@ -905,6 +915,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/glob", "npm:7.1.3"],
             ["@types/minimatch", "npm:3.0.3"],
             ["@types/node", "npm:14.0.27"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/google-protobuf", [
+        ["npm:3.7.3", {
+          "packageLocation": "./.yarn/cache/@types-google-protobuf-npm-3.7.3-798efe85de-bea0fea95a.zip/node_modules/@types/google-protobuf/",
+          "packageDependencies": [
+            ["@types/google-protobuf", "npm:3.7.3"]
           ],
           "linkType": "HARD",
         }]
@@ -5615,9 +5634,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["front", "workspace:."],
             ["@commitlint/config-conventional", "npm:9.1.1"],
-            ["@dzintars/npm-test-pkg", "npm:0.0.9::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.9%2Fd2dc97c206ead33e80296a9697a0fd6fe0d05707e176d4fdf0622788abf7615b"],
+            ["@dzintars/npm-test-pkg", "npm:0.0.10::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40dzintars%2Fnpm-test-pkg%2F0.0.10%2Fe6c12d60def3983531e64543bc0a651c2ba588c550f322d78f9f1de86e4de8df"],
             ["@oswee/test-npm-private-package", "npm:0.0.7::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40oswee%2Ftest-npm-private-package%2F0.0.7%2Fa0c1f9468ec6522b23810b4b38039a33ee0e583e13ebe3fb8b1833cb2754764c"],
             ["@types/eslint", "npm:7.2.0"],
+            ["@types/google-protobuf", "npm:3.7.3"],
             ["@types/html-webpack-plugin", "npm:3.2.3"],
             ["@types/leaflet", "npm:1.5.17"],
             ["@types/mini-css-extract-plugin", "npm:0.9.1"],
@@ -5640,6 +5660,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["extract-loader", "npm:4.0.3"],
             ["file-loader", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:5.1.0"],
             ["fork-ts-checker-webpack-plugin", "npm:4.1.6"],
+            ["google-protobuf", "npm:3.13.0"],
             ["history", "npm:4.10.1"],
             ["html-loader", "npm:0.5.5"],
             ["html-webpack-plugin", "virtual:0487b1b8263ee74b6a800d7d32396247265bb66793913170b66fbaba014393ed5e7147a33f4bbb04ae9c659e18794d2a28c1045211d073c2ec3f37a52f31b1e7#npm:4.3.0"],
@@ -6059,6 +6080,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:7.1.6"],
             ["lodash", "npm:4.17.19"],
             ["minimatch", "npm:3.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["google-protobuf", [
+        ["npm:3.13.0", {
+          "packageLocation": "./.yarn/cache/google-protobuf-npm-3.13.0-245231a363-044c272569.zip/node_modules/google-protobuf/",
+          "packageDependencies": [
+            ["google-protobuf", "npm:3.13.0"]
           ],
           "linkType": "HARD",
         }]

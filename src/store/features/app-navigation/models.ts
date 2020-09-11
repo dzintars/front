@@ -1,3 +1,5 @@
+import { ListModulesResponse as ListModulesResponseRpc, Module } from '@dzintars/npm-test-pkg'
+
 export type AppModule = Readonly<{
   id: string
   title: string
@@ -10,7 +12,7 @@ export type AppModules = Readonly<{
 }>
 
 export type AppNavigationState = Readonly<{
-  entities: { [id: string]: AppModule }
+  entities: { [id: string]: Module }
   ids: string[]
   fetching: boolean
   selected: string

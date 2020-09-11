@@ -1,5 +1,6 @@
 import { websocketConnected, websocketDisconnected } from './actions'
 import { WebsocketTypes, WebsocketActionTypes } from './types'
+import * as jspb from 'google-protobuf'
 
 let websocket: WebSocket = null
 
@@ -19,12 +20,14 @@ const websocketMiddleware = ({ dispatch }) => next => {
           /**
            * envelope represents an raw websocket message
            */
+          const payload = event.data
+          const actionToDispatch = payload.onMessage(event as jspb.Message)
           const envelope = JSON.parse(event.data)
           const action = {
             type: envelope.rpc,
             payload: envelope.message,
           }
-          dispatch(action)
+          dispatch(actionToDispatch)
         }
         websocket.onerror = (error): void => console.log(`WS Error: ${error} `)
         websocket.onclose = (): void => dispatch(websocketDisconnected())
