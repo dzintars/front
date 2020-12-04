@@ -1,5 +1,10 @@
 # Front-end SPA application
 
+UPDATE: This repo currently is on-hold.
+All latest changes are done in `develop` branch and it should be in broken state due to incomplete `modules` websocket API implementation.
+WebSocket server also mostly is down on public address.
+Currently my main focus is on `Prime` Bazel managed mono-repository where eventually all this repository will be migrated to.
+
 This is my try to set up complete front-end application.
 This is an early WIP. DON'T USE IT!
 
