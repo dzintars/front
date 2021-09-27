@@ -15,7 +15,7 @@ export default function template(this: SystemShellElement): TemplateResult {
           <system-router></system-router>
         `
       : html`
-          <h1>Connecting</h1>
+          <h1>Connecting to API ...</h1>
         `}
   `
 }
