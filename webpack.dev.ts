@@ -35,12 +35,12 @@ const config: webpack.Configuration = merge(common, {
     hot: true, // https://github.com/webpack/webpack-dev-server/issues/97#issuecomment-69726201
     compress: true,
     // https://webpack.js.org/configuration/dev-server/#devserverhttp2
-    allowedHosts: ['dev.oswee.com'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
+    allowedHosts: ['front.oswee.dev'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
     http2: true,
     https: {
-      key: fs.readFileSync('/home/dzintars/.tls/oswee.com/privkey.pem'),
-      cert: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain.pem'),
-      ca: fs.readFileSync('/home/dzintars/.tls/oswee.com/fullchain.pem'),
+      key: fs.readFileSync('/home/dzintars/.tls/oswee.dev/privkey.pem'),
+      cert: fs.readFileSync('/home/dzintars/.tls/oswee.dev/fullchain.pem'),
+      ca: fs.readFileSync('/home/dzintars/.tls/oswee.dev/fullchain.pem'),
     },
     // To run behind HAProxy (insecure) https://stackoverflow.com/a/43647767/6651080
     // disableHostCheck: true, // Probably not needed if allowedHosts is used
@@ -49,7 +49,7 @@ const config: webpack.Configuration = merge(common, {
       errors: true,
     },
     // TODO: Use devServer.transportMode wss
-    sockHost: 'dev.oswee.com',
+    sockHost: 'front.oswee.dev',
     sockPath: '/sockjs-node',
     sockPort: 443,
   },
