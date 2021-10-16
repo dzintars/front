@@ -18,11 +18,7 @@ export default function template(this: AppTaskbarElement): TemplateResult {
       </div>
     </div>
     <h1>Home</h1>
-    <div class="middle">
-      <div class="fieldset">
-        <input name="search" type="search" />
-      </div>
-    </div>
+    <div class="middle"></div>
     <div class="right">
       <button class="btn icon-btn btn--xl" @click=${this.toggleActionCenter} title="Action Center">
         ${Icon('gear', '', 'icon-btn__icon')}
