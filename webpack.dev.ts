@@ -35,7 +35,7 @@ const config: webpack.Configuration = merge(common, {
     hot: true, // https://github.com/webpack/webpack-dev-server/issues/97#issuecomment-69726201
     compress: true,
     // https://webpack.js.org/configuration/dev-server/#devserverhttp2
-    allowedHosts: ['front.oswee.dev'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
+    allowedHosts: ['front.oswee.dev', 'front.oswee.com'], // Disabling this and the disableHostCheck leads to Invalid Host header by HAProxy
     http2: true,
     https: {
       key: fs.readFileSync('/home/dzintars/.tls/oswee.dev/privkey.pem'),
